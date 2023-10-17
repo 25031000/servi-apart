@@ -217,7 +217,7 @@ function cargarFotosVehiculo(){
             <div class="page-title">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="#" style="color: #18d26e">Administrador</a>
+                  <a href="#" style="color: #18d26e">Residente</a>
                 </li>
                 <li class="breadcrumb-item active">Ver datos de vehiculo</li>
               </ol>
@@ -380,6 +380,12 @@ function cargarNovedades()
 
     if (!isset($result)) {
         echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
+        echo '
+            <script>
+                let head = document.querySelector(".filas_vehiculos");
+                head.style.display = "none";
+            </script>
+        ';
 
     } else {
         
@@ -387,6 +393,7 @@ function cargarNovedades()
             
 
             echo '
+            
             <tr><td style="text-align:center">' . $f['id_nov'] . '</td>
                 <td style="text-align:center">' . $f['placa'] . ' </td>
                 <td style="text-align:center">' . $f['novedad'] . '</td>

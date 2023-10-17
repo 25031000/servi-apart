@@ -1,6 +1,6 @@
 <?php
-require_once("../../Models/conexion.php");
-require_once("../../Models/consultas.php");
+// require_once("../../Models/conexion.php");
+// require_once("../../Models/consultas.php");
 
 
 function cargarPublicacionesRes(){
@@ -66,7 +66,107 @@ function cargarInfoUsuarios(){
     }
 }
 
+function cargarVehiculosResidente(){
+    $objConsultas = new Consultas();
+    
+    $identificacion = $_SESSION['id'];
 
+    $result = $objConsultas->mostrarVehiculosRes($identificacion);
+
+    if (!isset($result)) {
+        echo '<h2>No hay vehiculos registrados en el sistema</h2>';
+        echo '
+            <script>
+                let head = document.querySelector(".filas_vehiculos");
+                head.style.display = "none";
+            </script>
+        ';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr><td style="text-align:center">' . $f['placa'] . '</td>
+                <td style="text-align:center">' . $f['marca'] . ' </td>
+                <td style="text-align:center">' . $f['referencia'] . '</td>
+                <td style="text-align:center">' . $f['modelo'] . ' </td>
+                <td style="text-align:center">' . $f['fecha'] . ' </td>
+                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><i class="ti-eye"></i> Ver Historial</a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-eye"></i></a></td>
+
+            </tr>     
+            ';
+        }
+    }
+}
+
+function cargarNovedadesResidente()
+{
+    $placa = $_GET['placa'];
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarNovedades($placa);
+
+    if (!isset($result)) {
+        echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
+        echo '
+            <script>
+                let head = document.querySelector(".filas_vehiculos");
+                head.style.display = "none";
+            </script>
+        ';
+
+    } else {
+        
+        foreach ($result as $f) {
+            
+
+            echo '
+            
+            <tr><td style="text-align:center">' . $f['id_nov'] . '</td>
+                <td style="text-align:center">' . $f['placa'] . ' </td>
+                <td style="text-align:center">' . $f['novedad'] . '</td>
+                <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
+                <td style="text-align:center">' . $f['identificacion'] . ' </td>
+                <td style="text-align:center">' . $f['nombres'] . ' </td>
+
+
+            </tr>   
+            
+
+            ';
+        }
+
+        
+    }
+}
+
+function cargarVehiculosPDFR()
+{    
+    $identificacion = isset($_SESSION['id']);
+
+    $objConsultas = new Consultas();
+
+    $result = $objConsultas->mostrarVehiculosRes($identificacion);
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['placa'].'</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['marca'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['referencia'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['modelo'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
+
+            </tr>     
+            ';
+        }
+    }
+}
 
 ?>
 

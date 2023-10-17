@@ -2,8 +2,8 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadAdministrador.php");
-require_once("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/seguridadResidente.php");
+require_once("../../Controllers/mostrarInfoResidente.php");
 
 
 ?>
@@ -75,7 +75,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 <body>
 
     <?php
-    include 'menu-include.php';
+    include 'menu-include-residente.php';
     ?>
 
 
@@ -99,7 +99,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#"style="color: #18d26e">Administrador</a>
+                                        <a href="#"style="color: #18d26e">Residente</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver novedades</li>
                                 </ol>
@@ -118,7 +118,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                    <table class="table table-hover ">
+                                        <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
                                                     <th style="font-size:18px">ID Novedad</th>
@@ -126,13 +126,15 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:18px">Novedad</th>
                                                     <th style="font-size:18px">Fecha Revision</th>
                                                     <th style="font-size:18px">Identificación guarda</th>
-                                                    <th style="font-size:18px">Nombre de guarda encargado</th>
-                                                    <th  style="text-align:center; font-size:18px">Operaciones</th>
+                                                    <th style="text-align:center; font-size:18px">Nombre de guarda encargado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                    cargarNovedades();
+
+                                                cargarNovedadesResidente();
+                                                
+
                                                 ?>
                                             </tbody>
                                         </table>
@@ -149,8 +151,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <?php
     $placa = $_GET['placa'];
 
-    echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
-    echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en Excel</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar PDF</a></button>';
+    echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Excel</a></button>';
                     ?>
 
 
