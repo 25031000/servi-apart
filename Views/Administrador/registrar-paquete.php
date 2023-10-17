@@ -67,8 +67,8 @@
                                 <button id="btn-signup" type="submit" class="w-25 py-3">Registrar</button>
                             </div>
                         </form>
-                        <div class="content-img ">
-                            <img class="w-100 h-100" src="../Administrador/images/pack-images.png" alt="">
+                        <div class="content-img d-flex align-items-center">
+                            <img class="w-75 h-75" src="../Administrador/images/pack-images.png" alt="">
                         </div>
                     </section>
                 </main>

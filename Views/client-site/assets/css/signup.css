@@ -38,10 +38,8 @@
 }
 
 #return-home{
-    background: rgba(255, 255, 255, 0.25);
+    background: #00bf63;
     color: black;
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
 }
 
 #return-home:hover{

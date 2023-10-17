@@ -119,6 +119,8 @@
   justify-content: center;
   background-image: url("../../dashboard/images/edificio.jpg");
   position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .unix-login:before {
