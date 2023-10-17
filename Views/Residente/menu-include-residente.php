@@ -70,11 +70,6 @@
                                 <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Mis Vehiculos</a>
                             </li>
                         </ul>
-                        <ul>
-                            <li>
-                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Novedades Hechas</a>
-                            </li>
-                        </ul>
 
                     <li>
                         <a class="sidebar-sub-toggle">

@@ -1,11 +1,8 @@
 <?php
-
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadAdministrador.php");
-require_once("../../Controllers/mostrarInfoAdmin.php");
-
-
+require_once("../../Models/seguridadResidente.php");
+require_once("../../Controllers/mostrarInfoResidente.php");
 ?>
 
 
@@ -18,9 +15,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi - Apart</title>
+    <title>Servi-Apart</title>
+
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
@@ -69,13 +69,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
 <body>
 
     <?php
-    include 'menu-include.php';
+    include 'menu-include-residente.php';
     ?>
 
 
@@ -88,8 +89,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 id="tl_v_vehiculos">Novedades</h1>
-                                <p>Como administrador, accede al historial de novedades de vehículos realizadas por el personal de seguridad de nuestro conjunto</p>
+                                <h1 id="tl_v_vehiculos">Mis Vehiculos</h1>
+                                <p>Visualiza y gestiona tus vehículos registrados en el sistema. Además, podrás ver las
+                                    novedades realizadas por el personal de seguridad para cada uno de tus vehículos.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -99,9 +102,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#"style="color: #18d26e">Administrador</a>
+                                        <a style="color: #18d26e">Residente</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Ver novedades</li>
+                                    <li class="breadcrumb-item active">Ver Vehiculos</li>
                                 </ol>
                             </div>
                         </div>
@@ -113,47 +116,55 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card vehiculos_ver">
-                                <div class="card-title">
-
-                                </div>
-                                <div class="card-body">
+                                <div class="card-body card-ver">
                                     <div class="table-responsive">
-                                    <table class="table table-hover ">
+                                        <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                    <th style="font-size:18px">ID Novedad</th>
                                                     <th style="font-size:18px">Placa</th>
-                                                    <th style="font-size:18px">Novedad</th>
-                                                    <th style="font-size:18px">Fecha Revision</th>
-                                                    <th style="font-size:18px">Identificación guarda</th>
-                                                    <th style="font-size:18px">Nombre de guarda encargado</th>
-                                                    <th  style="text-align:center; font-size:18px">Operaciones</th>
+                                                    <th style="font-size:18px">Marca</th>
+                                                    <th style="font-size:18px">Referencia</th>
+                                                    <th style="font-size:18px">Modelo</th>
+                                                    <th style="font-size:18px">Fecha de Registro</th>
+                                                    <th style="text-align:center; font-size:18px">Novedades</th>
+                                                    <th style="text-align:center; font-size:18px">Más detalles</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                    cargarNovedades();
+
+                                                cargarVehiculosResidente();
+
                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
+
                                 </div>
 
+
                             </div>
+                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf"
+                                style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a
+                                    class="txt-pdf" href="../../services/generatepdfvehiculos.php"
+                                    target="_blank">Generar Reporte PDF</a></button>
+                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a
+                                    class="txt-excel" href="../../services/generarexcelvehiculos.php"
+                                    target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 
                         <!-- /# column -->
                     </div>
 
-                    <?php
-    $placa = $_GET['placa'];
 
-    echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en PDF</a></button>';
-    echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Reporte de novedades en Excel</a></button>';
-                    ?>
-
-
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer">
+                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
@@ -339,13 +350,21 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-
-
-
-
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
     <!--  Dashboard 1 -->
     <script src="../Dashboard/js/dashboard1.js"></script>
     <script src="../Dashboard/js/dashboard2.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 

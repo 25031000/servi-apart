@@ -36,8 +36,8 @@ header("content-Disposition: attachment; filename=reporte_vehiculos.xls");
 
             require_once "../Models/conexion.php";
             require_once "../Models/consultas.php";
-            require_once "../Controllers/mostrarInfoAdmin.php";
-            cargarVehiculosPDF();
+            require_once "../Controllers/mostrarInfoResidente.php";
+            cargarVehiculosPDFR();
 
         ?>
     </tbody>

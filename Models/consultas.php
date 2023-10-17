@@ -577,6 +577,26 @@ class Consultas
 
     }
 
+    public function mostrarVehiculosRes($identificacion)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM vehiculo WHERE identificacion = :identificacion";
+
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":identificacion", $identificacion);
+
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
 
     public function eliminarUserAdmin($id)
     {
