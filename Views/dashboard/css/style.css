@@ -3399,6 +3399,7 @@ tbody tr td:last-child {
 }
 
 .login-form {
+  width: 500px;
   padding: 30px 30px 20px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.25);
@@ -3407,46 +3408,46 @@ tbody tr td:last-child {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+
 }
 
 .login-form h4 {
-  color: #000000;
+  color: #ffffff;
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 50px;
-}
-
-.login-form .checkbox {
-  color: #000000;
-  font-size: 1rem;
-  padding: 0 20px;
 }
 
 .login-form .checkbox label {
   text-transform: none;
 }
 
-/* .login-form .btn {
-  width: 100%;
-  text-transform: uppercase;
-  font-size: 14px;
-  padding: 15px;
-  border: 0px;
-  border: solid     ;
-} */
-
 .login-form .btn {
   width: 100%;
   margin: 20px auto;
+  background: #00BF63;
+  color: black;
+  font-weight: 500;
+  border: #00BF63;
+  font-size: 18px;
+}
+
+
+.login-form .btn:hover{
+  width: 100%;
+  margin: 20px auto;
+  background: #FF914D;
+  color: black;
 }
 
 .login-form label {
-  color: #000000;
+  color: #ffffff;
   text-transform: uppercase;
+  font-weight: 500;
 }
 
 .login-form label a {
-  color: #000000;
+  color: #ffffff;
 }
 
 .social-login-content {
@@ -3466,17 +3467,18 @@ tbody tr td:last-child {
 }
 
 .register-link a {
-  color: #000000;
+  color: #00BF63;
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .register-link a:hover {
-  color: white;
+  color: #FF914D;
   font-size: 1rem;
 }
 
 .register-link p {
-  color: #000000;
+  color: #ffffff;
   font-size: 1rem;
 }
 
