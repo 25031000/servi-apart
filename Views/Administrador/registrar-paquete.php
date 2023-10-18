@@ -45,32 +45,29 @@
                 </div>
             </div>
             <div class="  px-0 mt-5">
-                <main class="  main-content h-auto">
-                    <section class="wrapper-form   h-auto ">
-                        <form class="  m-0 p-3 d-flex flex-column justify-content-center form-pack " action="../../Controllers/registrarPaquete.php" method="post">
-                            <div class="mb-5 d-flex text-start">
-                                <h2 class="title">Paqueteria</h2>
-                            </div>
-                            <div class="mb-5 d-flex flex-column">
-            
-                                <input type="text" placeholder="~ Torre" class="py-3 border-none input ps-3" name="torre">
-                            </div>
-                            <div class="mb-5 d-flex flex-column">
-            
+                <div class="mb-5 d-flex text-center border  w-100 "> 
+                    <h2>Paqueteria</h2>
+                 </div>
+                <main class="  main-content h-auto d-flex border justify-content-center">
+                        <form class="  m-0 p-5 d-flex flex-column form-pack  " action="../../Controllers/registrarPaquete.php" method="post">
+                            <div class="mb-5 d-flex  w-100 justify-content-around">                                
                                 <input type="text" placeholder="~ Apartamento" class="py-3 border-none ps-3 input" name="apartamento">
                             </div>
-                            <div class="mb-5 d-flex flex-column">
-            
+                            <div class="mb-5 d-flex  w-100 justify-content-around">                                
+                                <input type="text" placeholder="~ Torre" class="py-3 border-none input ps-3" name="torre">
+                               
+                            </div>
+                            <div class="mb-5 d-flex  w-100 justify-content-around">
                                 <input type="text" placeholder="~ Remitente" class="py-3 border-none ps-3 input" name="remitente">
                             </div>
-                            <div class="mb-5 d-flex flex-column">
+                            <div class="mb-5 d-flex  w-100 justify-content-around">
                                 <button id="btn-signup" type="submit" class="w-25 py-3">Registrar</button>
                             </div>
                         </form>
-                        <div class="content-img d-flex align-items-center">
-                            <img class="w-75 h-75" src="../Administrador/images/pack-images.png" alt="">
+                        <div class="content-img d-none  d-md-flex align-items-center justify-content-center">
+                            <img class="w-100 h-100" src="../Administrador/images/pack.jpg" alt="">
                         </div>
-                    </section>
+    
                 </main>
             
             </div>
