@@ -1,8 +1,8 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 
 ?>
 
@@ -68,22 +68,22 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    
-    <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
+
+    <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
-    
-    
-  
-    
+
+
+
+
 
 </head>
 
 <body>
 
-<?php
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
     <!-- /# sidebar -->
 
@@ -96,12 +96,14 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                            <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important; margin-left: 40px " >
-                                    <img src="../../assets/icons/megafono.png" alt="" style="width: 50px; height: 50px;">
+                                <div class="page-title d-flex align-items-center">
+                                    <div class="icon-content p-2 rounded-circle"
+                                        style="background-color: #18d26e !important; margin-left: 40px ">
+                                        <img src="../../assets/icons/megafono.png" alt=""
+                                            style="width: 50px; height: 50px;">
+                                    </div>
+                                    <h1 style="font-size: 2.5rem;" class="hola">Registro de publicaciones</h1>
                                 </div>
-                                <h1 style="font-size: 2.5rem;" class="hola">Registro de publicaciones</h1>
-                            </div>
                                 <h1 style="margin-top: 30px; font-size: 30px; margin-left: 55px ">Crear Publicación</h1>
                                 <p style="font-size: 20px; margin-left: 55px">Por favor rellena los campos</p>
                             </div>
@@ -122,61 +124,43 @@
                     </div>
                     <!-- /# column -->
                 </div>
-          
+
                 <!-- /# row -->
-
-                <div class="row">
-                            <div class="col-md-6">
-                                <img src="../../assets/img/publi.png" class="img_publi" alt="">
-                            </div>
-
-                            
-                </div>
-                    
-                <section id="main-content" style="margin-top: -430px">
-                   <div class="row">
-                        <div class="col-lg-7">
-                            <div class="card-publi">
-                                <div class="card-title">
-                                    
-                                </div>
-
-                                
-                        
-                                <form action="../../Controllers/crearPublicaciones.php" method="POST">
-                                <div class="row">
+            </div>
+        </div>
+    </div>
 
 
-                                    <div class="form-group col-md-12">
-                                        <label><strong>Titulo:</strong></label>
-                                        <input type="text" class="form-control" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
-                                    </div>
-                                   
-                                    <div class="form-group col-md-12 ">
-                                        <label><strong>Descripcion:</strong></label>
-                                        <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
-                                        <textarea name="descripcion" id="" class="form-control" cols="30" rows="3" placeholder="Ej: Profundiza la situacion."></textarea>
-                                    </div>
+    <div class="container-fluid">
+        <div class="row contImg">
+            <div class="col-md-6">
+                <form action="../../Controllers/crearPublicaciones.php" method="POST" style="margin-top: 90px;">
+                    <div class="row">
 
-                                    
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Crear</button>
-                                <div class="register-link m-t-15 text-center">
-                                    
-                                </div>
-                            </form>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <div class="form-group col-md-12">
+                            <label><strong>Titulo:</strong></label>
+                            <input type="text" class="form-control"
+                                placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
                         </div>
-                        <!-- /# column -->
-                      
-                        <!-- /# column -->
+
+                        <div class="form-group col-md-12 ">
+                            <label><strong>Descripcion:</strong></label>
+                            <!-- <input type="textarea" class="form-control des" placeholder="Ej: Profundiza la situacion" name="descripcion"> -->
+                            <textarea name="descripcion" id="" class="form-control" cols="30" rows="3"
+                                placeholder="Ej: Profundiza la situacion."></textarea>
+                        </div>
+
+
                     </div>
+                    <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Crear</button>
+                    <div class="register-link m-t-15 text-center">
 
-
-                    
-        </section>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 ">
+                <img src="../../assets/img/publi.png" class="img_publi" alt="">
             </div>
         </div>
     </div>
@@ -195,7 +179,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 
-   
+
 
 </body>
 
