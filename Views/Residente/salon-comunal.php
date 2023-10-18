@@ -39,8 +39,7 @@ require_once("../../Models/consultas.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <style>
         /* Estilo para la sección principal */
@@ -117,7 +116,7 @@ require_once("../../Models/consultas.php");
                                     require '../../Controllers/mostrarInfoResidente.php';
                                     cargarInfoUsuarios();
                                     ?>
-                            </h1>
+                                </h1>
                             </div>
                         </div>
                     </div>
@@ -135,15 +134,15 @@ require_once("../../Models/consultas.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                
-                    <div class="d-flex justify-content-center">
-                        <h4 class="mx-auto">Reserva Tu Dia</h4>
-                    </div>
 
-                
+                <div class="d-flex justify-content-center">
+                    <h4 class="mx-auto">Reserva Tu Dia</h4>
+                </div>
+
+
                 <section id="main-content">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-md-6">
                             <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -webkit-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -moz-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);">
@@ -153,65 +152,162 @@ require_once("../../Models/consultas.php");
                                     <div id="detalles-reservacion">
                                     </div>
                                 </div>
-                                <!-- no borrar esos div de arriba -->
-                                <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
-                </section>
+
+                            </div>
+                        </div>
+                        <!-- no borrar esos div de arriba -->
+                        <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
 
 
-                <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
-                    <div class="row g-2">
+                        <!-- <div class="col-md-6">
+                            <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
+                                            <label for="identificacion"><b>Identificación</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
+                                            <label for="dia_reserva"><b>Día de Reserva</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                                            <label for="hora_inicio"><b>Hora de Inicio</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                                            <label for="hora_finalizacion"><b>Hora de Finalización</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="mesas" name="mesas" required>
+                                            <label for="mesas"><b>Mesas</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="sillas" name="sillas" required>
+                                            <label for="sillas"><b>Sillas</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <label><b>Tipo de evento</b></label>
+                                            <select name="tipo_evento" id="tipo_evento" class="form-control">
+                                                <option value="cumpleaños">Fiesta de cumpleaños</option>
+                                                <option value="comunitaria">Reunión comunitaria</option>
+                                                <option value="shower">Baby shower</option>
+                                                <option value="benefico">Evento benéfico</option>
+                                                <option value="teatral">Presentación teatral</option>
+                                                <option value="fin_año">Fiesta de fin de año</option>
+                                                <option value="aniversario">Fiesta de aniversario</option>
+                                                <option value="arte">Taller de arte</option>
+                                                <option value="reu_corporativa">Reunión corporativa</option>
+                                                <option value="expo_artesanias">Exposición de artesanías</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-success face">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+
+
+
+
+
+
+                        </div> -->
                         <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="number" class="form-control" id="identificacion" name="identificacion"
-                                    placeholder="0123456789" required>
-                                <label for="identificacion"><b>Identificación</b></label>
-                            </div>
+                            <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
+                                <div class="row g-2">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
+                                            <label for="identificacion">Identificación</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
+                                            <label for="dia_reserva"><b>Día de Reserva</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                                            <label for="hora_inicio"><b>Hora de Inicio</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
+                                            <label for="hora_finalizacion"><b>Hora de Finalización</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="mesas" name="mesas" required>
+                                            <label for="mesas"><b>Mesas</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control" id="sillas" name="sillas" required>
+                                            <label for="sillas"><b>Sillas</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <label for="disabledSelect" class="form-label">Tipo de evento</label>
+                                            <!-- <label for="tipo_evento">Tipo de evento</label> -->
+                                            <select name="tipo_evento" id="disabledSelect" class="form-control">
+                                                <option value="" selected></option>
+                                                <option value="cumpleaños">Fiesta de cumpleaños</option>
+                                                <option value="arte">Matrimonio</option>
+                                                <option value="arte">Primera comunion</option>
+                                                <option value="comunitaria">Reunión comunitaria</option>
+                                                <option value="shower">Baby shower</option>
+                                                <option value="benefico">Evento benéfico</option>
+                                                <option value="teatral">Presentación teatral</option>
+                                                <option value="fin_año">Fiesta de fin de año</option>
+                                                <option value="aniversario">Fiesta de aniversario</option>
+                                                <option value="arte">Taller de arte</option>
+                                                <option value="reu_corporativa">Reunión corporativa</option>
+                                                <option value="expo_artesanias">Exposición de artesanías</option>
+                                                <option value="otro">Otro</option>
+                                            </select>
+                                            <label for="tipo_evento"><b>Tipo de evento</b></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-success face">Enviar</button>
+                                    </div>
+                                </div>
+
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly
-                                    required>
-                                <label for="dia_reserva"><b>Día de Reserva</b></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
-                                <label for="hora_inicio"><b>Hora de Inicio</b></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion"
-                                    value="03:00:00" required>
-                                <label for="hora_finalizacion"><b>Hora de Finalización</b></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="number" class="form-control" id="mesas" name="mesas" required>
-                                <label for="mesas"><b>Mesas</b></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="number" class="form-control" id="sillas" name="sillas" required>
-                                <label for="sillas"><b>Sillas</b></label>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-success face">Enviar</button>
-                        </div>
+
                     </div>
-                </form>
-
-
-
-
-
-
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-success face">Enviar</button>
             </div>
         </div>
+        </form>
+    </div>
+
+    </div>
+    </div>
     </div>
     <!-- /# card -->
     </div>
@@ -245,9 +341,7 @@ require_once("../../Models/consultas.php");
     <!-- sidebar -->
 
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 
 

@@ -742,7 +742,7 @@ class Consultas
         }
     }
 
-    public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas)
+    public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -771,8 +771,8 @@ class Consultas
 
             if (isset($result['identificacion'])) {
 
-                $insertar = "INSERT INTO reserva_salon (identificacion, dia_reserva, hora_inicio, hora_finalizacion, mesas, sillas)
-                            VALUES (:identificacion, :dia_reserva, :hora_inicio, :hora_finalizacion, :mesas, :sillas)";
+                $insertar = "INSERT INTO reserva_salon (identificacion, dia_reserva, hora_inicio, hora_finalizacion, mesas, sillas, tipo_evento)
+                            VALUES (:identificacion, :dia_reserva, :hora_inicio, :hora_finalizacion, :mesas, :sillas, :tipo_evento)";
 
                 $result = $conexion->prepare($insertar);
 
@@ -784,6 +784,7 @@ class Consultas
                 $result->bindParam(":hora_finalizacion", $hora_finalizacion);
                 $result->bindParam(":mesas", $mesas);
                 $result->bindParam(":sillas", $sillas);
+                $result->bindParam(":tipo_evento", $tipo_evento);
 
                 if ($result->execute()) {
                     return true; // Indicar éxito en la inserción.
@@ -837,23 +838,23 @@ class Consultas
     }
 
 
-    public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas)
+    public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
 
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
+        $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE identificacion=:identificacion";
         $result = $conexion->prepare($actualizar);
 
 
         $result->bindParam(":identificacion", $identificacion);
-
         $result->bindParam(":dia_reserva", $dia_reserva);
         $result->bindParam(":hora_inicio", $hora_inicio);
         $result->bindParam(":hora_finalizacion", $hora_finalizacion);
         $result->bindParam(":mesas", $mesas);
         $result->bindParam(":sillas", $sillas);
+        $result->bindParam(":tipo_evento", $tipo_evento);
 
         $result->execute();
 
@@ -1058,6 +1059,7 @@ class Consultas
                 S.hora_finalizacion , 
                 S.mesas , 
                 S.sillas,
+                S.tipo_evento,
                 U.nombres,
                 U.apellidos,
                 U.email,

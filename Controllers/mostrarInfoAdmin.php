@@ -1280,6 +1280,17 @@ function mostrarReservas()
                                             <p class="fs-6" style="position:relative; top: 9px">' . $f['sillas'] . '</p>
                                         </div>
                                     </div>
+
+                                    <div style="display: flex" class="border justify-content-between p-2 px-3">
+                                    <div class"w-50 d-flex p-2" style="align-items: center;">
+                                        <img  src="../../assets/icons/iconSalonComunal/cartel.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                        <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Tipo de Evento</p>
+                                    </div>
+                                    <div class"w-50 p-2 border d-flex justify-content-center" style="margin-right: 40px">
+                                        <p class="fs-6" style="position:relative; top: 9px">' . $f['tipo_evento'] . '</p>
+                                    </div>
+                                </div>
+
                                     <div class="h-auto row d-flex p-2">
                                     <section class="col p-2 border-end border-primary">
                                         <!-- Botón "Eliminar" en la esquina superior izquierda -->

@@ -37,12 +37,13 @@ $hora_inicio= $_POST['hora_inicio']?? null;
 $hora_finalizacion= $_POST['hora_finalizacion']?? null;
 $mesas= $_POST['mesas']?? null;
 $sillas= $_POST['sillas']?? null;
+$tipo_evento= $_POST['tipo_evento']?? null; 
 
-if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' ){
-    $objConsultas = new Consultas();
-    $response = $objConsultas->registrarDia($identificacion, $dia_reserva ,$hora_inicio, $hora_finalizacion, $mesas, $sillas);
-    if(!$response)return;
-        ?>
+//if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== ''&& $tipo_evento!=='' ){
+   // $objConsultas = new Consultas();
+    //$response = $objConsultas->registrarDia($identificacion, $dia_reserva ,$hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento);
+    //if(!$response)return;
+        /*?>
     <script>
         Swal.fire({
             icon: 'success',
@@ -72,7 +73,7 @@ if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $ho
     <?php
     }
         
-
+*/
     ?>
     
 </body>
