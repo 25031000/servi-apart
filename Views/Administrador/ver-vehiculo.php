@@ -19,8 +19,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
@@ -69,6 +68,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    
 
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
@@ -89,6 +89,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important; width: 50px;">
+                                    <img src="../../assets/icons/cocheV.png" alt="">
+                                </div>
                                 <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
                                 <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las
                                     novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>

@@ -144,13 +144,6 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf"
-                                style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a
-                                    class="txt-pdf" href="../../services/generatepdfvehiculos.php"
-                                    target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a
-                                    class="txt-excel" href="../../services/generarexcelvehiculos.php"
-                                    target="_blank">Generar Reporte Excel</a></button>
                         </div>
                         <!-- /# column -->
 
