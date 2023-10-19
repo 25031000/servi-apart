@@ -63,6 +63,10 @@
             <div class="pt-3 ">
                 <main class="w-100 row px-5 gap-4 flex-nowrap  py-5">
                     <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form" method="post">
+                    <div class="d-flex flex-column mb-3">
+                            <h2>Registrar paquete</h2>
+                        </div>
+
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Torre</label>
                             <input type="text" name="torre" placeholder="1" class="rounded-3 input">

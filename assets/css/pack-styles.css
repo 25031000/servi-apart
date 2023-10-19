@@ -106,6 +106,9 @@ html{
     border-radius: 0.625rem;
     box-shadow:  -15px 15px 60px #b0b0b0,
     15px -15px 60px #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .register-btn{
