@@ -104,16 +104,22 @@ function cargarInfoUsuarios(){
     if (!isset($result)) {
         echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
     } else {
-        foreach ($result as $f) {
+        /* foreach ($result as $f) {
             echo '
             <tr>
                 
                 <td>' . $f['nombres'] . '</td>
                 <td>' . $f['apellidos'] . '</td>
             </tr>';
-        }
+        } */
+        return $result;
     }
 }
+
+
+
+
+
 
 function cargarVehiculosResidente(){
     $objConsultas = new Consultas();
