@@ -92,13 +92,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle"
+                            <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/promocion.png" alt="">
+                                    <img src="../../assets/icons/promocion.png" style="width: 45px; height: 45px" alt="">
                                 </div>
-                                <h1 style="font-size: 35px; font-family: 'Roboto', sans-serif !important; ">Publicaciones Creadas</h1>
+                                <h1 style="font-size: 35px; font-family: 'Roboto', sans-serif !important; padding: 25px
+                                ">Publicaciones Creadas</h1>
 
-                                <p style="font-size: 20px">Elige la accion que deseas realizar "Editar" o "Eliminar" </p>
+                               
                             </div>
 
                         </div>
