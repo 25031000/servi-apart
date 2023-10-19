@@ -32,44 +32,62 @@
 
     <div class="content-wrap">
         <div class="main">
-            <div class="col-lg-12 w-100 p-l-0 title-margin-left ">
-                <div class="page-header">
-                    <div class="page-title">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#" style="color: #18d26e">Administrador</a>
-                            </li>
-                            <li class="breadcrumb-item active">Registro de paqueteria</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            <div class="  px-0 mt-5">
-                <div class="mb-5 d-flex text-center border  w-100 "> 
-                    <h2>Paqueteria</h2>
-                 </div>
-                <main class="  main-content h-auto d-flex border justify-content-center">
-                        <form class="  m-0 p-5 d-flex flex-column form-pack  " action="../../Controllers/registrarPaquete.php" method="post">
-                            <div class="mb-5 d-flex  w-100 justify-content-around">                                
-                                <input type="text" placeholder="~ Apartamento" class="py-3 border-none ps-3 input" name="apartamento">
+        <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title d-flex align-items-center">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/box-pack.png" alt="">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
                             </div>
-                            <div class="mb-5 d-flex  w-100 justify-content-around">                                
-                                <input type="text" placeholder="~ Torre" class="py-3 border-none input ps-3" name="torre">
-                               
-                            </div>
-                            <div class="mb-5 d-flex  w-100 justify-content-around">
-                                <input type="text" placeholder="~ Remitente" class="py-3 border-none ps-3 input" name="remitente">
-                            </div>
-                            <div class="mb-5 d-flex  w-100 justify-content-around">
-                                <button id="btn-signup" type="submit" class="w-25 py-3">Registrar</button>
-                            </div>
-                        </form>
-                        <div class="content-img d-none  d-md-flex align-items-center justify-content-center">
-                            <img class="w-100 h-100" src="../Administrador/images/pack.jpg" alt="">
                         </div>
-    
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#" style="color: #18d26e">Administrador</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Registro de paqueteria</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- main content -->
+            <div class="pt-3 ">
+                <main class="w-100 row px-5 gap-4 flex-nowrap  py-5">
+                    <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form" method="post">
+                        <div class="d-flex flex-column mb-3">
+                            <label for="" class="py-2">Torre</label>
+                            <input type="text" name="torre" placeholder="1" class="rounded-3 input">
+                        </div>
+
+                        <div class="d-flex flex-column mb-3">
+                            <label for="" class="py-2">Apartamento</label>
+                            <input type="text" name="apartamento" placeholder="a-12" class="rounded-3 input">
+                        </div>
+
+                        <div class="d-flex flex-column mb-4">
+                            <label for="" class="py-2">Remitente</label>
+                            <input type="text" name="remitente" placeholder="Mercado libre" class="rounded-3 input">
+                        </div>
+
+                        <div class="d-flex flex-column  mt-3">
+                            <button class="p-2 register-btn rounded-2">Registrar</button>                        
+                        </div>
+                    </form>
+                    <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
+                        <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
+                        <img src="./images/vertical-pack.png"  alt="">
+                        <img src="./images/horizontal-pack.png" width="100%" height="100%"   alt="">
+                    </div>
                 </main>
-            
             </div>
         </div>
     </div>
