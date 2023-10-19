@@ -74,7 +74,11 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link  href="../../assets/css/pack-styles.css" rel="stylesheet">
-
+<style>
+    .box-cont{
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+</style>
 </head>
 
 <body>
