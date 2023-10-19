@@ -13,9 +13,7 @@
     <div class="col-md-6 left">
     <div class="#">
         <h3>
-            <?php
-            echo
-            ?>
+        
         </h3>
     </div>
     </div>
