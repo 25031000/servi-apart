@@ -34,13 +34,13 @@
         <div class="main">
         <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
+                        <div class="page-header ms-4">
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
                                     <img src="../../assets/icons/box-pack.png" alt="">
                                 </div>
-                                <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
+                                <h1 style="font-size: 1.7em;" class="ms-4">Registro de paqueteria</h1>
                             </div>
                         </div>
                     </div>
@@ -61,11 +61,11 @@
                 </div>
                 <!-- main content -->
             <div class="pt-3 ">
-                <main class="w-100 row px-5 gap-4 flex-nowrap  py-5">
-                    <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form" method="post">
+                <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
+                    <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
-                            <h2>Registrar paquete</h2>
-                        </div>
+                            <h2 style="font-size: 1.7em;">Registrar paquete</h2>
+                        </div>  
 
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Torre</label>

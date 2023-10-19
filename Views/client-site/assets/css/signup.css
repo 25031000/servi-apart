@@ -45,3 +45,13 @@
 #return-home:hover{
     background-color: #00bf63;
 }
+
+#btn{
+    
+    margin: 20px auto !important; 
+    background: #00BF63 !important;
+    color: black !important;
+    font-weight: 500 !important;
+    border: #00BF63 !important;
+    font-size: 18px !important;
+}

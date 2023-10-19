@@ -104,15 +104,16 @@ html{
 
 .pack-form{
     border-radius: 0.625rem;
-    box-shadow:  -15px 15px 60px #b0b0b0,
-    15px -15px 60px #ffffff;
+    box-shadow: 6px 6px 36px #e3e3e3,
+    -6px -6px 36px #ffffff;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-width: 25.25rem;
 }
 
 .register-btn{
-    width: 120px;
+    width: 7.5rem;
     background-color: var(--primary);
     color: black;
 }
@@ -144,7 +145,19 @@ html{
     grid-area: img2;
 }
 
-input[type="file"]{
-    display: none;
+@media (max-width: 1400px){
+    body{
+        font-size: 13px;
+    }
 }
 
+@media (max-width: 1200px){
+    .grid-collage{
+        display: none;
+    }
+    .pack-form{
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+    }
+}
