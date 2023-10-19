@@ -143,3 +143,8 @@ html{
 #grid > img:nth-child(3){
     grid-area: img2;
 }
+
+input[type="file"]{
+    display: none;
+}
+
