@@ -106,7 +106,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/box-pack.png" alt="">
+                                    <img src="../../assets/icons/promocion.png" style="width: 45px; height: 45px !importan" alt="" >
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
                             </div>

@@ -65,7 +65,7 @@
                     <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.7em;">Registrar paquete</h2>
-                        </div>
+                        </div>  
 
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Torre</label>
