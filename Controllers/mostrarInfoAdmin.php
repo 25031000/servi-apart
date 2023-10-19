@@ -21,7 +21,7 @@ function cargarUsuarios(){
         foreach ($result as $f) {
             echo '
             <tr>
-                <td><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px"></td>
+                <td><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></td>
                 <td>' . $f['identificacion'] . '</td>
                 <td>' . $f['tipo_doc'] . ' </td>
                 <td>' . $f['nombres'] . '</td>
@@ -1156,7 +1156,8 @@ function mostrarReservas()
     } else {
         foreach ($result as $f) {
             echo '
-            <article class="box-cont p-4 px-4 mb-3" style="-webkit-border-radius: 25px; -moz-border-radius: 25px; border-radius: 25px; ">
+            <article class="box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
+            -6px -6px 36px #ffffff">
                 <header class="w-100 p-2 border-2 border-bottom border-dark">
                     <h3>' . $f['id_reserva'] . '</h3>
                 </header>

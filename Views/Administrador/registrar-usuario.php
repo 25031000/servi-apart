@@ -69,6 +69,7 @@
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
 </head>
 
 <body>
@@ -114,21 +115,21 @@
                 <!-- /# row -->
                 <section id="main-content" >
                 <div class="row">
-                        <div class="col-lg-10 container p-4">
-                            <div class="card p-4">
+                        <div class="col-lg-10 container p-4 ">
+                            <div class="card p-5 border border-light pack-form">
                                 <div class="card-title">
                                     
                                     
                                 </div>
-                                <form action="../../Controllers/registrarUserAdmin.php" method="POST" enctype="multipart/form-data">
+                                <form action="../../Controllers/registrarUserAdmin.php" method="POST"  enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>identificacion:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 23554535354" name="identificacion">
+                                        <input type="number" class="form-control input" placeholder="Ej: 23554535354" name="identificacion">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Tipo de Documento:</label>
-                                        <select name="tipo_doc" id="" class="form-control">
+                                        <select name="tipo_doc" id="" class="form-control input">
                                             <option value="CC">Seleccione una opcion</option>
                                             <option value="CC">CC</option>
                                             <option value="CE">CE</option>
@@ -137,23 +138,23 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Nombres:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Miguel Angel" name="nombres">
+                                        <input type="text" class="form-control input" placeholder="Ej: Miguel Angel" name="nombres">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Apellidos:</label>
-                                        <input type="text" class="form-control" placeholder="Ej: Gallejo Restrepo" name="apellidos">
+                                        <input type="text" class="form-control input" placeholder="Ej: Gallejo Restrepo" name="apellidos">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Email:</label>
-                                        <input type="email" class="form-control" placeholder="Ej: example@example.com" name="email">
+                                        <input type="email" class="form-control input" placeholder="Ej: example@example.com" name="email">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>telefono:</label>
-                                        <input type="number" class="form-control" placeholder="Ej: 323 233 2333" name="telefono">
+                                        <input type="number" class="form-control input" placeholder="Ej: 323 233 2333" name="telefono">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label>Roles:</label>
-                                        <select name="Roles" id="rolSelect" class="form-control">
+                                        <select name="Roles" id="rolSelect" class="form-control input">
                                             <option value="CC">Seleccione una opcion</option>
                                             <option value="Administrador">Administrador</option>
                                             <option value="Residente">Residente</option>
@@ -165,7 +166,7 @@
 
                                     <div class="form-group col-md-3">
                                         <label>Seleccione Estado:</label>
-                                        <select name="Estado" id="" class="form-control">
+                                        <select name="Estado" id="" class="form-control input">
                                             <option value="CC">Seleccione una opcion</option>
                                             <option value="Activo">Activo</option>
                                             <option value="Pendiente">Pendiente</option>
@@ -175,12 +176,12 @@
 
                                     <div class="form-group col-md-3">
                                         <label>Torre:</label>
-                                        <input type="text" class="form-control" id="torreInput" placeholder="Ej: A" name="torre">
+                                        <input type="text" class="form-control input" id="torreInput" placeholder="Ej: A" name="torre">
                                     </div>
 
                                     <div class="form-group col-md-3">
                                         <label>Apartamento:</label>
-                                        <input type="text" class="form-control" id="apartamentoInput" placeholder="Ej: 302" name="apartamento">
+                                        <input type="text" class="form-control input" id="apartamentoInput" placeholder="Ej: 302" name="apartamento">
                                     </div>
 
                                     <div class="form-group col-md-12">

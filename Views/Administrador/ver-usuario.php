@@ -71,6 +71,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <style>
+        .card-publi{
+            border-radius: 0.625rem;
+    box-shadow: 6px 6px 36px #e3e3e3,
+    -6px -6px 36px #ffffff;
+    margin: 0 2em;
+        }
+    </style>
 </head>
 
 <body>
