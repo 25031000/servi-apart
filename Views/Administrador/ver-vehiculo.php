@@ -62,12 +62,15 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
 
     <!-- Common -->
+    
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     
 
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">

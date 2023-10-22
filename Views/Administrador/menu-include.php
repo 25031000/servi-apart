@@ -12,6 +12,12 @@ require_once "../../Controllers/mostrarInfoAdmin.php";
 $objConsulta = new Consultas();
 $result = $objConsulta->verPerfil($id);
 ?>
+<head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+</head>
 
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano">

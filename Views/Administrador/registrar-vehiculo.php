@@ -23,6 +23,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
     <title>Vehiculos</title>
 </head>
 
@@ -34,14 +35,21 @@
     <div class="content-wrap">
         <div class="main">
         <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:20px">
                         <div class="page-header">
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
-                                    style="background-color: #18d26e !important;">
+                                    style="background-color: #18d26e !important; margin-left: 20px;">
                                     <img src="../../assets/icons/box-pack.png" alt="">
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Registro de Vehículos</h1>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-10">
+                            <p class="p_vehiculo">Este módulo te ofrece la posibilidad de registrar de manera rápida y
+                                sencilla los detalles de los vehículos que ingresen a la propiedad, lo que
+                                asegura un control eficiente y seguro de toda la información relevante para tu gestión.</p>   
+                                </div>                             
                             </div>
                         </div>
                     </div>
@@ -67,17 +75,20 @@
                         <img src="./images/horizontal2.jpg"  width="100%" height="100%" alt="">
                         <img src="./images/vertical.jpg"  alt="">
                         <img src="./images/horizontal.jpg" width="100%" height="100%"   alt="">
-                    </div>
+                </div>
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
                     <div class="row">
-                                        <div class="form-group col-md-4 campos_vehiculo">
+                    <div class="d-flex flex-column mb-3">
+                            <h2 style="font-size: 1.7em;">Registrar Vehiculo</h2>
+                        </div>  
+                                        <div class="form-group col-md-4 ">
                                             <label>Placa:</label>
-                                            <input type="text" class="rounded-3 input" placeholder="Ej: UZI974"
+                                            <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: UZI974"
                                                 name="placa">
                                         </div>
-                                        <div class="form-group col-md-4 campos_vehiculo">
+                                        <div class="form-group col-md-4 ">
                                             <label>Marca:</label>
-                                            <select name="marca" class="rounded-3 input" placeholder="Ej: Ford">
+                                            <select style="width:100%" name="marca" class="rounded-3 input" placeholder="Ej: Ford">
                                                 <option value="marca">Marca</option>
                                                 <optgroup label="Marcas de Vehículos">
                                                     <option value="chevrolet">Chevrolet</option>
@@ -135,46 +146,47 @@
                                                 </optgroup>
                                             </select>
                                         </div>
-                                        <div class="form-group col-md-4 campos_vehiculo">
+                                        <div class="form-group col-md-4 ">
                                             <label>Referencia:</label>
-                                            <input type="text" class="rounded-3 input" placeholder="Ej: Explorer"
+                                            <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: Explorer"
                                                 name="referencia">
                                         </div>
-                                        <div class="form-group col-md-4 campos_vehiculo">
-                                            <label>Modelo:</label>
-                                            <input type="number" class="rounded-3 input" placeholder="Ej: 2013"
+                                        <div class="form-group col-md-6 ">
+                                            <label style="display:block;">Modelo:</label>
+                                            <input style="width:100%" type="number" class="rounded-3 input" placeholder="Ej: 2013"
                                                 name="modelo">
                                         </div>
-                                        <div class="form-group col-md-8 campos_vehiculo labelid" style="display:flex">
+                                        <div class="form-group col-md-6  labelid" style="display:block">
                                             <label>Identificación de Propietario:</label>
-                                            <input type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
+                                            <input style="width:100%" type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
                                                 name="identificacion">
                                         </div>
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-3 campos_vehiculo">
                                             <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de Vehiculo</label>
                                             <input type="file" id="uploadBtn"  name="foto1"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-3 campos_vehiculo">
                                             <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 2 de Vehiculo</label>
                                             <input type="file" id="uploadBtn" name="foto2"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
 
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-3 campos_vehiculo">
                                             <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 3 de Vehiculo</label>
                                             <input type="file" id="uploadBtn"  name="foto3"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
 
-                                        <div class="form-group col-md-6 campos_vehiculo">
+                                        <div class="form-group col-md-3 campos_vehiculo">
                                             <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 4 de Vehiculo</label>
                                             <input type="file" id="uploadBtn" name="foto4"
                                                 accept=".jpeg, .jpg, .png, .gif">
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-flat btn_registrar">Registrar
-                                        vehiculo</button>
+                                    <div class="d-flex flex-column  mt-3">
+                            <button class="p-2 register-btn rounded-2 w-30">Registrar</button>                        
+                        </div>
                     </form>
                   
                 </main>

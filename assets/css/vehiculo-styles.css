@@ -15,106 +15,169 @@
   h6 {
     font-family: 'Varela Round', sans-serif !important;
   }
-
-
+  
+  .txt_vehiculos {
+    padding: 0 50px;
+  }
+  
+  #tl_vehiculo {
+    font-size: 48px !important;
+    font-weight: 800;
+  }
+  
+  .p_vehiculo {
+   font-size: 16px; 
+   margin-top: 15px;
+   margin-left: 20px;
+   margin-bottom: -30px;
+  }
+  
+  .form_vehiculo {
+    padding: 20px 0;
+    margin-left: -80px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 100% !important; padding: 20px; 
+    border-radius: 20px;
+    margin-top: 80px;
+  }
+  
+  
+  .img_vehiculo {
+    height: 400px;
+    margin-left: 70px;
     
+  }
+  
+  .btn_registrar {
+    margin-left: 6px;
+    margin-top: 25px;
+  }
+  
+  .campos_vehiculo {
+    margin-bottom: 10px;
+  }
+  
+  #tl_v_vehiculos {
+    font-size: 35px;
+  }
+
+  .btn-novedades {
+    background: #00BF63;
+    color: #151515;
+    padding: 10px;
+    width: 150px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+
+  .lista_vehiculos {
+    padding: 20px 10px;
+  }
+  
+.vehiculos_ver {
+    margin-top:0;  
+    color:black; 
+    padding: 7px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 0 solid;
+  
+}
+  .filas_vehiculos {
+    text-align: center;
+  }
+  
+  #ttl_fotos {
+    font-size: 35px;
+  }
 .btn-editar {
     background: #00BF63;
     border: 1px solid #00BF63;
     color: black;
 }
-
 .btn-editar:hover{
     background: #1e9a5e;
     border: 1px solid #1e9a5e;
     color: black;
 }
 
+.btn-novedades:hover {
+    background: #444444;
+    border: 1px solid #444444;
+}
+
+
+
 .btn-detalles {
     background: #FF914D;
     border: 1px solid #FF914D;
 }
-
 .btn-detalles:hover {
     background: #e27d3e;
     border: 1px solid #e27d3e;
 }
-
 .btn-pdf {
     background: #e27d3e;
     border: 1px solid #e27d3e;
     color: white;
 }
-
 .txt-pdf {
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
-
 .txt-pdf:hover {
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
-
 .btn-pdf:hover {
     transform: scale(1.1);
     transition: 0.3s;
+    background: #e27d3e;
+    border: 1px solid #e27d3e;
 }
-
-
-
 .btn-excel{
     background: #00BF63;
     border: 1px solid #00BF63;
     color: white;
 }
-
 .txt-excel {
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
-
 .txt-excel:hover {
     color: rgb(0, 0, 0);
     font-weight: 400;
 }
-
 .btn-excel:hover {
     transform: scale(1.1);
     transition: 0.3s;
+    background: #00BF63;
+    border: 1px solid #00BF63;
 }
-
-
 .datos_vehiculo_propietario {
   margin-left: 50px;
 }
-
 .carrusel {
   transition: transform 0.1s ease-in-out;
 }
-
 .carousel-indicators {
   height: 15px;
 }
-
 .carousel-indicators button {
   margin: 5px 8px;
   width: 30px;
   height: 4px;
 }
-
 .card-datos {
   border: none;
 }
-
 .tl-datos-fotos {
   font-size: 18px;
 }
-
 #myTabContent {
   padding: 10px;
 }
-
 .card-ver {
   padding: 0;
 }
@@ -169,4 +232,12 @@
 
 #grid > img:nth-child(3){
   grid-area: img2;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.table {
+  margin-bottom: 0;
 }

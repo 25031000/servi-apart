@@ -69,8 +69,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
 
 <body>
 

@@ -282,23 +282,23 @@ function cargarFotosVehiculo(){
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label>Placa:</label>
-                                <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                                <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Marca:</label>
-                                <input type="text" class="form-control" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+                                <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Referencia:</label>
-                                <input type="text" class="form-control" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+                                <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Modelo:</label>
-                                <input type="text" class="form-control" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo">
+                                <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:90%">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Fecha Registro:</label>
-                                <input type="text" class="form-control" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha">
+                                <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:90%">
                             </div>
                             
                         </div>
@@ -325,19 +325,19 @@ function cargarFotosVehiculo(){
         <div class="row">
             <div class="form-group col-md-6">
                 <label>Nombres:</label>
-                <input type="text" class="form-control" value="' . $f['nombres'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                <input type="text" class="rounded-3 input" value="' . $f['nombres'] . '"  readonly placeholder="Ej: 23554535354" name="placa" style="display:block; width:90%">
             </div>
             <div class="form-group col-md-6">
                 <label>Apellidos:</label>
-                <input type="text" class="form-control" value="' . $f['apellidos'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+                <input type="text" class="rounded-3 input" value="' . $f['apellidos'] . '"  readonly placeholder="Ej: 23554535354" name="marca" style="display:block; width:90%">
             </div>
             <div class="form-group col-md-6">
                 <label>Correo:</label>
-                <input type="email" class="form-control" value="' . $f['email'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+                <input type="email" class="rounded-3 input" value="' . $f['email'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="display:block; width:90%">
             </div>
             <div class="form-group col-md-6">
                 <label>Telefono:</label>
-                <input type="text" class="form-control" value="' . $f['telefono'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo">
+                <input type="text" class="rounded-3 input" value="' . $f['telefono'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:90%">
             </div>
             
         </div>
@@ -350,12 +350,6 @@ function cargarFotosVehiculo(){
     </div>
         </div>
 
-        <div class="row">
-        <div class="col-lg-12">
-            <div class="footer">
-                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-            </div>
-        </div>
         </div>
 
 
@@ -432,37 +426,38 @@ function cargarNovedadesEditar()
         <section id="main-content">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border:none; font-size: 18px">Información de Novedad</button>
-                    </li>
-                </ul>
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             
                     <form action="../../Controllers/modificarNovedadAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST">
                     
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>Placa:</label>
-                            <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
-                        </div>
+                    <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
+                    <div class="row">
+                    <div class="d-flex flex-column mb-3">
+                            <h2 style="font-size: 1.7em;">Datos del Vehiculo</h2>
+                        </div>  
+                                        <div class="form-group col-md-5">
+                                            <label>Placa:</label>
+                                            <input style="width:100%" value="' . $f['placa'] . '" readonly type="text" class="rounded-3 input" placeholder="Ej: UZI974"
+                                                name="placa">
+                                        </div>
+                                        <div class="form-group col-md-7  labelid" style="display:block">
+                                        <label>Identificación del Personal de Seguridad:</label>
+                                        <input style="width:100%" value="' . $f['identificacion'] . '" readonly type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
+                                            name="identificacion">
+                                        </div>
+                                        <div class="form-group col-md-12 ">
+                                            <label>Novedad:</label>
+                                            <input style="width:100%" value="' . $f['novedad'] . '"  type="text" class="rounded-3 input" placeholder="Ej: Chevrolet"
+                                                name="novedad">
+                                        </div>
 
-                        <div class="form-group col-md-6">
-                            <label>Identificación del Personal de Seguridad:</label>
-                            <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label>Novedad:</label>
-                            <input type="text" class="form-control" value="' . $f['novedad'] . '" placeholder="Ej: Espejo roto" name="novedad">
-                        </div>
 
-                        
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-editar" style="margin-left:7px">Modificar datos de la Novedad</button>
-                    <div class="register-link m-t-15 text-center">
-                        
-                    </div>
+                                
+                                    </div>
+                                    <button type="submit" class="p-2 btn btn-primary btn-editar w-30" style="margin-left:7px">Modificar Novedad</button>                    
+                        </div>
                 </form>
 
                         </div>
@@ -532,7 +527,7 @@ function cargarVehiculos(){
     } else {
         foreach ($result as $f) {
             echo '
-            <tr><td style="text-align:center">' . $f['placa'] . '</td>
+            <tr style="border-style:none !important"><td style="text-align:center;">' . $f['placa'] . '</td>
                 <td style="text-align:center">' . $f['marca'] . ' </td>
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
@@ -569,102 +564,49 @@ function cargarVehiculoEditar(){
         <section id="main-content">
         <div class="row">
             <div class="col-lg-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border: none; font-size:20px">Datos del vehiculo</button>
-                    </li>
-                </ul>
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             
                     <form action="../../Controllers/modificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data">
                     
                     <div class="row">
-                        <div class="form-group col-md-6">
-                            <label>Placa:</label>
-                            <input type="text" class="form-control" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
-                        </div>
+                    <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
+                    <div class="row">
+                    <div class="d-flex flex-column mb-3">
+                            <h2 style="font-size: 1.7em;">Datos del Vehiculo</h2>
+                        </div>  
+                                        <div class="form-group col-md-5">
+                                            <label>Placa:</label>
+                                            <input style="width:100%" value="' . $f['placa'] . '" readonly type="text" class="rounded-3 input" placeholder="Ej: UZI974"
+                                                name="placa">
+                                        </div>
+                                        <div class="form-group col-md-7  labelid" style="display:block">
+                                        <label>Identificación de Propietario:</label>
+                                        <input style="width:100%" value="' . $f['identificacion'] . '" readonly type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
+                                            name="identificacion">
+                                        </div>
+                                        <div class="form-group col-md-4 ">
+                                            <label>Marca:</label>
+                                            <input style="width:100%" value="' . $f['marca'] . '"  type="text" class="rounded-3 input" placeholder="Ej: Chevrolet"
+                                                name="marca">
+                                        </div>
+                                        <div class="form-group col-md-4 ">
+                                            <label>Referencia:</label>
+                                            <input style="width:100%" value="' . $f['referencia'] . '"  type="text" class="rounded-3 input" placeholder="Ej: Tracker"
+                                                name="referencia">
+                                        </div>
+                                        <div class="form-group col-md-4 ">
+                                            <label>Modelo:</label>
+                                            <input style="width:100%" value="' . $f['modelo'] . '"  type="text" class="rounded-3 input" placeholder="Ej: 2015"
+                                                name="modelo">
+                                        </div>
 
-                        <div class="form-group col-md-6">
-                            <label>Identificación de propietario:</label>
-                            <input type="text" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
+                                
+                                    </div>
+                                    <div class="d-flex flex-column  mt-3">                       
                         </div>
-
-                        <div class="form-group col-md-12">
-                            <label>Marca:</label>
-                            <select name="marca" id="" class="form-control">
-                                <option value="' . $f['marca'] . '">' . $f['marca'] . '</option>
-                                <optgroup label="Marcas de Vehículos">
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="renault">Renault</option>
-                        <option value="mazda">Mazda</option>
-                        <option value="toyota">Toyota</option>
-                        <option value="nissan">Nissan</option>
-                        <option value="honda">Honda</option>
-                        <option value="suzuki">Suzuki</option>
-                        <option value="kia">Kia</option>
-                        <option value="hyundai">Hyundai</option>
-                        <option value="volkswagen">Volkswagen</option>
-                        <option value="ford">Ford</option>
-                        <option value="jeep">Jeep</option>
-                        <option value="subaru">Subaru</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="peugeot">Peugeot</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="land-rover">Land Rover</option>
-                        <option value="jaguar">Jaguar</option>
-                        <option value="porsche">Porsche</option>
-                        <option value="lexus">Lexus</option>
-                        <option value="cadillac">Cadillac</option>
-                        <option value="buick">Buick</option>
-                        <option value="lincoln">Lincoln</option>
-                        <option value="infiniti">Infiniti</option>
-                        <option value="acura">Acura</option>
-                        <option value="tesla">Tesla</option>
-                        <option value="ram">Ram</option>
-                        <option value="gmc">GMC</option>
-                        <option value="chrysler">Chrysler</option>
-                        <option value="dodge">Dodge</option>
-                        <option value="maserati">Maserati</option>
-                        <option value="alfa-romeo">Alfa Romeo</option>
-                    </optgroup>
-                    <optgroup label="Marcas de Motos">
-                        <option value="honda-motos">Honda Motos</option>
-                        <option value="yamaha-motos">Yamaha Motos</option>
-                        <option value="suzuki-motos">Suzuki Motos</option>
-                        <option value="kawasaki-motos">Kawasaki Motos</option>
-                        <option value="ktm">KTM</option>
-                        <option value="bajaj">Bajaj</option>
-                        <option value="royal-enfield">Royal Enfield</option>
-                        <option value="husqvarna">Husqvarna</option>
-                        <option value="aprilia">Aprilia</option>
-                        <option value="mv-agusta">MV Agusta</option>
-                        <option value="triumph">Triumph</option>
-                        <option value="harley-davidson">Harley-Davidson</option>
-                        <option value="vespa">Vespa</option>
-                        <option value="scooters">Scooters</option>
-                        <option value="indian-motos">Indian Motos</option>
-                        <option value="bmw-motos">BMW Motos</option>
-                        <option value="ducati-motos">Ducati Motos</option>
-                        <option value="kymco-motos">Kymco Motos</option>
-                        </optgroup>
-                            </select>
-                        </div>
-                        
-
-                        <div class="form-group col-md-6">
-                            <label>Referencia:</label>
-                            <input type="text" class="form-control" value="' . $f['referencia'] . '" placeholder="Ej: Miguel Angel" name="referencia">
-
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label>Modelo:</label>
-                            <input type="number" class="form-control" value="' . $f['modelo'] . '"  laceholder="Ej: Gallejo Restrepo" name="modelo">
-                        </div>
-                        
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-editar" style="margin-left:7px">Modificar datos del Vehiculo</button>
-                    <div class="register-link m-t-15 text-center">
+                    </form>
+                    <button type="submit" class="p-2 btn btn-primary btn-editar w-40" style="margin-left:7px">Modificar datos del Vehiculo</button>
                         
                     </div>
                 </form>

@@ -68,6 +68,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
 </head>
 
 <body>
