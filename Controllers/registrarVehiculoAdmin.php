@@ -9,14 +9,14 @@
 </head>
 <style>
     *, html, body{
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Varela Round', sans-serif;
     }
 </style>
 
 <body>
 <?php
 
-    // Enlazamos las dependencias necesario
+    // Enlazamos las dependencias necesarias
     require_once ("../Models/conexion.php");
     require_once ("../Models/consultas.php");
 
@@ -28,14 +28,19 @@
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
     $identificacion = $_POST['identificacion'];
+    $foto1 = $_POST['foto1'];
+    $foto2 = $_POST['foto2'];
+    $foto3 = $_POST['foto3'];
+    $foto4 = $_POST['foto4'];
 
      // ------------------------------------------
-    // Verificamos que las claves coincidan
 
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (strlen($placa) > 0     && strlen($marca)> 0 
         && strlen($referencia) >0              && strlen($modelo)>0
-        && strlen($identificacion) >0){
+        && strlen($identificacion) >0 && strlen($foto1)> 0
+        && strlen($foto2) >0 && strlen($foto3)> 0
+        && strlen($foto4) >0 ){
 
 
             //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
@@ -59,7 +64,6 @@
             $objConsultas = new Consultas();
             $result = $objConsultas -> registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4);
 
-            //echo "<script>location.href='../Views/Administrador/registrar-paquete.php'</script>";
         }else{
             ?>
             <script>

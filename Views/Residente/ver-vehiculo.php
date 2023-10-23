@@ -117,7 +117,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                 <!-- /# row -->
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
-                        <div class="col-lg-7">
+                        <div class="col-lg-6">
                             <div class="card vehiculos_ver">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
