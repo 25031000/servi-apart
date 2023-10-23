@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src="sweetalert2.all.min.js"></script>
-    <title>Document</title>
+    <title>Servi - Apart</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 <style>
     *, html, body{
