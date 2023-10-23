@@ -69,8 +69,11 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+
 </head>
 
 <body>
@@ -86,7 +89,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="col-lg-6 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Mis Vehiculos</h1>
@@ -97,7 +100,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         </div>
                     </div>
                     <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
+                    <div class="col-lg-6 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
@@ -114,7 +117,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                 <!-- /# row -->
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-7">
                             <div class="card vehiculos_ver">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
@@ -125,7 +128,6 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                                     <th style="font-size:18px">Marca</th>
                                                     <th style="font-size:18px">Referencia</th>
                                                     <th style="font-size:18px">Modelo</th>
-                                                    <th style="font-size:18px">Fecha de Registro</th>
                                                     <th style="text-align:center; font-size:18px">Novedades</th>
                                                     <th style="text-align:center; font-size:18px">Más detalles</th>
                                                 </tr>
@@ -146,6 +148,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                             </div>
                         </div>
                         <!-- /# column -->
+                        <div class="col-lg-5">
+                            <img src="../../assets/img/car.svg" alt="" width="100%">
+                        </div>
 
                         <!-- /# column -->
                     </div>
