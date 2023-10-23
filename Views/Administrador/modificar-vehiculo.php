@@ -17,8 +17,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
     <title>Servi - Apart</title>
 
-    <!-- ================= Favicon ================== -->
-    <link href="../client-site/assets/img/sar.png" rel="shortcut icon">
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
     <!-- Retina iPhone Touch Icon-->
