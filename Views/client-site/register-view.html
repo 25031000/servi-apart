@@ -38,9 +38,10 @@
 <body>
 
     <div class="unix-login position-relative">
-        <div id="return-home" role="button" class="  p-2 d-flex justify-content-center align-items-center mt-2 rounded-5 position-absolute return-arrow">
-            <a href="../../index.html" class="d-flex justify-content-center"><img class="w-75 h-75" src="../client-site/assets/img/Return1.png" alt=""></a>
-       
+        <div id="return-home" role="button"
+            class="  p-2 d-flex justify-content-center align-items-center mt-2 rounded-5 position-absolute return-arrow">
+            <a href="../../index.html" class="d-flex justify-content-center"><img class="w-75 h-75"
+                    src="../client-site/assets/img/Return1.png" alt=""></a>
         </div>
         <div class="container-fluid">
             <div class="row justify-content-center">
@@ -52,8 +53,8 @@
                         class="bg-none h-auto w-75  rounded-3 d-flex justify-content-center position-relative flex-column">
                         <div role="button" id="return"
                             class="  p-2 d-flex justify-content-center align-items-center mt-2 rounded-5 position-absolute return-arrow">
-                            <a href="page-login.html">                           
-                            <img class="w-75 h-75" src="../client-site/assets/img/Return1.png" alt=""> </a>
+
+                            <img class="w-75 h-75" src="../client-site/assets/img/Return1.png" alt="">
                         </div>
                         <h4 class=" p-2 fs-1 text-center mt-4 py-3" style="color: #ffff;">Registro</h4>
                         <div class="px-0 d-flex row mt-4 align-items-center w-100 mx-auto justify-content-center p-0"
@@ -61,32 +62,43 @@
                             <div class="p-4 bg-dark  d-flex align-items-center justify-content-center rounded-5 col-2 text-white ball"
                                 id="ball-one">
                                 <div id="check-one"
-                                    class="w-100 h-100 p-2 d-none align-items-center  position-absolute top-0 left-0 bg-success rounded-5">
+                                style="background-color: #00bf63;"
+                                    class="w-100 h-100 p-2 d-none align-items-center  position-absolute top-0 left-0 rounded-5">
                                     <img class="w-100 h-100 d-flex m-auto "
                                         src="../client-site/assets/img/check-icon.png" alt="">
                                 </div>
-                                1
+                                <img id="first-lock" class="d-flex" src="./assets/img/vector.svg" alt="">
+                                <img  class="d-none" src="./assets/img/lock-err.svg" alt="">
                             </div>
                             <div class="progress col-3 p-0  bg-dark" style="height: 5px;" role="progressbar"
                                 aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                <div id="progress-one" class="progress-bar bg-success " style="width: 0%"></div>
+                                <div id="progress-one" class="progress-bar" style="width: 0%; background-color: #00bf63;"></div>
                             </div>
                             <div class="p-4 bg-dark col-2 rounded-5 text-white ball d-flex align-items-center justify-content-center"
                                 id="ball-two">
                                 <div id="check-two"
-                                    class="w-100 h-100 p-2 d-none align-items-center  position-absolute top-0 left-0 bg-success rounded-5">
+                                style="background-color: #00bf63;"
+                                    class="w-100 h-100 p-2 d-none align-items-center  position-absolute top-0 left-0  rounded-5">
                                     <img class="w-100 h-100 d-flex m-auto "
                                         src="../client-site/assets/img/check-icon.png" alt="">
                                 </div>
-                                2
+                                <img id="second-lock" class="d-flex" src="./assets/img/vector.svg" alt="">
+                                <img  class="d-none" src="./assets/img/lock-err.svg" alt="">
                             </div>
                             <div class="progress p-0 col-3 bg-dark" style="height: 5px;" role="progressbar"
                                 aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                <div id="progress-two" class="progress-bar bg-success p-0 m-0" style="width: 0%"></div>
+                                <div id="progress-two" class="progress-bar  p-0 m-0" style="width: 0%; background-color: #00bf63;"></div>
                             </div>
                             <div class="p-4 bg-dark col-2 rounded-5 text-white ball d-flex align-items-center justify-content-center"
                                 id="ball-three">
-                                3
+                                <div id="check-three"
+                                style="background-color: #00bf63;"
+                                    class="w-100 h-100 p-2 d-none align-items-center  position-absolute top-0 left-0  rounded-5">
+                                    <img class="w-100 h-100 d-flex m-auto "
+                                        src="../client-site/assets/img/check-icon.png" alt="">
+                                </div>
+                                <img id="third-lock" class="d-flex" src="./assets/img/vector.svg" alt="">
+                                <img id="lock-err" class="d-none" src="./assets/img/lock-err.svg" alt="">
                             </div>
                         </div>
                         <form class=" my-2 overflow-hidden" action="../../Controllers/registrarUserEx.php"
@@ -94,34 +106,40 @@
                             <section id="art-content" style="width: 95%;" class="d-flex mx-auto">
                                 <article id="first-art" class="row d-flex animate__animated  mx-auto mt-5 p-2">
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Nombres</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Nombres</label>
                                         <input class="d-block form-control" placeholder="EJ:Andres Camilo"
                                             name="nombres" type="text">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Apellidos</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Apellidos</label>
                                         <input class="d-block form-control" placeholder="EJ:Perez Alvarez"
                                             name="apellidos" type="text">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Email</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Email</label>
                                         <input class="d-block form-control" placeholder="EJ:andres@gmail.com"
                                             name="email" type="email">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Telefono</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Telefono</label>
                                         <input class="d-block form-control" placeholder="EJ:3212****" name="telefono"
                                             type="text">
                                     </div>
                                 </article>
                                 <article id="second-art" class=" row d-none animate__animated   mx-auto mt-5 p-2">
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5"style="color: #ffff !important;">Identificacion</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Identificacion</label>
                                         <input class="d-block form-control" placeholder="EJ:10023****"
                                             name="identificacion" type="text">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Tipo de identificacion</label>
+                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Tipo de
+                                            identificacion</label>
                                         <input class="d-block form-control" list="doc-type" placeholder="EJ:CC"
                                             name="tipo_doc" type="text">
                                         <datalist id="doc-type">
@@ -131,23 +149,27 @@
                                         </datalist>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Torre</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Torre</label>
                                         <input class="d-block form-control" placeholder="EJ:4" name="torre" type="text">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Apartamento</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Apartamento</label>
                                         <input class="d-block form-control" placeholder="EJ:v-12" name="apartamento"
                                             type="text">
                                     </div>
                                 </article>
                                 <article id="third-art" class=" row d-none animate__animated   mx-auto mt-5 p-2">
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Clave</label>
+                                        <label for="" class="text-black fs-5"
+                                            style="color: #ffff !important;">Clave</label>
                                         <input class="d-block form-control" placeholder="EJ:****" name="clave"
                                             type="password">
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Validar clave</label>
+                                        <label for="" class="text-black fs-5" style="color: #ffff !important;">Validar
+                                            clave</label>
                                         <input class="d-block form-control" placeholder="EJ:****" name="clave2"
                                             type="password">
                                     </div>
@@ -155,7 +177,7 @@
                             </section>
 
                             <button id="submit-btn" type="submit"
-                                class="btn btn-dark my-5 mx-auto d-none">Registrase</button>
+                                class="btn btn-dark mb-5 my-4 mx-auto d-none">Registrase</button>
                         </form>
                         <button id="next-btn" class="btn btn-dark my-4 mb-5 d-flex mx-auto">Siguiente</button>
                     </div>
@@ -166,93 +188,8 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <script>
-        let btnNext = document.getElementById("next-btn");
-        let firstSection = document.getElementById("first-art");
-        let secondSection = document.getElementById("second-art");
-        let thirdSection = document.getElementById("third-art");
-        let submitBtn = document.getElementById("submit-btn");
-        let returnBtn = document.getElementById("return");
-        let articlesContent = document.getElementById("art-content")
-        let progressOne = document.getElementById("progress-one")
-        let progressTwo = document.getElementById("progress-two")
-        let checkOne = document.getElementById("check-one")
-        let checkTwo = document.getElementById("check-two")
-
-        function counter() {
-            let count = 0;
-
-            btnNext.addEventListener('click', () => {
-                if (count <= 1) {
-                    count++;
-
-                }
-                if (count == 1) {
-
-                    setTimeout(() => {
-                        firstSection.classList.replace('d-flex', 'd-none')
-                        secondSection.classList.replace('d-none', 'd-flex')
-                        thirdSection.classList.replace('d-flex', 'd-none')
-                    }, 500);
-                    progressOne.style.width = "100%"
-                    checkOne.classList.replace('d-none', 'd-flex')
-                }
-
-                if (count == 2) {
-
-
-                    setTimeout(() => {
-                        firstSection.classList.replace('d-flex', 'd-none')
-                        secondSection.classList.replace('d-flex', 'd-none')
-                        thirdSection.classList.replace('d-none', 'd-flex')
-                    }, 500);
-                    progressTwo.style.width = "100%";
-                    btnNext.classList.replace('d-flex', 'd-none')
-                    submitBtn.classList.replace('d-none', 'd-flex')
-                    checkTwo.classList.replace('d-none', 'd-flex')
-
-                }
-            })
-
-            returnBtn.addEventListener('click', () => {
-                if (count >= 1) {
-                    count--;
-
-                }
-
-                if (count == 1) {
-
-
-                    setTimeout(() => {
-                        firstSection.classList.replace('d-flex', 'd-none')
-                        secondSection.classList.replace('d-none', 'd-flex')
-                        thirdSection.classList.replace('d-flex', 'd-none')
-                    }, 500);
-                    progressTwo.style.width = "0%"
-                    submitBtn.classList.replace('d-flex', 'd-none')
-                    btnNext.classList.replace('d-none', 'd-flex')
-                }
-
-                if (count == 0) {
-
-
-
-                    setTimeout(() => {
-                        firstSection.classList.replace('d-none', 'd-flex')
-                        secondSection.classList.replace('d-flex', 'd-none')
-                        thirdSection.classList.replace('d-flex', 'd-none')
-                    }, 500);
-                    progressOne.style.width = "0%";
-                    checkTwo.classList.replace('d-flex', 'd-none')
-
-                }
-            })
-        }
-
-        counter()
-
-    </script>
+<script src="./assets/js/register-view.js"></script>
+    
 </body>
 
 

@@ -15,6 +15,11 @@
     border-radius: 0 !important;
 }
 
+#art-content{
+    min-height: 260px;
+    align-items: center;
+}
+
 .return-arrow {
     width: 50px;
     height: 50px;
@@ -27,6 +32,10 @@
     background-color: #00bf63;
 }
 
+#check-one, #check-two{
+    background-color: #00bf63 !important;
+}
+
 #form-container {
     background: rgba(255, 255, 255, 0.25);
     color: black;
@@ -35,6 +44,7 @@
     border-radius: 10px;
     margin: 0 auto;
     min-width: 470px;
+    min-height: 570px;
 }
 
 #return-home{
