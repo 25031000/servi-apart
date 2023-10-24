@@ -522,7 +522,7 @@ function cargarVehiculos(){
     $result = $objConsultas->mostrarVehiculosAdmin();
 
     if (!isset($result)) {
-        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
+        echo '<h2> NO HAY VEHICULOS REGISTRADOS. </h2>';
 
     } else {
         foreach ($result as $f) {
