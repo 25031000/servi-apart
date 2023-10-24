@@ -111,6 +111,18 @@ html{
     justify-content: center;
     min-width: 25.25rem;
 }
+/*
+estilos del formulario de residente en salon comunal
+*/
+
+.adi{
+    position: relative;
+}
+.adidas{
+    position: absolute;
+    top: 15px;
+    left: 50px
+}
 
 .register-btn{
     width: 7.5rem;

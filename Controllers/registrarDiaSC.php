@@ -41,6 +41,8 @@ $sillas= $_POST['sillas']?? null;
 $tipo_evento= $_POST['tipo_evento']?? null; 
 
 $identificacion = $_GET['id'] ?? null;
+
+
 if( $identificacion !== ''  && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== ''&& $tipo_evento!=='' ){
     $objConsultas = new Consultas();
     $response = $objConsultas->registrarDia($identificacion, $dia_reserva ,$hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento);

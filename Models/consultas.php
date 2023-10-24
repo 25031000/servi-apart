@@ -187,7 +187,7 @@ class Consultas
     }
     public function mostrarUsuarioRes($identificacion)
     {
-        $f = null;
+        
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -199,10 +199,12 @@ class Consultas
         $result->execute();
 
 
-        while ($resultado = $result->fetch()) {
+        /* while ($resultado = $result->fetch()) {
             $f[] = $resultado;
         }
-        return $f;
+        return $f; */
+        $data = $result->fetch(PDO::FETCH_NUM);
+        if($data) return $data;
     }
 
 
