@@ -50,7 +50,7 @@ if($titulo !== '' && $descripcion !== ''){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Error al registrar paquete. Intentelo de nuevo',
+            text: 'Error al crear la publicacion, intente de nuevo',
             confirmButtonText: 'Ok'
         }).then((result)=>{
             if(result.isConfirmed){
