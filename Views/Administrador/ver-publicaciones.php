@@ -73,6 +73,16 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    <style>
+        .card-publi {
+            border-radius: 0.625rem;
+            box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff;
+            margin: 0 2em;
+            margin-top: -50px;
+            
+        }
+    </style>
     
 </head>
 
@@ -94,23 +104,26 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title d-flex align-items-center">
                             <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/promocion.png" style="width: 45px; height: 45px" alt="">
+                                    <img src="../../assets/icons/promocion.png" width= "48px" height= "48px" alt="">
                                 </div>
-                                <h1 style="font-size: 35px; font-family: 'Roboto', sans-serif !important; padding: 25px
-                                ">Publicaciones Creadas</h1>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Publicaciones Creadas</h1>
+                               
 
                                
                             </div>
 
-                        </div>
+                        </div >
+                        <p id="text-title" style="margin-left: 100px">Se visualizara todas las publicaciones  que han sido creadas en nuestro módulo </p>
                     </div>
+
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Administador</a>
+                                    <a href="#" style="color: #18d26e">Administrador</a>
+
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>
@@ -123,61 +136,61 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                 </div>
 
-                        <div class="p-2  center justify-content-end">
+                <div style="display: flex; justify-content: end; width: 98%">
 
-                        <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light" href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
-                        <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light" href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte PDF</a></button>
+                <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light"
+                        href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
+                <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light"
+                        href="../../services/generarpdfpubli.php" target="_blank">Generar Reporte
+                        PDF</a></button>
 
-                        </div>
+                </div>
 
                 <section id="main-content">
-                <div class="row">
+                    <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi ver-publi">
+                            <div class="card-publi" style="margin-left:25px">
                                 <div class="card-title">
-                                
-                              
+
+                                </div>
                                 <div class="card-body">
-                                <div class="table-responsive">
-                                        <table class="table  table-hover ">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover ">
                                             <thead>
-                                                <tr class="">
-                                                    <th style="font-size: 20px"><strong>Titulo</strong></th>
-                                                    <th  style="font-size: 20px; text-align: left"><strong >Descripcion</strong></th>
-                                                    <th style="font-size: 20px;  text-align: center"><strong>Operaciones</strong></th>
+                                                <tr style="font-size:15px">
+                                                    <th>Foto</th>
+                                                    <th>Identificación</th>
+                                                    <th>Editar</th>
+                                                    <th>Eliminar</th>
                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                   cargarPublicaciones();
+                                                cargarPublicaciones();
 
                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!-- /# column -->
-                      
-                        <!-- /# column -->
-                    </div>
-
-                    
 
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="footer">
+                                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </section>
-            </div>
         </div>
     </div>
 

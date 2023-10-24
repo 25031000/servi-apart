@@ -2,7 +2,7 @@
 
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once ("../../Models/seguridadAdministrador.php");
+require_once("../../Models/seguridadAdministrador.php");
 require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
@@ -72,20 +72,21 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
     <style>
-        .card-publi{
+        .card-publi {
             border-radius: 0.625rem;
-    box-shadow: 6px 6px 36px #e3e3e3,
-    -6px -6px 36px #ffffff;
-    margin: 0 2em;
+            box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff;
+            margin: 0 2em;
+            margin-top: -50px;
         }
     </style>
 </head>
 
 <body>
 
-<?php
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
 
 
@@ -108,7 +109,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Administador</a>
+                                        <a href="#" style="color: #18d26e">Administrador</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver Usuarios</li>
                                 </ol>
@@ -117,16 +118,27 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     </div>
                     <!-- /# column -->
                 </div>
+
+                <div style="display: flex; justify-content: end; width: 98%">
+
+                    <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light"
+                            href="../../services/generarexelusuarios.php" target="_blank">Generar Excel</a></button>
+                    <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light"
+                            href="../../services/generarpdfusuarios.php" target="_blank">Generar Reporte
+                            PDF</a></button>
+
+                </div>
+
                 <!-- /# row -->
                 <section id="main-content">
-                <div class="row">
+                    <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi" style="margin-left:0">
+                            <div class="card-publi" style="margin-left:25px">
                                 <div class="card-title">
-                                
+
                                 </div>
                                 <div class="card-body">
-                                <div class="table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr style="font-size:15px">
@@ -146,32 +158,28 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                             <tbody>
                                                 <?php
 
-                                                    cargarUsuarios();
+                                                cargarUsuarios();
 
                                                 ?>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <!-- /# column -->
-                      
-                        <!-- /# column -->
-                        <button id="GenerarPDF" class="btn p-2 btn-danger" style="margin-top:65px; margin-left:20px;margin-right:15px;"><a class="text-light" href="../../services/generatepdfusuarios.php" target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarPDF" class="btn p-2 btn-success " style="margin-top:65px"><a class="text-light" href="../../services/generarexcelusuarios.php" target="_blank">Generar Reporte Excel</a></button>
-                     
-                    </div>
 
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="footer">
+                                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         </div>
