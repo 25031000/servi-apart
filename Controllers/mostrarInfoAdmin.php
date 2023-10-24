@@ -533,10 +533,10 @@ function cargarVehiculos(){
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
-                <td style="text-align:center"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px"><i class="ti-pencil-alt"> Editar</i></a>
-                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px;"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center;"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary " style="margin-right:15px; border: none; background: #00BF63; color: white; display: flex; align-items: center; max-width:80px"><box-icon name="message-square-edit" color="#ffffff" style="width:22px""></box-icon> Editar</a>
+                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px;"> <i class="ti-eraser"></i> Eliminar</a></td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><i class="ti-eye"></i> Ver Historial</a></td>
-                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-eye"></i></a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-more-alt"></i></a></td>
 
             </tr>     
             ';
