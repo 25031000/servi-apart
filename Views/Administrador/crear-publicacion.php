@@ -65,7 +65,7 @@
                 <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
                     <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
-                            <h2 style="font-size: 1.7em;">Crear publicacion</h2>
+                            <h2 style="font-size: 1.7em;">Crear publicación</h2>
                         </div>  
 
                         <div class="d-flex flex-column mb-3">

@@ -30,7 +30,7 @@ function cargarUsuarios(){
                 <td>' . $f['estado'] . ' </td>
                 <td>' . $f['torre'] . ' </td>
                 <td>' . $f['apartamento'] . ' </td>
-                <td><a href="modificar-usuario.php?id=' . $f['identificacion'] . '" class="btn btn-primary"><i class="ti-pencil-alt">Editar</i></a></td>
+                <td><a href="modificar-publi.php?id_publi=' . $f['identificacion'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
                 <td><a href="../../Controllers/eliminarUserAdmin.php?id=' . $f['identificacion'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
             </tr>     
             ';
@@ -686,17 +686,14 @@ function cargarPublicaciones(){
     } else {
         foreach ($result as $f) {
             echo '
-            <tr style="">
-               
-              
-                <td style="color: black">' . $f['titulo'] . ' </td>
-                <td style="color: black">' . $f['descripcion'] . '</td>
-             
-                <td class="d-flex gap-3" style="margin-left: 170px ">
-                <a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> 
-                 <a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger" style="margin-left: 50px"> <i class="ti-trash"></i>Eliminar</a>
-                 </td>
-            </tr>     
+            <tr>
+            
+            <td>' . $f['titulo'] . ' </td>
+            <td>' . $f['descripcion'] . ' </td>
+         
+            <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
+            <td><a href="../../Controllers/eliminarPubli.php?id=' . $f['id_publi'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+        </tr>     
             ';
         }
     }
