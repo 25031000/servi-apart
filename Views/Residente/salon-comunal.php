@@ -43,21 +43,17 @@ require_once("../../Models/consultas.php");
     <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <style>
         /* Estilo para la sección principal */
-        #main-content {
+        /* #main-content {
             padding: 20px;
         }
 
-        /* Estilo para el calendario */
         .year-calendar {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 20px;
-            /* margin-bottom: 20px; */
         }
 
-        /* Estilo para el formulario */
         form {
-            /* border: 1px solid #ccc; */
             border-radius: 5px;
             padding: 20px;
         }
@@ -92,8 +88,7 @@ require_once("../../Models/consultas.php");
 
         #dia_reserva:read-only {
             background-color: #fff;
-            /* Establece el fondo en blanco */
-        }
+        } */
     </style>
 </head>
 
@@ -101,6 +96,9 @@ require_once("../../Models/consultas.php");
 
     <?php
     include 'menu-include-residente.php';
+    require '../../Controllers/mostrarInfoResidente.php';
+    $result = cargarInfoUsuarios();
+    list($id, $tipo_doc, $nombres, $apellidos) = $result;
     ?>
 
     <!-- /# sidebar -->
@@ -113,8 +111,7 @@ require_once("../../Models/consultas.php");
                             <div class="page-title">
                                 <h1 style="font-size: 36px;">Bienvenido,
                                     <?php
-                                    require '../../Controllers/mostrarInfoResidente.php';
-                                    cargarInfoUsuarios();
+                                    echo $nombres . ' ' . $apellidos;
                                     ?>
                                 </h1>
                             </div>
@@ -158,149 +155,76 @@ require_once("../../Models/consultas.php");
                         <!-- no borrar esos div de arriba -->
                         <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
 
-
-                        <!-- <div class="col-md-6">
-                            <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
-                                <div class="row g-2">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
-                                            <label for="identificacion"><b>Identificación</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
-                                            <label for="dia_reserva"><b>Día de Reserva</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
-                                            <label for="hora_inicio"><b>Hora de Inicio</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
-                                            <label for="hora_finalizacion"><b>Hora de Finalización</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="mesas" name="mesas" required>
-                                            <label for="mesas"><b>Mesas</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="sillas" name="sillas" required>
-                                            <label for="sillas"><b>Sillas</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-floating">
-                                            <label><b>Tipo de evento</b></label>
-                                            <select name="tipo_evento" id="tipo_evento" class="form-control">
-                                                <option value="cumpleaños">Fiesta de cumpleaños</option>
-                                                <option value="comunitaria">Reunión comunitaria</option>
-                                                <option value="shower">Baby shower</option>
-                                                <option value="benefico">Evento benéfico</option>
-                                                <option value="teatral">Presentación teatral</option>
-                                                <option value="fin_año">Fiesta de fin de año</option>
-                                                <option value="aniversario">Fiesta de aniversario</option>
-                                                <option value="arte">Taller de arte</option>
-                                                <option value="reu_corporativa">Reunión corporativa</option>
-                                                <option value="expo_artesanias">Exposición de artesanías</option>
-                                            </select>
-
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-success face">Enviar</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <div class="col-md-6 adi ">
+                                <form action="../../Controllers/registrarDiaSC.php?id= <?php echo $id; ?>" class="pack-form adidas" method="post" autocomplete="off">
+                                    <div class="row g-2">
 
 
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for=""><b>Día de Reserva</b></label>
+                                                <input type="date" class="py-2 input " id="dia_reserva" name="dia_reserva" readonly required>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for=""><b>Hora de Inicio</b></label>
+                                                <input type="time" class="py-2 input " id="hora_inicio" name="hora_inicio" required>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for=""><b>Hora de Finalización</b></label>
+                                                <input type="time" class="py-2 input " id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
 
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for=""><b>Mesas</b></label>
+                                                <input type="number" class="py-2 input " id="mesas" name="mesas" required>
 
-                        </div> -->
-                        <div class="col-md-6">
-                            <form action="../../Controllers/registrarDiaSC.php" method="post" autocomplete="off">
-                                <div class="row g-2">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="identificacion" name="identificacion" placeholder="0123456789" required>
-                                            <label for="identificacion">Identificación</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="date" class="form-control" id="dia_reserva" name="dia_reserva" readonly required>
-                                            <label for="dia_reserva"><b>Día de Reserva</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
-                                            <label for="hora_inicio"><b>Hora de Inicio</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="time" class="form-control" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
-                                            <label for="hora_finalizacion"><b>Hora de Finalización</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="mesas" name="mesas" required>
-                                            <label for="mesas"><b>Mesas</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="number" class="form-control" id="sillas" name="sillas" required>
-                                            <label for="sillas"><b>Sillas</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-floating">
-                                            <label for="disabledSelect" class="form-label">Tipo de evento</label>
-                                            <!-- <label for="tipo_evento">Tipo de evento</label> -->
-                                            <select name="tipo_evento" id="disabledSelect" class="form-control">
-                                                <option value="" selected></option>
-                                                <option value="cumpleaños">Fiesta de cumpleaños</option>
-                                                <option value="arte">Matrimonio</option>
-                                                <option value="arte">Primera comunion</option>
-                                                <option value="comunitaria">Reunión comunitaria</option>
-                                                <option value="shower">Baby shower</option>
-                                                <option value="benefico">Evento benéfico</option>
-                                                <option value="teatral">Presentación teatral</option>
-                                                <option value="fin_año">Fiesta de fin de año</option>
-                                                <option value="aniversario">Fiesta de aniversario</option>
-                                                <option value="arte">Taller de arte</option>
-                                                <option value="reu_corporativa">Reunión corporativa</option>
-                                                <option value="expo_artesanias">Exposición de artesanías</option>
-                                                <option value="otro">Otro</option>
-                                            </select>
-                                            <label for="tipo_evento"><b>Tipo de evento</b></label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-success face">Enviar</button>
-                                    </div>
-                                </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for=""><b>Sillas</b></label>
+                                                <input type="number" class="py-2 input " id="sillas" name="sillas" required>
 
-                        </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="d-flex flex-column col-md-6">
+                                                <label for="" class="form-label"><b>Tipo de evento</b></label>
+                                                <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
+                                                    <option value="" selected></option>
+                                                    <option value="cumpleaños">Fiesta de cumpleaños</option>
+                                                    <option value="arte">Matrimonio</option>
+                                                    <option value="arte">Primera comunion</option>
+                                                    <option value="comunitaria">Reunión comunitaria</option>
+                                                    <option value="shower">Baby shower</option>
+                                                    <option value="benefico">Evento benéfico</option>
+                                                    <option value="teatral">Presentación teatral</option>
+                                                    <option value="fin_año">Fiesta de fin de año</option>
+                                                    <option value="aniversario">Fiesta de aniversario</option>
+                                                    <option value="arte">Taller de arte</option>
+                                                    <option value="reu_corporativa">Reunión corporativa</option>
+                                                    <option value="expo_artesanias">Exposición de artesanías</option>
+                                                    <option value="otro">Otro</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-success face">Enviar</button>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        
 
                     </div>
-            </div>
-            <div class="col-md-12">
-                <button type="submit" class="btn btn-success face">Enviar</button>
             </div>
         </div>
         </form>
