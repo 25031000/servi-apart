@@ -74,9 +74,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <style>
         .card-publi {
             border-radius: 0.625rem;
-            box-shadow: 6px 6px 36px #e3e3e3,
-                -6px -6px 36px #ffffff;
-            margin: 0 2em;
+            
             margin-top: -50px;
         }
     </style>
