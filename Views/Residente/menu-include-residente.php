@@ -102,7 +102,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Crear Peticiones</a>
+                                <a href="registrar-peticion.php"><i class="ti-eye"></i>Crear Peticion</a>
                             </li>
                         </ul>
                     </li>
