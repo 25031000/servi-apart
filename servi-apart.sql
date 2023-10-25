@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2023 a las 18:56:02
+-- Tiempo de generación: 25-10-2023 a las 05:20:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -75,6 +75,19 @@ CREATE TABLE `paqueteria` (
 
 INSERT INTO `paqueteria` (`id`, `usuario`, `remitente`, `fecha`) VALUES
 (6, 231, 'sas group', '2023-10-17');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `peticiones`
+--
+
+CREATE TABLE `peticiones` (
+  `id_peticion` int(11) NOT NULL,
+  `titulo` varchar(60) NOT NULL,
+  `descripcion` varchar(500) NOT NULL,
+  `identificacion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -222,6 +235,13 @@ ALTER TABLE `paqueteria`
   ADD KEY `paqueteria_ibfk_1` (`usuario`);
 
 --
+-- Indices de la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  ADD PRIMARY KEY (`id_peticion`),
+  ADD KEY `identificacion` (`identificacion`);
+
+--
 -- Indices de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
@@ -264,6 +284,12 @@ ALTER TABLE `paqueteria`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  MODIFY `id_peticion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
@@ -291,6 +317,12 @@ ALTER TABLE `novedad_vehiculo`
 --
 ALTER TABLE `paqueteria`
   ADD CONSTRAINT `paqueteria_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`identificacion`);
+
+--
+-- Filtros para la tabla `peticiones`
+--
+ALTER TABLE `peticiones`
+  ADD CONSTRAINT `peticiones_ibfk_1` FOREIGN KEY (`identificacion`) REFERENCES `usuarios` (`identificacion`);
 
 --
 -- Filtros para la tabla `reserva_salon`

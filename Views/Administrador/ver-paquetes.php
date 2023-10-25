@@ -106,12 +106,16 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/promocion.png" style="width: 45px; height: 45px !importan" alt="" >
+                                    <img src="../../assets/icons/box-pack.png" style="width: 45px; height: 45px !important" alt="" >
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Registro de paqueteria</h1>
                             </div>
+                            <div class="paragr-content">
+                        <p>Lleva un registro de todos los paquetes que son recibidos en porteria. </p>
+                    </div>
                         </div>
                     </div>
+                    
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
@@ -135,8 +139,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <div class="box-head">
                                     <div class="p-2  d-flex justify-content-end">
                     
-                                        <button id="GenerarPDF" class="btn p-2  mx-2 "><a class="text-light" href="../../services/generatepdfpaqueteria.php" target="_blank">Generar PDF</a></button>
-                                        <button id="GenerarExcel" class="btn p-2 mx-3 "><a class="text-light" href="../../services/generateexcelpaqueteria.php" target="_blank">Generar Excel</a></button>
+                                        <button id="GenerarPDF" class="btn p-2  mx-2 "><a  href="../../services/generatepdfpaqueteria.php" target="_blank">Generar PDF</a></button>
+                                        <button id="GenerarExcel" class="btn p-2 mx-3 "><a  href="../../services/generateexcelpaqueteria.php" target="_blank">Generar Excel</a></button>
 
                                     </div>
                                 </div>
@@ -163,7 +167,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                         <div
                                                             style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
                                                             <img style="width: 25px; height: 25px;"
-                                                                src="../../assets/icons/Calendar.png" alt=""></div>
+                                                                src="../../assets/icons/Calendar.png"alt=""></div>
                                                         <span class="ms-2">Fecha</span>
                                                     </th>
                                                     <th class="d-flex col-md-2">

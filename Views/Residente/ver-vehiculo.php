@@ -92,7 +92,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                     <div class="col-lg-6 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 id="tl_v_vehiculos">Mis Vehiculos</h1>
+                                <h1 id="tl_v_vehiculos">Mis Vehículos</h1>
                                 <p>Visualiza y gestiona tus vehículos registrados en el sistema. Además, podrás ver las
                                     novedades realizadas por el personal de seguridad para cada uno de tus vehículos.
                                 </p>
@@ -107,7 +107,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                     <li class="breadcrumb-item">
                                         <a style="color: #18d26e">Residente</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Ver Vehiculos</li>
+                                    <li class="breadcrumb-item active">Ver Vehículos</li>
                                 </ol>
                             </div>
                         </div>
