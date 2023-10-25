@@ -3,7 +3,8 @@
     require_once ("../../Models/consultas.php");
     require_once ("../../Models/seguridadResidente.php");
     require_once ("../../Controllers/mostrarInfoAdmin.php");
-
+    $id = $_SESSION['id'];
+    
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +27,9 @@
 </head>
 
 <body>
-    <?php
+    <!--<?php
     include 'menu-include-residente.php';
-    ?>
+    ?>-->
 
     <div class="content-wrap">
         <div class="main">
@@ -70,24 +71,19 @@
                        <article class="circulo4"></article>
                        <article class="circulo5"></article>
                     </div>
-                    <form action="../../Controllers/registrarPeticion.php" class="col-md-8 p-5 pack-form formulario h-75" method="post">
+                    <form action="../../Controllers/registrarPeticion.php?id=<?php echo $id;?>" class="col-md-8 p-5 pack-form formulario h-75" method="post">
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.7em;">Registrar peticion</h2>
                         </div>  
 
                         <div class="d-flex flex-column mb-3">
-                            <label for="" class="py-2">Nombre</label>
-                            <input type="text" name="torre" placeholder="" class="rounded-3 input">
-                        </div>
-
-                        <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Título</label>
-                            <input type="text" name="apartamento" placeholder="Título" class="rounded-3 input">
+                            <input type="text" name="titulo" placeholder="Título" class="rounded-3 input">
                         </div>
 
                         <div class="d-flex flex-column mb-4">
                             <label for="" class="py-2">Descripción</label>
-                            <input type="text" name="remitente" placeholder="Descripción de la solicitud" class="rounded-3 input">
+                            <input type="text" name="descripcion" placeholder="Descripción de la solicitud" class="rounded-3 input">
                         </div>
 
                         <div class="d-flex flex-column  mt-3">

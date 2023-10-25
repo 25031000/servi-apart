@@ -744,6 +744,38 @@ class Consultas
         }
     }
 
+    public function insertarPeticion($titulo, $descripcion, $identificacion)
+    {
+        
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $insertar = "INSERT INTO peticiones(titulo, descripcion, identificacion)
+        VALUES (:titulo, :descripcion, :identificacion)";
+
+        $result = $conexion->prepare($insertar);
+
+        $result->bindParam(":titulo", $titulo);
+        $result->bindParam(":descripcion", $descripcion);
+        $result->bindParam(":identificacion", $identificacion);
+
+        $result->execute();
+
+        echo '
+        <script>
+        
+        Swal.fire({
+            icon: "success",
+            title:"Peticion registrada exitosamente",
+            showConfirmButton: false,
+            timer: 2000
+        }).then((result)=>{
+            location.href="../Views/Residente/registrar-peticion.php";
+        })
+    </script>';
+
+    }
+
     public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
         $objConexion = new Conexion();
@@ -1078,7 +1110,7 @@ class ValidarSesion
 
                         case 'Residente':
                             echo '<script>alert("Bienvenido señor residente")</script>';
-                            echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
+                            echo "<script>location.href = '../Views/Residente/homeResi.php'</script>";
                             break;
 
                         case 'Seguridad':
