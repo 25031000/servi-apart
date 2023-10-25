@@ -22,6 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
    
     <title>Publicaciones</title>
 </head>
@@ -63,23 +64,23 @@
                 <!-- main content -->
             <div class="pt-3 ">
                 <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
-                    <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
+                    <form action="../../Controllers/crearPublicaciones.php" class="col-md-5 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.7em;">Crear publicación</h2>
                         </div>  
 
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Titulo</label>
-                            <input type="text" name="torre" placeholder="Ej: acueducto " class="rounded-3 input">
+                            <input type="text" name="titulo" placeholder="Ej: acueducto " class="rounded-3 input">
                         </div>
 
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Apartamento</label>
-                            <input type="text" name="apartamento" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input">
+                            <input type="text" name="descripcion" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input">
                         </div>
 
                         <div class="d-flex flex-column  mt-3">
-                            <button class="p-2 register-btn rounded-2">Registrar</button>                        
+                            <button class="boton-btn">Registrar</button>                        
                         </div>
 
                         
@@ -101,9 +102,9 @@
     <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
     <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
     <script src="../Dashboard/js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 </body>
 
 </html>

@@ -363,7 +363,7 @@ class Consultas
 
         $result->execute();
         echo '<script>alert("Publicacion Eliminada")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+        // echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
     }
 
 
@@ -866,99 +866,6 @@ class Consultas
     }
 
 
-    /* public function actualizarClaveAdmin($identificacion, $claveMd)
-    {
-
-
-        $objConexion = new conexion();
-        $conexion = $objConexion->get_conexion();
-
-        $actualizar = " UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
-        $result = $conexion->prepare($actualizar);
-
-        $result->bindParam(":identificacion", $identificacion);
-        $result->bindParam(":claveMd", $claveMd);
-
-        $result->execute();
-
-        echo '<script>alert("Clave Actualizada")</script>';
-        echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
-    } */
-
-
-    /* public function registrarPaquete($destinatario, $remitente, $torre, $apartamento, $telDestinatario)
-    {
-        try {
-            $objConexion = new conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $query = "INSERT INTO paqueteria(destinatario, remitente, torre, apartamento, telefono, fecha) VALUES(:destinatario, :remitente, :torre, :apartamento, :telefono, NOW())";
-            $statement = $conexion->prepare($query);
-
-            $statement->bindParam(':destinatario', $destinatario);
-            $statement->bindParam(':remitente', $remitente);
-            $statement->bindParam(':torre', $torre);
-            $statement->bindParam(':apartamento', $apartamento);
-            $statement->bindParam(':telefono', $telDestinatario);
-
-            $response = $statement->execute();
-
-            if (!$response)
-                return false;
-            return true;
-        } catch (\Throwable $th) {
-            echo "Ha ocurrido un problema al registrar el paquete :( " . $th;
-        }
-    } */
-
-   /*  public function mostrarPaquetesAdmin()
-    {
-        try {
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $query = "SELECT * FROM paqueteria";
-            $statement = $conexion->prepare($query);
-
-
-            $response = $statement->execute();
-            if (!$response)
-                return;
-            $result = $statement->fetchAll();
-            return $result;
-
-        } catch (\Throwable $th) {
-            echo "error al listar los registros de paquetes: " . $th;
-        }
-    }
-    public function mostrarReservasAdmin()
-    {
-        try {
-            $objConexion = new Conexion();
-            $conexion = $objConexion->get_conexion();
-
-            $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($actualizar);
-
-            
-            $result->bindParam(":identificacion", $identificacion);
-    
-            $result->bindParam(":dia_reserva", $dia_reserva);
-            $result->bindParam(":hora_inicio", $hora_inicio);
-            $result->bindParam(":hora_finalizacion", $hora_finalizacion);
-            $result->bindParam(":mesas", $mesas);
-            $result->bindParam(":sillas", $sillas);
-    
-            $result->execute();
-
-            echo '<script>alert("Información actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
-            
-        }catch (\Throwable $th) {
-            echo "error al listar los registros de las reservas: " . $th;
-        }
-
-    } */
         public function actualizarClaveAdmin($identificacion, $claveMd){  
 
     

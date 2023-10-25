@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .custom-mouse {
@@ -23,9 +24,7 @@
 .clicki{
     font-size: 20px;
 }
-.perfil-btn {
-    background-color: orange !important;
-}
+
 
 .portada {
     background-image: url("../images/zyro-image.png");
