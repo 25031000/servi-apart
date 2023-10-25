@@ -117,10 +117,6 @@
                 <div class="row">
                         <div class="col-lg-10 container p-4 ">
                             <div class="card p-5 border border-light pack-form">
-                                <div class="card-title">
-                                    
-                                    
-                                </div>
                                 <form action="../../Controllers/registrarUserAdmin.php" method="POST"  enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="form-group col-md-6">

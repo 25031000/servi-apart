@@ -63,14 +63,22 @@ html{
     background-color: #18d26e;
 }
 
+#GenerarPDF a, #GenerarExcel a {
+    color: black;
+}
+
 #GenerarPDF:hover {
-    background-color: black;
-    color: whitesmoke;
+    transform: scale(1.1);
+    transition: 0.3s;
+    background: #e27d3e;
+    border: 1px solid #e27d3e;
 }
 
 #GenerarExcel:hover {
-    background-color: black;
-    color: whitesmoke;
+    transform: scale(1.1);
+    transition: 0.3s;
+    background: #00BF63;
+    border: 1px solid #00BF63;
 }
 
 .packed-icon {
@@ -80,15 +88,18 @@ html{
 
 
 .box-cont {
-    -webkit-box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 2px 19px -8px rgba(0, 0, 0, 0.75);
-
+    box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff !important;
+    padding: 2rem 0;
 }
 
 .whatsapp:hover {
     transform: scale(2);
 
+}
+
+.paragr-content{
+    margin-left: 86px;
 }
 
 /* register packages */
@@ -105,7 +116,7 @@ html{
 .pack-form{
     border-radius: 0.625rem;
     box-shadow: 6px 6px 36px #e3e3e3,
-    -6px -6px 36px #ffffff;
+                -6px -6px 36px #ffffff !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
