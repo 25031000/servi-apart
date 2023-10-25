@@ -615,7 +615,7 @@ class Consultas
         echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
     }
 
-    public function verPerfil($id)
+    public function verPerfil($identificacion)
     {
         $f = null;
         $objConexion = new Conexion();
@@ -625,7 +625,7 @@ class Consultas
 
         $result = $conexion->prepare($buscar);
 
-        $result->bindParam(':id', $id);
+        $result->bindParam(':id', $identificacion);
         $result->execute();
 
 

@@ -96,8 +96,13 @@ require_once("../../Models/consultas.php");
 
     <?php
     include '../../components/menu.php';
+    include '../../components/headerInclude.php';
+
     require '../../Controllers/mostrarInfoResidente.php';
     
+
+
+
     $result = cargarInfoUsuarios();
     list($id, $tipo_doc, $nombres, $apellidos) = $result;
     ?>

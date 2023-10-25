@@ -80,6 +80,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
     <?php
     include '../../components/menu.php';
+    include '../../components/headerInclude.php';
+
+    
     ?>
 
 

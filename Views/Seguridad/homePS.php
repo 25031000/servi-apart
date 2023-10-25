@@ -52,7 +52,7 @@
 
 </head>
 
-<body class="position-relative">
+<body class="position-relative" Style="overflow:scroll"></body>
 
     <?php
     include '../../components/menu.php';
