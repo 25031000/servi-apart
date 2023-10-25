@@ -79,7 +79,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 <body>
 
     <?php
-    include 'menu-include-residente.php';
+    include '../../components/menu.php';
     ?>
 
 

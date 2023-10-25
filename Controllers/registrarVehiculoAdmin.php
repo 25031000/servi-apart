@@ -33,22 +33,30 @@
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
     $identificacion = $_POST['identificacion'];
-     // ------------------------------------------
+    // ------------------------------------------
     // Verificamos que las claves coincidan
-        //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($placa) > 0     && strlen($marca)> 0 
-        && strlen($referencia) >0              && strlen($modelo)>0
-        && strlen($identificacion) >0){
-            //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
-              //MOVEMOS EL ARCHIVO A LA CARPETA UPLOADS Y LA CARPETA USUARIOS
-            $foto1 = "../Uploads/vehiculos/".$_FILES['foto1']['name'];
+    //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
+    if (
+        strlen($placa) > 0 && strlen($marca) > 0
+        && strlen($referencia) > 0 && strlen($modelo) > 0
+        && strlen($identificacion) > 0
+    ) {
+
+        //CREAMOS UNA VARIABLE PARA DEFINIR LA RUTA DONDE QUEDARA ALOJADA LA IMAGEN
+        //MOVEMOS EL ARCHIVO A LA CARPETA UPLOADS Y LA CARPETA USUARIOS
+    
+        // Verificamos que todas las fotos hayan sido seleccionadas.
+        if (isset($_FILES['foto1']['name']) && isset($_FILES['foto2']['name']) && isset($_FILES['foto3']['name']) && isset($_FILES['foto4']['name'])) {
+            // Las fotos han sido seleccionadas, por lo que podemos continuar
+            $foto1 = "../Uploads/vehiculos/" . $_FILES['foto1']['name'];
             $mover = move_uploaded_file($_FILES['foto1']['tmp_name'], $foto1);
-            $foto2 = "../Uploads/vehiculos/".$_FILES['foto2']['name'];
+            $foto2 = "../Uploads/vehiculos/" . $_FILES['foto2']['name'];
             $mover = move_uploaded_file($_FILES['foto2']['tmp_name'], $foto2);
-            $foto3 = "../Uploads/vehiculos/".$_FILES['foto3']['name'];
+            $foto3 = "../Uploads/vehiculos/" . $_FILES['foto3']['name'];
             $mover = move_uploaded_file($_FILES['foto3']['tmp_name'], $foto3);
-            $foto4 = "../Uploads/vehiculos/".$_FILES['foto4']['name'];
+            $foto4 = "../Uploads/vehiculos/" . $_FILES['foto4']['name'];
             $mover = move_uploaded_file($_FILES['foto4']['tmp_name'], $foto4);
+        } 
 
         //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
         //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
@@ -72,7 +80,7 @@
 
             })
         </script>
-    <?php
+        <?php
     }
 
     ?>

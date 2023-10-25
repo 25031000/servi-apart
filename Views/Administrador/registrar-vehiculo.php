@@ -38,13 +38,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <div class="content-wrap">
         <div class="main">
             <div class="row">
-                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:20px">
+                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px; padding: 0 30px">
                     <div class="page-header">
-                        <div class="page-title d-flex align-items-center">
-                            <div class="icon-content p-2 rounded-circle"
-                                style="background-color: #18d26e !important; margin-left: 20px;">
-                                <img src="../../assets/icons/box-pack.png" alt="">
-                            </div>
+                        <div class="page-title d-flex align-items-center"><div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/carro-ver.png"
+                                        style="width: 48px; height: 48px !important" alt="">
+                                </div>
                             <h1 style="font-size: 1.5rem;" class="ms-4">Registro de Vehículos</h1>
                         </div>
                         <!-- <div class="row">
@@ -82,7 +82,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <img src="./images/horizontal.jpg" width="100%" height="100%" alt="">
                     </div>
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form"
-                        method="post">
+                        method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="d-flex flex-column mb-3">
                                 <h2 style="font-size: 1.7em;">Registrar Vehiculo</h2>
@@ -167,21 +167,26 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">
                             </div>
+<<<<<<< HEAD
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
+=======
+                            <div class="form-group col-md-6 campos_vehiculo ">
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 1 de
+>>>>>>> e19568ad4c0865bc9067783f8aacde0a63bae4f8
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
+                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
                             </div>
                             <div class="form-group col-md-6 campos_vehiculo">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 2 de
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 2 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
+                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 3 de
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 3 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
+                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
