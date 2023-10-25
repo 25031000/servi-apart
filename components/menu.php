@@ -19,7 +19,7 @@
                 </div>
                 
                 <div  id="second-li" role="button" class="list-group-item item-list  d-flex justify-content-between text-white py-2 w-auto">
-                    <a href="vehiculo.php" class="chocolate">Vehiculos</a>
+                    <a href="ver-vehiculo.php" class="chocolate">Vehiculos</a>
                      
                     <div>
                         <img class="second-arrow" style="transform: rotate(-45deg);" src="icons/arrow.png" alt="">
@@ -27,7 +27,7 @@
                 </div>
 
                 <div  id="second-li" role="button" class="list-group-item item-list  d-flex justify-content-between text-white py-2 w-auto">
-                    <a href="salonComunal.php" class="chocolate">Salon Comunal </a>
+                    <a href="salon-comunal.php" class="chocolate">Salon Comunal </a>
                     
                     <div>
                         <img class="second-arrow" style="transform: rotate(-45deg);" src="icons/arrow.png" alt="">
