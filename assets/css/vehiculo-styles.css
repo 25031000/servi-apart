@@ -241,17 +241,20 @@
 }
 
 .input-file {
-  max-width: 40px;
-  max-height: 40px;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   border: none;
-  opacity: 0;
 
   /* Para mostrar el nombre del archivo */
   &::file-selector-button {
     cursor: pointer;
   border: none;
   width: 95px;
-  
+
     /* Para mostrar el nombre del archivo seleccionado */
     &::after {
       content: attr(data-filename);
@@ -262,6 +265,5 @@
       left: 10px;
     }
   } 
-
 
 }
