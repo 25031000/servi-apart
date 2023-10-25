@@ -95,8 +95,9 @@ require_once("../../Models/consultas.php");
 <body>
 
     <?php
-    include 'menu-include-residente.php';
+    include '../../components/menu.php';
     require '../../Controllers/mostrarInfoResidente.php';
+    
     $result = cargarInfoUsuarios();
     list($id, $tipo_doc, $nombres, $apellidos) = $result;
     ?>

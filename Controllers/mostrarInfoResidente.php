@@ -77,7 +77,7 @@ function cargarPublicacionesRes(){
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
                             </main>
-                            <footer class=" p-2 m-0">
+                            <footer class=" p-2 m-0" style="background: transparent; height: 21%">
                             <section class="w-100 m-0 p-0 d-flex align-items-center ">
                                     <img style="width: 20px; height: 20px" src="./icons/calendario.png">
                                     <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['fecha'] .'</small>
@@ -94,20 +94,24 @@ function cargarPublicacionesRes(){
     }
 
 
-function cargarInfoUsuarios(){
-    $objConsultas = new Consultas();
-   
-    $identificacion = $_SESSION['id']; // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
 
-    $result = $objConsultas->mostrarUsuarioRes($identificacion);
-
-    if (!isset($result)) {
-        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
-    } else {
-
-        return $result;
+    function cargarInfoUsuarios(){
+        session_start();
+        $objConsultas = new Consultas();
+       
+        $identificacion = $_SESSION['id']; // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
+    
+        $result = $objConsultas->mostrarUsuarioRes($identificacion);
+    
+        if (!isset($result)) {
+            echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+        } else {
+    
+            return $result;
+        }
     }
-}
+
+
 
 
 
