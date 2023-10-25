@@ -60,7 +60,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
 
     <!-- Common -->
-    
+
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
@@ -69,7 +69,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    
+
 
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
@@ -89,16 +89,20 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title">
+                            <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
-                                    style="background-color: #18d26e !important; width: 50px;">
-                                    <img src="../../assets/icons/cocheV.png" alt="">
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/carro-ver.png"
+                                        style="width: 48px; height: 48px !important" alt="">
                                 </div>
-                                <h1 id="tl_v_vehiculos">Vehiculos Registrados</h1>
-                                <p>Visualiza y gestiona los vehículos registrados en el sistema. Además visualiza las
-                                    novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Ver Vehiculos</h1>
                             </div>
+
+                            <p style="margin-bottom: -20px; margin-top: 20px;">Visualiza y gestiona los vehículos
+                                registrados en el sistema. Además visualiza las
+                                novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
                         </div>
+
                     </div>
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
@@ -115,6 +119,17 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     </div>
                     <!-- /# column -->
                 </div>
+
+                <div style="display: flex; justify-content: end; width: 99%">
+                    <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf"
+                        style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a
+                            class="txt-pdf" href="../../services/generatepdfvehiculos.php" target="_blank">Generar
+                            Reporte PDF</a></button>
+                    <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a
+                            class="txt-excel" href="../../services/generarexcelvehiculos.php" target="_blank">Generar
+                            Reporte Excel</a></button>
+                </div>
+
                 <!-- /# row -->
                 <section id="main-content" class="lista_vehiculos">
                     <div class="row">
@@ -150,13 +165,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
                             </div>
-                            <button id="GenerarPDF" class="btn p-2 btn-danger btn-pdf"
-                                style="margin-top:40px; margin-right:15px; background: #FF914D; border: 1px solid #FF914D"><a
-                                    class="txt-pdf" href="../../services/generatepdfvehiculos.php"
-                                    target="_blank">Generar Reporte PDF</a></button>
-                            <button id="GenerarExcel" class="btn p-2 btn-success btn-excel" style="margin-top:40px"><a
-                                    class="txt-excel" href="../../services/generarexcelvehiculos.php"
-                                    target="_blank">Generar Reporte Excel</a></button>
+
                         </div>
                         <!-- /# column -->
 
@@ -178,6 +187,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>

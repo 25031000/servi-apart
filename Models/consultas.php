@@ -363,7 +363,7 @@ class Consultas
 
         $result->execute();
         echo '<script>alert("Publicacion Eliminada")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+        // echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
     }
 
 

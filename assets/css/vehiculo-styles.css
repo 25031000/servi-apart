@@ -78,7 +78,7 @@
 .vehiculos_ver {
     margin-top:0;  
     color:black; 
-    padding: 7px;
+    padding: 10px 12px 0px 12px;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border: 0 solid;
@@ -91,20 +91,22 @@
   #ttl_fotos {
     font-size: 35px;
   }
+
 .btn-editar {
     background: #00BF63;
     border: 1px solid #00BF63;
-    color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif !important; 
 }
+
 .btn-editar:hover{
     background: #1e9a5e;
     border: 1px solid #1e9a5e;
-    color: black;
 }
 
 .btn-novedades:hover {
     background: #444444;
-    border: 1px solid #444444;
+    border: none;
 }
 
 
@@ -234,10 +236,35 @@
   grid-area: img2;
 }
 
-input[type="file"] {
-  display: block;
-}
-
 .table {
   margin-bottom: 0;
+}
+
+.input-file {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+
+  /* Para mostrar el nombre del archivo */
+  &::file-selector-button {
+    cursor: pointer;
+  border: none;
+  width: 95px;
+  
+    /* Para mostrar el nombre del archivo seleccionado */
+    &::after {
+      content: attr(data-filename);
+      display: block;
+      position: absolute;
+      font-size: 14px;
+      color: #ccc;
+      left: 10px;
+    }
+  } 
+
+
 }

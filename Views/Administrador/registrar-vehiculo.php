@@ -47,7 +47,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
                             <h1 style="font-size: 1.5rem;" class="ms-4">Registro de Vehículos</h1>
                         </div>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-10">
                                 <p class="p_vehiculo">Este módulo te ofrece la posibilidad de registrar de manera rápida
                                     y
@@ -55,7 +55,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                     asegura un control eficiente y seguro de toda la información relevante para tu
                                     gestión.</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!-- /# column -->
@@ -75,7 +75,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
             <!-- main content -->
             <div class="pt-3 ">
-                <main class="w-100 row px-5 gap-4 flex-nowrap  py-5">
+                <main class="w-100 row px-5 gap-4 flex-nowrap  py-3">
                     <div id="grid" class="col-md-6 p-0 m-0 grid-collage">
                         <img src="./images/horizontal2.jpg" width="100%" height="100%" alt="">
                         <img src="./images/vertical.jpg" alt="">
@@ -167,27 +167,27 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">
                             </div>
-                            <div class="form-group col-md-3 campos_vehiculo">
+                            <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif">
+                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
                             </div>
-                            <div class="form-group col-md-3 campos_vehiculo">
+                            <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 2 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif">
+                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
                             </div>
 
-                            <div class="form-group col-md-3 campos_vehiculo">
+                            <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 3 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif">
+                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
                             </div>
 
-                            <div class="form-group col-md-3 campos_vehiculo">
+                            <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 4 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif">
+                                <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
                             </div>
                         </div>
                         <div class="d-flex flex-column  mt-3">
