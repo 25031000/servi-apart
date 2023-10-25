@@ -92,7 +92,8 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Novedades</h1>
-                                <p>Como administrador, accede al historial de novedades de vehículos realizadas por el personal de seguridad de nuestro conjunto</p>
+                                <p>Como administrador, accede al historial de novedades de vehículos realizadas por el
+                                    personal de seguridad de nuestro conjunto</p>
                             </div>
                         </div>
                     </div>
@@ -102,12 +103,21 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#"style="color: #18d26e">Residente</a>
+                                        <a href="#" style="color: #18d26e">Residente</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver novedades</li>
                                 </ol>
                             </div>
                         </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: end; width: 99%; margin-top:-20px">
+                        <?php
+                        $placa = $_GET['placa'];
+
+                        echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa=' . $placa . '" target="_blank">Generar PDF</a></button>';
+                        echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa=' . $placa . '" target="_blank">Generar Excel</a></button>';
+                        ?>
                     </div>
                     <!-- /# column -->
                 </div>
@@ -129,14 +139,15 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                                     <th style="font-size:18px">Novedad</th>
                                                     <th style="font-size:18px">Fecha Revision</th>
                                                     <th style="font-size:18px">Identificación guarda</th>
-                                                    <th style="text-align:center; font-size:18px">Nombre de guarda encargado</th>
+                                                    <th style="text-align:center; font-size:18px">Nombre de guarda
+                                                        encargado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
                                                 cargarNovedadesResidente();
-                                                
+
 
                                                 ?>
                                             </tbody>
@@ -151,12 +162,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         <!-- /# column -->
                     </div>
 
-                    <?php
-    $placa = $_GET['placa'];
 
-    echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa='.$placa.'" target="_blank">Generar PDF</a></button>';
-    echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa='.$placa.'" target="_blank">Generar Excel</a></button>';
-                    ?>
 
 
                 </section>

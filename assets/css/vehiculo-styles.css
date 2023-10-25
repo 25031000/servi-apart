@@ -78,7 +78,7 @@
 .vehiculos_ver {
     margin-top:0;  
     color:black; 
-    padding: 7px;
+    padding: 10px 12px 0px 12px;
     border-radius: 20px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border: 0 solid;
@@ -106,7 +106,7 @@
 
 .btn-novedades:hover {
     background: #444444;
-    border: 1px solid #444444;
+    border: none;
 }
 
 

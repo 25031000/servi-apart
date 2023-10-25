@@ -122,7 +122,7 @@ function cargarVehiculosResidente(){
     $result = $objConsultas->mostrarVehiculosRes($identificacion);
 
     if (!isset($result)) {
-        echo '<h2>No hay vehiculos registrados en el sistema</h2>';
+        echo '<h2>No tienes vehiculos registrados en el sistema</h2>';
         echo '
             <script>
                 let head = document.querySelector(".filas_vehiculos");
@@ -137,8 +137,8 @@ function cargarVehiculosResidente(){
                 <td style="text-align:center">' . $f['marca'] . ' </td>
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
-                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><i class="ti-eye"></i> Ver Historial</a></td>
-                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-eye"></i></a></td>
+                <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-more-alt"></i></a></td>
 
             </tr>     
             ';

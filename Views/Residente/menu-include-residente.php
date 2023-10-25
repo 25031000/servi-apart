@@ -20,7 +20,7 @@
                     ?>
     
 
-                    <li class="label">Modulos</li>
+                    <li class="label">Módulos</li>
                     <li>
                         <a class="sidebar-sub-toggle">
                             <i class="ti-user"></i> Residentes 
@@ -30,7 +30,7 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-home"></i> Salon Comunal
+                            <i class="ti-home"></i> Salón Comunal
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
@@ -49,7 +49,7 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-package"></i> Paqueteria
+                            <i class="ti-package"></i> Paquetería
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
@@ -62,12 +62,12 @@
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-car"></i>Vehiculos
+                            <i class="ti-car"></i>Vehículos
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Mis Vehiculos</a>
+                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Mis Vehículos</a>
                             </li>
                         </ul>
 
