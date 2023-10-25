@@ -167,7 +167,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">
                             </div>
-                            <div class="form-group col-md-6 campos_vehiculo">
+                            <div class="form-group col-md-6 campos_vehiculo ">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
                                     Vehiculo</label>
                                 <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
@@ -184,10 +184,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
                             </div>
 
-                            <div class="form-group col-md-6 campos_vehiculo">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 4 de
-                                    Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
+                            <div class="form-group col-md-6 campos_vehiculo   d-flex flex-column justify-content-center">
+                                    <section class="position-relative d-flex align-items-center ">
+                                    <div class="d-flex position-absolute p-2 bg-success rounded-5" style="left: calc(50% - 20px);">
+                                        <img src="./icons/camera.png" width="24" height="24" alt="">
+                                    </div>
+                                    <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif" class=" d-flex mx-auto input input-file" style="z-index: 10;">
+                                    </section>
+                                    <label for="uploadBtn" class="archivo d-block text-center py-2">Foto 4</label>
                             </div>
                         </div>
                         <div class="d-flex flex-column  mt-3">
