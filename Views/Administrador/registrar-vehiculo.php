@@ -38,13 +38,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <div class="content-wrap">
         <div class="main">
             <div class="row">
-                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:20px">
+                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px; padding: 0 30px">
                     <div class="page-header">
-                        <div class="page-title d-flex align-items-center">
-                            <div class="icon-content p-2 rounded-circle"
-                                style="background-color: #18d26e !important; margin-left: 20px;">
-                                <img src="../../assets/icons/box-pack.png" alt="">
-                            </div>
+                        <div class="page-title d-flex align-items-center"><div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/carro-ver.png"
+                                        style="width: 48px; height: 48px !important" alt="">
+                                </div>
                             <h1 style="font-size: 1.5rem;" class="ms-4">Registro de Vehículos</h1>
                         </div>
                         <!-- <div class="row">
