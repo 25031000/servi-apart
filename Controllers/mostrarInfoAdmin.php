@@ -1095,7 +1095,7 @@ function mostrarReservas()
     } else {
         foreach ($result as $f) {
             echo '
-            <article class="box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
+            <article class="col-md-12 box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
             -6px -6px 36px #ffffff">
                 <header class="w-100 p-2 border-2 border-bottom border-dark">
                     <h3>' . $f['id_reserva'] . '</h3>

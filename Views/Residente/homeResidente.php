@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../Residente/css/home.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
     
     
   
@@ -86,7 +87,7 @@
                     
                 </section>
                  <a href="ver-publicaciones.php">
-                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" style="margin-left: 650px; margin-top: -40px">ver todas las publicaciones </button> </a>
+                <button type="submit" class="bot-btn" style="margin-left: 650px; margin-top: -40px">ver todas las publicaciones </button> </a>
 
                     <div class="row">
                         <div class="col-lg-12">
