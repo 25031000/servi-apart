@@ -87,7 +87,31 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px; padding: 0 30px">
+                        <div class="page-header">
+                            <div class="page-title d-flex align-items-center">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/carro-ver.png"
+                                        style="width: 48px; height: 48px !important" alt="">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Ver Vehículos</h1>
+                            </div>
+                            <p style="margin-bottom: -20px; margin-top: 20px;">Visualiza y gestiona los vehículos
+                                registrados en el sistema. Además visualiza las
+                                novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
+                            <!-- <div class="row">
+                            <div class="col-md-10">
+                                <p class="p_vehiculo">Este módulo te ofrece la posibilidad de registrar de manera rápida
+                                    y
+                                    sencilla los detalles de los vehículos que ingresen a la propiedad, lo que
+                                    asegura un control eficiente y seguro de toda la información relevante para tu
+                                    gestión.</p>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
@@ -103,7 +127,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 novedades hechas por el personal de seguridad para cada uno de los vehiculos</p>
                         </div>
 
-                    </div>
+                    </div> -->
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
