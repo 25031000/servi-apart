@@ -44,23 +44,25 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="../Seguridad/css/menu.css"> -->
     <link rel="stylesheet" href="../Seguridad/css/home.css">
+    <link rel="stylesheet" href="../../components/css/header.css">
+    <link rel="stylesheet" href="../../components/css/menu.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     
 
 </head>
 
-<body class="position-relative">
+<body class="position-relative" Style="overflow:scroll"></body>
 
     <?php
-    include 'menu.php';
+    include '../../components/menu.php';
 ?>
     <div class="custom-mouse d-flex justify-content-center align-items-center">
         <span class="text-black fw-bolder clicki">CLICK</span>
     </div>
     <!-- /# sidebar -->
     <?php
-    include 'headerInclude.php';
+    include '../../components/headerInclude.php';
 ?>
     
     <main id="dash-container" class="container-fluid position-relative">
@@ -317,12 +319,7 @@
     <script>
         //menu icon on Navbar
         $('#menu-btn').click(() => {
-            /* $('#dash-container').css({
-                zIndex: '-10'
-            });
-            $('header').css({
-                zIndex: '-1'
-            }); */
+
             $('#menu-modal').attr('transition-style', 'in:wipe:down')
             $('#menu-modal').css({
                 display: 'block'
@@ -340,14 +337,6 @@
                 overflowY: "scroll"
             })
 
-        }).queue(() => {
-            /* $('#dash-container').css({
-                zIndex: '1'
-            });
-            $('header').css({
-                zIndex: '1'
-            });
-             */
         })
     </script>
 </body>

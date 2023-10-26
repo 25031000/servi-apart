@@ -1,0 +1,11 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.perfil-btn {
+    background-color: orange !important;
+    border: none !important;
+}

@@ -254,7 +254,7 @@
     cursor: pointer;
   border: none;
   width: 95px;
-  
+
     /* Para mostrar el nombre del archivo seleccionado */
     &::after {
       content: attr(data-filename);
@@ -265,6 +265,5 @@
       left: 10px;
     }
   } 
-
 
 }

@@ -1,6 +1,7 @@
 <?php
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadResidente.php");
 
 
 ?>
@@ -95,8 +96,14 @@ require_once("../../Models/consultas.php");
 <body>
 
     <?php
-    include 'menu-include-residente.php';
+    include '../../components/menu.php';
+    include '../../components/headerInclude.php';
+
     require '../../Controllers/mostrarInfoResidente.php';
+    
+
+
+
     $result = cargarInfoUsuarios();
     list($id, $tipo_doc, $nombres, $apellidos) = $result;
     ?>

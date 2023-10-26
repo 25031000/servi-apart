@@ -237,7 +237,7 @@ function cargarFotosVehiculo()
 
       <div class="row" style="display:flex; align-items:center; margin-left:30px">
       <div class="col-lg-5">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" >
+          <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators" >
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -259,10 +259,10 @@ function cargarFotosVehiculo()
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <img src="../../assets/icons/prev.png">
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <img src="../../assets/icons/next.png">
   </button>
  </div>
     </div>
@@ -699,7 +699,7 @@ function cargarPublicaciones()
             <td>' . $f['descripcion'] . ' </td>
          
             <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
-            <td><a href="../../Controllers/eliminarPubli.php?id=' . $f['id_publi'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+            <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
         </tr>     
             ';
         }
@@ -1119,7 +1119,7 @@ function mostrarReservas()
     } else {
         foreach ($result as $f) {
             echo '
-            <article class="box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
+            <article class="col-md-12 box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
             -6px -6px 36px #ffffff">
                 <header class="w-100 p-2 border-2 border-bottom border-dark">
                     <h3>' . $f['id_reserva'] . '</h3>
