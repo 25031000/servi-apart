@@ -42,7 +42,7 @@
     <!-- Custom styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="../Seguridad/css/menu.css"> -->
+
     <link rel="stylesheet" href="../Seguridad/css/home.css">
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
@@ -52,7 +52,7 @@
 
 </head>
 
-<body class="position-relative" Style="overflow:scroll"></body>
+<body class="position-relative" style="overflow-y: scroll;"></body>
 
     <?php
     include '../../components/menu.php';
@@ -79,10 +79,7 @@
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
                         <p class="  p-0  w-100 mb-0">Vehiculos</p>
-                        <!-- <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
-                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
-                            <img width="16" height="16" src="./icons/next.png" alt="">
-                        </div> -->
+                        
                     </div>
                 </section>
                 <section role="button" class="col-md-5 module  p-0 d-flex flex-column ">
@@ -91,10 +88,7 @@
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom m-0  py-3">
                         <p class=" p-0  w-100 mb-0">Paqueteria</p>
-                        <!-- <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
-                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
-                            <img width="16" height="16" src="./icons/next.png" alt="">
-                        </div> -->
+                        
                     </div>
                 </section>
                 
@@ -106,10 +100,7 @@
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
                         <p class="  p-0  w-100 mb-0">Salon comunal</p>
-                        <!-- <div   class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
-                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
-                            <img width="16" height="16" src="./icons/next.png" alt="">
-                        </div> -->
+                       
                     </div>
                 </section>
                 <section role="button" class="col-md-5 module   p-0 d-flex flex-column ">
@@ -118,10 +109,7 @@
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom  py-3">
                         <p class=" p-0  w-100 mb-0">Publicaciones</p>
-                        <!-- <div  class="  ml-3 view-more  border align-items-center justify-content-center d-flex rounded-5" role="button">
-                            <span class="fs-5 mr-2  text-view-more">Ver mas</span>
-                            <img width="16" height="16" src="./icons/next.png" alt="">
-                        </div> -->
+                        
                     </div>
                 </section>
             </div>

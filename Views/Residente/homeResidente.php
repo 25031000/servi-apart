@@ -32,13 +32,10 @@
   
 </head>
 
-<body style="font-family: 'Varela Round', sans-serif !important;" >
+<body style="font-family: 'Varela Round', sans-serif !important; " >
 
 <?php
     include '../../components/menu.php';
-
-   
-    
     include '../../components/headerInclude.php';
 ?>
 
@@ -117,7 +114,7 @@ $('#menu-modal').css({
     display: 'block'
 })
 $('body').css({
-    overflowY: "hidden"
+    overflowX: "hidden"
 })
 })
 
@@ -125,8 +122,8 @@ $('body').css({
 $('#close').click(() => {
 
 $('#menu-modal').attr('transition-style', 'out:wipe:down')
-$('body').css({
-    overflowY: "scroll"
+$('html').css({
+    overflow: "scroll"
 })
 
 })

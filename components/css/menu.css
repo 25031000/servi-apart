@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+
 *{
     padding: 0%;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif !important;
+
 }
 
 html{
@@ -27,31 +32,30 @@ footer{
 }
 
 .section-modal{
-    height: 80%;
+    height: 75%;
     background-color: #0F1210;
     
 
 }
 .list{
-    width: 100%;
+    min-width: 60%;
     padding: 0 20px;
+    margin-left: 0;
 }
-.list > .item-list {
-    font-size: 2rem;
-}
+
 
 #title{
     transform: rotate(-90deg);
-    right: -200px;
+    right: -250px !important;
     width: 90vh;
-    bottom: 35%;
+    bottom: 35% ;
 }
 
 #title > h2{
-    font-size: 11rem;
+    font-size: 8rem !important;
     letter-spacing: 2rem;
     font-weight: bolder;
-    line-height: 160px;
+    line-height: 120px !important;
     color: #FDAA09;
 }
 
@@ -80,21 +84,12 @@ footer{
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.first-li{
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 
-.second-li{
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.third-li{
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 /* CSS para quitar el color azul de los enlaces <a> con la clase "chocolate" */
 a.chocolate {
     color: inherit;
     text-decoration: none;
+    font-size: 1.8rem;
 }
 
 
@@ -110,24 +105,24 @@ Hover animations
     scale: 1.3;
 }
 
-#first-li:hover .first-arrow{
+.item-list:hover .first-arrow{
     translate: 7px -7px;
 }
 
-#first-li:hover{
+.first-arrow:hover{
     color: #FDAA09 !important;
 }
 
-#second-li:hover .second-arrow{
-    translate: 7px;
+.item-list:hover .second-arrow{
+    translate: 7px -7px;
 }
 
-#second-li:hover{
+.item-list:hover{
     color: #FDAA09 !important;
 }
 
 #third-li:hover .third-arrow{
-    translate: 7px 7px;
+    translate: 7px -7px;
 }
 
 #third-li:hover{
@@ -144,13 +139,13 @@ RESPONSIVE SCREEN
 @media (min-width: 768px){
     .list{
         width: 40%;
-        margin-left: 70px;
+        
     }
 }
 
 @media (min-width: 902px){
-    .list > .item-list{
-        font-size: 4rem;
+    a.chocolate{
+        font-size: 3rem;
     }
 
     .first-arrow{
@@ -167,13 +162,23 @@ RESPONSIVE SCREEN
         width: 72px;
         height: 72px;
     }
+
+    #title{
+        right: -200px !important;
+    }
+
+    #title > h2{
+        font-size:11rem !important;
+    line-height: 160px !important;
+
+    }
 }
 
 
 @media (min-width: 992px){
     .list{
         width: 40%;
-        margin-left: 150px;
     }
+    
 }
 

@@ -1110,7 +1110,7 @@ class ValidarSesion
 
                         case 'Residente':
                             echo '<script>alert("Bienvenido señor residente")</script>';
-                            echo "<script>location.href = '../Views/Residente/homeResi.php'</script>";
+                            echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
                             break;
 
                         case 'Seguridad':
