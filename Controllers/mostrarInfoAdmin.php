@@ -8,7 +8,8 @@
 
 // ESTA FUNCION ES LA QUE SE LLAMA EN LA VISTA 
 
-function cargarUsuarios(){
+function cargarUsuarios()
+{
 
 
     $objConsultas = new Consultas();
@@ -38,7 +39,8 @@ function cargarUsuarios(){
     }
 }
 
-function cargarUsuariosexcel(){
+function cargarUsuariosexcel()
+{
 
 
     $objConsultas = new Consultas();
@@ -68,7 +70,8 @@ function cargarUsuariosexcel(){
 
 
 // aterrizamos la pk enviada desde la tabla 
-function cargarUsuarioEditar(){
+function cargarUsuarioEditar()
+{
 
     $identificacion = $_GET['id'];
 
@@ -168,16 +171,16 @@ function cargarUsuariosPDF()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['tipo_doc'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['email'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefono'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['rol'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['estado'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['tipo_doc'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombres'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apellidos'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['email'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['telefono'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['rol'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['estado'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['torre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apartamento'] . '</td>
 
             </tr>     
             ';
@@ -187,7 +190,8 @@ function cargarUsuariosPDF()
 
 
 
-function cargarFotosVehiculo(){
+function cargarFotosVehiculo()
+{
 
     $placa = $_GET['placa'];
 
@@ -382,9 +386,9 @@ function cargarNovedades()
         ';
 
     } else {
-        
+
         foreach ($result as $f) {
-            
+
 
             echo '
             
@@ -402,7 +406,7 @@ function cargarNovedades()
             ';
         }
 
-        
+
     }
 }
 
@@ -501,12 +505,12 @@ function cargarNovedadesPDF()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['id_nov'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['placa'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['novedad'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha_rev'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_nov'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['placa'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['novedad'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombres'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['fecha_rev'] . '</td>
 
             </tr>     
             ';
@@ -515,8 +519,9 @@ function cargarNovedadesPDF()
 }
 
 
-function cargarVehiculos(){
-    
+function cargarVehiculos()
+{
+
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarVehiculosAdmin();
@@ -544,7 +549,8 @@ function cargarVehiculos(){
     }
 }
 
-function cargarVehiculoEditar(){
+function cargarVehiculoEditar()
+{
 
     $placa = $_GET['placa'];
 
@@ -660,12 +666,12 @@ function cargarVehiculosPDF()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['placa'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['marca'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['referencia'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['modelo'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['placa'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['marca'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['referencia'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['modelo'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['fecha'] . '</td>
 
             </tr>     
             ';
@@ -674,7 +680,8 @@ function cargarVehiculosPDF()
 }
 
 
-function cargarPublicaciones(){
+function cargarPublicaciones()
+{
 
 
     $objConsultas = new Consultas();
@@ -700,7 +707,8 @@ function cargarPublicaciones(){
 }
 
 
-function cargarPubliEditar(){
+function cargarPubliEditar()
+{
 
     $id_publi = $_GET['id_publi'];
 
@@ -724,7 +732,7 @@ function cargarPubliEditar(){
                                         </div>
 
 
-                        <form action="../../Controllers/modificarpubli.php?id_publi='.$id_publi.'" method="POST">
+                        <form action="../../Controllers/modificarpubli.php?id_publi=' . $id_publi . '" method="POST">
                         <div class="row">
 
 
@@ -775,9 +783,9 @@ function cargarPubliEditar(){
 
 
 
-                    }
+    }
 
-                }
+}
 
 
 
@@ -812,9 +820,10 @@ function cargarUsuariosReportes()
     }
 }
 
-function cargarPublicacionesPDF(){
+function cargarPublicacionesPDF()
+{
     $objConsultas = new Consultas();
-    $result = $objConsultas-> mostrarPublicaciones();
+    $result = $objConsultas->mostrarPublicaciones();
 
     if (!isset($result)) {
         echo '<h2> NO HAY PUBLICACIONES REGISTRADAS </h2>';
@@ -823,9 +832,9 @@ function cargarPublicacionesPDF(){
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_publi'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['titulo'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['descripcion'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_publi'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['titulo'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['descripcion'] . '</td>
                
             </tr>     
             ';
@@ -847,24 +856,39 @@ function perfil()
 
     foreach ($result as $f) {
         echo '
+
+
         <li class="label">' . $f['rol'] . '</li>
         <li>
             <a class="sidebar-sub-toggle">
-                <img style="border-radius: 50%; width: 40px; height: 40px;" src="../' . $f['foto'] . '" class="foto_user_servi ">     ' . $f['nombres'] . '
-                <span class="sidebar-collapse-icon ti-angle-down"></span>
-
-                <ul>
-                    <li>
-                        <a href="perfil.php?id=' . $f['identificacion'] . '"><i class="ti-write"></i>Editar Cuenta</a>
-                    </li>
-                    <li>
-                        <a href="../../Controllers/cerrarSesion.php">
-                        <i class="ti-close"></i>Cerrar Sesion</a>
-                    </li>
-                </ul>
-
+            <img style="border-radius: 50%; width: 40px; height: 40px;" src="../' . $f['foto'] . '" class="foto_user_servi ">     ' . $f['nombres'] . '
+            <span class="sidebar-collapse-icon ti-angle-down"></span>
             </a>
+            <ul>
+            <li>
+            <a href="perfil.php?id=' . $f['identificacion'] . '"><i class="ti-write"></i>Editar Cuenta</a>
         </li>
+        <li>
+        <a href="../../Controllers/cerrarSesion.php">
+        <i class="ti-close"></i>Cerrar Sesion</a>
+    </li>
+
+            </ul>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
         ';
     }
@@ -1051,7 +1075,7 @@ function cargarPaquetes()
                 <td class="d-flex col-md-2 justify-content-center">' . $f['apartamento'] . ' </td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['fecha'] . '</td>
                 <td class="d-flex col-md-2 justify-content-center">' . $f['remitente'] . ' </td>
-                <td class="d-flex col-md-2 justify-content-center">' . $f['nombres'] . ' ' . $f['apellidos'].' </td> 
+                <td class="d-flex col-md-2 justify-content-center">' . $f['nombres'] . ' ' . $f['apellidos'] . ' </td> 
                 <td class="d-flex col-md-2 justify-content-center"><a aria-label="Chat on WhatsApp" target="_blank" data-bs-toggle="tooltip" data-bs-title="Default tooltip" href="https://wa.me/57' . $f['telefono'] . '"><img class="whatsapp" style="width: 30px; height: 30px; "  alt="Chat on WhatsApp" src="../../assets/icons/whatsapp.png" />
                 <a /> </td>
            </tr>     
@@ -1072,12 +1096,12 @@ function cargarPaquetesPDF()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['remitente'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres']. ' ' . $f['apellidos'] .'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['torre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apartamento'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['fecha'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['remitente'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombres'] . ' ' . $f['apellidos'] . '</td>
             </tr>     
             ';
         }
@@ -1254,15 +1278,16 @@ function mostrarReservas()
         }
     }
 }
-    function cargarReservaEditar(){
-        $id_reserva =$_GET['id'];
+function cargarReservaEditar()
+{
+    $id_reserva = $_GET['id'];
 
-        $objConsultas = new Consultas();
-        $result = $objConsultas->mostrarReservaEditarAdmin($id_reserva);
-    
-    
-        foreach ($result as $f) {
-            echo '
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservaEditarAdmin($id_reserva);
+
+
+    foreach ($result as $f) {
+        echo '
             
             <div class="card text-center" >
                 
@@ -1280,7 +1305,7 @@ function mostrarReservas()
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="identificacion" style="font-weight: bold; color: #333;">Identificación</label>
-                        <input type="number" class="form-control" value="'.$f['identificacion'] .'" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
@@ -1288,7 +1313,7 @@ function mostrarReservas()
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
-                        <input type="date" class="form-control" value="'.$f['dia_reserva'] .'" id="dia_reserva" name="dia_reserva" readonly required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="date" class="form-control" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva" readonly required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
@@ -1296,28 +1321,28 @@ function mostrarReservas()
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
-                        <input type="time" class="form-control" value="'.$f['hora_inicio'] .'" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="time" class="form-control" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
-                        <input type="time" class="form-control" value="'.$f['hora_finalizacion'] .'" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="time" class="form-control" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
-                        <input type="number" class="form-control"  value="'.$f['mesas'] .'" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="number" class="form-control"  value="' . $f['mesas'] . '" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-floating">
                     <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
-                        <input type="number" class="form-control" value="'.$f['sillas'] .'" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                        <input type="number" class="form-control" value="' . $f['sillas'] . '" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
@@ -1330,9 +1355,9 @@ function mostrarReservas()
                 </div>
                 
                 ';
-            }
     }
-    function cargarReservasPDF()
+}
+function cargarReservasPDF()
 {
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarReservasAdmin();
@@ -1344,19 +1369,19 @@ function mostrarReservas()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_reserva'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombres'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefono'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['email'].'</td>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['dia_reserva'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_inicio'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_finalizacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['mesas'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['sillas'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_reserva'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombres'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apellidos'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['telefono'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['email'] . '</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['dia_reserva'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['torre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apartamento'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['hora_inicio'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['hora_finalizacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['mesas'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['sillas'] . '</td>
 
             </tr>     
             ';
@@ -1375,19 +1400,19 @@ function cargarReservasEX()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['id_reserva'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['nombre'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apellidos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['telefonos'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['correo'].'</td>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['dia_reserva'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['torre'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['apartamento'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_inicio'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['hora_finalizacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['mesas'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['sillas'].'</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_reserva'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apellidos'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['telefonos'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['correo'] . '</td>
+                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['dia_reserva'] . '</th>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['torre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apartamento'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['hora_inicio'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['hora_finalizacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['mesas'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['sillas'] . '</td>
 
             </tr>       
             ';
