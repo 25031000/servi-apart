@@ -167,8 +167,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">
                             </div>
-                            <div class="form-group col-md-6 campos_vehiculo ">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 1 de
+                            <div class="form-group col-md-6 campos_vehiculo">
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
                                     Vehiculo</label>
                                 <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
                             </div>
