@@ -30,8 +30,8 @@
     
     require_once "../Models/conexion.php";
     require_once "../Models/consultas.php";
-    require_once "../Controllers/mostrarInfoResidente.php";
-    cargarVehiculosPDFR() 
+    require_once "../Controllers/mostrarInfoAdmin.php";
+    cargarVehiculosPDF() 
     ?>
   </tbody>
 </table>

@@ -195,33 +195,6 @@ function cargarNovedadesResidente()
     }
 }
 
-function cargarVehiculosPDFR()
-{    
-    $identificacion = isset($_SESSION['id']);
-
-    $objConsultas = new Consultas();
-
-    $result = $objConsultas->mostrarVehiculosRes($identificacion);
-
-    if (!isset($result)) {
-        echo '<h2> NO HAY VEHICULOS REGISTRADOS </h2>';
-
-    } else {
-        foreach ($result as $f) {
-            echo '
-            <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">'. $f['placa'].'</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['marca'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['referencia'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['modelo'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['identificacion'].'</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">'.$f['fecha'].'</td>
-
-            </tr>     
-            ';
-        }
-    }
-}
 
 function cargarFotosVehiculoRes(){
 
