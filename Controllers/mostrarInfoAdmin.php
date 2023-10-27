@@ -398,7 +398,8 @@ function cargarNovedades()
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px"><i class="ti-pencil-alt">Editar</i></a><a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+                <a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
 
             </tr>   
             
@@ -460,8 +461,9 @@ function cargarNovedadesEditar()
 
                                 
                                     </div>
-                                    <button type="submit" class="p-2 btn btn-primary btn-editar w-30" style="margin-left:7px">Modificar Novedad</button>                    
+                                    
                         </div>
+                        <button type="submit" class="p-2 btn btn-primary btn-editar" style="margin-left:4px; width:180px">Modificar Novedad</button>                    
                 </form>
 
                         </div>
@@ -538,8 +540,8 @@ function cargarVehiculos()
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
-                <td style="text-align:center; display:flex; justify-content:center  "><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary " style="margin-right:15px; border: none; background: #00BF63; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edit.png" width="20px" style="margin-right:7px">  Editar</a>
-                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px;"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
+                <td style="text-align:center; display:flex; justify-content:center  "><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+                <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-more-alt"></i></a></td>
 
@@ -865,12 +867,12 @@ function perfil()
             <span class="sidebar-collapse-icon ti-angle-down"></span>
             </a>
             <ul>
-            <li>
-            <a href="perfil.php?id=' . $f['identificacion'] . '"><i class="ti-write"></i>Editar Cuenta</a>
+            <li >
+            <a href="perfil.php?id=' . $f['identificacion'] . '"><img src="../../assets/icons/editCuenta.png" alt="icono editar cuenta" width="18px" class="iconos"  style="margin-right:5px">  Editar Cuenta</a>
         </li>
         <li>
         <a href="../../Controllers/cerrarSesion.php">
-        <i class="ti-close"></i>Cerrar Sesion</a>
+        <img src="../../assets/icons/cerrarSesion.png" alt="icono cerrar sesion" width="18px" class="iconos"  style="margin-right:5px">    Cerrar Sesion</a>
     </li>
 
             </ul>
