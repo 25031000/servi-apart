@@ -18,7 +18,7 @@ require_once("../../Models/consultas.php");
         foreach ($result as $f) {
            
             echo '
-                        <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border">
+                        <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border" style="-webkit-border-radius: 0.625rem; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff" >
                             <header class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             '. $f['titulo'] .'
@@ -30,7 +30,7 @@ require_once("../../Models/consultas.php");
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
                             </main>
-                            <footer class=" p-2 m-0">
+                            <footer class=" p-2 m-0" style="background: transparent; height: 21%">
                             <section class="w-100 m-0 p-0 d-flex align-items-center ">
                                     <img style="width: 20px; height: 20px" src="./icons/calendario.png">
                                     <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['fecha'] .'</small>
@@ -63,9 +63,8 @@ function cargarPublicacionesRes(){
         foreach (array_slice($result, $start, 3) as $f){
             echo '
                             
-                            
-            <article class="col-md-12 box-cont p-4 px-4 my-5" style="-webkit-border-radius:  0.625rem;  width: 700px; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
-            -6px -6px 36px #ffffff">
+                         <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 380px; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
+
                             <header class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             '. $f['titulo'] .'

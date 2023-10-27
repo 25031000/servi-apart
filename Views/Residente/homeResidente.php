@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title">
+                            <div class="page-title" style="margin-left: 390px">
                                 <h1 id="publi-title">Publicaciones Creadas</h1>
                                 <p id="text-title">mostramos las tres publicaciones más recientes que han sido registradas en nuestro módulo </p>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href=""  style="color: #18d26e">Residente</a>
+                                        <a href=""  style="color: #18d26e; margin-left: 190px">Residente</a>
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>
@@ -86,7 +86,7 @@
                  <a href="ver-publicaciones.php">
                 <button type="submit" class="bot-btn" style="margin-left: 650px; margin-top: -40px">ver todas las publicaciones </button> </a>
 
-                    <div class="row">
+                    <div class="row" style="margin-left: 20px">
                         <div class="col-lg-12">
                             <div class="footer">
                                 <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
