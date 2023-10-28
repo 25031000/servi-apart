@@ -116,13 +116,13 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card vehiculos_ver">
-                                <div class="card-body card-ver">
+                                <div class="">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
+                                                <th style="font-size:17px">Placa</th>
                                                     <th style="font-size:17px">Marca</th>
-                                                    <th style="font-size:17px">Placa</th>
                                                     <th style="font-size:17px">Referencia</th>
                                                     <th style="font-size:17px">Modelo</th>
                                                     <th style="font-size:17px">Identificación Propietario</th>

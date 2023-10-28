@@ -191,7 +191,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
                         </div>
                         <div class="d-flex flex-column  mt-3">
-                            <button class="p-2 register-btn rounded-2 w-30">Registrar</button>
+                            <button class="p-2 register-btn rounded-2 w-20">Registrar</button>
                         </div>
                     </form>
 

@@ -534,13 +534,13 @@ function cargarVehiculos()
     } else {
         foreach ($result as $f) {
             echo '
-            <tr style="border-style:none !important"><td style="text-align:center;">' . $f['placa'] . '</td>
+            <tr style="border:white"><td style="text-align:center;">' . $f['placa'] . '</td>
                 <td style="text-align:center">' . $f['marca'] . ' </td>
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
-                <td style="text-align:center; display:flex; justify-content:center  "><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+                <td style="text-align:center; display:flex; justify-content:center; border:white"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-primary btn-detalles"><i class="ti-more-alt"></i></a></td>
