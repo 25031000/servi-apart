@@ -168,7 +168,6 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
