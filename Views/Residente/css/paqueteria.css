@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-size: 16px;
+}
+
+.custom-card{
+    box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff !important;
+}
+
+.swal2-confirm{
+    background-color: #18d26e !important;
+    box-shadow: 0 0 0 3px #70fab0ab !important;
+}

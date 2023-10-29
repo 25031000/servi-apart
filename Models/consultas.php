@@ -1051,6 +1051,72 @@ class Consultas
             echo "it had occurs an error when it was counting the table" . $th;
         }
     }
+
+    /**
+     * Metodo para mostrar paquetes en modulo de paqueteria con rol residente
+     * 
+     * @function mostrarPaqueteRes
+     * 
+     * @param string $user_id // identificacion del usuario 
+     * @return array // registro de paquetes relacionados al apartamento de un usuario
+     * 
+     * 
+     * 
+     */
+    public function mostrarPaqueteRes(string $user_id) : array{
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+        
+                $query = "SELECT 
+                            U.torre,
+                            U.apartamento,
+                            P.remitente,
+                            P.fecha
+                            FROM usuarios U INNER JOIN paqueteria P ON U.identificacion=P.usuario WHERE U.identificacion=:user_id;
+                ";
+                
+                $statement = $conexion->prepare($query);
+                $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+        
+                $response = $statement->execute();
+                if(!$response) return [];
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+                if(count($result) == 0) return [];
+                return $result;
+        } catch (\Throwable $th) {
+            echo "Error en la consulta :( " . $th;
+        }
+    }
+
+    /**
+     * Metodo para eliminar paquetes en modulo de paqueteria con rol residente
+     * 
+     * @function eliminarPaqueteRes
+     * 
+     * @param string $user_id // identificacion del usuario 
+     * @return bool // respuesta boolean para actuar en base a ella.
+     * 
+     * 
+     * 
+     */
+    public function eliminarPaqueteRes(string $user_id) : bool{
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "DELETE FROM paqueteria WHERE usuario=:user_id";
+            $statement = $conexion->prepare($query);
+            $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+            $response = $statement->execute();
+            if(!$response) return false;
+            return true;
+        } catch (\Throwable $th) {
+            echo "Error en la consulta :( " . $th;
+        }
+    }
 }
 
 
