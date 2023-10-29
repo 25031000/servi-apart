@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
     
-    
   
 </head>
 
@@ -39,10 +38,6 @@
     include '../../components/menu.php';
     include '../../components/headerInclude.php';
 ?>
-
-
-
-
 
 
     <div class="content-wrap">
@@ -99,37 +94,14 @@
     </div>
 
 
+    <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
     <script src="../Dashboard/js/lib/menubar/sidebar.js"></script>
     <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
     <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
 
-
-    <script>
-    //menu icon on Navbar
-    $('#menu-btn').click(() => {
-
-$('#menu-modal').attr('transition-style', 'in:wipe:down')
-$('#menu-modal').css({
-    display: 'block'
-})
-$('body').css({
-    overflowX: "hidden"
-})
-})
-
-//close icon on modal
-$('#close').click(() => {
-
-$('#menu-modal').attr('transition-style', 'out:wipe:down')
-$('html').css({
-    overflow: "scroll"
-})
-
-})
-</script>
-    <!-- Common -->
+    
 
     
 
