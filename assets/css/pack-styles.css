@@ -130,11 +130,14 @@ estilos del formulario de residente en salon comunal
 
 .adi{
     position: relative;
+    padding: 15px;
 }
+
 .adidas{
     position: absolute;
     top: 15px;
-    left: 50px
+    left: 50px;
+    padding: 20px;
 }
 
 .register-btn{
@@ -169,6 +172,9 @@ estilos del formulario de residente en salon comunal
 #grid > img:nth-child(3){
     grid-area: img2;
 }
+
+
+
 
 @media (max-width: 1400px){
     body{
