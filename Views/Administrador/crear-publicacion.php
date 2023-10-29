@@ -85,9 +85,11 @@
 
                         
                     </form>
-                    <div id="grid" class="col-md-7 ">
-                        
-                        <img src="../../assets/img/publi.png" width="75%" height="75%"   alt="">
+                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
+                        <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
+                        <img src="./images/vertical-pack.png"  alt="">
+                        <img src="./images/horizontal-pack.png" width="100%" height="100%"   alt="">
+                    </div>
                     </div>
                 </main>
             </div>

@@ -43,15 +43,15 @@ $result = $objConsulta->verPerfil($id);
                     <li class="label">Módulos</li>
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-user"></i> Usuarios
+                        <img src="../../assets/icons/usuarios.png" alt="icono usuarios" width="20px" style="margin-right:10px"> Usuarios
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-usuario.php"> <i class="ti-pencil-alt"></i>Registrar </a>
+                                <a href="registrar-usuario.php"><img src="../../assets/icons/registrarUsuario.png" alt="icono registrar usuario" width="20px"  style="margin-right:10px"> Registrar </a>
                             </li>
                             <li>
-                                <a href="ver-usuario.php"><i class="ti-eye"></i>Ver</a>
+                                <a href="ver-usuario.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver</a>
                             </li>
 
                         </ul>
@@ -59,12 +59,12 @@ $result = $objConsulta->verPerfil($id);
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-home"></i> Salón Comunal
+                        <img src="../../assets/icons/salon.png" alt="icono salon comunal" width="20px"  style="margin-right:10px">  Salón Comunal
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="ver-reservaSC.PHP"><i class="ti-eye"></i>Ver reservas</a>
+                                <a href="ver-reservaSC.PHP"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver reservas</a>
                             </li>
 
                         </ul>
@@ -72,15 +72,15 @@ $result = $objConsulta->verPerfil($id);
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-package"></i> Paquetería
+                        <img src="../../assets/icons/paquete.png" alt="icono paqueteria" width="20px"  style="margin-right:10px">  Paquetería
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-paquete.php"><i class="ti-pencil-alt"></i>Registrar paquete </a>
+                                <a href="registrar-paquete.php"><img src="../../assets/icons/agregar.png" alt="icono registrar paquete" width="20px"  style="margin-right:10px"> Registrar paquete </a>
                             </li>
                             <li>
-                                <a href="ver-paquetes.php"><i class="ti-eye"></i>Ver paquete</a>
+                                <a href="ver-paquetes.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver paquete</a>
                             </li>
 
                         </ul>
@@ -88,15 +88,15 @@ $result = $objConsulta->verPerfil($id);
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-car"></i> Vehículos
+                        <img src="../../assets/icons/vehiculo.png" alt="icono vehiculos" width="20px"  style="margin-right:10px">  Vehículos
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-vehiculo.php"> <i class="ti-pencil-alt"></i>Registrar Vehículos</a>
+                                <a href="registrar-vehiculo.php"> <img src="../../assets/icons/agregar.png" alt="icono agregar vehiculo" width="20px"  style="margin-right:10px"> Registrar Vehículos</a>
                             </li>
                             <li>
-                                <a href="ver-vehiculo.php"><i class="ti-eye"></i>Ver Vehículos</a>
+                                <a href="ver-vehiculo.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Vehículos</a>
                             </li>
 
 
@@ -104,31 +104,31 @@ $result = $objConsulta->verPerfil($id);
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-info-alt"></i> Peticiones
+                        <img src="../../assets/icons/peticiones.png" alt="icono peticiones" width="20px"  style="margin-right:10px">  Peticiones
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><i class="ti-eye"></i>Ver Peticiones</a>
+                                <a href="#"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Peticiones</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-comment-alt"></i> Publicaciones
+                        <img src="../../assets/icons/publicaciones.png" alt="icono publicaciones" width="20px"  style="margin-right:10px">  Publicaciones
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
 
-                                <a href="crear-publicacion.php"><i class="ti-pencil-alt"></i>Crear Publicación</a>
+                                <a href="crear-publicacion.php"><img src="../../assets/icons/agregar.png" alt="icono agregar" width="20px"  style="margin-right:10px"> Crear Publicación</a>
 
                         
                             </li>
                         
                             <li>
-                                <a href="ver-publicaciones.php"><i class="ti-eye"></i>Ver Publicaciones</a>
+                                <a href="ver-publicaciones.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Publicaciones</a>
                             </li>
                         
                            
@@ -137,12 +137,12 @@ $result = $objConsulta->verPerfil($id);
 
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-money"></i> Pagos
+                        <img src="../../assets/icons/pagos.png" alt="icono pagos" width="20px"  style="margin-right:10px">  Pagos
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
                             <li>
-                                <a href="pagos.php"><i class="ti-eye"></i>Gestión de pagos</a>
+                                <a href="pagos.php"><img src="../../assets/icons/gestionPagos.png" alt="icono gestion de pagos" width="20px"  style="margin-right:10px"> Gestión de pagos</a>
                             </li>
                         </ul>
                     </li>
