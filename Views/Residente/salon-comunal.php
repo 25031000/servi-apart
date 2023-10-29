@@ -96,8 +96,8 @@ require_once("../../Models/seguridadResidente.php");
 <body>
 
     <?php
-    include '../../components/menu.php';
-    include '../../components/headerInclude.php';
+    /* include '../../components/menu.php';
+    include '../../components/headerInclude.php'; */
 
     require '../../Controllers/mostrarInfoResidente.php';
     
@@ -105,39 +105,55 @@ require_once("../../Models/seguridadResidente.php");
 
 
     $result = cargarInfoUsuarios();
-    list($id, $tipo_doc, $nombres, $apellidos) = $result;
-    ?>
 
-    <!-- /# sidebar -->
-    <div class="content-wrap">
-        <div class="main">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h1 style="font-size: 36px;">Bienvenido,
-                                    <?php
-                                    echo $nombres . ' ' . $apellidos;
-                                    ?>
-                                </h1>
+    if (!empty($result)) {
+        // Asegúrate de iniciar la sesión
+    
+        $sesionId = $_SESSION['id']; // Obtén el ID del usuario que ha iniciado sesión
+    
+        $usuarioEnSesion = null;
+    
+        // Busca el usuario actual en el array de resultados
+        foreach ($result as $usuario) {
+            if ($usuario['identificacion'] == $sesionId) {
+                $usuarioEnSesion = $usuario;
+                break;
+            }
+        }
+    
+        if ($usuarioEnSesion !== null) {
+            $nombres = $usuarioEnSesion['nombres'];
+            $apellidos = $usuarioEnSesion['apellidos'];
+    
+            ?>
+            <!-- /# sidebar -->
+            <div class="content-wrap">
+                <div class="main">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-8 p-r-0 title-margin-right">
+                                <div class="page-header">
+                                    <div class="page-title">
+                                        <h1 style="font-size: 36px;">Bienvenido,
+                                            <?php
+                                            echo $nombres . ' ' . $apellidos;
+                                            ?>
+                                        </h1>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#"> Registro Reserva</a></li>
-                                    <li class="breadcrumb-item active">Residente</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /# column -->
                 </div>
-                <!-- /# row -->
+            </div>
+            <?php
+        } else {
+            echo '<h2> El usuario de la sesión no se encontró en los resultados.</h2>';
+        }
+    } else {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+    }
+?>    
 
                 <div class="d-flex justify-content-center">
                     <h4 class="mx-auto">Reserva Tu Dia</h4>
