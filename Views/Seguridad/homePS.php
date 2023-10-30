@@ -83,12 +83,15 @@
                        
                     </div>
                 </section>
+
+               
                 <section role="button" class="col-md-5 module   p-0 d-flex flex-column ">
                     <div class="">
+                    <a href="ver-publicaciones.php">
                         <img class="w-100  rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom  py-3">
-                        <p class=" p-0  w-100 mb-0">Publicaciones</p>
+                        <p class=" p-0  w-100 mb-0">Publicaciones</p> </a>
                         
                     </div>
                 </section>
