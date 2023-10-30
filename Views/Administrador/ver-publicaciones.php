@@ -160,8 +160,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                 <tr style="font-size:15px">
                                                     <th>Foto</th>
                                                     <th>Identificación</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
+                                                    <th >Operaciones</th>
+                                                  
                                                    
                                                 </tr>
                                             </thead>

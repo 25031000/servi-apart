@@ -700,8 +700,8 @@ function cargarPublicaciones()
             <td>' . $f['titulo'] . ' </td>
             <td>' . $f['descripcion'] . ' </td>
          
-            <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
-            <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+            <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+            <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
         </tr>     
             ';
         }
