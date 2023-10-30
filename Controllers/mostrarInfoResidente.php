@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\map;
+
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 
@@ -330,5 +333,49 @@ function cargarFotosVehiculoRes(){
 
 }
 
+
+function cargarPaquetesRes(string $identificacion){
+    $objConsultas = new Consultas();
+    $arr = $objConsultas->mostrarPaqueteRes($identificacion);
+    if(count($arr) == 0){
+        echo '
+            <section class="container d-flex flex-column align-items-center">
+                <img src="./images/empty-mailbox.svg" width="500" height="500" />
+                <h5>Parece que no tienes paquetes registrados</h5>
+            </section>
+        ';
+    }else{
+       array_map(function($item){
+        $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
+
+        echo '
+            <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
+               <div class="col-5 border rounded-3 text-white align-items-center d-flex py-4 flex-column justify-content-center" style="background: #18d26e;">
+                    <p class=" m-0 position-relative" style="font-size: 3rem; top: 8px;">'.explode("-",$item['fecha'])[2].'</p>
+                    <small class=" m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">'.$months[explode("-",$item['fecha'])[1]].'</small>
+               </div>           
+               <div class="col-7  align-items-center d-flex flex-column justify-content-center">
+                    <div >
+                        <strong style="font-size: 1.5rem !important;">'.$item['remitente'] .'</strong>
+                    </div>
+                    <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
+                        <div class="text-white">'. $item['torre']. '-' .  $item['apartamento'] . '</div>
+                    </div>
+                    <div >
+                        <small class="text-alternative" style="font-size: 0.8rem">Apartamento - Torre</small>
+                    </div>
+               </div>           
+            </section>
+        ';
+    }, $arr); 
+    }
+    
+
+}
+
 ?>
 
+<!-- <div>'. $item['torre']. '</div>
+                <div>'. $item['apartamento']. '</div>
+                <div>'. $item['remitente']. '</div>
+                <div>'. $item['fecha']. '</div>  -->

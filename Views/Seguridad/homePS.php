@@ -52,18 +52,16 @@
 
 </head>
 
-<body class="position-relative" style="overflow-y: scroll;"></body>
+<body>
 
     <?php
     include '../../components/menu.php';
+    include '../../components/headerInclude.php';
 ?>
     <div class="custom-mouse d-flex justify-content-center align-items-center">
         <span class="text-black fw-bolder clicki">CLICK</span>
     </div>
-    <!-- /# sidebar -->
-    <?php
-    include '../../components/headerInclude.php';
-?>
+
     
     <main id="dash-container" class="container-fluid position-relative">
         <section class="mt-5">
@@ -307,29 +305,6 @@
     <!-- <script src="../Dashboard/js/lib/toastr/toastr.min.js"></script>
     <script src="../Dashboard/js/lib/toastr/toastr.init.js"></script> -->
 
-    <script>
-        //menu icon on Navbar
-        $('#menu-btn').click(() => {
-
-            $('#menu-modal').attr('transition-style', 'in:wipe:down')
-            $('#menu-modal').css({
-                display: 'block'
-            })
-            $('body').css({
-                overflowY: "hidden"
-            })
-        })
-
-        //close icon on modal
-        $('#close').click(() => {
-
-            $('#menu-modal').attr('transition-style', 'out:wipe:down')
-            $('body').css({
-                overflowY: "scroll"
-            })
-
-        })
-    </script>
 </body>
 
 </html>
