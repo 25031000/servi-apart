@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-10-2023 a las 05:20:30
+-- Tiempo de generación: 31-10-2023 a las 00:25:44
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -52,9 +52,12 @@ CREATE TABLE `novedad_vehiculo` (
 --
 
 INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`) VALUES
-(3, 'AIO654', 'rayon en el lado izquierdo del automovil', 537837838, '2023-09-19 14:19:59'),
-(4, 'eee111', 'fuga de aceite', 537837838, '2023-09-19 14:19:59'),
-(5, 'QRP456', 'llanta pinchada', 2147483647, '2023-09-19 14:19:59');
+(6, 'NJI164', 'Ventana de conductor abierta', 123456879, '2023-10-30 18:17:29'),
+(7, 'NUI189', 'luz trasera fragmentada', 123456879, '2023-10-30 18:18:26'),
+(9, 'MDO89Y', 'llanta trasera pinchada', 123456879, '2023-10-30 18:21:08'),
+(10, 'JYP10L', 'rayon en el costado derecho', 123456879, '2023-10-30 18:21:52'),
+(12, 'KJH654', 'sin la tapa de gasolina', 123456879, '2023-10-30 18:24:07'),
+(13, 'JAD231', 'aboyadura en la parte trasera del vehiculo', 123456879, '2023-10-30 18:25:05');
 
 -- --------------------------------------------------------
 
@@ -167,7 +170,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
+(1, 'CC', 'Administrador', 'Cuenta', 'administrador@gmail.com', '00000000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '', ''),
+(123, 'CC', 'Residente', 'Cuenta', 'residente@gmail.com', '0000000000000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, 'A', '501'),
 (231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariospng-clipart-service-information-business-organization-management-administrator-miscellaneous-face.png', '1', '101'),
+(321, 'CC', 'Guarda', 'Cuenta', 'guardaseguridad@gmail.com', '0000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '', ''),
 (999, 'CC', 'ronald', 'rodriguez', 'ronal@gmail.com', '222222', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '4', 'b-23'),
 (4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
 (35354, 'CE', 'Andres', 'garzon', 'garzon@gmail.com', '3194564165', '35354', 'Residente', 'Activo', '../Uploads/Usuarios/3.jfif', 'B', '609'),
@@ -204,10 +210,13 @@ CREATE TABLE `vehiculo` (
 --
 
 INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`) VALUES
-(6456456, 'AIO654', 'chevrolet', 'AVEO', 2010, '2023-09-06 00:00:00', '../Uploads/vehiculos/8.jfif', '../Uploads/vehiculos/9.jfif', '../Uploads/vehiculos/10.jfif', '../Uploads/vehiculos/11.jfif'),
-(231, 'eee111', 'nissan', 'explores', 35435, '2023-09-06 00:00:00', '../Uploads/vehiculos/f.jpg', '../Uploads/vehiculos/', '../Uploads/vehiculos/', '../Uploads/vehiculos/'),
-(231, 'PPP123', 'chevrolet', 'Vitara', 2008, '2023-10-01 17:13:38', '../Uploads/vehiculos/10-770x578.jpg', '../Uploads/vehiculos/', '../Uploads/vehiculos/', '../Uploads/vehiculos/'),
-(354534, 'QRP456', 'mazda', 'CR5', 2023, '2023-09-08 00:00:00', '../Uploads/vehiculos/20.jfif', '../Uploads/vehiculos/21.jfif', '../Uploads/vehiculos/22.jfif', '../Uploads/vehiculos/23.jfif');
+(563453783, 'JAD231', 'chevrolet', 'Aveo', 2010, '2023-10-30 18:03:32', '../Uploads/vehiculos/1200px-07_Chevrolet_Aveo.jpg', '../Uploads/vehiculos/aveo.png', '../Uploads/vehiculos/1200px-07_Chevrolet_Aveo.jpg', '../Uploads/vehiculos/kfz74363255_chevrolet-aveo-fv297wx-1.jpg'),
+(6456456, 'JYP10L', 'suzuki-motos', 'Gixxer 250', 2020, '2023-10-30 18:07:03', '../Uploads/vehiculos/373074099_6854829611245694_7728345865232265779_n.jpg', '../Uploads/vehiculos/376613450_6759346867448988_857412316125683335_n.jpg', '../Uploads/vehiculos/377142517_7133066106743679_6546180573538173479_n.jpg', '../Uploads/vehiculos/379925709_6791518704232916_5010015788712805100_n.jpg'),
+(123, 'KJH654', 'ford', 'Mustang', 2021, '2023-10-30 18:04:37', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-2.jpg', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-5.jpg', '../Uploads/vehiculos/C4owTPPOhKCYMAZ.jpg', '../Uploads/vehiculos/ford_mustang_36-1440x960.jpg'),
+(999, 'MDO89Y', 'royal-enfield', 'Himalayan', 2022, '2023-10-30 18:08:14', '../Uploads/vehiculos/385038190_10229709550101568_6522253390091800740_n.jpg', '../Uploads/vehiculos/385066547_10229709549821561_8669995821190450946_n.jpg', '../Uploads/vehiculos/385776850_10229709550381575_2953303067214096847_n.jpg', '../Uploads/vehiculos/385905058_10229709550861587_2624138796443913553_n.jpg'),
+(231, 'NJI164', 'chevrolet', 'Camaro', 2018, '2023-10-30 18:13:53', '../Uploads/vehiculos/descarga (1).jpg', '../Uploads/vehiculos/descarga (2).jpg', '../Uploads/vehiculos/descarga (3).jpg', '../Uploads/vehiculos/aaaaaaaa.jpeg'),
+(231, 'NUI189', 'toyota', 'Hilux', 2009, '2023-10-30 18:09:22', '../Uploads/vehiculos/387051147_10161032564347829_5498429313744374518_n.jpg', '../Uploads/vehiculos/387149993_10161032563542829_5955634481596939495_n.jpg', '../Uploads/vehiculos/387815411_10161032564397829_3618727748125337355_n.jpg', '../Uploads/vehiculos/toyota_hilux_2018_diesel_toyota_hilux_2018_automatica_4x4_full_28_7770127685556873237.jpg'),
+(321654987, 'XDL458', 'jeep', 'Wrangler', 2020, '2023-10-30 18:05:52', '../Uploads/vehiculos/118648004_324394212337259_463587677140842316_n.jpg', '../Uploads/vehiculos/118744016_324394219003925_6714623843598140147_n.jpg', '../Uploads/vehiculos/118788046_324394205670593_3565358998563215441_n.jpg', '../Uploads/vehiculos/118805529_324394202337260_8295620494356773503_n.jpg');
 
 --
 -- Índices para tablas volcadas
@@ -275,7 +284,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
