@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .custom-mouse {
@@ -78,8 +77,9 @@
     transform: scale(1.01);
 }
 
-/* estilos de imagenes del modulo de salon comunal */
-
+footer{
+   width: 100vw; 
+}
 
 
 

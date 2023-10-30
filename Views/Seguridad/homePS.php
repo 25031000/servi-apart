@@ -14,38 +14,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi-Apart</title>
+    <title>Home</title>
     <!-- <link href="../../assets/css/style.css" rel="stylesheet"> -->
 
-    <!-- ================= Favicon ================== -->
-    <!-- Standard -->
-    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
-    <!-- Retina iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
-    <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
-    <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
-    <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
-
-    <!-- Styles -->
-    <link href="../dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/themify-icons.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
-    <link href="../dashboard/css/style.css" rel="stylesheet">
-
-    <!-- Custom styles -->
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../Seguridad/css/home.css">
+    <!-- Custom styles -->
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
+    
+    <!-- estilos seguridad home -->
+    <link rel="stylesheet" href="../Seguridad/css/home.css">
+    
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     
@@ -113,8 +95,8 @@
             </div>
         </section>
     </main>
-    <footer class="row border py-3 mt-5 bg-light">
-        <div class="col-lg-12 footer">
+    <footer class=" border container-fluid py-3 mt-5 bg-light">
+        <div class="w-100">
                 <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
         </div>
     </footer>
