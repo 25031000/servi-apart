@@ -75,8 +75,9 @@
                         </div>
 
                         <div class="d-flex flex-column mb-3">
-                            <label for="" class="py-2">Apartamento</label>
-                            <input type="text" name="descripcion" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input">
+                            <label for="" class="py-2">Descripcion</label>
+                            <textarea name="textarea" rows="5" cols="40" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input">
+                        </textarea> 
                         </div>
 
                         <div class="d-flex flex-column  mt-3">
