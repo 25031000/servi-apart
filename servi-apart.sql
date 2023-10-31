@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2023 a las 00:25:44
+-- Tiempo de generación: 31-10-2023 a las 16:55:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -170,10 +170,10 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
-(1, 'CC', 'Administrador', 'Cuenta', 'administrador@gmail.com', '00000000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '', ''),
+(1, 'CC', 'Administrador', 'Cuenta', 'administrador@gmail.com', '00000000', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, '', ''),
 (123, 'CC', 'Residente', 'Cuenta', 'residente@gmail.com', '0000000000000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, 'A', '501'),
 (231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariospng-clipart-service-information-business-organization-management-administrator-miscellaneous-face.png', '1', '101'),
-(321, 'CC', 'Guarda', 'Cuenta', 'guardaseguridad@gmail.com', '0000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '', ''),
+(321, 'CC', 'Guarda', 'Cuenta', 'guardaseguridad@gmail.com', '0000', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', NULL, '', ''),
 (999, 'CC', 'ronald', 'rodriguez', 'ronal@gmail.com', '222222', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '4', 'b-23'),
 (4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
 (35354, 'CE', 'Andres', 'garzon', 'garzon@gmail.com', '3194564165', '35354', 'Residente', 'Activo', '../Uploads/Usuarios/3.jfif', 'B', '609'),
