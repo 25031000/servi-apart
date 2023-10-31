@@ -14,7 +14,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi-Apart</title>
+    <title>Servi - Apart</title>
 
     <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
@@ -80,7 +80,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                 <!-- /# row -->
                 <section id="main-content" class="lista_vehiculos" style="padding: 20px 0">
                     <div class="row">
-                        <div class="col-lg-6">
+                        <div class="col-lg-7">
                             <div class="card vehiculos_ver" style="width:95%">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
@@ -111,7 +111,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                             </div>
                         </div>
                         <!-- /# column -->
-                        <div id="grid" class="col-lg-5 p-0 m-0 grid-collage">
+                        <div id="grid" class="col-lg-5 grid-collage" style="margin-left:-50px; padding-left:40px">
                             <img src="../administrador/images/horizontal2.jpg" width="100%" height="100%" alt="">
                             <img src="../administrador/images/vertical.jpg" alt="">
                             <img src="../administrador/images/horizontal.jpg" width="100%" height="100%" alt="">

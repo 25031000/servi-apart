@@ -20,6 +20,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
     <title>Servi - Apart</title>
 
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <!-- Common -->
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
@@ -41,7 +44,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
-<body style="height:1200px">
+<body style="height:1200px" class="container-fluid">
 
     <?php
     include '../../components/menu.php';
@@ -61,7 +64,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Novedades</h1>
-                                <p>Como administrador, accede al historial de novedades de vehículos realizadas por el
+                                <p>Como residente y propietario, accede al historial de novedades de tus vehículos realizadas por el
                                     personal de seguridad de nuestro conjunto</p>
                             </div>
                         </div>
@@ -80,7 +83,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         </div>
                     </div>
 
-                    <div style="display: flex; justify-content: end; width: 56%; margin-top:-20px">
+                    <div style="display: flex; justify-content: end; width: 58.7%; margin-top:-20px">
                         <?php
                         $placa = $_GET['placa'];
 
@@ -94,15 +97,15 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                 <section id="main-content" class="lista_vehiculos" style="padding: 20px 0; margin-left:15px">
                     <div class="row">
                         <div class="col-lg-7">
-                            <div class="card vehiculos_ver" style="width:95%">
+                            <div class="card vehiculos_ver" style="width:100%">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                <th style="font-size:17px">Placa</th>
+                                                    <th style="font-size:17px">Placa</th>
                                                     <th style="font-size:17px">Descripción de novedad</th>
-                                                    <th style="font-size:17px">Fecha Revision</th>
+                                                    <th style="font-size:17px">Fecha Revisi+on</th>
                                                     <th style="font-size:17px">Identificación guarda</th>
                                                     <th style="font-size:17px">Guarda encargado</th>
                                                 </tr>
@@ -122,15 +125,21 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
                             </div>
                         </div>
-                        <!-- /# column -->
-                        <div id="grid" class="col-lg-4 p-0 m-0 grid-collage">
-                            <img src="../administrador/images/horizontal2.jpg" width="100%" height="100%" alt="">
-                            <img src="../administrador/images/vertical.jpg" alt="">
-                            <img src="../administrador/images/horizontal.jpg" width="100%" height="100%" alt="">
+
+                        <div class="col-lg-5">
+                            <?php
+
+                            cargarFotosRes();
+
+                            ?>
                         </div>
+                        <!-- /# column -->
+
 
                         <!-- /# column -->
                     </div>
+
+
 
 
                     <div class="row">

@@ -149,7 +149,7 @@ function cargarVehiculosResidente(){
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
-                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-detalles" style="background: #FF914D; width:45px"><img src="../../assets/icons/mas.png" width="20px" style="margin-right:3px"></a></td>
+                <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/mas.png" width="20px" style="margin-right:3px"></a></td>
 
             </tr>     
             ';
@@ -188,6 +188,8 @@ function cargarNovedadesResidente()
 
 
             </tr>   
+
+            
             
 
             ';
@@ -213,11 +215,11 @@ function cargarFotosVehiculoRes(){
         echo '        
         
         
-        <div class="row container-fluid" style="margin-top:20px">
+        <div class="row container-fluid">
             <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
                 <div class="page-title">
-                <h1 style="font-size:50px">Vehiculo con placa <span style="font-size:50px; font-weight: 800; color:#FF914D">' . $f['placa'] . '</span>
+                <h1 style="font-size:50px">Vehículo con placa <span style="font-size:50px; font-weight: 800; color:#FF914D">' . $f['placa'] . '</span>
                 </h1>
                 </div>
             </div>
@@ -230,7 +232,7 @@ function cargarFotosVehiculoRes(){
                 <li class="breadcrumb-item">
                   <a href="#" style="color: #18d26e">Residente</a>
                 </li>
-                <li class="breadcrumb-item active">Ver datos de vehiculo</li>
+                <li class="breadcrumb-item active">Ver datos de vehículo</li>
               </ol>
             </div>
           </div>
@@ -242,9 +244,9 @@ function cargarFotosVehiculoRes(){
 
 
 
-      <div class="row" style="display:flex; align-items:center; margin-left:30px">
+      <div class="row" style="display:flex; align-items:center; margin-left:20px">
       <div class="col-lg-5">
-      <div id="carouselExampleDark" class="carousel carousel-dark slide" >
+      <div id="carouselExampleDark" class="carousel slide" >
   <div class="carousel-indicators" >
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -266,10 +268,10 @@ function cargarFotosVehiculoRes(){
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <img src="../../assets/icons/prev.png">
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <img src="../../assets/icons/next.png">
   </button>
  </div>
     </div>
@@ -283,7 +285,7 @@ function cargarFotosVehiculoRes(){
                             <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 
-                            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data"  class="p-5 pack-form" style="margin-top:15%">
+                            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data"  class="p-5 pack-form" style="margin-top:3%">
                         <div class="row">
                         <div class="row">
                     <div class="d-flex flex-column mb-3">
@@ -291,23 +293,23 @@ function cargarFotosVehiculoRes(){
                         </div>  
                             <div class="form-group col-md-4">
                                 <label>Placa:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                                <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa" style="width:100%">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Marca:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+                                <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca" style="width:100%">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Referencia:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+                                <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="width:100%">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Modelo:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:90%">
+                                <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:100%">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Fecha Registro:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:90%">
+                                <label>Fecha de Registro:</label>
+                                <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:100%">
                             </div>
                             
 
@@ -370,6 +372,66 @@ function cargarPaquetesRes(string $identificacion){
     }, $arr); 
     }
     
+
+}
+
+
+function cargarFotosRes()
+{
+
+    $placa = $_GET['placa'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarFotosVehiculoAdmin($placa);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo '        
+        
+
+      <div class="row" style="margin-left:40px">
+          <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel" style="width: 650px">
+  <div class="carousel-indicators" style="width: 500px">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner carrusel" style="width: 650px">
+    <div class="carousel-item active">
+        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
+    </div>
+    <div class="carousel-item" >
+        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
+    </div>
+    <div class="carousel-item" >
+        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
+    </div>
+    <div class="carousel-item" >
+        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+  <img src="../../assets/icons/prev.png">
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <img src="../../assets/icons/next.png">
+  </button>
+ </div>
+
+
+
+
+
+        ';
+
+
+
+
+    }
 
 }
 
