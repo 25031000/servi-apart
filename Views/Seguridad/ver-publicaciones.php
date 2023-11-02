@@ -36,8 +36,8 @@
 <body style="font-family: 'Varela Round', sans-serif !important;" >
 
 <?php
-    include '../../components/menu.php';
-    include '../../components/headerInclude.php';
+    include '../../components/menuPS.php';
+    include '../../components/headerIncludePS.php';
 
     
     ?>
