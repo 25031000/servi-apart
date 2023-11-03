@@ -64,7 +64,7 @@ if($apartamento !== ''  && $remitente !== '' && $torre !== ''){
             showConfirmButton: false,
             timer: 2000
         }).then((result)=>{
-            location.href='../Views/Administrador/registrar-paquete.php';
+            window.history.back();
         })
     </script>
     <?php 

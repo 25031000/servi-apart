@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/menu.css">
+<!-- <link rel="stylesheet" href="css/menu.css"> -->
 <main transition-style="in:wipe:down" id="menu-modal" class="p-0 position-absolute top-0 left-0 container-fluid">
     <div id="title" class="position-absolute d-none d-md-block">
         <h2 class="text-end ">SERVI</h2>
@@ -14,7 +14,7 @@
         <nav class="list  m-0 ms-md-5">
             <div role="button" id="first-li"
                 class="list-group-item  item-list  d-flex align-items-center justify-content-between text-white py-2 w-auto ">
-                <a href="ver-paquetes.php" class="chocolate">Paqueteria</a>
+                <a href="paqueteria.php" class="chocolate">Paqueteria</a>
 
                 <div>
                     <img class="first-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">

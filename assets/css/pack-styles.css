@@ -124,6 +124,16 @@ html{
     justify-content: center;
     min-width: 25.25rem;
 }
+
+.pack-form-ps{
+    border-radius: 0.625rem;
+    box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 25.25rem;
+}
 /*
 estilos del formulario de residente en salon comunal
 */
@@ -147,6 +157,17 @@ estilos del formulario de residente en salon comunal
 }
 
 .grid-collage{
+    display: grid;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+                        "img1 img3"
+                        "img2 img3";
+}
+
+.grid-collage-ps{
     display: grid;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
@@ -187,6 +208,18 @@ estilos del formulario de residente en salon comunal
         display: none;
     }
     .pack-form{
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 902px){
+    .grid-collage-ps{
+        display: none;
+    }
+    .pack-form-ps{
         width: 80%;
         display: flex;
         margin: 0 auto;

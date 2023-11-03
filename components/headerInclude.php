@@ -34,6 +34,10 @@
     [transition-style="out:wipe:down"] {
       animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-down both;
     }
+
+    header{
+      box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff !important;
+    }
   </style>
 </head>
 
