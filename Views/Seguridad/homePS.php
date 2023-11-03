@@ -1,8 +1,8 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadPS.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadPS.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 
@@ -24,27 +24,27 @@
     <!-- Custom styles -->
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
-    
+
     <!-- estilos seguridad home -->
     <link rel="stylesheet" href="../Seguridad/css/home.css">
-    
+
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
-    
+
 
 </head>
 
 <body>
 
     <?php
-    include '../../components/menu.php';
-    include '../../components/headerInclude.php';
-?>
+    include '../../components/menuPS.php';
+    include '../../components/headerIncludePS.php';
+    ?>
     <div class="custom-mouse d-flex justify-content-center align-items-center">
         <span class="text-black fw-bolder clicki">CLICK</span>
     </div>
 
-    
+
     <main id="dash-container" class="container-fluid position-relative">
         <section class="mt-5">
             <div class="portada text-center d-flex align-items-center justify-content-center">
@@ -58,7 +58,7 @@
                         <img class="w-100  rounded-top img-module h-100" src="./images/estacionamiento.jpg" alt="">
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
-                        <a href="ver-vehiculos.php"><p class="  p-0  w-100 mb-0">Vehiculos</p></a>
+                        <a href="ver-vehiculos.php" style="text-decoration: none; color: black;"><p class="  p-0  w-100 mb-0">Vehiculos</p></a>
                         
                     </div>
                 </section>
@@ -67,40 +67,43 @@
                         <img class="w-100  rounded-top img-module h-100" src="./images/paqueteria.jpg" alt="">
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom m-0  py-3">
-                        <p class=" p-0  w-100 mb-0">Paqueteria</p>
-                        
+                    <a href="paqueteria.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">paqueteria</a>
                     </div>
                 </section>
-                
+
             </div>
             <div class="row px-3 mt-5 justify-content-center gap-5">
-            <section role="button" class="col-md-5 module  p-0 d-flex flex-column justify-content-center ">
+                <section role="button" class="col-md-5 module  p-0 d-flex flex-column justify-content-center ">
                     <div class="">
                         <img class="w-100  rounded-top img-module h-100" src="./images/saloncomunal.jpg" alt="">
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
-                        <p class="  p-0  w-100 mb-0">Salon comunal</p>
-                       
+                    <a href="salonComunal.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">Salon Comunal</a>
+
                     </div>
                 </section>
 
-               
+
                 <section role="button" class="col-md-5 module   p-0 d-flex flex-column ">
                     <div class="">
-                    <a href="ver-publicaciones.php">
-                        <img class="w-100  rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
+                        <a href="ver-publicaciones.php">
+                            <img class="w-100 rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
+                        </a>
                     </div>
-                    <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom  py-3">
-                        <p class=" p-0  w-100 mb-0">Publicaciones</p> </a>
-                        
+                    <div class="border text-center fs-3 d-flex rounded-bottom py-3">
+                        <a href="ver-publicaciones.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">Publicaciones</a>
                     </div>
                 </section>
+
             </div>
         </section>
     </main>
     <footer class=" border container-fluid py-3 mt-5 bg-light">
         <div class="w-100">
-                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+            <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
         </div>
     </footer>
 
@@ -116,33 +119,33 @@
     <script src="../Dashboard/js/lib/menubar/sidebar.js"></script>
     <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
     <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
-    
-    
-    <script>
-                document.addEventListener("mousemove", (e)=>{
-                    let mouseX = e.clientX;
-                    let mouseY = e.clientY;
-        
-                    $('.custom-mouse').css({
-                        transform: `translate(${mouseX}px, ${mouseY}px)`,
-                    })
-                })
-        
-                $('.img-module').mouseover((e)=>{
-                    $('.custom-mouse').css({
-                        opacity: 1
-                    })
-                })
 
-                $('.img-module').mouseleave((e)=>{
-                    $('.custom-mouse').css({
-                        opacity: 0
-                    })
-                })
-        
-                
-        
-            </script>
+
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+
+            $('.custom-mouse').css({
+                transform: `translate(${mouseX}px, ${mouseY}px)`,
+            })
+        })
+
+        $('.img-module').mouseover((e) => {
+            $('.custom-mouse').css({
+                opacity: 1
+            })
+        })
+
+        $('.img-module').mouseleave((e) => {
+            $('.custom-mouse').css({
+                opacity: 0
+            })
+        })
+
+
+
+    </script>
     <script src="../Dashboard/js/scripts.js"></script>
     <!-- Calender -->
     <!-- <script src="../Dashboard/js/lib/jquery-ui/jquery-ui.min.js"></script>
@@ -151,7 +154,7 @@
     <script src="../Dashboard/js/lib/calendar/fullcalendar-init.js"></script> -->
 
     <!--  Flot Chart -->
-   <!--  <script src="../Dashboard/js/lib/flot-chart/excanvas.min.js"></script>
+    <!--  <script src="../Dashboard/js/lib/flot-chart/excanvas.min.js"></script>
     <script src="../Dashboard/js/lib/flot-chart/jquery.flot.js"></script>
     <script src="../Dashboard/js/lib/flot-chart/jquery.flot.pie.js"></script>
     <script src="../Dashboard/js/lib/flot-chart/jquery.flot.time.js"></script>
@@ -163,7 +166,7 @@
     <script src="../Dashboard/js/lib/flot-chart/flot-chart-init.js"></script> -->
 
     <!--  Chartist -->
-   <!--  <script src="../Dashboard/js/lib/chartist/chartist.min.js"></script>
+    <!--  <script src="../Dashboard/js/lib/chartist/chartist.min.js"></script>
     <script src="../Dashboard/js/lib/chartist/chartist-plugin-tooltip.min.js"></script>
     <script src="../Dashboard/js/lib/chartist/chartist-init.js"></script> -->
 
@@ -172,11 +175,11 @@
     <script src="../Dashboard/js/lib/chart-js/chartjs-init.js"></script> -->
 
     <!--  Knob -->
-   <!--  <script src="../Dashboard/js/lib/knob/jquery.knob.min.js "></script>
+    <!--  <script src="../Dashboard/js/lib/knob/jquery.knob.min.js "></script>
     <script src="../Dashboard/js/lib/knob/knob.init.js "></script> -->
 
     <!--  Morris -->
-   <!--  <script src="../Dashboard/js/lib/morris-chart/raphael-min.js"></script>
+    <!--  <script src="../Dashboard/js/lib/morris-chart/raphael-min.js"></script>
     <script src="../Dashboard/js/lib/morris-chart/morris.js"></script>
     <script src="../Dashboard/js/lib/morris-chart/morris-init.js"></script> -->
 
@@ -222,17 +225,17 @@
     <script src="../Dashboard/js/lib/weather/weather-init.js"></script> -->
 
     <!--  Owl Carousel -->
-   <!--  <script src="../Dashboard/js/lib/owl-carousel/owl.carousel.min.js"></script>
+    <!--  <script src="../Dashboard/js/lib/owl-carousel/owl.carousel.min.js"></script>
     <script src="../Dashboard/js/lib/owl-carousel/owl.carousel-init.js"></script> -->
 
     <!--  Calender 2 -->
-<!--     <script src="../Dashboard/js/lib/calendar-2/moment.latest.min.js"></script>
+    <!--     <script src="../Dashboard/js/lib/calendar-2/moment.latest.min.js"></script>
     <script src="../Dashboard/js/lib/calendar-2/pignose.calendar.min.js"></script>
     <script src="../Dashboard/js/lib/calendar-2/pignose.init.js"></script> -->
 
 
     <!-- Datatable -->
-<!--     <script src="../Dashboard/js/lib/data-table/datatables.min.js"></script>
+    <!--     <script src="../Dashboard/js/lib/data-table/datatables.min.js"></script>
     <script src="../Dashboard/js/lib/data-table/buttons.dataTables.min.js"></script>
     <script src="../Dashboard/js/lib/data-table/dataTables.buttons.min.js"></script>
     <script src="../Dashboard/js/lib/data-table/buttons.flash.min.js"></script>
@@ -244,7 +247,7 @@
     <script src="../Dashboard/js/lib/data-table/datatables-init.js"></script> -->
 
     <!-- JS Grid -->
- <!--    <script src="../Dashboard/js/lib/jsgrid/db.js"></script>
+    <!--    <script src="../Dashboard/js/lib/jsgrid/db.js"></script>
     <script src="../Dashboard/js/lib/jsgrid/jsgrid.core.js"></script>
     <script src="../Dashboard/js/lib/jsgrid/jsgrid.load-indicator.js"></script>
     <script src="../Dashboard/js/lib/jsgrid/jsgrid.load-strategies.js"></script>
@@ -264,7 +267,7 @@
     <script src="../Dashboard/js/lib/datamap/datamap-init.js"></script> -->
 
     <!--  Nestable -->
-   <!--  <script src="../Dashboard/js/lib/nestable/jquery.nestable.js"></script>
+    <!--  <script src="../Dashboard/js/lib/nestable/jquery.nestable.js"></script>
     <script src="../Dashboard/js/lib/nestable/nestable.init.js"></script> -->
 
     <!--ION Range Slider JS-->
@@ -274,11 +277,11 @@
     <script src="../Dashboard/js/lib/rangeSlider/rangeslider.init.js"></script> -->
 
     <!-- Bar Rating-->
-  <!--   <script src="../Dashboard/js/lib/barRating/jquery.barrating.js"></script>
+    <!--   <script src="../Dashboard/js/lib/barRating/jquery.barrating.js"></script>
     <script src="../Dashboard/js/lib/barRating/barRating.init.js"></script> -->
 
     <!-- jRate -->
-  <!--   <script src="../Dashboard/js/lib/rating1/jRate.min.js"></script>
+    <!--   <script src="../Dashboard/js/lib/rating1/jRate.min.js"></script>
     <script src="../Dashboard/js/lib/rating1/jRate.init.js"></script> -->
 
     <!-- Sweet Alert -->
