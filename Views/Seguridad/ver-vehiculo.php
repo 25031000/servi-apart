@@ -1,9 +1,10 @@
 <?php
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
-require_once("../../Models/seguridadResidente.php");
-require_once("../../Controllers/mostrarInfoResidente.php");
+require_once("../../Models/seguridadPS.php");
+require_once("../../Controllers/mostrarInfoGuarda.php");
 ?>
+
 
 
 <!DOCTYPE html>
@@ -18,10 +19,13 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
     <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
+    <!-- Common -->
+    <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
+    <link href="../Dashboard/css/style.css" rel="stylesheet">
 
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
@@ -29,46 +33,54 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 
 
 
 </head>
 
-<body class="container-fluid">
+<body>
 
     <?php
     include '../../components/menu.php';
     include '../../components/headerInclude.php';
-
-
     ?>
 
 
 
 
-
-    <div class="content-wrap mt-4" style="margin-left:43px;">
+    <div class="content-wrap container-fluid">
         <div class="main">
-            <div class="">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 p-r-0 title-margin-right">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title">
-                                <h1 id="tl_v_vehiculos">Mis Vehículos</h1>
-                                <p>Visualiza y gestiona tus vehículos registrados en el sistema. Además, podrás ver las
-                                    novedades realizadas por el personal de seguridad para cada uno de tus vehículos.
-                                </p>
+                            <div class="page-title d-flex align-items-center">
+                                <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/carro-ver.png"
+                                        style="width: 48px; height: 48px !important" alt="">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Ver Vehículos</h1>
                             </div>
+                            <p class="mt-4" style="margin-bottom: -20px; margin-top: 20px;">Este módulo te permite acceder a la
+                                información de los vehículos registrados en nuestro sistema, brindándote las
+                                herramientas necesarias para una supervisión efectiva y un control integral de la
+                                seguridad en nuestras instalaciones.</p>
+
                         </div>
                     </div>
                     <!-- /# column -->
-                    <div class="col-lg-6 p-l-0 title-margin-left">
+                    <div class="col-lg-4 p-l-0 ">
                         <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb" style="margin-left:72%">
+                            <div class="page-title" style="display:flex; justify-content: end;">
+                                <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a style="color: #18d26e">Residente</a>
+                                        <a style="color: #18d26e">Guarda de Seguridad</a>
                                     </li>
                                     <li class="breadcrumb-item active">Ver Vehículos</li>
                                 </ol>
@@ -77,29 +89,34 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                     </div>
                     <!-- /# column -->
                 </div>
+
+
+
                 <!-- /# row -->
-                <section id="main-content" class="lista_vehiculos mt-3" style="padding: 20px 0">
+                <section id="main-content" class="lista_vehiculos mt-4">
                     <div class="row">
-                        <div class="col-lg-7">
-                            <div class="card vehiculos_ver" style="width:95%">
-                                <div class="card-body card-ver">
+                        <div class="col-lg-12">
+                            <div class="card vehiculos_ver">
+                                <div class="">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr class="filas_vehiculos">
-                                                    <th style="font-size:18px">Placa</th>
-                                                    <th style="font-size:18px">Marca</th>
-                                                    <th style="font-size:18px">Referencia</th>
-                                                    <th style="font-size:18px">Modelo</th>
-                                                    <th style="text-align:center; font-size:18px">Novedades</th>
-                                                    <th style="text-align:center; font-size:18px">Más detalles</th>
+                                                    <th style="font-size:17px">Placa</th>
+                                                    <th style="font-size:17px">Marca</th>
+                                                    <th style="font-size:17px">Referencia</th>
+                                                    <th style="font-size:17px">Modelo</th>
+                                                    <th style="font-size:17px">Identificación Propietario</th>
+                                                    <th style="font-size:17px">Fecha de Registro</th>
+                                                    <th style="text-align:center; font-size:17px">Novedades</th>
+                                                    <th style="text-align:center; font-size:17px">Más detalles</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
 
-                                                cargarVehiculosResidente();
-
+                                                cargarVehiculosPS();
+                                                
                                                 ?>
                                             </tbody>
                                         </table>
@@ -109,13 +126,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
                             </div>
+
                         </div>
                         <!-- /# column -->
-                        <div id="grid" class="col-lg-5 grid-collage" style="margin-left:-50px; padding-left:40px">
-                            <img src="../administrador/images/horizontal2.jpg" width="100%" height="100%" alt="">
-                            <img src="../administrador/images/vertical.jpg" alt="">
-                            <img src="../administrador/images/horizontal.jpg" width="100%" height="100%" alt="">
-                        </div>
 
                         <!-- /# column -->
                     </div>

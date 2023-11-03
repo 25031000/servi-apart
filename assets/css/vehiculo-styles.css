@@ -124,10 +124,7 @@
     border: 1px solid #e27d3e;
     color: white;
 }
-.txt-pdf {
-    color: rgb(0, 0, 0);
-    font-weight: 400;
-}
+
 .txt-pdf:hover {
     color: rgb(0, 0, 0);
     font-weight: 400;

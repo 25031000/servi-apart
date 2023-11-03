@@ -1,8 +1,8 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadPS.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadPS.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 
@@ -37,9 +37,9 @@
 <body>
 
     <?php
-    include '../../components/menu.php';
-    include '../../components/headerInclude.php';
-?>
+    include '../../components/menuPS.php';
+    include '../../components/headerIncludePS.php';
+    ?>
     <div class="custom-mouse d-flex justify-content-center align-items-center">
         <span class="text-black fw-bolder clicki">CLICK</span>
     </div>
@@ -57,9 +57,9 @@
                     <div class="">
                         <img class="w-100  rounded-top img-module h-100" src="./images/estacionamiento.jpg" alt="">
                     </div>
-                    <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
-                        <p class="  p-0  w-100 mb-0">Vehiculos</p>
-
+                    <div class="border text-center fs-3 d-flex rounded-bottom py-3">
+                        <a href="ver-vehiculo.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">Vehículos</a>
                     </div>
                 </section>
                 <section role="button" class="col-md-5 module  p-0 d-flex flex-column ">
@@ -67,8 +67,8 @@
                         <img class="w-100  rounded-top img-module h-100" src="./images/paqueteria.jpg" alt="">
                     </div>
                     <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom m-0  py-3">
-                        <p class=" p-0  w-100 mb-0">Paqueteria</p>
-
+                        <a href="paqueteria.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">paqueteria</a>
                     </div>
                 </section>
 
@@ -79,7 +79,8 @@
                         <img class="w-100  rounded-top img-module h-100" src="./images/saloncomunal.jpg" alt="">
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
-                        <p class="  p-0  w-100 mb-0">Salon comunal</p>
+                        <a href="salonComunal.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">Salon Comunal</a>
 
                     </div>
                 </section>
@@ -88,13 +89,15 @@
                 <section role="button" class="col-md-5 module   p-0 d-flex flex-column ">
                     <div class="">
                         <a href="ver-publicaciones.php">
-                            <img class="w-100  rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
+                            <img class="w-100 rounded-top img-module h-100" src="./images/publicaciones.jpg" alt="">
+                        </a>
                     </div>
-                    <div class="border  text-center align-items-center  fs-3 d-flex rounded-bottom  py-3">
-                        <p class=" p-0  w-100 mb-0">Publicaciones</p> </a>
-
+                    <div class="border text-center fs-3 d-flex rounded-bottom py-3">
+                        <a href="ver-publicaciones.php" class="p-0 w-100 mb-0 publico"
+                            style="text-decoration: none; color: black;">Publicaciones</a>
                     </div>
                 </section>
+
             </div>
         </section>
     </main>
@@ -106,7 +109,9 @@
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
