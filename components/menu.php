@@ -23,7 +23,16 @@
 
             <div id="second-li" role="button"
                 class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
-                <a href="ver-vehiculo.php" class="chocolate">Vehiculos</a>
+                <a href="ver-vehiculo.php" class="chocolate">Vehículos</a>
+
+                <div>
+                    <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
+                </div>
+            </div>
+
+            <div id="second-li" role="button"
+                class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
+                <a href="registrar-novedad.php" class="chocolate">Registrar Novedades</a>
 
                 <div>
                     <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
