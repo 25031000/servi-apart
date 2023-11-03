@@ -187,7 +187,7 @@ class Consultas
     }
     public function mostrarUsuarioRes($identificacion)
     {
-        
+
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -204,7 +204,8 @@ class Consultas
         }
         return $f; */
         $data = $result->fetch(PDO::FETCH_NUM);
-        if($data) return $data;
+        if ($data)
+            return $data;
     }
 
 
@@ -273,6 +274,8 @@ class Consultas
         }
         return $f;
     }
+
+    
 
 
 
@@ -363,7 +366,7 @@ class Consultas
 
         $result->execute();
         echo '<script>alert("Publicacion Eliminada")</script>';
-         echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+        echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
     }
 
 
@@ -526,6 +529,34 @@ class Consultas
         </script>';
     }
 
+    public function modificarNovedadesPS($id_nov, $placa, $identificacion, $novedad)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam("id_nov", $id_nov);
+        $result->bindParam("novedad", $novedad);
+
+        $result->execute();
+
+        echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Seguridad/ver-novedades.php?placa=' . $placa . '";
+            })
+        </script>';
+    }
+
     public function eliminarVehiculosAdmin($placa)
     {
         $objConexion = new Conexion();
@@ -579,6 +610,34 @@ class Consultas
 
     }
 
+
+    public function eliminarNovedadesGuarda($id_nov, $placa)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM novedad_vehiculo Where id_nov=:id_nov";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id_nov", $id_nov);
+
+
+        $result->execute();
+        echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Novedad Eliminada Exitosamente",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Seguridad/ver-novedades.php?placa=' . $placa . '";
+            })
+        </script>';
+
+    }
+
     public function mostrarVehiculosRes($identificacion)
     {
         $f = null;
@@ -599,6 +658,88 @@ class Consultas
         }
         return $f;
     }
+
+    public function registrarNovedadPS($placa, $novedad, $identificacion)
+    {
+
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+
+        // Verificar si la placa existe en la base de datos
+        $consultarPlaca = 'SELECT * FROM vehiculo WHERE placa=:placa';
+        $resultPlaca = $conexion->prepare($consultarPlaca);
+        $resultPlaca->bindParam(":placa", $placa);
+        $resultPlaca->execute();
+        $fPlaca = $resultPlaca->fetch();
+
+        if ($fPlaca) {
+
+
+
+
+
+            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
+            $insertar = "INSERT INTO novedad_vehiculo(placa, novedad, identificacion) 
+            VALUES(:placa, :novedad, :identificacion)";
+
+
+            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+            $result = $conexion->prepare($insertar);
+
+
+            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+            $result->bindParam(":placa", $placa);
+            $result->bindParam(":novedad", $novedad);
+            $result->bindParam(":identificacion", $identificacion);
+
+            //EJECUTAMOS EL INSERT
+            $result->execute();
+
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Novedad registrada exitosamente",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Seguridad/registrar-novedad.php";
+            })
+        </script>';
+
+        } else {
+            // La placa no existe en la base de datos, muestra un mensaje de error
+            echo '<script>
+                
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "La placa que ingresaste no se encuentra en el sistema. Verifica que este bien",
+                    confirmButtonText: "Ok"
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                       location.href="../Views/Seguridad/ver-novedades.php"; 
+                    }
+                    
+                })
+            </script>';
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+
+
 
     public function eliminarUserAdmin($id)
     {
@@ -677,6 +818,8 @@ class Consultas
             $resultIdentificacion->execute();
             $fIdentificacion = $resultIdentificacion->fetch();
 
+
+
             if ($fIdentificacion) {
                 //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
                 $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, foto1, foto2, foto3, foto4) 
@@ -746,7 +889,7 @@ class Consultas
 
     public function insertarPeticion($titulo, $descripcion, $identificacion)
     {
-        
+
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
@@ -898,74 +1041,80 @@ class Consultas
     }
 
 
-        public function actualizarClaveAdmin($identificacion, $claveMd){  
+    public function actualizarClaveAdmin($identificacion, $claveMd)
+    {
 
-    
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":claveMd", $claveMd);
+
+        $result->execute();
+
+        echo '<script>alert("Clave Actualizada")</script>';
+        echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
+    }
+
+    public function getUserByApartament(string $apartamento, string $torre): int
+    {
+        try {
+            $objConexion = new conexion();
+
+            $query = "SELECT * from usuarios WHERE apartamento=:apartamento AND torre=:torre";
+            $statement = $objConexion->get_conexion()->prepare($query);
+
+            $statement->bindParam(":apartamento", $apartamento, PDO::PARAM_INT);
+            $statement->bindParam(":torre", $torre, PDO::PARAM_STR);
+
+            $statement->execute();
+
+            $arr = $statement->fetch(PDO::FETCH_ASSOC);
+            if (!$arr)
+                return -1;
+
+            $userId = intval($arr['identificacion']);
+            return $userId;
+        } catch (\Throwable $th) {
+            return -1;
+        }
+    }
+
+    public function registrarPaquete(int $usuario, string $remitente): bool
+    {
+        try {
             $objConexion = new conexion();
             $conexion = $objConexion->get_conexion();
-        
-            $actualizar = " UPDATE usuarios SET clave=:claveMd WHERE identificacion=:identificacion";
-            $result = $conexion->prepare($actualizar);
-        
-            $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":claveMd", $claveMd);
-            
-            $result->execute();
-        
-            echo '<script>alert("Clave Actualizada")</script>';
-            echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
+
+
+
+            $query = "INSERT INTO paqueteria(usuario, remitente, fecha) VALUES(:usuario, :remitente, NOW())";
+            $statement = $conexion->prepare($query);
+
+            $statement->bindParam(':usuario', $usuario);
+            $statement->bindParam(':remitente', $remitente);
+
+            $response = $statement->execute();
+
+            if (!$response)
+                return false;
+            return true;
+        } catch (\Throwable $th) {
+            echo "Ha ocurrido un problema al registrar el paquete :( " . $th;
         }
+    }
 
-        public function getUserByApartament(string $apartamento, string $torre) : int{
-            try {
-                $objConexion = new conexion();
-                
-                $query = "SELECT * from usuarios WHERE apartamento=:apartamento AND torre=:torre";
-                $statement = $objConexion->get_conexion()->prepare($query);
+    public function mostrarPaquetesAdmin(): array
+    {
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
 
-                $statement->bindParam(":apartamento", $apartamento, PDO::PARAM_INT);
-                $statement->bindParam(":torre", $torre, PDO::PARAM_STR);
-
-                $statement->execute();
-
-                $arr = $statement->fetch(PDO::FETCH_ASSOC);
-                if(!$arr) return -1;
-
-                $userId = intval($arr['identificacion']);
-                return $userId;
-            } catch (\Throwable $th) {
-               return -1;
-            }
-        }
-
-        public function registrarPaquete(int $usuario, string $remitente) : bool{
-            try {
-                $objConexion = new conexion();
-                $conexion = $objConexion->get_conexion();
-
-
-
-                $query = "INSERT INTO paqueteria(usuario, remitente, fecha) VALUES(:usuario, :remitente, NOW())";
-                $statement = $conexion->prepare($query);
-
-                $statement->bindParam(':usuario', $usuario);
-                $statement->bindParam(':remitente', $remitente);
-
-                $response = $statement->execute();
-
-                if(!$response) return false;
-                return true;
-            } catch (\Throwable $th) {
-                echo "Ha ocurrido un problema al registrar el paquete :( " . $th; 
-            }
-        }
-
-        public function mostrarPaquetesAdmin() : array {
-            try {
-                $objConexion = new Conexion();
-                $conexion = $objConexion->get_conexion();
-        
-                $query = "SELECT 
+            $query = "SELECT 
                             P.id,
                             U.nombres,
                             U.apellidos,
@@ -976,24 +1125,26 @@ class Consultas
                             P.fecha
                             FROM usuarios U INNER JOIN paqueteria P ON U.identificacion=P.usuario;
                 ";
-                $statement = $conexion->prepare($query);
-        
-        
-                $response = $statement->execute();
-                if(!$response) return [];
-                $result = $statement->fetchAll();
-                return $result;
-                
-            } catch (\Throwable $th) {
-                echo "error al listar los registros de paquetes: " . $th;
-            }
+            $statement = $conexion->prepare($query);
+
+
+            $response = $statement->execute();
+            if (!$response)
+                return [];
+            $result = $statement->fetchAll();
+            return $result;
+
+        } catch (\Throwable $th) {
+            echo "error al listar los registros de paquetes: " . $th;
         }
-        public function mostrarReservasAdmin(){
-            try {
-                $objConexion = new Conexion();
-                $conexion = $objConexion->get_conexion();
-        
-                $query = "SELECT S.id_reserva , 
+    }
+    public function mostrarReservasAdmin()
+    {
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "SELECT S.id_reserva , 
                 S.identificacion, 
                 S.dia_reserva , 
                 S.hora_inicio , 
@@ -1063,28 +1214,31 @@ class Consultas
      * 
      * 
      */
-    public function mostrarPaqueteRes(string $user_id) : array{
+    public function mostrarPaqueteRes(string $user_id): array
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
-        
-                $query = "SELECT 
+
+            $query = "SELECT 
                             U.torre,
                             U.apartamento,
                             P.remitente,
                             P.fecha
                             FROM usuarios U INNER JOIN paqueteria P ON U.identificacion=P.usuario WHERE U.identificacion=:user_id;
                 ";
-                
-                $statement = $conexion->prepare($query);
-                $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
-        
-                $response = $statement->execute();
-                if(!$response) return [];
-                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                if(count($result) == 0) return [];
-                return $result;
+            $statement = $conexion->prepare($query);
+            $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+
+
+            $response = $statement->execute();
+            if (!$response)
+                return [];
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) == 0)
+                return [];
+            return $result;
         } catch (\Throwable $th) {
             echo "Error en la consulta :( " . $th;
         }
@@ -1101,7 +1255,8 @@ class Consultas
      * 
      * 
      */
-    public function eliminarPaqueteRes(string $user_id) : bool{
+    public function eliminarPaqueteRes(string $user_id): bool
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -1111,7 +1266,8 @@ class Consultas
             $statement->bindParam(':user_id', $user_id, PDO::PARAM_STR);
 
             $response = $statement->execute();
-            if(!$response) return false;
+            if (!$response)
+                return false;
             return true;
         } catch (\Throwable $th) {
             echo "Error en la consulta :( " . $th;
@@ -1218,5 +1374,5 @@ class ValidarSesion
 
 
 
-        
+
 ?>

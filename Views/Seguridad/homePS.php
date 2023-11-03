@@ -58,8 +58,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <img class="w-100  rounded-top img-module h-100" src="./images/estacionamiento.jpg" alt="">
                     </div>
                     <div class="border text-center  align-items-center fs-3 d-flex  rounded-bottom py-3">
-                    <a href="vehiculo.php" class="p-0 w-100 mb-0 publico"
-                            style="text-decoration: none; color: black;">Vehiculos</a>
+                        <a href="ver-vehiculos.php" style="text-decoration: none; color: black;"><p class="  p-0  w-100 mb-0">Vehiculos</p></a>
+                        
                     </div>
                 </section>
                 <section role="button" class="col-md-5 module  p-0 d-flex flex-column ">
@@ -108,8 +108,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     </footer>
 
 
-
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>

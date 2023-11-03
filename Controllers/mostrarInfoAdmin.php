@@ -441,7 +441,7 @@ function cargarNovedadesEditar()
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
                     <div class="row">
                     <div class="d-flex flex-column mb-3">
-                            <h2 style="font-size: 1.7em;">Datos del Vehiculo</h2>
+                            <h2 style="font-size: 1.7em;">Datos del Reporte</h2>
                         </div>  
                                         <div class="form-group col-md-5">
                                             <label>Placa:</label>
