@@ -48,7 +48,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
 
-    <div class="content-wrap " style="margin-left:43px;">
+    <div class="content-wrap mt-4" style="margin-left:43px;">
         <div class="main">
             <div class="">
                 <div class="row">
@@ -78,7 +78,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content" class="lista_vehiculos" style="padding: 20px 0">
+                <section id="main-content" class="lista_vehiculos mt-3" style="padding: 20px 0">
                     <div class="row">
                         <div class="col-lg-7">
                             <div class="card vehiculos_ver" style="width:95%">

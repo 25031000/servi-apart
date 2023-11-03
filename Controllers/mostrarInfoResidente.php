@@ -244,7 +244,7 @@ function cargarFotosVehiculoRes(){
 
 
 
-      <div class="row" style="display:flex; align-items:center; margin-left:20px">
+      <div class="row mt-4" style="display:flex; align-items:center; margin-left:20px">
       <div class="col-lg-5">
       <div id="carouselExampleDark" class="carousel slide" >
   <div class="carousel-indicators" >
