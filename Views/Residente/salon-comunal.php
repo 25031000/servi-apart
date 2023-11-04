@@ -116,7 +116,7 @@ require_once("../../Models/seguridadResidente.php");
         // Asegúrate de iniciar la sesión
     
         $sesionId = $_SESSION['id']; // Obtén el ID del usuario que ha iniciado sesión
-    ?> <div class="ms-5"> <?php echo $sesionId; ?></div> <?php 
+ 
         $usuarioEnSesion = null;
 
         // Busca el usuario actual en el array de resultados
