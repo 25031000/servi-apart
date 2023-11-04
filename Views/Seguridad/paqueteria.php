@@ -37,7 +37,7 @@
 
     <?php
     include '../../components/menu.php';
-    include '../../components/headerInclude.php';
+    include '../../components/headerIncludePS.php';
 ?>
 
     <div class="content-wrap mt-4">
