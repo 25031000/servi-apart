@@ -49,7 +49,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 
     <?php
     include '../../components/menu.php';
-    include '../../components/headerInclude.php';
+    include '../../components/headerIncludePS.php';
     ?>
 
 

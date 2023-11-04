@@ -4,136 +4,50 @@
     box-sizing: border-box;
 }
 
-.custom-mouse {
-    width: 130px;
-    height: 130px;
 
-    z-index: 9999;
-    background-color: rgb(255 255 255 / 0.3);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    transition: all 0.8 linear;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0;
-    opacity: 0;
-    margin: 0;
-}
-
-.clicki{
-    font-size: 20px;
-}
-
-
-.portada {
-    background-image: url("../images/zyro-image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: -7rem;
-    height: 200px;
-}
-
-.seguridad-titulo {
-    font-size: 1.3rem;
-    letter-spacing: 1rem;
-    font-weight: 600;
-}
-
-.img-module{
-    position: relative;
-    z-index: 1;
-    /* -webkit-filter: brightness(60%); */
-    filter: brightness(80%);
-}
-
-
-.module {
-    padding: 0;
-    transition: all 1s ease;
-    background: #f1eff1;
-    box-shadow: 20px 20px 60px #cdcbcd,
-        -20px -20px 60px #ffffff;
-}
-
-.view-more {
-    background-color: aqua;
-    max-height: 38px;
-    padding: 10px !important;
-    transition: all 12s ease-in !important;
-}
-
-.text-view-more {
-    display: none;
-}
-
-
-.view-more:hover .text-view-more {
-    display: block;
-    transition: all 12s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-
-.module:hover{
-    transform: scale(1.01);
-}
 
 footer{
    width: 100vw; 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* responsive */
-@media (min-width: 375px) {
-    .seguridad-titulo {
-        font-size: 1.6rem;
-        font-weight: 600;
-    }
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:    "first second"
+                            "third fourth";
+    
+    width: 80%;
+    margin-top: 3em;
+   gap: 2rem;
 }
 
 
-@media (min-width: 620px) {
-    .seguridad-titulo {
-        font-weight: 300;
-        font-size: 3rem;
-        letter-spacing: 2rem;
-
-    }
+.grid div:nth-child(1){
+    min-width: 30%;
+    min-height: 300px;
+    grid-area: first;
+    background-color: lightblue;
 }
 
-
-@media (min-width: 768px) {
-    .seguridad-titulo {
-        font-weight: 300;
-        font-size: 6rem;
-        letter-spacing: 2rem;
-
-    }
+.grid div:nth-child(2){
+    min-width: 30%;
+    min-height: 300px;
+    grid-area: second;
+    background-color: lightcoral;
 }
 
-@media (min-width: 1160px) {
-    .seguridad-titulo {
-        font-size: 7rem;
-        font-weight: 100;
-        letter-spacing: 2rem;
+.grid div:nth-child(3){
+    min-width: 30%;
+    min-height: 300px;
+    grid-area: third;
+    background-color: lightgreen;
+}
 
-    }
+.grid div:nth-child(4){
+    min-width: 30%;
+    min-height: 300px;
+    grid-area: fourth;
+    background-color: lightsalmon;
 }
