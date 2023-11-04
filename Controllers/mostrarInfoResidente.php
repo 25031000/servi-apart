@@ -375,6 +375,53 @@ function cargarPaquetesRes(string $identificacion){
 
 }
 
+function cargarReservaRes(string $identificacion){
+    $objConsultas = new Consultas();
+    $arr = $objConsultas->mostrarReservasAdmin($identificacion);
+    if(count($arr) == 0){
+        echo '
+            <section class="container d-flex flex-column align-items-center">
+                <img src="./images/empty-mailbox.svg" width="500" height="500" />
+                <h5>Parece que no tienes reservas</h5>
+            </section>
+        ';
+    } else {
+        array_map(function($item){
+            $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
+
+            // Convertir la hora a un formato sin segundos
+            $hora_inicio = date('H:i', strtotime($item['hora_inicio']));
+            $hora_finalizacion = date('H:i', strtotime($item['hora_finalizacion']));
+
+            echo '
+                <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
+                   <div class="col-5 border rounded-3 text-white align-items-center d-flex py-4 flex-column justify-content-center" style="background: #18d26e;">
+                        <p class=" m-0 position-relative" style="font-size: 3rem; top: 8px;">'.explode("-",$item['dia_reserva'])[2].'</p>
+                        <small class=" m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">'.$months[explode("-",$item['dia_reserva'])[1]].'</small>
+                   </div>           
+                   <div class="col-7  align-items-center d-flex flex-column justify-content-center">
+                       
+
+                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
+                            <div class="text-white">'. $item['tipo_evento']. '</div>
+                        </div>
+
+
+                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
+                            <div class="text-white">'. $item['mesas']. '-' .  $item['sillas'] . '</div>
+                        </div>
+                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
+                            <div class="text-white">'.$hora_inicio.' - ' . $hora_finalizacion . '</div>
+                        </div>
+                        <div >
+                            <small class="text-alternative" style="font-size: 0.8rem">Apartamento - Torre</small>
+                        </div>
+                   </div>           
+                </section>
+            ';
+        }, $arr); 
+    }
+}
 
 function cargarFotosRes()
 {

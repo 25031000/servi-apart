@@ -50,7 +50,7 @@
 
             <div role="button" id="third-li"
                 class="list-group-item  item-list  d-flex  align-items-center justify-content-between text-white py-2 w-auto">
-                <a href="homePS.php" class="chocolate">Home </a>
+                <a href="homeResidente.php" class="chocolate">Home </a>
 
                 <div>
                     <img src="icons/arrow.png" style="transform: rotate(-90deg);" class="third-arrow" alt="">
