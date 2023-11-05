@@ -116,7 +116,7 @@ require_once("../../Models/seguridadResidente.php");
         // Asegúrate de iniciar la sesión
     
         $sesionId = $_SESSION['id']; // Obtén el ID del usuario que ha iniciado sesión
-    
+ 
         $usuarioEnSesion = null;
 
         // Busca el usuario actual en el array de resultados
@@ -187,7 +187,7 @@ require_once("../../Models/seguridadResidente.php");
             <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
 <!--             <div class="container-fluid">
  -->                <div class="col-md-6 adi ">
-                    <form action="../../Controllers/registrarDiaSC.php?id= <?php echo $id; ?>" class="pack-form adidas"
+                    <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId?>" class="pack-form adidas"
                         method="post" autocomplete="off">
                         <div class="row g-2">
 
