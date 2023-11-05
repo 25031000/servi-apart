@@ -235,8 +235,8 @@ require_once("../../Models/seguridadResidente.php");
                                     <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
                                         <option value="" selected></option>
                                         <option value="cumpleaños">Fiesta de cumpleaños</option>
-                                        <option value="arte">Matrimonio</option>
-                                        <option value="arte">Primera comunion</option>
+                                        <option value="matrimonio">Matrimonio</option>
+                                        <option value="comunion">Primera comunion</option>
                                         <option value="comunitaria">Reunión comunitaria</option>
                                         <option value="shower">Baby shower</option>
                                         <option value="benefico">Evento benéfico</option>
