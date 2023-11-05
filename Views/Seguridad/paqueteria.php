@@ -36,7 +36,7 @@
 <body>
 
     <?php
-    include '../../components/menu.php';
+    include '../../components/menuPS.php';
     include '../../components/headerIncludePS.php';
 ?>
 
@@ -123,43 +123,6 @@
     <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
     <script src="../Dashboard/js/scripts.js"></script>
 
-<<<<<<< HEAD
-=======
-    <footer></footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-
-    <script src="../Dashboard/js/lib/jquery.min.js"></script>
-    <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
-    <script src="../Dashboard/js/lib/menubar/sidebar.js"></script>
-    <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
-    <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
-
-
-    <script>
-    //menu icon on Navbar
-    $('#menu-btn').click(() => {
-
-$('#menu-modal').attr('transition-style', 'in:wipe:down')
-$('#menu-modal').css({
-    display: 'block'
-})
-$('body').css({
-    overflowX: "hidden"
-})
-})
-
-//close icon on modal
-$('#close').click(() => {
-
-$('#menu-modal').attr('transition-style', 'out:wipe:down')
-$('html').css({
-    overflow: "scroll"
-})
-
-})
-</script>
->>>>>>> 1adf09d89b9083757725e08947c8442eb98fab24
 </body>
 
 </html>

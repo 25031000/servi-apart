@@ -45,7 +45,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 <body>
 
     <?php
-    include '../../components/menu.php';
+    include '../../components/menuPS.php';
     include '../../components/headerIncludePS.php';
     ?>
 
