@@ -1294,27 +1294,21 @@ function cargarReservaEditar()
             
             <div class="card text-center" >
                 
-            
-             
-             
-           
-               
-               
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
                 <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
                 <div class="row g-2">
                 <div class="col-md-6">
-                    <div class="form-floating">
-                    <label for="identificacion" style="font-weight: bold; color: #333;">Identificación</label>
+                    <div class="">
+                    <label for="" style="font-weight: bold; color: #333;">Identificación</label>
                         <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
                 
                 <div class="col-md-6">
-                    <div class="form-floating">
+                    <div class="">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
                         <input type="date" class="form-control" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva" readonly required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
@@ -1322,33 +1316,58 @@ function cargarReservaEditar()
                 </div>
             
                 <div class="col-md-6">
-                    <div class="form-floating">
+                    <div class="">
                     <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
                         <input type="time" class="form-control" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-floating">
+                    <div class="">
                     <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
                         <input type="time" class="form-control" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-floating">
+                    <div class="">
                     <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
                         <input type="number" class="form-control"  value="' . $f['mesas'] . '" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-floating">
+                    <div class="">
                     <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
                         <input type="number" class="form-control" value="' . $f['sillas'] . '" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
+                <div class="col-md-6">
+                <div>
+                    <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
+                    <div>
+                        <select class="form-control" id="tipo_evento" name="tipo_evento" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                            <option value="' . $f['tipo_evento'] . '">' . $f['tipo_evento'] . '</option>
+                            <option value="" selected></option>
+                            <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
+                            <option value="Matrimonio">Matrimonio</option>
+                            <option value="Primera comunión">Primera comunión</option>
+                            <option value="Reunión comunitaria">Reunión comunitaria</option>
+                            <option value="Baby shower">Baby shower</option>
+                            <option value="Evento benéfico">Evento benéfico</option>
+                            <option value="Presentación teatral">Presentación teatral</option>
+                            <option value="Fiesta fin de año">Fiesta fin de año</option>
+                            <option value="Aniversario">Fiesta de aniversario</option>
+                            <option value="Taller de arte">Taller de arte</option>
+                            <option value="Reunión corporativa">Reunión corporativa</option>
+                            <option value="Exposición de artesanías">Exposición de artesanías</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">Actualizar Informacion</button>
                 </div>
