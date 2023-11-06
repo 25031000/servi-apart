@@ -6,7 +6,8 @@ require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
 
 
- function cargarPublicacionRes(){
+function cargarPublicacionRes()
+{
 
 
     $objConsultas = new Consultas();
@@ -16,41 +17,42 @@ require_once("../../Models/consultas.php");
         echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
 
     } else {
-        
-    
+
+
         foreach ($result as $f) {
-           
+
             echo '
                         <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border" style="-webkit-border-radius: 0.625rem; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff" >
                             <header class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
-                            '. $f['titulo'] .'
+                            ' . $f['titulo'] . '
                             </h2>
                             <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> 
                             </header>
                             <main class=" p-2 d-flex flex-column justify-content-center">
-                                <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
+                                <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>
                             <footer class=" p-2 m-0" style="background: transparent; height: 21%">
                             <section class="w-100 m-0 p-0 d-flex align-items-center ">
                                     <img style="width: 20px; height: 20px" src="./icons/calendario.png">
-                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['fecha'] .'</small>
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['fecha'] . '</small>
                                     <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
-                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['hora'] .'</small>
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['hora'] . '</small>
                             </section>
                             </footer>
                         </article>
                     ';
-                
-            }
-            
-        
+
+        }
+
+
     }
 }
 
-function cargarPublicacionesRes(){
+function cargarPublicacionesRes()
+{
 
 
     $objConsultas = new Consultas();
@@ -60,17 +62,17 @@ function cargarPublicacionesRes(){
         echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
 
     } else {
-        $count = count ($result);
+        $count = count($result);
         $start = max(0, $count - 3);
-        
-        foreach (array_slice($result, $start, 3) as $f){
+
+        foreach (array_slice($result, $start, 3) as $f) {
             echo '
                             
                          <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 380px; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
 
                             <header class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
-                            '. $f['titulo'] .'
+                            ' . $f['titulo'] . '
                             </h2>
 
                             <a href="ver-publicaciones.php">  
@@ -80,43 +82,44 @@ function cargarPublicacionesRes(){
 
                             </header>
                             <main class=" p-2 d-flex flex-column justify-content-center">
-                                <p class=" my-auto" style="font-size: 1rem">'. $f['descripcion'] .'</p>
+                                <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>
                             <footer class=" p-2 m-0" style="background: transparent; height: 21%">
                             <section class="w-100 m-0 p-0 d-flex align-items-center ">
                                     <img style="width: 20px; height: 20px" src="./icons/calendario.png">
-                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['fecha'] .'</small>
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['fecha'] . '</small>
                                     <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
-                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> '. $f['hora'] .'</small>
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['hora'] . '</small>
                             </section>
                             </footer>
                         </article>
                     ';
-             
-            }
-            
+
         }
+
     }
+}
 
 
 
-    function cargarInfoUsuarios(){
-        $objConsultas = new Consultas();
+function cargarInfoUsuarios()
+{
+    $objConsultas = new Consultas();
 
-        // session_start();
-       
-        $identificacion = $_SESSION['id'];
-         // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
-    
-        $result = $objConsultas->verPerfil($identificacion);
-    
-        if (!isset($result)) {
-            echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
-        } else {
-    
-            return $result;
-        }
+    // session_start();
+
+    $identificacion = $_SESSION['id'];
+    // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
+
+    $result = $objConsultas->verPerfil($identificacion);
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+    } else {
+
+        return $result;
     }
+}
 
 
 
@@ -125,9 +128,10 @@ function cargarPublicacionesRes(){
 //pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
-function cargarVehiculosResidente(){
+function cargarVehiculosResidente()
+{
     $objConsultas = new Consultas();
-    
+
     $identificacion = $_SESSION['id'];
 
     $result = $objConsultas->mostrarVehiculosRes($identificacion);
@@ -174,9 +178,9 @@ function cargarNovedadesResidente()
         ';
 
     } else {
-        
+
         foreach ($result as $f) {
-            
+
 
             echo '
             
@@ -195,12 +199,13 @@ function cargarNovedadesResidente()
             ';
         }
 
-        
+
     }
 }
 
 
-function cargarFotosVehiculoRes(){
+function cargarFotosVehiculoRes()
+{
 
     $placa = $_GET['placa'];
 
@@ -336,32 +341,33 @@ function cargarFotosVehiculoRes(){
 }
 
 
-function cargarPaquetesRes(string $identificacion){
+function cargarPaquetesRes(string $identificacion)
+{
     $objConsultas = new Consultas();
     $arr = $objConsultas->mostrarPaqueteRes($identificacion);
-    if(count($arr) == 0){
+    if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
                 <img src="./images/empty-mailbox.svg" width="500" height="500" />
                 <h5>Parece que no tienes paquetes registrados</h5>
             </section>
         ';
-    }else{
-       array_map(function($item){
-        $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
+    } else {
+        array_map(function ($item) {
+            $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
 
-        echo '
+            echo '
             <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
                <div class="col-5 border rounded-3 text-white align-items-center d-flex py-4 flex-column justify-content-center" style="background: #18d26e;">
-                    <p class=" m-0 position-relative" style="font-size: 3rem; top: 8px;">'.explode("-",$item['fecha'])[2].'</p>
-                    <small class=" m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">'.$months[explode("-",$item['fecha'])[1]].'</small>
+                    <p class=" m-0 position-relative" style="font-size: 3rem; top: 8px;">' . explode("-", $item['fecha'])[2] . '</p>
+                    <small class=" m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">' . $months[explode("-", $item['fecha'])[1]] . '</small>
                </div>           
                <div class="col-7  align-items-center d-flex flex-column justify-content-center">
                     <div >
-                        <strong style="font-size: 1.5rem !important;">'.$item['remitente'] .'</strong>
+                        <strong style="font-size: 1.5rem !important;">' . $item['remitente'] . '</strong>
                     </div>
                     <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
-                        <div class="text-white">'. $item['torre']. '-' .  $item['apartamento'] . '</div>
+                        <div class="text-white">' . $item['torre'] . '-' . $item['apartamento'] . '</div>
                     </div>
                     <div >
                         <small class="text-alternative" style="font-size: 0.8rem">Apartamento - Torre</small>
@@ -369,16 +375,40 @@ function cargarPaquetesRes(string $identificacion){
                </div>           
             </section>
         ';
-    }, $arr); 
+        }, $arr);
     }
-    
+
 
 }
 
-function cargarReservaRes(string $identificacion){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function cargarReservaRes(string $identificacion)
+{
     $objConsultas = new Consultas();
     $arr = $objConsultas->mostrarReservasAdmin($identificacion);
-    if(count($arr) == 0){
+    if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
                 <img src="./images/empty-mailbox.svg" width="500" height="500" />
@@ -386,42 +416,71 @@ function cargarReservaRes(string $identificacion){
             </section>
         ';
     } else {
-        array_map(function($item){
+        array_map(function ($item) {
             $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
 
-            // Convertir la hora a un formato sin segundos
-            $hora_inicio = date('H:i', strtotime($item['hora_inicio']));
-            $hora_finalizacion = date('H:i', strtotime($item['hora_finalizacion']));
+            // Convertir la hora a un formato con AM y PM
+            $hora_inicio = date('g:i A', strtotime($item['hora_inicio']));
+            $hora_finalizacion = date('g:i A', strtotime($item['hora_finalizacion']));
 
             echo '
-                <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
-                   <div class="col-5 border rounded-3 text-white align-items-center d-flex py-4 flex-column justify-content-center" style="background: #18d26e;">
-                        <p class=" m-0 position-relative" style="font-size: 3rem; top: 8px;">'.explode("-",$item['dia_reserva'])[2].'</p>
-                        <small class=" m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">'.$months[explode("-",$item['dia_reserva'])[1]].'</small>
-                   </div>           
-                   <div class="col-7  align-items-center d-flex flex-column justify-content-center">
-                       
-
-                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
-                            <div class="text-white">'. $item['tipo_evento']. '</div>
+            <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
+                <div class="col-5 border rounded-3 text-black align-items-center d-flex py-4 flex-column justify-content-center" style="background: #FF914D;">
+                    <p class="m-0 position-relative" style="font-size: 3rem; top: 8px;">' . explode("-", $item['dia_reserva'])[2] . '</p>
+                    <small class="m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">' . $months[explode("-", $item['dia_reserva'])[1]] . '</small>
+                </div>           
+                <div class="col-7  align-items-center d-flex flex-column justify-content-center">
+        
+                    <div class="rounded-2 py-1 px-3 my-2" style="font-size: 1.2rem; font-weight: bold;"> 
+                        <div class="text-black">' . $item['tipo_evento'] . '</div>
+                    </div>
+        
+                    <div class="rounded-2 py-1 px-3 my-2">
+                        <img src="../../assets/icons/iconSalonComunal/mesas.png" style="width: 25px; height: 25px;">
+                        <div class="text-black">' . $item['mesas'] . '-' . $item['sillas'] . '
+                        <img src="../../assets/icons/iconSalonComunal/silla.png" style="width: 25px; height: 25px;">
                         </div>
-
-
-                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
-                            <div class="text-white">'. $item['mesas']. '-' .  $item['sillas'] . '</div>
-                        </div>
-                        <div class="border rounded-2 py-1 px-3 my-2" style="background: #18d26e;">
-                            <div class="text-white">'.$hora_inicio.' - ' . $hora_finalizacion . '</div>
-                        </div>
-                        <div >
-                            <small class="text-alternative" style="font-size: 0.8rem">Apartamento - Torre</small>
-                        </div>
-                   </div>           
-                </section>
-            ';
-        }, $arr); 
+                    </div>
+        
+                    <div class="rounded-2 py-1 px-3 my-2" >
+                        <div class="text-black">' . $hora_inicio . ' - ' . $hora_finalizacion . '</div>
+                    </div>
+        
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-primary btn-sm">Modificar</button>
+                        <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
+                    </div>
+                    
+               </div>           
+            </section>
+        ';
+        
+        }, $arr);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function cargarFotosRes()
 {

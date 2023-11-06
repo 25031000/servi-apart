@@ -28,9 +28,14 @@
     include '../../components/headerInclude.php';
 ?>
 
-    <main class="container-fluid rimary d-flex flex-wrap justify-content-center">
-        <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>reservas Realizadas</strong></h2>
-       
+<main class="container-fluid primary d-flex flex-wrap justify-content-between"> <!-- Cambia 'rimary' por 'primary' en la clase -->
+    <div class="col-md-6">
+        <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>Reservas realizadas</strong></h2>
+    </div>
+    <div class="col-md-6 text-md-end">
+        <a href="salon-comunal.php" class="btn btn-outline-info mt-4 me-5">Regresar</a>
+    </div>
+
         <?php
             require_once "../../Controllers/mostrarInfoResidente.php";
             

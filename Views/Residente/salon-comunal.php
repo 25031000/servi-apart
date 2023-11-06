@@ -17,8 +17,8 @@ require_once("../../Models/seguridadResidente.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Servi - Apart</title>
-    <link href="../../assets/css/style.css" rel="stylesheet">
-
+<!--     <link href="../../assets/css/style.css" rel="stylesheet">
+ -->
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
@@ -45,10 +45,10 @@ require_once("../../Models/seguridadResidente.php");
     <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
-
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
-    <style>
+<!--     <link rel="stylesheet" href="./css/paqueteria.css"> -->    
+<style>
         /* Estilo para la sección principal */
         /* #main-content {
             padding: 20px;
@@ -96,6 +96,8 @@ require_once("../../Models/seguridadResidente.php");
         #dia_reserva:read-only {
             background-color: #fff;
         } */
+    
+
     </style>
 </head>
 
@@ -116,7 +118,7 @@ require_once("../../Models/seguridadResidente.php");
         // Asegúrate de iniciar la sesión
     
         $sesionId = $_SESSION['id']; // Obtén el ID del usuario que ha iniciado sesión
- 
+    
         $usuarioEnSesion = null;
 
         // Busca el usuario actual en el array de resultados
@@ -168,94 +170,95 @@ require_once("../../Models/seguridadResidente.php");
 
     <section id="main-content">
         <div class="row">
-           <!--  <div class="container-fluid"> -->
-                <div class="col-md-6 ozuna">
-                    <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
+            <!--  <div class="container-fluid"> -->
+            <div class="col-md-6 ozuna">
+                <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -webkit-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -moz-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);">
 
-                        <!-- <div class="card-body"> -->
-                        <div class="year-calendar">
-                            <div id="detalles-reservacion">
-                            </div>
+                    <!-- <div class="card-body"> -->
+                    <div class="year-calendar">
+                        <div id="detalles-reservacion">
                         </div>
-
                     </div>
+
                 </div>
-           <!--  </div> -->
+            </div>
+            <!--  </div> -->
             <!-- no borrar esos div de arriba -->
             <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
-<!--             <div class="container-fluid">
- -->                <div class="col-md-6 adi ">
-                    <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId?>" class="pack-form adidas"
-                        method="post" autocomplete="off">
-                        <div class="row g-2">
+            <!--             <div class="container-fluid">
+ -->
+            <div class="col-md-6 adi ">
+                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form adidas"
+                    method="post" autocomplete="off">
+                    <div class="row g-2">
 
 
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for=""><b>Día de Reserva</b></label>
-                                    <input type="date" class="py-2 input  " id="dia_reserva" name="dia_reserva" readonly
-                                        required>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for=""><b>Día de Reserva</b></label>
+                                <input type="date" class="py-2 input  " id="dia_reserva" name="dia_reserva" readonly
+                                    required>
 
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for=""><b>Hora de Inicio</b></label>
-                                    <input type="time" class="py-2 input " id="hora_inicio" name="hora_inicio" required>
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for=""><b>Hora de Finalización</b></label>
-                                    <input type="time" class="py-2 input " id="hora_finalizacion"
-                                        name="hora_finalizacion" value="03:00:00" required>
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for=""><b>Mesas</b></label>
-                                    <input type="number" class="py-2 input " id="mesas" name="mesas" required>
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for=""><b>Sillas</b></label>
-                                    <input type="number" class="py-2 input " id="sillas" name="sillas" required>
-
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex flex-column col-md-6">
-                                    <label for="" class="form-label"><b>Tipo de evento</b></label>
-                                    <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
-                                        <option value="" selected></option>
-                                        <option value="cumpleaños">Fiesta de cumpleaños</option>
-                                        <option value="matrimonio">Matrimonio</option>
-                                        <option value="comunion">Primera comunion</option>
-                                        <option value="comunitaria">Reunión comunitaria</option>
-                                        <option value="shower">Baby shower</option>
-                                        <option value="benefico">Evento benéfico</option>
-                                        <option value="teatral">Presentación teatral</option>
-                                        <option value="fin_año">Fiesta de fin de año</option>
-                                        <option value="aniversario">Fiesta de aniversario</option>
-                                        <option value="arte">Taller de arte</option>
-                                        <option value="reu_corporativa">Reunión corporativa</option>
-                                        <option value="expo_artesanias">Exposición de artesanías</option>
-                                        <option value="otro">Otro</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-success face">Enviar</button>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for=""><b>Hora de Inicio</b></label>
+                                <input type="time" class="py-2 input " id="hora_inicio" name="hora_inicio" required>
 
-                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for=""><b>Hora de Finalización</b></label>
+                                <input type="time" class="py-2 input " id="hora_finalizacion" name="hora_finalizacion"
+                                    value="03:00:00" required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for=""><b>Mesas</b></label>
+                                <input type="number" class="py-2 input " id="mesas" name="mesas" required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for=""><b>Sillas</b></label>
+                                <input type="number" class="py-2 input " id="sillas" name="sillas" required>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex flex-column col-md-6">
+                                <label for="" class="form-label"><b>Tipo de evento</b></label>
+                                <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
+                                    <option value="" selected></option>
+                                    <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
+                                    <option value="Matrimonio">Matrimonio</option>
+                                    <option value="Primera comunion">Primera comunion</option>
+                                    <option value="Reunion comunitaria">Reunión comunitaria</option>
+                                    <option value="Baby shower">Baby shower</option>
+                                    <option value="Evento benefico">Evento benéfico</option>
+                                    <option value="Presentacion teatral">Presentación teatral</option>
+                                    <option value="Fiesta fin deaño">Fiesta fin de año</option>
+                                    <option value="Aniversario">Fiesta de aniversario</option>
+                                    <option value="Taller de arte">Taller de arte</option>
+                                    <option value="Reunion corporativa">Reunión corporativa</option>
+                                    <option value="Expocion artesanias">Exposición de artesanías</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success face">Enviar</button>
+                        </div>
+                    </div>
+
+            </div>
             <!-- </div> -->
 
 
@@ -272,22 +275,27 @@ require_once("../../Models/seguridadResidente.php");
         </div>
         <!-- /# column -->
         </div>
+        <div class="d-grid gap-2 col-6 mx-auto bzrp " style="margin-top: 50px; ">
+            <a href="ver-reservaRes.php" class="btn btn-success bzrp">Ver Reserva</a>
+        </div>
+
 
         <!-- /# row -->
 
-        <div class="row">
+      <!--   <div class="row">
             <div class="col-lg-12">
                 <div class="footer">
                     <p>2018 © Admin Board. - <a href="#">example.com</a></p>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         </div>
         </div>
         </div>
 
     </section>
+
     </div>
     </div>
     </div>
