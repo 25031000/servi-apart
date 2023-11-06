@@ -14,7 +14,7 @@
         <nav class="list  m-0 ms-md-5">
             <div role="button" id="first-li"
                 class="list-group-item  item-list  d-flex align-items-center justify-content-between text-white py-2 w-auto ">
-                <a href="paqueteria.php" class="chocolate">Paqueteria</a>
+                <a href="paqueteria.php" class="chocolate">Paquetería</a>
 
                 <div>
                     <img class="first-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
@@ -23,7 +23,7 @@
 
             <div id="second-li" role="button"
                 class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
-                <a href="ver-vehiculo.php" class="chocolate">Vehiculos</a>
+                <a href="ver-vehiculo.php" class="chocolate">Vehículos</a>
 
                 <div>
                     <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
@@ -32,7 +32,7 @@
 
             <div id="second-li" role="button"
                 class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
-                <a href="salon-comunal.php" class="chocolate">Salon Comunal </a>
+                <a href="salon-comunal.php" class="chocolate">Salón Comunal </a>
 
                 <div>
                     <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">

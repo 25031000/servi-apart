@@ -14,9 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi-Apart</title>
+    <title>Servi - Apart</title>
 
-    <!-- ================= Favicon ================== -->
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
+    
     <!-- Standard -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
