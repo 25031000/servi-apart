@@ -448,7 +448,7 @@ function cargarReservaRes(string $identificacion)
                     </div>
         
                     <div class="btn-container">
-                    <a href="../../Views/Residente/modificar-reservaRes.php" class="btn btn-primary btn-sm">Modificar</a>
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '" class="btn btn-primary btn-sm">Modificar</a>
                         <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
                     </div>
                     

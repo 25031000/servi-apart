@@ -1,3 +1,7 @@
+<?php
+            require_once("../../Models/seguridadResidente.php"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +24,7 @@
 <body>
     <?php
     
-            session_start();
+            /* session_start(); */
             $id = $_SESSION['id'];
     //menu
     include '../../components/menu.php';
@@ -38,6 +42,8 @@
 
         <?php
             require_once "../../Controllers/mostrarInfoResidente.php";
+            require_once("../../Models/seguridadResidente.php");
+
             
             cargarReservaRes($id);
         ?>
