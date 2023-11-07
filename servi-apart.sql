@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2023 a las 16:55:25
+-- Tiempo de generación: 07-11-2023 a las 03:05:09
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -77,7 +77,15 @@ CREATE TABLE `paqueteria` (
 --
 
 INSERT INTO `paqueteria` (`id`, `usuario`, `remitente`, `fecha`) VALUES
-(6, 231, 'sas group', '2023-10-17');
+(6, 231, 'sas group', '2023-10-17'),
+(7, 999, 'apple', '2023-11-03'),
+(8, 999, 'gropu', '2023-11-03'),
+(9, 999, 'gali', '2023-11-03'),
+(10, 999, 'pooo', '2023-11-03'),
+(11, 999, 'perra', '2023-11-03'),
+(12, 999, 'bebi', '2023-11-03'),
+(13, 999, 'bebi', '2023-11-03'),
+(14, 999, 'punto', '2023-11-03');
 
 -- --------------------------------------------------------
 
@@ -137,12 +145,15 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
-(15, 321654987, '2023-10-17', '15:43:00', '03:00:00', 56, 54, ''),
-(17, 231, '2023-10-24', '11:34:00', '03:00:00', 56, 56, ''),
-(18, 654321, '2023-10-28', '13:04:00', '03:00:00', 1, 1, ''),
-(19, 563453783, '2023-10-26', '12:13:00', '03:00:00', 2, 2, ''),
-(20, 563453783, '2023-10-07', '16:10:00', '03:00:00', 3, 3, ''),
-(21, 231, '2023-10-29', '15:11:00', '03:00:00', 22, 22, '');
+(22, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(23, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(24, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(25, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(26, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(27, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(28, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(29, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
+(30, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, '');
 
 -- --------------------------------------------------------
 
@@ -290,7 +301,7 @@ ALTER TABLE `novedad_vehiculo`
 -- AUTO_INCREMENT de la tabla `paqueteria`
 --
 ALTER TABLE `paqueteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `peticiones`
@@ -308,7 +319,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- Restricciones para tablas volcadas
