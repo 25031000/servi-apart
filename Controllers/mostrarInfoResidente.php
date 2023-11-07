@@ -448,7 +448,7 @@ function cargarReservaRes(string $identificacion)
                     </div>
         
                     <div class="btn-container">
-                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '" class="btn btn-primary btn-sm">Modificar</a>
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '&reservaid='.$item['id_reserva'] .'" class="btn btn-primary btn-sm">Modificar</a>
                         <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
                     </div>
                     
@@ -462,10 +462,13 @@ function cargarReservaRes(string $identificacion)
 
 function modificarReservaRes()
 {
-    $id_reserva = $_GET['id'];
+    $id_reserva = $_GET['reservaid'];
+    $identificacion= $_GET['id'];
+
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarReservaEditarRes($id_reserva);
+    $result = $objConsultas->mostrarReservaEditarRes($id_reserva, $identificacion);
+
 
 
     foreach ($result as $f) {
@@ -478,13 +481,6 @@ function modificarReservaRes()
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
                 <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
                 <div class="row g-2">
-                <div class="col-md-6">
-                    <div class="">
-                    <label for="" style="font-weight: bold; color: #333;">Identificación</label>
-                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
-                        
-                    </div>
-                </div>
                 
                 <div class="col-md-6">
                     <div class="">

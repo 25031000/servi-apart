@@ -190,7 +190,7 @@ require_once("../../Models/seguridadResidente.php");
             <!--             <div class="container-fluid">
  -->
             <div class="col-md-6 adi ">
-                <form action="../../Controllers/registrarDiaSC.php" class="pack-form adidas"
+                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form adidas"
                     method="post" autocomplete="off">
                     <div class="row g-2">
 
