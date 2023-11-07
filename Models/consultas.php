@@ -1014,6 +1014,28 @@ class Consultas
         return $f;
     }
 
+    //se creo para el editar en ver reserva residente no funciona todavia
+    
+    public function mostrarReservaEditarRes($id_reserva)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
+
 
     public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
