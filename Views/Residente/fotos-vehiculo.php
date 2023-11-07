@@ -41,7 +41,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid p-0">
 
   <?php
   include '../../components/menu.php';
