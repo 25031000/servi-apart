@@ -2,7 +2,7 @@
     require_once ("../../Models/conexion.php");
     require_once ("../../Models/consultas.php");
     require_once ("../../Models/seguridadPS.php");
-    require_once ("../../Controllers/mostrarInfoResidente.php");
+    require_once("../../Controllers/mostrarInfoGuarda.php");
 ?>
 
 
@@ -53,7 +53,7 @@
                         <div class="page-header">
                             <div class="page-title" style="margin-left: 20px">
                                 <h1 id="publi-title" >Publicaciones Creadas</h1>
-                                <p id="text-title">mostramos todas las publñicaciones que han sido registradas en nuestro módulo </p>
+                                <p id="text-title">mostramos todas las publicaciones que han sido registradas en nuestro módulo </p>
                             </div>
                         </div>
                     </div>
