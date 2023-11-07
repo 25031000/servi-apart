@@ -27,6 +27,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
     <title>Vehiculos</title>
 </head>
 
@@ -191,7 +192,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
                         </div>
                         <div class="d-flex flex-column  mt-3">
-                            <button class="p-2 register-btn rounded-2 w-20">Registrar</button>
+                        <button class="boton-btn">Registrar</button>   
                         </div>
                     </form>
 

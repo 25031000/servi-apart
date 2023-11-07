@@ -70,6 +70,7 @@
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
 </head>
 
 <body>
@@ -186,7 +187,7 @@
                                     </div>
                                     
                                 </div>
-                                <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Registro</button>
+                                <button class="boton-btn">Registrar</button>  
                                 <div class="register-link m-t-15 text-center">
                                     
                                 </div>

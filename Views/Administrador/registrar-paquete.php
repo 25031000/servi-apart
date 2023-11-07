@@ -22,6 +22,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
     <title>Paqueteria</title>
 </head>
 
@@ -83,7 +84,7 @@
                         </div>
 
                         <div class="d-flex flex-column  mt-3">
-                            <button class="p-2 register-btn rounded-2">Registrar</button>                        
+                        <button class="boton-btn">Registrar</button>                           
                         </div>
                     </form>
                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">

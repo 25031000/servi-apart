@@ -50,7 +50,7 @@ if($titulo !== '' && $descripcion !== ''){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Error al crear la publicacion, intente de nuevo',
+            text: 'Error al crear la publicacion, rellene todos los campos por favor',
             confirmButtonText: 'Ok'
         }).then((result)=>{
             if(result.isConfirmed){

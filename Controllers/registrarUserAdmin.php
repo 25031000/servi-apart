@@ -45,7 +45,7 @@
             echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
         }else{
             echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo "<script>location.href='../Views/Administrador/page-register.php'</script>";
+            echo "<script>location.href='../Views/Administrador/registrar-usuario.php'</script>";
         }
 
 
