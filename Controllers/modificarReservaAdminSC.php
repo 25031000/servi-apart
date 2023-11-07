@@ -16,6 +16,7 @@ $hora_inicio =$_POST['hora_inicio'];
 $hora_finalizacion =$_POST['hora_finalizacion'];
 $mesas =$_POST['mesas'];
 $sillas =$_POST['sillas'];
+$tipo_evento =$_POST['tipo_evento'];
 
 
 
@@ -28,13 +29,13 @@ $sillas =$_POST['sillas'];
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         if (
             strlen('identificacion')> 0  && strlen('dia_reserva') > 0 && strlen('hora_inicio')> 0 &&
-            strlen('hora_finalizacion')> 0 && strlen('mesas') > 0 && strlen('sillas')){
+            strlen('hora_finalizacion')> 0 && strlen('mesas') > 0 && strlen('sillas') > 0 && strlen('tipo_evento')> 0){
 
             //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
             //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
             $objConsultas = new Consultas();
-            $result = $objConsultas -> modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion,$mesas, $sillas);    
+            $result = $objConsultas -> modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion,$mesas, $sillas, $tipo_evento);    
         
 
         }else{
