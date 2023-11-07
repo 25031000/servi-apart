@@ -35,7 +35,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid p-0">
 
     <?php
     include '../../components/menu.php';
