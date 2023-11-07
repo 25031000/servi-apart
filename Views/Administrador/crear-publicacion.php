@@ -76,8 +76,7 @@
 
                         <div class="d-flex flex-column mb-3">
                             <label for="" class="py-2">Descripcion</label>
-                            <textarea name="textarea" rows="5" cols="40" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input">
-                        </textarea> 
+                            <textarea name="descripcion" rows="5" cols="40" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input"></textarea> 
                         </div>
 
                         <div class="d-flex flex-column  mt-3">
@@ -86,7 +85,7 @@
 
                         
                     </form>
-                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
+                     <div id="grid" class="col-md-6 p-5 m-0 grid-collage">
                         <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
                         <img src="./images/vertical-pack.png"  alt="">
                         <img src="./images/horizontal-pack.png" width="100%" height="100%"   alt="">
