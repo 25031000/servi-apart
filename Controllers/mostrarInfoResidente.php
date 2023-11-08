@@ -479,9 +479,19 @@ function modificarReservaRes()
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
-                <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
+                <form action="../../Controllers/modificarReservaRes.php" method="POST" >
                 <div class="row g-2">
-                
+               
+                 
+                <div class="col-md-6">
+                    <div class="">
+                    <label for="identificacion" style="font-weight: bold; color: #333;">Identificacion</label>
+                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        
+                    </div>
+                </div>
+
+
                 <div class="col-md-6">
                     <div class="">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
