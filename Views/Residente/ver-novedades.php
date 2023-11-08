@@ -44,7 +44,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
 </head>
 
-<body style="height:1200px" class="container-fluid">
+<body style="height:1200px" class="container-fluid p-0">
 
     <?php
     include '../../components/menu.php';

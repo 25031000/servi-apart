@@ -69,7 +69,7 @@ function cargarPublicacionesRes()
         foreach (array_slice($result, $start, 3) as $f) {
             echo '
                             
-                         <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 380px; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
+                         <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 30%; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
 
                             <header class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
@@ -486,7 +486,7 @@ function cargarReservaRes(string $identificacion)
                     </div>
         
                     <div class="btn-container">
-                    <a href="../../Views/Residente/modificar-reservaRes.php" class="btn btn-primary btn-sm">Modificar</a>
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '&reservaid='.$item['id_reserva'] .'" class="btn btn-primary btn-sm">Modificar</a>
                         <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
                     </div>
                     
@@ -500,10 +500,13 @@ function cargarReservaRes(string $identificacion)
 
 function modificarReservaRes()
 {
-    $id_reserva = $_GET['id'];
+    $id_reserva = $_GET['reservaid'];
+    $identificacion= $_GET['id'];
+
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarReservaEditarRes($id_reserva);
+    $result = $objConsultas->mostrarReservaEditarRes($id_reserva, $identificacion);
+
 
 
     foreach ($result as $f) {
@@ -514,16 +517,19 @@ function modificarReservaRes()
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
-                <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
+                <form action="../../Controllers/modificarReservaRes.php" method="POST" >
                 <div class="row g-2">
+               
+                 
                 <div class="col-md-6">
                     <div class="">
-                    <label for="" style="font-weight: bold; color: #333;">Identificación</label>
-                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                    <label for="identificacion" style="font-weight: bold; color: #333;">Identificacion</label>
+                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
-                
+
+
                 <div class="col-md-6">
                     <div class="">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>

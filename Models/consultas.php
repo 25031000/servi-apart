@@ -275,7 +275,7 @@ class Consultas
         return $f;
     }
 
-    
+
 
 
 
@@ -1015,25 +1015,36 @@ class Consultas
     }
 
     //se creo para el editar en ver reserva residente no funciona todavia
-    
-    public function mostrarReservaEditarRes($id_reserva)
+
+    public function mostrarReservaEditarRes($id_reserva, $identificacion)
     {
-        $f = null;
-        $objConexion = new Conexion();
-        $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
-        $result = $conexion->prepare($consultar);
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
 
-        $result->bindParam(":id_reserva", $id_reserva);
+            $consultar = "SELECT * FROM reserva_salon WHERE identificacion=:identificacion AND id_reserva=:id_reserva";
+            $result = $conexion->prepare($consultar);
 
-        $result->execute();
+            $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":id_reserva", $id_reserva);
+
+            $result->execute();
+            $arr = $result->fetchAll(PDO::FETCH_ASSOC);
+
+            return $arr;
+            
+        } catch (\Throwable $th) {
+            echo $th->getMessage() . ":)";
+        }
 
 
-        while ($resultado = $result->fetch()) {
+        /* while ($resultado = $result->fetch()) {
             $f[] = $resultado;
         }
-        return $f;
+        return $f; */
+
+
     }
 
 
