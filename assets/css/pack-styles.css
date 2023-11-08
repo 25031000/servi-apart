@@ -113,6 +113,8 @@ html{
     padding-left: 0.625rem;
     background: var(--input-back);
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300 !important;
 }
 
 .pack-form{
@@ -154,6 +156,8 @@ estilos del formulario de residente en salon comunal
     width: 7.5rem;
     background-color: var(--primary);
     color: black;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 300 !important;
 }
 
 .grid-collage{

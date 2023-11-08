@@ -1,6 +1,7 @@
 
 <?php
- session_start();
+     if(session_status() !== PHP_SESSION_ACTIVE) session_start();
+   
 
 if (!isset($_SESSION['AUTENTICADO'])) {
     // Guardar la URL actual en la variable de sesión
