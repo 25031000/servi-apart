@@ -25,7 +25,10 @@
     <?php
     
             /* session_start(); */
-            $id = $_SESSION['id'];
+            $identificacion = $_SESSION['id'];
+
+            $id_reserva = $_GET['id_reserva'];
+
     //menu
     include '../../components/menu.php';
     //header
@@ -43,9 +46,10 @@
         <?php
             require_once "../../Controllers/mostrarInfoResidente.php";
             require_once("../../Models/seguridadResidente.php");
+            require_once("../../Models/consultas.php");
 
             
-            cargarReservaRes($id);
+            cargarReservaRes($identificacion, $id_reserva);
         ?>
 
     </main>

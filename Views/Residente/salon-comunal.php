@@ -276,7 +276,7 @@ require_once("../../Models/seguridadResidente.php");
         <!-- /# column -->
         </div>
         <div class="d-grid gap-2 col-6 mx-auto bzrp " style="margin-top: 50px; ">
-            <a href="ver-reservaRes.php" class="btn btn-success bzrp">Ver Reserva</a>
+            <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-success bzrp">Ver Reserva</a>
         </div>
 
 

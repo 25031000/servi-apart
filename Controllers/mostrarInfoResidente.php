@@ -408,7 +408,7 @@ function cargarPaquetesRes(string $identificacion)
 function cargarReservaRes(string $identificacion)
 {
     $objConsultas = new Consultas();
-    $arr = $objConsultas->mostrarReservasAdmin($identificacion);
+    $arr = $objConsultas->mostrarReservaRes($identificacion);
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
@@ -462,12 +462,12 @@ function cargarReservaRes(string $identificacion)
 
 function modificarReservaRes()
 {
-    $id_reserva = $_GET['reservaid'];
+    
     $identificacion= $_GET['id'];
 
 
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarReservaEditarRes($id_reserva, $identificacion);
+    $result = $objConsultas-> mostrarReservaRes($identificacion);
 
 
 

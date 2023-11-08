@@ -1014,20 +1014,19 @@ class Consultas
         return $f;
     }
 
-    //se creo para el editar en ver reserva residente no funciona todavia
+    // se creo para el editar en ver reserva residente no funciona todavia
 
-    public function mostrarReservaEditarRes($id_reserva, $identificacion)
+    public function mostrarReservaRes($identificacion)
     {
 
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
 
-            $consultar = "SELECT * FROM reserva_salon WHERE identificacion=:identificacion AND id_reserva=:id_reserva";
+            $consultar = "SELECT * FROM reserva_salon WHERE identificacion=:identificacion";
             $result = $conexion->prepare($consultar);
 
             $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":id_reserva", $id_reserva);
 
             $result->execute();
             $arr = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -1046,6 +1045,42 @@ class Consultas
 
 
     }
+
+    public function modificarReservaRes($dia_reserva, $identificacion,$hora_inicio,$hora_finalizacion,$mesas,$sillas,$tipo_evento)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE reserva_salon SET hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, dia_reserva=:dia_reserva,  mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE id_reserva=:id_reserva ";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+        $result->bindParam(":dia_reserva", $dia_reserva);
+        $result->bindParam(":hora_inicio", $hora_inicio);
+        $result->bindParam(":hora_finalizacion", $hora_finalizacion);
+        $result->bindParam(":mesas", $mesas);
+        $result->bindParam(":sillas", $sillas);
+        $result->bindParam(":tipo_evento", $tipo_evento);
+
+
+
+        $result->execute();
+
+        echo ' 
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                location.href="../Views/Residente/ver-reservaRes.php?identificacion=' . $identificacion . '";
+            })
+        </script>';
+    }
+
 
 
     public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
