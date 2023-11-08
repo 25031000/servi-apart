@@ -69,8 +69,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <p class="ps-4">Registra cada paquete que llegue a porteria y hazle saber a los residentes su llegada.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #7D68FF">
                
-                <img src="./images/Next.png" alt=""> 
-          
+                <a href="paqueteria.php"> 
+                <img src="./images/Next.png" alt="">
+                </a>
                 </span>
                 <img src="./images/paquete.png" style="width: 158px;" class="position-absolute" alt="">
             </div>
