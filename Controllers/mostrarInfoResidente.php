@@ -486,7 +486,7 @@ function cargarReservaRes(string $identificacion)
                     </div>
         
                     <div class="btn-container">
-                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '&reservaid='.$item['id_reserva'] .'" class="btn btn-primary btn-sm">Modificar</a>
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id='. $item['identificacion'] .'&reservaid='.$item['id_reserva'].'" class="btn btn-primary btn-sm">Modificar</a>
                         <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
                     </div>
                     
@@ -498,16 +498,15 @@ function cargarReservaRes(string $identificacion)
     }
 }
 
+
 function modificarReservaRes()
 {
     
-    $identificacion= $_GET['id'];
-
-
+    $id_reserva= $_GET['reservaid'];
     $objConsultas = new Consultas();
-    $result = $objConsultas-> mostrarReservaRes($identificacion);
+    $result = $objConsultas-> mostrarReservaEditarRes($id_reserva);
 
-
+ 
 
     foreach ($result as $f) {
         echo '
@@ -517,7 +516,7 @@ function modificarReservaRes()
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
-                <form action="../../Controllers/modificarReservaRes.php" method="POST" >
+                <form action="../../Controllers/modificarReservaRes.php?reservaid='.$id_reserva.'" method="POST" >
                 <div class="row g-2">
                
                  
@@ -570,9 +569,8 @@ function modificarReservaRes()
                 <div>
                     <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
                     <div>
-                        <select class="form-control" id="tipo_evento" name="tipo_evento" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                            <option value="' . $f['tipo_evento'] . '">' . $f['tipo_evento'] . '</option>
-                            <option value="" selected></option>
+                        <select class="form-control" id="tipo_evento" name="tipo_evento" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
+                            <option value="">' . $f['tipo_evento'] . '</option>
                             <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                             <option value="Matrimonio">Matrimonio</option>
                             <option value="Primera comunión">Primera comunión</option>
@@ -591,6 +589,8 @@ function modificarReservaRes()
                 </div>
             </div>
             
+          
+
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">Actualizar Informacion</button>
                 </div>

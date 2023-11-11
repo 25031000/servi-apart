@@ -1046,15 +1046,39 @@ class Consultas
 
     }
 
-    public function modificarReservaRes($dia_reserva, $identificacion,$hora_inicio,$hora_finalizacion,$mesas,$sillas,$tipo_evento)
+    public function mostrarReservaEditarRes($id_reserva)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM reserva_salon WHERE id_reserva=:id_reserva";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
+
+
+
+
+    public function modificarReservaRes($id_reserva,$dia_reserva, $identificacion, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
 
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE reserva_salon SET hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, dia_reserva=:dia_reserva,  mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE id_reserva=:id_reserva ";
+        $actualizar = " UPDATE reserva_salon SET dia_reserva=:dia_reserva,  hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion,  mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE id_reserva=:id_reserva ";
         $result = $conexion->prepare($actualizar);
 
+        
         $result->bindParam(":id_reserva", $id_reserva);
         $result->bindParam(":dia_reserva", $dia_reserva);
         $result->bindParam(":hora_inicio", $hora_inicio);

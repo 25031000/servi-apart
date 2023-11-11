@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2023 a las 03:05:09
+-- Tiempo de generación: 11-11-2023 a las 05:57:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -135,8 +135,8 @@ CREATE TABLE `reserva_salon` (
   `dia_reserva` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_finalizacion` time NOT NULL,
-  `mesas` int(11) NOT NULL,
-  `sillas` int(11) NOT NULL,
+  `mesas` int(10) NOT NULL,
+  `sillas` int(10) NOT NULL,
   `tipo_evento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -145,15 +145,10 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
-(22, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(23, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(24, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(25, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(26, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(27, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(28, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(29, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, ''),
-(30, 999, '2023-11-30', '22:44:00', '03:00:00', 123, 123, '');
+(31, 999, '2023-11-30', '14:59:00', '03:00:00', 44, 500, 'Taller de arte'),
+(32, 999, '2023-11-14', '23:59:00', '03:00:00', 789, 487, 'Presentación teatral'),
+(33, 999, '2023-11-25', '21:02:00', '03:00:00', 789, 987, 'Baby shower'),
+(34, 654321, '2023-11-26', '13:48:00', '03:00:00', 1000, 2000, 'Otro');
 
 -- --------------------------------------------------------
 
@@ -319,7 +314,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- Restricciones para tablas volcadas

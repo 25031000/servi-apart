@@ -32,7 +32,7 @@
 
 
 
-
+    $id_reserva = $_GET['reservaid'];
     $identificacion = $_POST['identificacion'];
     $dia_reserva = $_POST['dia_reserva'];
     $hora_inicio = $_POST['hora_inicio'];
@@ -55,11 +55,13 @@
         strlen('hora_finalizacion') > 0 && strlen('mesas') > 0 && strlen('sillas') > 0 && strlen('tipo_evento') > 0
     ) {
 
+
+        
         //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
         //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
         $objConsultas = new Consultas();
-        $result = $objConsultas->modificarReservaRes($dia_reserva, $identificacion, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento);
+        $result = $objConsultas->modificarReservaRes($id_reserva,$dia_reserva, $identificacion, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento);
     } else {
         echo '<script>alert("Por favor complete todos los campos")</script>';
         echo "<script>location.href='../Views/Residente/ver-reservaSC.php'</script>";

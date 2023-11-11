@@ -27,7 +27,7 @@
             /* session_start(); */
             $identificacion = $_SESSION['id'];
 
-            $id_reserva = $_GET['id_reserva'];
+            
 
     //menu
     include '../../components/menu.php';
@@ -49,7 +49,7 @@
             require_once("../../Models/consultas.php");
 
             
-            cargarReservaRes($identificacion, $id_reserva);
+            cargarReservaRes($identificacion);
         ?>
 
     </main>
