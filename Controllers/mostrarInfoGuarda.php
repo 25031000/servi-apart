@@ -290,7 +290,7 @@ function cargarNovedadesPS()
                 <td style="text-align:center">' . $f['placa'] . ' </td>
                 <td style="text-align:center; max-width:600px">' . $f['novedad'] . '</td>
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
-                <td style="text-align:center">' . $f['nombres'] . ' '.$f['apellidos'].'</td>
+                <td style="text-align:center">' . $f['nombres'] . ' ' . $f['apellidos'] . '</td>
                 <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
 
@@ -387,7 +387,114 @@ function cargarNovedadesEditarPS()
     }
 
 }
+function mostrarReservas()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservasPS();
 
+    if (!isset($result)) {
+        echo '<h2> NO HAY RESERVAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <article class="col-md-12 box-cont p-4 px-4 my-5" style="style=" -webkit-border-radius: 0.625rem; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
+                <header class="w-100 p-2 border-2 border-bottom border-dark">
+                    <h3> Numero de Reserva ' . $f['id_reserva'] . '</h3>
+                </header>
+                <div class="h-auto row d-flex p-2">
+                                <section class="col p-2">
+                                    
+
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/usuarios.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] .' '.$f['apellidos'].'</p>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/telefono.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Telefono</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['telefono'] . '</p>
+                                        </div>
+                                    </div>
+
+                                   
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/diaReserva.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Dia Reserva</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['dia_reserva'] . '</p>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                    <div class"w-50 d-flex p-2" style="align-items: center;">
+                                        <img  src="../../assets/icons/iconSalonComunal/cartel.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                        <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Tipo de Evento</p>
+                                    </div>
+                                    <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                        <p class="fs-6" style="position:relative; top: 9px">' . $f['tipo_evento'] . '</p>
+                                    </div>
+                                </div>
+                                </section>
+
+                                <section class="col p-2">
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/torres.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Torre</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['torre'] . '</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/puerta.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apartamento</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['apartamento'] . '</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/horaInicio.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Inicio</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['hora_inicio'] . '</p>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                        <div class"w-50 d-flex p-2" style="align-items: center;">
+                                            <img  src="../../assets/icons/iconSalonComunal/reloj.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Hora Finalización</p>
+                                        </div>
+                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['hora_finalizacion'] . '</p>
+                                        </div>
+                                    </div>
+
+                         </div>
+              </article>
+            ';
+        }
+    }
+}
 
 
 
