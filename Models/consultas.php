@@ -1131,6 +1131,8 @@ class Consultas
         echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
 
     }
+ 
+
 
 
     public function actualizarClaveAdmin($identificacion, $claveMd)
@@ -1263,7 +1265,39 @@ class Consultas
             echo "error al listar los registros de las reservas: " . $th;
         }
     }
+    public function mostrarReservasPS()
+    {
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
 
+            $query = "SELECT S.id_reserva , 
+                S.identificacion, 
+                S.dia_reserva , 
+                S.hora_inicio , 
+                S.hora_finalizacion , 
+                S.mesas , 
+                S.sillas,
+                S.tipo_evento,
+                U.nombres,
+                U.apellidos,
+                U.email,
+                U.telefono,
+                U.torre,
+                U.apartamento  FROM reserva_salon S INNER JOIN usuarios U ON S.identificacion=U.identificacion";
+            $statement = $conexion->prepare($query);
+
+
+            $response = $statement->execute();
+            if (!$response)
+                return;
+            $result = $statement->fetchAll();
+            return $result;
+
+        } catch (\Throwable $th) {
+            echo "error al listar los registros de las reservas: " . $th;
+        }
+    }
 
     /**
      * Contador de registros de tablas
