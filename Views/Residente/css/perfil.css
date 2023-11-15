@@ -19,13 +19,15 @@
 /*---------------- LEFT CONTAINER------------ */
 
 .white_radius {
-    max-width: 230px;
+    max-width: 300px;
+    max-height: 300px;
     border-radius: 50%;
     border: 2px solid white;
 }
 
 .gray_radius {
-    max-width: 230px;
+    max-width: 300px;
+    max-height: 300px;
     border-radius: 50%;
     border: 3px solid rgb(214, 214, 214);
 }
@@ -83,6 +85,11 @@
 
 /*---------------- RIGHT CONTAINER------------ */
 
+.input_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
 .input_wrapper input{
     padding: 0.75rem 0;
     border: none;
@@ -96,17 +103,23 @@
 
 .type_wrapper{
     min-height: 132px !important;
+    border: 2px dashed lightgrey;
+
 }
 
 .pass_section{
     border: 2px dashed #FFA5A5;
 }
 
+
+
 .check_wrapper{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 20%;
+    margin: 0 10px !important;
 }
 
 .check_wrapper input[type=radio]{
@@ -114,6 +127,7 @@
     right: 0;
     top: 0;
     border-radius: 50% !important;
+    appearance: none;
 }
 
 

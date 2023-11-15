@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="./css/perfil.css">
 
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
 </head>
 
@@ -34,7 +35,7 @@
                         <input role="button" onchange="getData(this)" type="file">
                     </div>
                     <div class="white_radius ">
-                        <img width="100%" height="100%" src="./images/profile.png" alt="">
+                        <img style="width: 290px; height: 290px;" src="./images/profile.png" alt="">
                     </div>
                 </div>
                 <div class="username_wrapper">
@@ -47,11 +48,15 @@
                 </div>
             </div>
         </section>
-        <section class="form_wrapper p-0 col-lg-7 border position-relative border-primary d-flex flex-column justify-content-center">
+        <section
+            class="form_wrapper p-0 col-lg-7 border position-relative border-primary d-flex flex-column justify-content-center">
 
-            <form action="../../Controllers/modificarFotoPerfil.php" class="border border-success p-0 py-4 d-flex flex-column gap-5">
+            <form action="../../Controllers/modificarFotoPerfil.php" method="post"
+                class="border border-success p-0 py-4 d-flex flex-column gap-5">
                 <section class="desicion_icons_wrp justify-content-end d-flex">
-                    <img src="./icons/Tick.png" role="button" type="submit" class="m-2" alt="">
+                    <button type="submit">
+                        <img src="./icons/Tick.png" role="button" class="m-2" alt="">
+                    </button>
                     <img src="./icons/Cancel.png" role="button" type="reset" class="m-2" alt="">
                 </section>
                 <div class="w-100 row px-2 m-0 ">
@@ -84,32 +89,35 @@
                 </div>
                 <div>
                     <p class="ps-4 m-0">Restablecer contrasena</p>
-                    <section class="pass_edit w-100 row p-4 m-0 justify-content-between gap-3 flex-nowrap align-items-center">
-                        <div class="pass_section rounded-4 justify-content-around p-3 gap-3 col-md-8 d-flex flex-nowrap">
-                            <div class="input_wrapper  mb-3">
+                    <section
+                        class="pass_edit w-100 row p-4 m-0 justify-content-between gap-3 flex-nowrap align-items-center">
+                        <div
+                            class="pass_section rounded-4 justify-content-around p-3 gap-3 col-md-8 d-flex flex-nowrap">
+                            <div class="input_wrapper  mb-3 col-md-5">
                                 <label for="" class="mb-2">Contrasena nueva</label>
                                 <input type="password" name="password" placeholder="******">
                             </div>
-                            <div class="input_wrapper  mb-3">
+                            <div class="input_wrapper  mb-3 col-md-5">
                                 <label for="" class="mb-2">Confirmar contrasena</label>
                                 <input type="password" name="password-verifier" placeholder="******">
                             </div>
                         </div>
 
-                        <div class="type_wrapper border border-primary col-md-4 text-center py-3 d-flex flex-column">
+                        <div class="type_wrapper rounded-3 col-md-4 text-center py-3 d-flex flex-column">
                             <label for="" class="mb-2 w-100">Tipo de documento</label>
-                            <section style="min-height: 48px;" class="inputs_wrapper px-3 w-100 d-flex flex-nowrap justify-content-center gap-2 border border-danger">
-                                <div onclick="checked(this)" role="button" class="check_wrapper rounded-3 w-50 p-2 border border-warning">
+                            <section style="min-height: 48px;"
+                                class="inputs_wrapper px-3 w-100 d-flex flex-nowrap justify-content-center gap-2">
+                                <div onclick="checked(this)" role="button" class="check_wrapper border rounded-3 p-2 ">
                                     <small>CC</small>
-                                    <input type="radio" name="cc" value="cc">
+                                    <input type="radio" name="type" value="cc">
                                 </div>
-                                <div onclick="checked(this)" role="button" class="check_wrapper rounded-3 w-50 p-2 border border-warning">
+                                <div onclick="checked(this)" role="button" class="check_wrapper border rounded-3 p-2 ">
                                     <small>CE</small>
-                                    <input type="radio" name="ce" value="cc">
+                                    <input type="radio" name="type" value="ce">
                                 </div>
-                                <div onclick="checked(this)" role="button" class="check_wrapper rounded-3 w-50 p-2 border border-warning">
+                                <div onclick="checked(this)" role="button" class="check_wrapper border rounded-3 p-2 ">
                                     <small>PS</small>
-                                    <input type="radio" name="ps" value="ps">
+                                    <input type="radio" name="type" value="ps">
                                 </div>
                             </section>
 
@@ -124,6 +132,9 @@
 
 
     <script>
+
+        const radioBtnContainer = document.querySelectorAll(".check_wrapper")
+
         window.onload = () => {
             const file = document.querySelector("input[type=file]")
 
@@ -131,26 +142,48 @@
                 console.log(item.files[0]);
             }
 
+
+
             const radioBtnContainer = document.querySelectorAll(".check_wrapper")
             const radioInput = document.querySelectorAll("input[type=radio]")
 
             radioBtnContainer.forEach(item => {
                 item.addEventListener('click', () => {
-
-                    radioInput.forEach(i => i.checked = false)
+                    radioInput.forEach(i => {
+                        i.checked = false;
+                      
+                    })
 
                     const input = item.childNodes[3]
-                    input.checked === true ? input.checked = false : input.checked = true;
+
+                    input.checked ? input.checked = false : input.checked = true;
                 })
             });
+
+
         }
+
+
+        function checked(i) {
+            radioBtnContainer.forEach(element => {
+                element.style.boxShadow = "none";
+                element.style.boderColor = "transparent"
+            });
+            //i.classList.add("border-primary")
+
+            i.style.boxShadow = "0 0 0 0.2rem rgba(0, 123, 255, 0.25)";
+            i.style.boderColor = "#007bff"
+        }
+
     </script>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
