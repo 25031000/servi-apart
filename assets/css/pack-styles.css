@@ -169,6 +169,8 @@ estilos del formulario de residente en salon comunal
     grid-template-areas: 
                         "img1 img3"
                         "img2 img3";
+    
+    
 }
 
 .grid-collage-ps{

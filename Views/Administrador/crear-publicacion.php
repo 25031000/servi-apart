@@ -85,10 +85,10 @@
 
                         
                     </form>
-                     <div id="grid" class="col-md-6 p-5 m-0 grid-collage">
-                        <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
-                        <img src="./images/vertical-pack.png"  alt="">
-                        <img src="./images/horizontal-pack.png" width="100%" height="100%"   alt="">
+                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
+                        <img src="./images/hola.jpg"  width="100%" height="100%" alt="">
+                        <img src="./images/hola3.jpg"  alt="">
+                        <img src="./images/hola2.jpg" width="100%" height="100%"   alt="">
                     </div>
                     </div>
                 </main>
