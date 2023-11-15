@@ -122,9 +122,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <div style="display: flex; justify-content: end; width: 98%">
 
                     <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light"
-                            href="../../services/generarexelusuarios.php" target="_blank">Generar Excel</a></button>
+                            href="../../services/generarexcelusuarios.php" target="_blank">Generar Excel</a></button>
                     <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light"
-                            href="../../services/generarpdfusuarios.php" target="_blank">Generar Reporte
+                            href="../../services/generatepdfusuarios.php" target="_blank">Generar Reporte
                             PDF</a></button>
 
                 </div>
@@ -184,6 +184,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
         </div>
     </div>
+
+  
+
 
 
 
