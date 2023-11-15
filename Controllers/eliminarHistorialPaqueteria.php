@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         session_start();
         $id = $_SESSION['id'];
         $response = $objConsultas->eliminarPaqueteRes($id);
-        echo $response;
+        echo $response === true ? 1 : 0;
     }
 }else{
     http_response_code(405);

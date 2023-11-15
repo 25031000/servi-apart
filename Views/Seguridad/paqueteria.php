@@ -51,8 +51,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     ?>
 
     <div class="content-wrap mt-4">
-        <div class="main">
-            <div class="row justify-content-between">
+        <div class="main d-flex flex-column justify-content-center w-100" style="height: 88vh;">
+            <div class="row justify-content-between w-100">
                 <div class="col-lg-8 p-r-0 title-margin-right align-items-center">
                     <div class="page-header ms-4 ">
                         <div class="page-title d-flex ms-3 r align-items-center">
@@ -64,7 +64,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                     </div>
                 </div>
                 <!-- /# column -->
-                <div class="col-lg-4 p-l-0 title-margin-left  d-flex align-items-center justify-content-center">
+                <div class="col-lg-4 p-l-0 title-margin-left  d-flex align-items-center justify-content-end pe-4 ">
                     <div class="page-header d-flex align-items-center ">
                         <div class="page-title  " style="display: flex; align-items: center !important;">
                             <ol class="breadcrumb  m-0">

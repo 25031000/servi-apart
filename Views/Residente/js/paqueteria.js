@@ -65,7 +65,11 @@ $('.history-icon').click(function(){
             
             fetch('../../Controllers/eliminarHistorialPaqueteria.php', fecthOptions)
             .then(response => response.text())
-            .then((data) => console.log(data))
+            .then((data) => {
+                if (data == 1) {
+                    location.reload();
+                }
+            })
             .catch(error => {
                 // Handle any errors
                 console.error(error);
@@ -99,6 +103,9 @@ $('.history-text').click(function(){
                 let response = await fetch('../../Controllers/eliminarHistorialPaqueteria.php', fecthOptions);
                 let responseParsed = await response.text();
                 console.log(responseParsed);
+                if (responseParsed == 1) {
+                    location.reload();
+                }
             } catch (error) {
                 console.log(error);
             }
