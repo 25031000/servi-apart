@@ -24,14 +24,14 @@ function cargarPublicacionRes()
 
             echo '
                         <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border" style="-webkit-border-radius: 0.625rem; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff" >
-                            <header class=" p-2 d-flex " > 
+                            <div class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             ' . $f['titulo'] . '
                             </h2>
                             <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> 
-                            </header>
+                            </div>
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>
@@ -71,7 +71,7 @@ function cargarPublicacionesRes()
                             
                          <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 30%; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
 
-                            <header class=" p-2 d-flex " > 
+                            <div class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             ' . $f['titulo'] . '
                             </h2>
@@ -81,7 +81,7 @@ function cargarPublicacionesRes()
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> </a>
 
-                            </header>
+                            </div>
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>

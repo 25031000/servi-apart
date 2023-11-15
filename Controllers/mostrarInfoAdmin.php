@@ -32,8 +32,8 @@ function cargarUsuarios()
                 <td>' . $f['estado'] . ' </td>
                 <td>' . $f['torre'] . ' </td>
                 <td>' . $f['apartamento'] . ' </td>
-                <td><a href="modificar-publi.php?id_publi=' . $f['identificacion'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
-                <td><a href="../../Controllers/eliminarUserAdmin.php?id=' . $f['identificacion'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td><a href="modificar-usuario.php?identificacion=' . $f['identificacion'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
+                <td><a href="../../Controllers/eliminarUserAdmin.php?identificacion=' . $f['identificacion'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
             </tr>     
             ';
         }
@@ -74,7 +74,7 @@ function cargarUsuariosexcel()
 function cargarUsuarioEditar()
 {
 
-    $identificacion = $_GET['id'];
+    $identificacion = $_GET['identificacion'];
 
     //enviamos la pk A UNA funcion de la clase consultas 
 

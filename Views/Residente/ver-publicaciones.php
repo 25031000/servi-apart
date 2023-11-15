@@ -51,7 +51,7 @@
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
-                            <div class="page-title" style="margin-left: 20px">
+                            <div class="page-title" style="margin-left: 20px; margin-top: 30px">
                                 <h1 id="publi-title" >Publicaciones Creadas</h1>
                                 <p id="text-title">mostramos las tres publicaciones más recientes que han sido registradas en nuestro módulo </p>
                             </div>
