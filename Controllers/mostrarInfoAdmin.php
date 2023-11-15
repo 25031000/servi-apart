@@ -32,8 +32,8 @@ function cargarUsuarios()
                 <td>' . $f['estado'] . ' </td>
                 <td>' . $f['torre'] . ' </td>
                 <td>' . $f['apartamento'] . ' </td>
-                <td><a href="modificar-usuario.php?identificacion=' . $f['identificacion'] . '" class="btn btn-editar"><i class="ti-pencil-alt" >Editar</i></a> </td>
-                <td><a href="../../Controllers/eliminarUserAdmin.php?identificacion=' . $f['identificacion'] . '" class="btn btn-danger"> <i class="ti-trash"></i>Eliminar</a></td>
+                <td style="text-align:center; display:flex; justify-content:center; border:white"><a href="modificar-usuario.php?identificacion=' . $f['identificacion'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+                <a href="../../Controllers/eliminarUserAdmin.php?identificacion=' . $f['identificacion'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"   style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
             </tr>     
             ';
         }
@@ -725,64 +725,39 @@ function cargarPubliEditar()
     foreach ($result as $f) {
         echo '
 
-                        <section id="main-content">
-                        <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card-publi">
-                                        <div class="card-title">
-                                            
-                                            
-                                        </div>
+        <div class="pt-4 ">
+        <main class="w-100 row px-5 gap-5 flex-nowrap align-items-center py-4" >
+            <form action="../../Controllers/modificarpubli.php?id_publi' . $f['id_publi'] . ' " class="col-md-6 p-5 pack-form h-75" method="post">
+            <div class="d-flex flex-column mb-3">
+                    <h2 style="font-size: 1.7em;">Crear publicación</h2>
+                </div>  
 
-
-                        <form action="../../Controllers/modificarpubli.php?id_publi=' . $id_publi . '" method="POST">
-                        <div class="row">
-
-
-                            <div class="form-group col-md-12">
-                                <label><strong>Titulo:</strong></label>
-                                <input type="text" class="form-control" value="' . $f['titulo'] . '" placeholder="Ej: No va haber luz de las 7pm a 10pm. " name="titulo">
-                            </div>
-                        
-                            <div class="form-group col-md-12 ">
-                                <label><strong>Descripcion:</strong></label>
-                                <input type="textarea" class="form-control des" cols="30" rows="3" value="' . $f['descripcion'] . '"  placeholder="Ej: Profundiza la situacion" name="descripcion">
-                            
-                            </div>
-
-                            
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Actualizar</button>
-                        <div class="register-link m-t-15 text-center">
-                            
-                        </div>
-                    </form>
-
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <!-- /# column -->
-
-                <!-- /# column -->
+                <div class="d-flex flex-column mb-3">
+                    <label for="" class="py-2">Titulo</label>
+                    <input type="text" name="titulo" value="' . $f['titulo'] . '" placeholder="Ej: acueducto " class="rounded-3 input">
                 </div>
 
-
-                <div class="row">
-                <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                <div class="d-flex flex-column mb-3">
+                    <label for="" class="py-2">Descripcion</label>
+                    <textarea name="descripcion" rows="5" cols="40" value="' . $f['descripcion'] . '" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input"></textarea> 
                 </div>
-                </div>
-                </div>
-                </section>
-                        
-                            
 
-                    
+                <div class="d-flex flex-column  mt-3">
+                    <button class="boton-btn">Registrar</button>                        
+                </div>
 
+                
+            </form>
+            
+            </div>
+        </main>
+    </div>
+</div>
+</div>
                         ';
+                        
 
+                       
 
 
 

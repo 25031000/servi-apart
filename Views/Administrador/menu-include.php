@@ -64,7 +64,7 @@ $result = $objConsulta->verPerfil($id);
                         </a>
                         <ul>
                             <li>
-                                <a href="ver-reservaSC.PHP"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver reservas</a>
+                                <a href="ver-reservaSC.PHP"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>
                             </li>
 
                         </ul>
@@ -80,7 +80,7 @@ $result = $objConsulta->verPerfil($id);
                                 <a href="registrar-paquete.php"><img src="../../assets/icons/agregar.png" alt="icono registrar paquete" width="20px"  style="margin-right:10px"> Registrar paquete </a>
                             </li>
                             <li>
-                                <a href="ver-paquetes.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver paquete</a>
+                                <a href="ver-paquetes.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>
                             </li>
 
                         </ul>
@@ -96,7 +96,7 @@ $result = $objConsulta->verPerfil($id);
                                 <a href="registrar-vehiculo.php"> <img src="../../assets/icons/agregar.png" alt="icono agregar vehiculo" width="20px"  style="margin-right:10px"> Registrar Vehículos</a>
                             </li>
                             <li>
-                                <a href="ver-vehiculo.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Vehículos</a>
+                                <a href="ver-vehiculo.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>
                             </li>
 
 
@@ -109,7 +109,7 @@ $result = $objConsulta->verPerfil($id);
                         </a>
                         <ul>
                             <li>
-                                <a href="#"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Peticiones</a>
+                                <a href="#"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>
                             </li>
                         </ul>
                     </li>
@@ -128,7 +128,7 @@ $result = $objConsulta->verPerfil($id);
                             </li>
                         
                             <li>
-                                <a href="ver-publicaciones.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver Publicaciones</a>
+                                <a href="ver-publicaciones.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>
                             </li>
                         
                            

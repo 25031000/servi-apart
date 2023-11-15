@@ -60,10 +60,10 @@
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left" style="margin-top: 30px">
                         <div class="page-header">
-                            <div class="page-title">
+                            <div class="page-title" style="margin-left: 20px; margin-top: 25px">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e; margin-left: 180px">Seguridad</a>
+                                        <a href="#"  style="color: #18d26e" >Seguridad</a>
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>

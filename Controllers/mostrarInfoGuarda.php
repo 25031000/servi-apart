@@ -28,9 +28,7 @@ function cargarPublicacionRes()
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             ' . $f['titulo'] . '
                             </h2>
-                            <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
-                                <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
-                            </div> 
+                           
                             </div>
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>

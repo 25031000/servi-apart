@@ -44,29 +44,33 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
     <main id="dash" class="container position-relative">
         <div class="w-100 mt-5">
-            <h2 style="font-size: 2.5rem; letter-spacing: 5px" class="text-center ">Personal de seguridad</h2>
+            <h2 style="font-size: 2.5rem; letter-spacing: 5px" class="text-center ">Señor Residente</h2>
             <p class="text-center" style="font-family: 'Roboto', sans-serif !important; font-weight: 300 !important;">Navega entre los distintos modulos en base a las actividades que necesisas realizar</p>
         </div>
         <section class="grid  mx-auto mt-5" style="height: 670px;">
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Vehiculos</h2>
-                <p class="ps-4">Manten un registro minusioso de los vehiculos que se encuentran en la propiedad y controla su estado de una manera rapida</p>
+                <p class="ps-4">Visualiza y gestiona tus vehículos registrados en el sistema. Además, podrás ver las novedades realizadas por el personal de seguridad para cada uno de tus vehículos.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #FFA031">
+                <a href="ver-vehiculo.php">
                     <img src="./images/Next.png" alt="">
+                    </a>
                 </span>
                 <img src="./images/carro.png" class="position-absolute" alt="">
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Salon comunal</h2>
-                <p class="ps-4">Mantente al tanto de que personas estan utilizando el salon comunal y cuales son sus horarios.</p>
+                <p class="ps-4">Podras hacer reservas de nuestro salon comunal, para el dia que desees y lo dispongas  .</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #05EB00">
+                <a href="salon-comunal.php">
                     <img src="./images/Next.png" alt="">
+                    </a>
                 </span>
                 <img src="./images/calendar.png" style="width: 158px;" class="position-absolute" alt="">
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Paqueteria</h2>
-                <p class="ps-4">Registra cada paquete que llegue a porteria y hazle saber a los residentes su llegada.</p>
+                <p class="ps-4">Podras observar si tienes algun paquete disponible para ti.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #7D68FF">
                
                 <a href="paqueteria.php"> 
@@ -88,6 +92,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
         </section>
     </main>
+
+    
 
 
 

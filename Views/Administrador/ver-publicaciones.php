@@ -158,8 +158,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                         <table class="table table-hover ">
                                             <thead>
                                                 <tr style="font-size:15px">
-                                                    <th>Foto</th>
-                                                    <th>Identificación</th>
+                                                    <th>Titulo</th>
+                                                    <th>Descripcion</th>
                                                     <th >Operaciones</th>
                                                   
                                                    

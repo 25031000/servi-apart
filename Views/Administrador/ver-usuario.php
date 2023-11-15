@@ -151,9 +151,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th>Estado</th>
                                                     <th>Torre</th>
                                                     <th>Apartamento</th>
-                                                    <th>Editar</th>
-                                                    <th>Eliminar</th>
-                                                </tr>
+                                                    <th style="margi-right: 40px">Operaciones</th>
+                                                   
                                             </thead>
                                             <tbody>
                                                 <?php
