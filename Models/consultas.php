@@ -994,6 +994,24 @@ class Consultas
         }
     }
 
+    public function eliminarDiaReservaPSE($id_reserva)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id_reserva", $id_reserva);
+
+        if ($result->execute()) {
+            echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
+            echo "<script>location.href = '../Views/Residente/ver-ReservaRes.php'</script>";
+        } else {
+            echo '<script>alert("Error al eliminar la reserva")</script>';
+        }
+    }
+
     public function mostrarReservaEditarAdmin($id_reserva)
     {
         $f = null;
