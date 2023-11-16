@@ -62,9 +62,9 @@
                     <!-- /# column -->
                 </div>
                 <!-- main content -->
-            <div class="pt-3 ">
-                <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
-                    <form action="../../Controllers/crearPublicaciones.php" class="col-md-5 p-5 pack-form h-75" method="post">
+                <div class="pt-3 ">
+                <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4" >
+                    <form action="../../Controllers/crearPublicaciones.php" class="col-md-6 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.7em;">Crear publicación</h2>
                         </div>  
@@ -85,10 +85,10 @@
 
                         
                     </form>
-                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
+                     <div id="grid" class="col-md-5 p-0 m-5 grid-collage " >
                         <img src="./images/hola.jpg"  width="100%" height="100%" alt="">
-                        <img src="./images/hola3.jpg"  alt="">
-                        <img src="./images/hola2.jpg" width="100%" height="100%"   alt="">
+                        <img src="./images/hola1.jpg"  alt="">
+                        <img src="./images/mensaje.jpg" width="100%" height="100%"   alt="">
                     </div>
                     </div>
                 </main>

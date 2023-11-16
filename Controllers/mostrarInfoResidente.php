@@ -24,14 +24,14 @@ function cargarPublicacionRes()
 
             echo '
                         <article id="art" class=" col-12 col-lg-4 col-md-6   p-4 mb-5 d-flex flex-column ms-2 justify-content-start h-auto border" style="-webkit-border-radius: 0.625rem; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff" >
-                            <header class=" p-2 d-flex " > 
+                            <div class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             ' . $f['titulo'] . '
                             </h2>
                             <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> 
-                            </header>
+                            </div>
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>
@@ -71,7 +71,7 @@ function cargarPublicacionesRes()
                             
                          <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 30%; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
 
-                            <header class=" p-2 d-flex " > 
+                            <div class=" p-2 d-flex " > 
                             <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
                             ' . $f['titulo'] . '
                             </h2>
@@ -81,7 +81,7 @@ function cargarPublicacionesRes()
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> </a>
 
-                            </header>
+                            </div>
                             <main class=" p-2 d-flex flex-column justify-content-center">
                                 <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
                             </main>
@@ -463,31 +463,42 @@ function cargarReservaRes(string $identificacion)
             $hora_finalizacion = date('g:i A', strtotime($item['hora_finalizacion']));
 
             echo '
-            <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 31%">
+            <section class="p-3 rounded-3 row custom-card my-3 mx-2" style="min-width: 25%;">
                 <div class="col-5 border rounded-3 text-black align-items-center d-flex py-4 flex-column justify-content-center" style="background: #FF914D;">
                     <p class="m-0 position-relative" style="font-size: 3rem; top: 8px;">' . explode("-", $item['dia_reserva'])[2] . '</p>
                     <small class="m-0 fw-light" style="font-size: 0.8rem; font-weight: 100;">' . $months[explode("-", $item['dia_reserva'])[1]] . '</small>
                 </div>           
-                <div class="col-7  align-items-center d-flex flex-column justify-content-center">
+                <div class="col-7  align-items-center d-flex flex-column justify-content-center ">
         
-                    <div class="rounded-2 py-1 px-3 my-2" style="font-size: 1.2rem; font-weight: bold;"> 
-                        <div class="text-black">' . $item['tipo_evento'] . '</div>
+                    <div class="rounded-2 py-1 px-3 " style="font-size: 1.2rem; font-weight: bold;"> 
+                        <div class="text-black ">' . $item['tipo_evento'] . '</div>
                     </div>
         
-                    <div class="rounded-2 py-1 px-3 my-2">
-                        <img src="../../assets/icons/iconSalonComunal/mesas.png" style="width: 25px; height: 25px;">
-                        <div class="text-black">' . $item['mesas'] . '-' . $item['sillas'] . '
+                    
+                    <div class="rounded-2 py-1   " style="display:flex;  justify-content:center;">
+
+                    <div  style="display:flex; margin-right:20px;">
+                    <img src="../../assets/icons/iconSalonComunal/mesas.png" style="width: 25px; height: 25px;">
+                    <div class="text-black " style="margin-left: 0.3em;">' . $item['mesas'] . '</div>
+                    </div>
+                        
+                    <div  style="display:flex;">
                         <img src="../../assets/icons/iconSalonComunal/silla.png" style="width: 25px; height: 25px;">
+                        <div class="text-black " style="margin-left: 0.3em;">' . $item['sillas'] . '</div>
                         </div>
                     </div>
+                    
         
-                    <div class="rounded-2 py-1 px-3 my-2" >
-                        <div class="text-black">' . $hora_inicio . ' - ' . $hora_finalizacion . '</div>
+                    <div class="rounded-2 py-1 px-3" >
+                        <small  style="font-size: 0.8rem; font-weight: 100; color:#BDC3C7">' . $hora_inicio . ' - ' . $hora_finalizacion . '</small>
                     </div>
         
-                    <div class="btn-container">
-                    <a href="../../Views/Residente/modificar-reservaRes.php?id='. $item['identificacion'] .'&reservaid='.$item['id_reserva'].'" class="btn btn-primary btn-sm">Modificar</a>
-                        <button type "button" class="btn btn-danger btn-sm">Cancelar</button>
+                    <div class="btn-container mt-2">
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id='. $item['identificacion'] .'&reservaid='.$item['id_reserva'].'" class="btn btn-info btn-sm ">Modificar</a>
+                    <a href="../../Controllers/eliminarDiaReservadoPSE.php?id=' . $item['id_reserva'] . '" class="btn btn-danger btn-sm">Eliminar</a>
+
+                        
+                       
                     </div>
                     
                </div>           

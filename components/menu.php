@@ -56,6 +56,8 @@
                     <img src="icons/arrow.png" style="transform: rotate(-90deg);" class="third-arrow" alt="">
                 </div>
             </div>
+
+            </div>
         </nav>
     </section>
     <footer class="w-100 d-flex  justify-content-center justify-content-sm-start align-items-center">

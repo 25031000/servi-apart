@@ -1,3 +1,6 @@
+
+
+
 <?php
 require_once("../../Models/conexion.php");
 require_once("../../Models/consultas.php");
@@ -52,7 +55,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <h2 class="ps-4">Vehiculos</h2>
                 <p class="ps-4">Manten un registro minusioso de los vehiculos que se encuentran en la propiedad y controla su estado de una manera rapida</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #FFA031">
+                <a href="ver-vehiculo.php"> 
                     <img src="./images/Next.png" alt="">
+                </a>
                 </span>
                 <img src="./images/carro.png" class="position-absolute" alt="">
             </div>
@@ -60,7 +65,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <h2 class="ps-4">Salon comunal</h2>
                 <p class="ps-4">Mantente al tanto de que personas estan utilizando el salon comunal y cuales son sus horarios.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #05EB00">
+                <a href="salonComunal.php"> 
                     <img src="./images/Next.png" alt="">
+                </a>
                 </span>
                 <img src="./images/calendar.png" style="width: 158px;" class="position-absolute" alt="">
             </div>
