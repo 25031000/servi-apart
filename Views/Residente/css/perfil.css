@@ -120,6 +120,7 @@
     justify-content: center;
     width: 20%;
     margin: 0 10px !important;
+    /* color: rgba(0, 255, 98, 0.308) */
 }
 
 .check_wrapper input[type=radio]{

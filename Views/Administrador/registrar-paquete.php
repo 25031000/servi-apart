@@ -65,7 +65,7 @@
                 <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
                     <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
                     <div class="d-flex flex-column mb-3">
-                            <h2 style="font-size: 1.7em;">Registrar paquete</h2>
+                            <h2 style="font-size: 1.7em;">Formulario de registro</h2>
                         </div>  
 
                         <div class="d-flex flex-column mb-3">
@@ -89,8 +89,8 @@
                     </form>
                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
                         <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
-                        <img src="./images/vertical-pack.png"  alt="">
-                        <img src="./images/horizontal-pack.png" width="100%" height="100%"   alt="">
+                        <img src="./images/vertical-p.jpg"  alt="">
+                        <img src="./images/pack1.jpg" width="100%" height="100%"   alt="">
                     </div>
                 </main>
             </div>

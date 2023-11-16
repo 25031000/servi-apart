@@ -171,8 +171,8 @@
             });
             //i.classList.add("border-primary")
 
-            i.style.boxShadow = "0 0 0 0.2rem rgba(0, 123, 255, 0.25)";
-            i.style.boderColor = "#007bff"
+            i.style.boxShadow = "0 0 0 0.2rem rgba(0, 255, 98, 0.308)";
+            i.style.boderColor = "#00ff37"
         }
 
     </script>
