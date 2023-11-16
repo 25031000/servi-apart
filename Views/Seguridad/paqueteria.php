@@ -106,8 +106,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         </div>
                     </form>
                     <div id="grid" class="col-md-7 p-0 m-0 grid-collage-ps">
-                        <img src="./images/pack.jpg" width="100%" height="100%" alt="">
-                        <img src="./images/vertical-pack.png" alt="">
+                        <img src="./images/pack1.jpg" width="100%" height="100%" alt="">
+                        <img src="./images/vertical-p.jpg" alt="">
                         <img src="./images/horizontal-pack.png" width="100%" height="100%" alt="">
                     </div>
                 </main>
