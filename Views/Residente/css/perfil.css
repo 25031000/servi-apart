@@ -86,8 +86,29 @@
 /*---------------- RIGHT CONTAINER------------ */
 
 .input_wrapper{
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.submit-btn, .reset-btn{
+    border: none;
+}
+
+.submit-btn:hover .bx-check{
+    color: #00bf63 !important;
+}
+
+.bx-check{
+    color: #b1b1b1 !important;
+}
+
+.reset-btn:hover .bx-x{
+    color: rgb(255, 105, 105) !important;
+}
+
+.bx-x{
+    color: #b1b1b1 !important;
+
 }
 
 .input_wrapper input{
@@ -132,3 +153,16 @@
 }
 
 
+/*---------------- MEDIA QUERIES------------ */
+
+
+@media (min-width: 992px )  and (max-width: 1460px){
+    .check_wrapper{
+        width: 30% !important;
+        margin: 0 2px !important;
+    }
+
+    .inputs_wrapper{
+        gap: 0 !important;
+    }
+}
