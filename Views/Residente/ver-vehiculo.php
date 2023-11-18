@@ -48,7 +48,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
 
-    <div class="content-wrap mt-4" style="margin-left:43px;">
+    <div class="container content-wrap mt-5">
         <div class="main">
             <div class="">
                 <div class="row">
@@ -66,7 +66,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                     <div class="col-lg-6 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
-                                <ol class="breadcrumb" style="margin-left:72%">
+                                <ol class="breadcrumb" style="margin-left:68%">
                                     <li class="breadcrumb-item">
                                         <a style="color: #18d26e">Residente</a>
                                     </li>
@@ -78,9 +78,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
-                <section id="main-content" class="lista_vehiculos mt-3" style="padding: 20px 0">
+                <section id="main-content" class="lista_vehiculos mt-4" style="padding: 20px 0">
                     <div class="row">
-                        <div class="col-lg-7">
+                        <div class="col-lg-9">
                             <div class="card vehiculos_ver" style="width:95%">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
@@ -91,6 +91,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                                     <th style="font-size:18px">Marca</th>
                                                     <th style="font-size:18px">Referencia</th>
                                                     <th style="font-size:18px">Modelo</th>
+                                                    <th style="font-size:18px">Estacionamiento</th>
                                                     <th style="text-align:center; font-size:18px">Novedades</th>
                                                     <th style="text-align:center; font-size:18px">Más detalles</th>
                                                 </tr>
@@ -111,10 +112,8 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                             </div>
                         </div>
                         <!-- /# column -->
-                        <div id="grid" class="col-lg-5 grid-collage" style="margin-left:-50px; padding-left:40px">
-                            <img src="../administrador/images/horizontal2.jpg" width="100%" height="100%" alt="">
-                            <img src="../administrador/images/vertical.jpg" alt="">
-                            <img src="../administrador/images/horizontal.jpg" width="100%" height="100%" alt="">
+                        <div class="col-lg-3" style="">
+                            <img src="../administrador/images/vertical.jpg" width="100%" height="100%" alt="">
                         </div>
 
                         <!-- /# column -->

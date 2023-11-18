@@ -126,7 +126,6 @@ function cargarInfoUsuarios()
 
 
 
-//pruebaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
 
 function cargarVehiculosResidente()
@@ -153,6 +152,7 @@ function cargarVehiculosResidente()
                 <td style="text-align:center">' . $f['marca'] . ' </td>
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
+                <td style="text-align:center">' . $f['parqueadero'] . ' </td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/mas.png" width="20px" style="margin-right:3px"></a></td>
 
@@ -186,10 +186,11 @@ function cargarNovedadesResidente()
             echo '
             
             <tr><td style="text-align:center">' . $f['placa'] . '</td>
-                <td style="text-align:center">' . $f['novedad'] . ' </td>
+                <td style="text-align:center; max-width: 500px">' . $f['novedad'] . ' </td>
                 <td style="text-align:center">' . $f['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
+                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
 
 
             </tr>   
@@ -221,7 +222,7 @@ function cargarFotosVehiculoRes()
         echo '        
         
         
-        <div class="row container-fluid">
+        <div class="row">
             <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
                 <div class="page-title">
@@ -250,8 +251,8 @@ function cargarFotosVehiculoRes()
 
 
 
-      <div class="row mt-4" style="display:flex; align-items:center; margin-left:20px">
-      <div class="col-lg-5">
+      <div class="row" style="display:flex; align-items:center; margin-top:50px; margin-left: -50px">
+      <div class="col-lg-6">
       <div id="carouselExampleDark" class="carousel slide" >
   <div class="carousel-indicators" >
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -285,13 +286,13 @@ function cargarFotosVehiculoRes()
 
 
 
-    <div class="col-lg-6 datos_vehiculo_propietario">
+    <div class="col-lg-6">
         <div class="row">
                         <div class=" modificar-user">
                             <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 
-                            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data"  class="p-5 pack-form" style="margin-top:3%">
+                            <form action="../../Controllers/mofificarVehiculoAdmin.php" method="POST" enctype="multipart/form-data"  class="p-5 pack-form" style="margin-top:3%; margin-right: -50px">
                         <div class="row">
                         <div class="row">
                     <div class="d-flex flex-column mb-3">
@@ -309,11 +310,15 @@ function cargarFotosVehiculoRes()
                                 <label>Referencia:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="width:100%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label>Modelo:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:100%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label>Estacionamiento:</label>
+                                <input type="text" class="rounded-3 input" value="' . $f['parqueadero'] . '"  readonly  name="estacionamiento" style="display:block; width:100%">
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label>Fecha de Registro:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:100%">
                             </div>
@@ -395,7 +400,7 @@ function cargarTotalPaquetesRes(string $identificacion)
             <h5>Parece que no tienes paquetes registrados</h5>
             </section>
             ';
-        } else {
+    } else {
         $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
         array_map(function ($item) {
             $months = array("01" => "Enero", "02" => "Febrero", "03" => "Marzo", "04" => "Abril", "05" => "Mayo", "06" => "Junio", "07" => "Julio", "08" => "Agosto", "09" => "Septiembre", "10" => "Octubre", "11" => "Noviembre", "12" => "Diciembre");
@@ -494,7 +499,7 @@ function cargarReservaRes(string $identificacion)
                     </div>
         
                     <div class="btn-container mt-2">
-                    <a href="../../Views/Residente/modificar-reservaRes.php?id='. $item['identificacion'] .'&reservaid='.$item['id_reserva'].'" class="btn btn-info btn-sm ">Modificar</a>
+                    <a href="../../Views/Residente/modificar-reservaRes.php?id=' . $item['identificacion'] . '&reservaid=' . $item['id_reserva'] . '" class="btn btn-info btn-sm ">Modificar</a>
                     <a href="../../Controllers/eliminarDiaReservadoPSE.php?id=' . $item['id_reserva'] . '" class="btn btn-danger btn-sm">Eliminar</a>
 
                         
@@ -504,7 +509,7 @@ function cargarReservaRes(string $identificacion)
                </div>           
             </section>
         ';
-        
+
         }, $arr);
     }
 }
@@ -512,12 +517,12 @@ function cargarReservaRes(string $identificacion)
 
 function modificarReservaRes()
 {
-    
-    $id_reserva= $_GET['reservaid'];
-    $objConsultas = new Consultas();
-    $result = $objConsultas-> mostrarReservaEditarRes($id_reserva);
 
- 
+    $id_reserva = $_GET['reservaid'];
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarReservaEditarRes($id_reserva);
+
+
 
     foreach ($result as $f) {
         echo '
@@ -527,7 +532,7 @@ function modificarReservaRes()
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
-                <form action="../../Controllers/modificarReservaRes.php?reservaid='.$id_reserva.'" method="POST" >
+                <form action="../../Controllers/modificarReservaRes.php?reservaid=' . $id_reserva . '" method="POST" >
                 <div class="row g-2">
                
                  
@@ -632,72 +637,3 @@ function modificarReservaRes()
 
 
 
-
-
-
-
-function cargarFotosRes()
-{
-
-    $placa = $_GET['placa'];
-
-    //enviamos la pk A UNA funcion de la clase consultas 
-
-    $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarFotosVehiculoAdmin($placa);
-
-    //pintamos la informacion  consultada en el artefacto (FORM)
-
-    foreach ($result as $f) {
-        echo '        
-        
-
-      <div class="row" style="margin-left:40px">
-          <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel" style="width: 650px">
-  <div class="carousel-indicators" style="width: 500px">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-  </div>
-  <div class="carousel-inner carrusel" style="width: 650px">
-    <div class="carousel-item active">
-        <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
-    </div>
-    <div class="carousel-item" >
-        <img src="../' . $f['foto2'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
-    </div>
-    <div class="carousel-item" >
-        <img src="../' . $f['foto3'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
-    </div>
-    <div class="carousel-item" >
-        <img src="../' . $f['foto4'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 500px; max-width: 650px">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-  <img src="../../assets/icons/prev.png">
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <img src="../../assets/icons/next.png">
-  </button>
- </div>
-
-
-
-
-
-        ';
-
-
-
-
-    }
-
-}
-
-?>
-
-<!-- <div>'. $item['torre']. '</div>
-                <div>'. $item['apartamento']. '</div>
-                <div>'. $item['remitente']. '</div>
-                <div>'. $item['fecha']. '</div>  -->

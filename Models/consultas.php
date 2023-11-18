@@ -450,15 +450,16 @@ class Consultas
         return $f;
     }
 
-    public function modificarVehiculosAdmin($placa, $identificacion, $marca, $referencia, $modelo)
+    public function modificarVehiculosAdmin($placa, $identificacion, $parqueadero, $marca, $referencia, $modelo)
     {
 
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE vehiculo SET marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
+        $actualizar = " UPDATE vehiculo SET parqueadero=:parqueadero, marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
         $result = $conexion->prepare($actualizar);
 
+        $result->bindParam("parqueadero", $parqueadero);
         $result->bindParam("marca", $marca);
         $result->bindParam("referencia", $referencia);
         $result->bindParam("modelo", $modelo);
@@ -776,22 +777,37 @@ class Consultas
         return $f;
     }
 
-    public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4)
+    public function registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $parqueadero, $foto1, $foto2, $foto3, $foto4)
     {
 
         //CREAMOS EL OBJETO DE CONEXION
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        //SELECT DE USUARIO REGISTRADO EN EL SISTEMA
+        //Validamos que la placa ingresada no esté en el sistema
         $consultar = 'SELECT * FROM vehiculo WHERE placa=:placa';
         $result = $conexion->prepare($consultar);
-
         $result->bindParam(":placa", $placa);
-
         $result->execute();
-
         $f = $result->fetch();
+
+
+        // Verificar si la identificación existe en la base de datos
+        $consultarIdentificacion = 'SELECT * FROM usuarios WHERE identificacion=:identificacion';
+        $resultIdentificacion = $conexion->prepare($consultarIdentificacion);
+        $resultIdentificacion->bindParam(":identificacion", $identificacion);
+        $resultIdentificacion->execute();
+        $fIdentificacion = $resultIdentificacion->fetch();
+
+
+        //Verificamos que el parqueadero asignado no esté relacionado a otro vehiculo
+        $consultarParqueadero = 'SELECT * FROM vehiculo WHERE parqueadero=:parqueadero';
+        $resultParqueadero = $conexion->prepare($consultarParqueadero);
+        $resultParqueadero->bindParam(":parqueadero", $parqueadero);
+        $resultParqueadero->execute();
+        $fParqueadero = $resultParqueadero->fetch();
+
+
 
         if ($f) {
             echo '
@@ -808,43 +824,51 @@ class Consultas
                 
             })
             </script>';
-        } else {
+
+        } else if ($fParqueadero) {
+            echo '<script>
+                
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "El parqueadero que ingresaste ya está asignado a otro vehiculo. Verifica que este bien",
+                        confirmButtonText: "Ok"
+                    }).then((result)=>{
+                        if(result.isConfirmed){
+                           location.href="../Views/Administrador/registrar-vehiculo.php"; 
+                        }
+                        
+                    })
+                </script>';
+        }
 
 
-            // Verificar si la identificación existe en la base de datos
-            $consultarIdentificacion = 'SELECT * FROM usuarios WHERE identificacion=:identificacion';
-            $resultIdentificacion = $conexion->prepare($consultarIdentificacion);
-            $resultIdentificacion->bindParam(":identificacion", $identificacion);
-            $resultIdentificacion->execute();
-            $fIdentificacion = $resultIdentificacion->fetch();
+        else if ($fIdentificacion) {
+            //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
+            $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, parqueadero, foto1, foto2, foto3, foto4) 
+            VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :parqueadero, :foto1, :foto2, :foto3, :foto4)";
 
 
-
-            if ($fIdentificacion) {
-                //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-                $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, foto1, foto2, foto3, foto4) 
-            VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :foto1, :foto2, :foto3, :foto4)";
+            //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
+            $result = $conexion->prepare($insertar);
 
 
-                //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
-                $result = $conexion->prepare($insertar);
+            //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
+            $result->bindParam(":placa", $placa);
+            $result->bindParam(":marca", $marca);
+            $result->bindParam(":referencia", $referencia);
+            $result->bindParam(":modelo", $modelo);
+            $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":parqueadero", $parqueadero);
+            $result->bindParam(":foto1", $foto1);
+            $result->bindParam(":foto2", $foto2);
+            $result->bindParam(":foto3", $foto3);
+            $result->bindParam(":foto4", $foto4);
 
+            //EJECUTAMOS EL INSERT
+            $result->execute();
 
-                //CONVERTIMOS LOS ARGUMENTOS EN PARAMETROS
-                $result->bindParam(":placa", $placa);
-                $result->bindParam(":marca", $marca);
-                $result->bindParam(":referencia", $referencia);
-                $result->bindParam(":modelo", $modelo);
-                $result->bindParam(":identificacion", $identificacion);
-                $result->bindParam(":foto1", $foto1);
-                $result->bindParam(":foto2", $foto2);
-                $result->bindParam(":foto3", $foto3);
-                $result->bindParam(":foto4", $foto4);
-
-                //EJECUTAMOS EL INSERT
-                $result->execute();
-
-                echo '
+            echo '
             <script>
             
             Swal.fire({
@@ -857,9 +881,9 @@ class Consultas
             })
         </script>';
 
-            } else {
-                // La identificación no existe en la base de datos, muestra un mensaje de error
-                echo '<script>
+        } else {
+            // La identificación no existe en la base de datos, muestra un mensaje de error
+            echo '<script>
                 
                 Swal.fire({
                     icon: "error",
@@ -873,19 +897,19 @@ class Consultas
                     
                 })
             </script>';
-            }
-
-
-
-
-
-
-
-
-
-
         }
+
+
+
+
+
+
+
+
+
+
     }
+
 
     public function insertarPeticion($titulo, $descripcion, $identificacion)
     {
@@ -1050,7 +1074,7 @@ class Consultas
             $arr = $result->fetchAll(PDO::FETCH_ASSOC);
 
             return $arr;
-            
+
         } catch (\Throwable $th) {
             echo $th->getMessage() . ":)";
         }
@@ -1087,7 +1111,7 @@ class Consultas
 
 
 
-    public function modificarReservaRes($id_reserva,$dia_reserva, $identificacion, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
+    public function modificarReservaRes($id_reserva, $dia_reserva, $identificacion, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
 
         $objConexion = new conexion();
@@ -1096,7 +1120,7 @@ class Consultas
         $actualizar = " UPDATE reserva_salon SET dia_reserva=:dia_reserva,  hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion,  mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE id_reserva=:id_reserva ";
         $result = $conexion->prepare($actualizar);
 
-        
+
         $result->bindParam(":id_reserva", $id_reserva);
         $result->bindParam(":dia_reserva", $dia_reserva);
         $result->bindParam(":hora_inicio", $hora_inicio);
@@ -1149,7 +1173,7 @@ class Consultas
         echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
 
     }
- 
+
 
 
 

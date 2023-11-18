@@ -93,7 +93,7 @@ $result = $objConsulta->verPerfil($id);
                         </a>
                         <ul>
                             <li>
-                                <a href="registrar-vehiculo.php"> <img src="../../assets/icons/agregar.png" alt="icono agregar vehiculo" width="20px"  style="margin-right:10px"> Registrar Vehículos</a>
+                                <a href="registrar-vehiculo.php"> <img src="../../assets/icons/agregar.png" alt="icono agregar vehiculo" width="20px"  style="margin-right:10px"> Registrar</a>
                             </li>
                             <li>
                                 <a href="ver-vehiculo.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"  style="margin-right:10px"> Ver </a>

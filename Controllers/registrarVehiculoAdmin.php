@@ -32,6 +32,7 @@
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
     $identificacion = $_POST['identificacion'];
+    $parqueadero = $_POST['parqueadero'];
     // ------------------------------------------
     // Verificamos que las claves coincidan
     //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
@@ -61,7 +62,7 @@
         //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
     
         $objConsultas = new Consultas();
-        $result = $objConsultas->registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $foto1, $foto2, $foto3, $foto4);
+        $result = $objConsultas->registrarVehiculoAdmin($placa, $marca, $referencia, $modelo, $identificacion, $parqueadero, $foto1, $foto2, $foto3, $foto4);
 
     } else {
         ?>

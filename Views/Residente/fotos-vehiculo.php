@@ -54,7 +54,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
   <div class="content-wrap">
     <div class="main">
-      <div class="container-fluid">
+      <div class="container mt-5">
 
         <?php
         cargarFotosVehiculoRes();

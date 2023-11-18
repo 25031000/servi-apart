@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,44 +10,49 @@
     <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 <style>
-    *, html, body{
+    *,
+    html,
+    body {
         font-family: 'Varela Round', sans-serif;
     }
 </style>
 
 <body>
-<?php
+    <?php
 
     // Enlazamos las dependencias necesario
-    require_once ("../Models/conexion.php");
-    require_once ("../Models/consultas.php");
+    require_once("../Models/conexion.php");
+    require_once("../Models/consultas.php");
 
     // Aterrizamos en variables los datos ingresados por el usuario
     // los cuales viajan a travé del metodo POST y name de los campos
-
+    
     $placa = $_POST['placa'];
     $identificacion = $_POST['identificacion'];
+    $parqueadero = $_POST['parqueadero'];
     $marca = $_POST['marca'];
     $referencia = $_POST['referencia'];
     $modelo = $_POST['modelo'];
 
-    
-     // ------------------------------------------
+
+    // ------------------------------------------
     // Verificamos que las claves coincidan
+    
+    //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
+    if (
+        strlen($placa) > 0 && strlen($marca) > 0
+        && strlen($referencia) > 0 && strlen($modelo) > 0
+    ) {
 
-        //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($placa) > 0     && strlen($marca)> 0 
-        && strlen($referencia) >0              && strlen($modelo)>0){
+        //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
+        //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
+    
+        $objConsultas = new Consultas();
+        $result = $objConsultas->modificarVehiculosAdmin($placa, $identificacion, $parqueadero, $marca, $referencia, $modelo);
 
-            //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
-            //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
 
-            $objConsultas = new Consultas();
-            $result = $objConsultas -> modificarVehiculosAdmin($placa, $identificacion,$marca, $referencia, $modelo);    
-        
-
-        }else{
-            echo '<script>
+    } else {
+        echo '<script>
                 
             Swal.fire({
                 icon: "error",
@@ -60,14 +66,14 @@
                 
             })
         </script>';
-        }
+    }
 
 
-?>
+    ?>
 
-        
-        
-        
-        </body>
-        </html>
-        
+
+
+
+</body>
+
+</html>

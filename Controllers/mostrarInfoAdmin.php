@@ -287,21 +287,25 @@ function cargarFotosVehiculo()
                         <div class="row">
                             <div class="form-group col-md-4">
                                 <label>Placa:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa">
+                                <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa" style="display:block; width:90%">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Marca:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca">
+                                <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca" style="display:block; width:90%">
                             </div>
                             <div class="form-group col-md-4">
                                 <label>Referencia:</label>
-                                <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia">
+                                <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="display:block; width:90%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label>Modelo:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:90%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label>Estacionamiento Asignado:</label>
+                                <input type="text" class="rounded-3 input" value="' . $f['parqueadero'] . '"  readonly name="parqueadero" style="display:block; width:90%">
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label>Fecha Registro:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:90%">
                             </div>
@@ -540,6 +544,7 @@ function cargarVehiculos()
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
+                <td style="text-align:center">' . $f['parqueadero'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
                 <td style="text-align:center; display:flex; justify-content:center; border:white"><a href="modificar-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarVehiculosAdmin.php?placa=' . $f['placa'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left" title="Estás seguro de eliminar el vehiculo? Esto también eliminará las novedades que este tenga"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
@@ -584,15 +589,21 @@ function cargarVehiculoEditar()
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.7em;">Datos del Vehiculo</h2>
                         </div>  
-                                        <div class="form-group col-md-5">
+                                        <div class="form-group col-md-4">
                                             <label>Placa:</label>
                                             <input style="width:100%" value="' . $f['placa'] . '" readonly type="text" class="rounded-3 input" placeholder="Ej: UZI974"
                                                 name="placa">
                                         </div>
-                                        <div class="form-group col-md-7  labelid" style="display:block">
-                                        <label>Identificación de Propietario:</label>
+                                        <div class="form-group col-md-4  labelid" style="display:block">
+                                        <label>ID Propietario:</label>
                                         <input style="width:100%" value="' . $f['identificacion'] . '" readonly type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
                                             name="identificacion">
+                                        </div>
+
+                                        <div class="form-group col-md-4  labelid" style="display:block">
+                                        <label>Estacionamiento:</label>
+                                        <input style="width:100%" value="' . $f['parqueadero'] . '" type="text" class="rounded-3 input" placeholder="Ej: B17"
+                                            name="parqueadero">
                                         </div>
                                         <div class="form-group col-md-4 ">
                                             <label>Marca:</label>

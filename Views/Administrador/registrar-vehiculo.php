@@ -41,11 +41,11 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             <div class="row">
                 <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px; padding: 0 30px">
                     <div class="page-header">
-                        <div class="page-title d-flex align-items-center"><div class="icon-content p-2 rounded-circle"
-                                    style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/carro-ver.png"
-                                        style="width: 48px; height: 48px !important" alt="">
-                                </div>
+                        <div class="page-title d-flex align-items-center">
+                            <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important;">
+                                <img src="../../assets/icons/carro-ver.png" style="width: 48px; height: 48px !important"
+                                    alt="">
+                            </div>
                             <h1 style="font-size: 1.5rem;" class="ms-4">Registro de Vehículos</h1>
                         </div>
                         <!-- <div class="row">
@@ -86,7 +86,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="d-flex flex-column mb-3">
-                                <h2 style="font-size: 1.7em;">Registrar Vehiculo</h2>
+                                <h2 style="font-size: 1.7em;">Formulario de Registro</h2>
                             </div>
                             <div class="form-group col-md-4 ">
                                 <label>Placa:</label>
@@ -158,41 +158,51 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: Explorer"
                                     name="referencia">
                             </div>
-                            <div class="form-group col-md-6 ">
+                            <div class="form-group col-md-4 ">
                                 <label style="display:block;">Modelo:</label>
                                 <input style="width:100%" type="number" class="rounded-3 input" placeholder="Ej: 2013"
                                     name="modelo">
                             </div>
-                            <div class="form-group col-md-6  labelid" style="display:block">
+                            <div class="form-group col-md-4  labelid" style="display:block">
                                 <label>Identificación de Propietario:</label>
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">
                             </div>
+
+                            <div class="form-group col-md-4  labelid" style="display:block">
+                                <label>Parqueadero Asignado:</label>
+                                <input style="width:100%" type="text" class="rounded-3 input"
+                                    placeholder="Ej: B10" name="parqueadero">
+                            </div>
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
+                                <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif"
+                                    class="input-file input" style="display:block">
                             </div>
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 2 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
+                                <input type="file" id="uploadBtn" name="foto2" accept=".jpeg, .jpg, .png, .gif"
+                                    class="input-file input" style="display:block">
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 3 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif" class="input-file input" style="display:block">
+                                <input type="file" id="uploadBtn" name="foto3" accept=".jpeg, .jpg, .png, .gif"
+                                    class="input-file input" style="display:block">
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 4 de
                                     Vehiculo</label>
-                                <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif" class="input-file input">
+                                <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif"
+                                    class="input-file input">
                             </div>
                         </div>
                         <div class="d-flex flex-column  mt-3">
-                        <button class="boton-btn">Registrar</button>   
+                            <button class="boton-btn">Registrar</button>
                         </div>
                     </form>
 

@@ -57,8 +57,8 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
     <div class="content-wrap">
-        <div class="main" style="margin-left:20px">
-            <div class="container-fluid">
+        <div class="main">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
@@ -82,21 +82,12 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                             </div>
                         </div>
                     </div>
-
-                    <div style="display: flex; justify-content: end; width: 58.7%; margin-top:-20px">
-                        <?php
-                        $placa = $_GET['placa'];
-
-                        echo '<button id="GenerarPDF" class="btn p-2 btn-pdf " style="margin-top:20px; margin-right:20px;margin-left:10px;"><a class="text-light" href="../../services/generatepdfnovedades.php?placa=' . $placa . '" target="_blank">Generar PDF</a></button>';
-                        echo '<button id="GenerarPDF" class="btn p-2 btn-excel " style="margin-top:20px"><a class="text-light" href="../../services/generarexcelnovedades.php?placa=' . $placa . '" target="_blank">Generar Excel</a></button>';
-                        ?>
-                    </div>
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
                 <section id="main-content" class="lista_vehiculos" style="padding: 20px 0; margin-left:15px">
                     <div class="row">
-                        <div class="col-lg-7">
+                        <div class="col-lg-12">
                             <div class="card vehiculos_ver" style="width:100%">
                                 <div class="card-body card-ver">
                                     <div class="table-responsive">
@@ -105,9 +96,10 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                                 <tr class="filas_vehiculos">
                                                     <th style="font-size:17px">Placa</th>
                                                     <th style="font-size:17px">Descripción de novedad</th>
-                                                    <th style="font-size:17px">Fecha Revisi+on</th>
+                                                    <th style="font-size:17px">Fecha Revisión</th>
                                                     <th style="font-size:17px">Identificación guarda</th>
-                                                    <th style="font-size:17px">Guarda encargado</th>
+                                                    <th style="font-size:17px; text-align: center">Guarda encargado</th>
+                                                    <th style="font-size:17px; text-align: center">Ver Foto</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -124,14 +116,6 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
                             </div>
-                        </div>
-
-                        <div class="col-lg-5">
-                            <?php
-
-                            cargarFotosRes();
-
-                            ?>
                         </div>
                         <!-- /# column -->
 
