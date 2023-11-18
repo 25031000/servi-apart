@@ -1417,6 +1417,74 @@ class Consultas
             echo "Error en la consulta :( " . $th;
         }
     }
+
+    public function modificarCuentaResidente(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $clave, string $torre, string $apartamento) : bool{
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "UPDATE usuarios SET
+                        tipo_doc = :tipo_doc,
+                        nombres = :nombres,
+                        apellidos = :apellidos,
+                        email = :email,
+                        telefono = :telefono,
+                        clave = :clave,
+                        torre = :torre,
+                        apartamento = :apartamento WHERE identificacion = :identificacion";
+            
+            $statement = $conexion->prepare($query);
+            $statement->bindParam(':identificacion', $user_id, PDO::PARAM_STR);
+            $statement->bindParam(':tipo_doc', $tipo_doc, PDO::PARAM_STR);
+            $statement->bindParam(':nombres', $nombres, PDO::PARAM_STR);
+            $statement->bindParam(':apellidos', $apellidos, PDO::PARAM_STR);
+            $statement->bindParam(':email', $email, PDO::PARAM_STR);
+            $statement->bindParam(':telefono', $telefono, PDO::PARAM_STR);
+            $statement->bindParam(':clave', $clave, PDO::PARAM_STR);
+            $statement->bindParam(':torre', $torre, PDO::PARAM_STR);
+            $statement->bindParam(':apartamento', $apartamento, PDO::PARAM_STR);
+            
+            $response = $statement->execute();
+            
+            return $response == false ? 0 : 1;
+
+        } catch (\Throwable $th) {
+            echo "Error en la consulta :( " . $th;
+        }
+    }
+
+    public function modificarCuentaResidenteAlterna(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $torre, string $apartamento) : bool{
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "UPDATE usuarios SET
+                        tipo_doc = :tipo_doc,
+                        nombres = :nombres,
+                        apellidos = :apellidos,
+                        email = :email,
+                        telefono = :telefono,
+                        torre = :torre,
+                        apartamento = :apartamento WHERE identificacion = :identificacion";
+            
+            $statement = $conexion->prepare($query);
+            $statement->bindParam(':identificacion', $user_id, PDO::PARAM_STR);
+            $statement->bindParam(':tipo_doc', $tipo_doc, PDO::PARAM_STR);
+            $statement->bindParam(':nombres', $nombres, PDO::PARAM_STR);
+            $statement->bindParam(':apellidos', $apellidos, PDO::PARAM_STR);
+            $statement->bindParam(':email', $email, PDO::PARAM_STR);
+            $statement->bindParam(':telefono', $telefono, PDO::PARAM_STR);
+            $statement->bindParam(':torre', $torre, PDO::PARAM_STR);
+            $statement->bindParam(':apartamento', $apartamento, PDO::PARAM_STR);
+            
+            $response = $statement->execute();
+            
+            return $response == false ? 0 : 1;
+
+        } catch (\Throwable $th) {
+            echo "Error en la consulta :( " . $th;
+        }
+    }
 }
 
 
