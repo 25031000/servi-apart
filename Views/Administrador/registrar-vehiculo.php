@@ -175,7 +175,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                     placeholder="Ej: B10" name="parqueadero">
                             </div>
                             <div class="form-group col-md-6 campos_vehiculo">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 1 de
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 1 de
                                     Vehiculo</label>
                                 <input type="file" id="uploadBtn" name="foto1" accept=".jpeg, .jpg, .png, .gif"
                                     class="input-file input" style="display:block">
@@ -195,7 +195,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
-                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i>Foto 4 de
+                                <label for="uploadBtn" class="archivo"> <i class="fa-solid fa-upload"></i> Foto 4 de
                                     Vehiculo</label>
                                 <input type="file" id="uploadBtn" name="foto4" accept=".jpeg, .jpg, .png, .gif"
                                     class="input-file input">

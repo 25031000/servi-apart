@@ -660,7 +660,7 @@ class Consultas
         return $f;
     }
 
-    public function registrarNovedadPS($placa, $novedad, $identificacion)
+    public function registrarNovedadPS($placa, $novedad, $identificacion, $fotoReporte)
     {
 
         //CREAMOS EL OBJETO DE CONEXION
@@ -675,15 +675,11 @@ class Consultas
         $resultPlaca->execute();
         $fPlaca = $resultPlaca->fetch();
 
+
         if ($fPlaca) {
-
-
-
-
-
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO novedad_vehiculo(placa, novedad, identificacion) 
-            VALUES(:placa, :novedad, :identificacion)";
+            $insertar = "INSERT INTO novedad_vehiculo(placa, novedad, identificacion, foto) 
+            VALUES(:placa, :novedad, :identificacion, :foto)";
 
 
             //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -694,6 +690,7 @@ class Consultas
             $result->bindParam(":placa", $placa);
             $result->bindParam(":novedad", $novedad);
             $result->bindParam(":identificacion", $identificacion);
+            $result->bindParam(":foto", $fotoReporte);
 
             //EJECUTAMOS EL INSERT
             $result->execute();

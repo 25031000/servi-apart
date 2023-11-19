@@ -107,6 +107,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                                                     <th style="font-size:17px">Referencia</th>
                                                     <th style="font-size:17px">Modelo</th>
                                                     <th style="font-size:17px">Identificación Propietario</th>
+                                                    <th style="font-size:17px">Estacionamiento</th>
                                                     <th style="font-size:17px">Fecha de Registro</th>
                                                     <th style="text-align:center; font-size:17px">Novedades</th>
                                                     <th style="text-align:center; font-size:17px">Más detalles</th>

@@ -37,6 +37,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
 
 
 
@@ -49,11 +50,11 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
     include '../../components/headerIncludePS.php';
     ?>
 
-    <div class="content-wrap container-fluid">
+    <div class="content-wrap container">
         <div class="main">
             <div class="row">
-                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px; padding: 0 30px">
-                    <div class="page-header">
+                <div class="col-lg-8 p-r-0 title-margin-right" style="margin-top:15px;">
+                    <div class="page-header p-0">
                         <div class="page-title d-flex align-items-center">
                             <div class="icon-content p-2 rounded-circle" style="background-color: #18d26e !important;">
                                 <img src="../../assets/icons/carro-ver.png" style="width: 48px; height: 48px !important"
@@ -84,34 +85,41 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
             </div>
             <!-- main content -->
             <div class="pt-3 ">
-                <main class="w-100 row px-5 gap-4 flex-nowrap  py-3 mt-4">
-                    <div id="grid" class="col-md-5 p-0 m-0 grid-collage">
-                        <img src="../Administrador/images/horizontal2.jpg" width="100%" height="100%" alt="">
-                        <img src="../Administrador/images/vertical.jpg" alt="">
-                        <img src="../Administrador/images/horizontal.jpg" width="100%" height="100%" alt="">
+                <main class="w-100 row mt-4">
+                    <div class="col-md-4" style="">
+                        <img src="../administrador/images/vertical.jpg" width="95%" height="93%" alt="">
                     </div>
-                    <form action="../../Controllers/registrarNovedad.php" class="col-md-7 p-5 pack-form" method="post"
-                        style="height: 70%">
+
+                    <form action="../../Controllers/registrarNovedad.php" class="col-md-8 p-5 pack-form" method="post"
+                        enctype="multipart/form-data" accept=".jpg, .png, .jpeg" style="height: 100%">
                         <div class="row">
                             <div class="d-flex flex-column mb-3">
                                 <h2 style="font-size: 1.7em;">Registrar Novedad a Vehículo</h2>
                             </div>
-                            <div class="form-group col-md-12 ">
+                            <div class="form-group col-md-6 campos_vehiculo">
                                 <label>Placa:</label>
                                 <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: UZI974"
                                     name="placa">
                             </div>
 
-                            <div class="form-group col-md-12  labelid" style="display:block">
+                            <div class="form-group col-md-6 campos_vehiculo">
+                                <label for="uploadBtn" class="archivo">Imagen del
+                                    posible daño o reporte:</label>
+                                <input type="file" id="uploadBtn" name="fotoReporte" accept=".jpeg, .jpg, .png, .gif"
+                                    class="input-file input" style="display:block">
+                            </div>
+
+                            <div class="form-group col-md-12  labelid campos_vehiculo" style="display:block">
                                 <label>Descripción del reporte:</label>
-                                <textarea style="width:100%; height: 150px" type="text" class="rounded-3 input"
+                                <textarea style="width:100%; height: 150px; max-height: 150px" type="text" class="rounded-3 input"
                                     placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
                                     name="novedad"></textarea>
                             </div>
 
+
                         </div>
                         <div class="d-flex flex-column  mt-3">
-                            <button class="p-2 register-btn rounded-2 w-20">Registrar</button>
+                            <button class="boton-btn">Registrar</button>
                         </div>
                     </form>
 
@@ -119,8 +127,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
             </div>
         </div>
     </div>
-
-
+    
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
