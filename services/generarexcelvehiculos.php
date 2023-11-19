@@ -26,6 +26,9 @@ header("content-Disposition: attachment; filename=reporte_vehiculos.xls");
              <span class="ms-2">Identificacion Residente</span>
             </th>
             <th class="d-flex col-md-2">
+             <span class="ms-2">Estacionamiento Asignado</span>
+            </th>
+            <th class="d-flex col-md-2">
              <span class="ms-2">Fecha de Registro</span>
             </th>
             
