@@ -403,6 +403,7 @@ function cargarNovedades()
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
+                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
                 <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
 
@@ -685,6 +686,7 @@ function cargarVehiculosPDF()
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['referencia'] . '</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['modelo'] . '</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['parqueadero'] . '</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['fecha'] . '</td>
 
             </tr>     

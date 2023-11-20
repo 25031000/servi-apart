@@ -251,7 +251,7 @@ function cargarFotosVehiculoRes()
 
 
 
-      <div class="row" style="display:flex; align-items:center; margin-top:50px; margin-left: -50px">
+      <div class="row" style="display:flex; align-items:center; margin-top:30px; margin-left: -50px">
       <div class="col-lg-6">
       <div id="carouselExampleDark" class="carousel slide" >
   <div class="carousel-indicators" >
@@ -260,7 +260,7 @@ function cargarFotosVehiculoRes()
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-  <div class="carousel-inner carrusel" style="">
+  <div class="carousel-inner carrusel" style="margin-top:20px">
     <div class="carousel-item active">
         <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
@@ -298,27 +298,27 @@ function cargarFotosVehiculoRes()
                     <div class="d-flex flex-column mb-3">
                             <h2 style="font-size: 1.6em;">Datos del vehículo</h2>
                         </div>  
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Placa:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['placa'] . '"  readonly placeholder="Ej: 23554535354" name="placa" style="width:100%">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Marca:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['marca'] . '"  readonly placeholder="Ej: 23554535354" name="marca" style="width:100%">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Referencia:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="width:100%">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Modelo:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:100%">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Estacionamiento:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['parqueadero'] . '"  readonly  name="estacionamiento" style="display:block; width:100%">
                             </div>
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 <label>Fecha de Registro:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:100%">
                             </div>

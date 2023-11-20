@@ -103,10 +103,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                 <div style="display: flex; justify-content: end; width: 99%; background-color: none">
                     <button id="GenerarPDF" style="background: transparent"><a
-                            class="btn p-2 btn-pdf mx-3 text-light" href="../../services/generatepdfvehiculos.php" target="_blank">Generar
+                            class="btn p-2 btn-pdf mx-3" href="../../services/generatepdfvehiculos.php" target="_blank">Generar
                             Reporte PDF</a></button>
                             <button id="GenerarExcel" style="background: transparent"><a
-                            class="btn p-2 btn-excel mx-3 text-light" href="../../services/generarexcelvehiculos.php" target="_blank">Generar
+                            class="btn p-2 btn-excel" href="../../services/generarexcelvehiculos.php" target="_blank">Generar
                             Reporte Excel</a></button>
                 </div>
 

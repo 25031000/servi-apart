@@ -89,6 +89,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:17px">Fecha Revision</th>
                                                     <th style="font-size:17px">Identificación guarda</th>
                                                     <th style="font-size:17px">Nombre de guarda encargado</th>
+                                                    <th style="font-size:17px; text-align: center">Ver Foto</th>
                                                     <th style="text-align:center; font-size:17px">Operaciones</th>
                                                 </tr>
                                             </thead>

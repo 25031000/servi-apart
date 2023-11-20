@@ -69,6 +69,7 @@ function cargarVehiculosPS()
                 <td style="text-align:center">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
+                <td style="text-align:center">' . $f['parqueadero'] . ' </td>
                 <td style="text-align:center">' . $f['fecha'] . ' </td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/mas.png" width="20px" style="margin-right:3px"></a></td>
@@ -186,11 +187,15 @@ function cargarFotosVehiculoPS()
                                 <label>Referencia:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['referencia'] . '" readonly placeholder="Ej: Miguel Angel" name="referencia" style="display:block; width:100%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
                                 <label>Modelo:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['modelo'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:100%">
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-4">
+                                <label>Estacionamiento:</label>
+                                <input type="text" class="rounded-3 input" value="' . $f['parqueadero'] . '"  readonly placeholder="Ej: Gallejo Restrepo" name="modelo" style="display:block; width:100%">
+                            </div>
+                            <div class="form-group col-md-4">
                                 <label>Fecha Registro:</label>
                                 <input type="text" class="rounded-3 input" value="' . $f['fecha'] . '" readonly placeholder="Ej: example@example.com" name="fecha" style="display:block; width:100%">
                             </div>
@@ -289,6 +294,7 @@ function cargarNovedadesPS()
                 <td style="text-align:center; max-width:600px">' . $f['novedad'] . '</td>
                 <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' ' . $f['apellidos'] . '</td>
+                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
                 <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
 

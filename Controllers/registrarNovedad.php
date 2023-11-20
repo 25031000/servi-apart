@@ -34,13 +34,17 @@
     session_start();
     $identificacion = $_SESSION['id'];
 
+    //Capturamos la foto del reporte
+    $fotoReporte = "../Uploads/novedades/" . $_FILES['fotoReporte']['name'];
+    $mover = move_uploaded_file($_FILES['fotoReporte']['tmp_name'], $fotoReporte);
+
     if (
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
         strlen($placa) > 0 && strlen($novedad) > 0
     ) {
 
         $objConsultas = new Consultas();
-        $result = $objConsultas->registrarNovedadPS($placa, $novedad, $identificacion);
+        $result = $objConsultas->registrarNovedadPS($placa, $novedad, $identificacion, $fotoReporte);
 
     } else {
         ?>

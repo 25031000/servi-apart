@@ -101,6 +101,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                                                     <th style="font-size:17px">Novedad</th>
                                                     <th style="font-size:17px">Fecha Revisión</th>
                                                     <th style="font-size:17px">Nombre de guarda encargado</th>
+                                                    <th style="font-size:17px; text-align: center">Ver Foto</th>
                                                     <th style="text-align:center; font-size:17px">Operaciones</th>
                                                 </tr>
                                             </thead>

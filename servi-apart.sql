@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2023 a las 03:05:16
+-- Tiempo de generación: 20-11-2023 a las 00:56:00
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -146,7 +146,6 @@ CREATE TABLE `reserva_salon` (
 --
 
 INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
-(31, 999, '2023-11-30', '14:59:00', '03:00:00', 44, 500, 'Taller de arte'),
 (32, 999, '2023-11-14', '23:59:00', '03:00:00', 789, 487, 'Presentación teatral'),
 (33, 999, '2023-11-25', '21:02:00', '03:00:00', 789, 987, 'Baby shower'),
 (34, 654321, '2023-11-26', '13:48:00', '03:00:00', 1000, 2000, 'Otro');
@@ -292,7 +291,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
