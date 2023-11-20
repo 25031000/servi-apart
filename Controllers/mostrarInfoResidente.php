@@ -476,7 +476,7 @@ function cargarReservaRes(string $identificacion)
                 <div class="col-7  align-items-center d-flex flex-column justify-content-center ">
         
                     <div class="rounded-2 py-1 px-3 " style="font-size: 1.2rem; font-weight: bold;"> 
-                        <div class="text-black ">' . $item['tipo_evento'] . '</div>
+                        <div class="text-black text-center">' . $item['tipo_evento'] . '</div>
                     </div>
         
                     
@@ -539,7 +539,7 @@ function modificarReservaRes()
                 <div class="col-md-6">
                     <div class="">
                     <label for="identificacion" style="font-weight: bold; color: #333;">Identificacion</label>
-                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" readonly  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
@@ -548,7 +548,7 @@ function modificarReservaRes()
                 <div class="col-md-6">
                     <div class="">
                     <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
-                        <input type="date" class="form-control" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="date" class="form-control" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
@@ -556,28 +556,28 @@ function modificarReservaRes()
                 <div class="col-md-6">
                     <div class="">
                     <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
-                        <input type="time" class="form-control" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="time" class="form-control" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
                     <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
-                        <input type="time" class="form-control" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="time" class="form-control" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
                     <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
-                        <input type="number" class="form-control"  value="' . $f['mesas'] . '" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                        <input type="number" class="form-control"  value="' . $f['mesas'] . '" id="mesas" name="mesas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
                     <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
-                        <input type="number" class="form-control" value="' . $f['sillas'] . '" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                        <input type="number" class="form-control" value="' . $f['sillas'] . '" id="sillas" name="sillas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
@@ -585,7 +585,7 @@ function modificarReservaRes()
                 <div>
                     <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
                     <div>
-                        <select class="form-control" id="tipo_evento" name="tipo_evento" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
+                        <select class="form-control" id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
                             <option value="">' . $f['tipo_evento'] . '</option>
                             <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                             <option value="Matrimonio">Matrimonio</option>

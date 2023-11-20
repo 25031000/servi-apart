@@ -151,6 +151,9 @@ estilos del formulario de residente en salon comunal
     left: 50px;
     padding: 20px;
 }
+.hora{
+    width: 100%;
+}
 
 .register-btn{
     width: 7.5rem;

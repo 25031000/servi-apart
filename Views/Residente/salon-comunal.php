@@ -17,7 +17,7 @@ require_once("../../Models/seguridadResidente.php");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Servi - Apart</title>
-<!--     <link href="../../assets/css/style.css" rel="stylesheet">
+    <!--     <link href="../../assets/css/style.css" rel="stylesheet">
  -->
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -47,8 +47,9 @@ require_once("../../Models/seguridadResidente.php");
     <link rel="stylesheet" href="../../components/css/menu.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
-<!--     <link rel="stylesheet" href="./css/paqueteria.css"> -->    
-<style>
+    <!--     <link rel="stylesheet" href="./css/paqueteria.css"> -->
+    <style>
+     
         /* Estilo para la sección principal */
         /* #main-content {
             padding: 20px;
@@ -96,8 +97,6 @@ require_once("../../Models/seguridadResidente.php");
         #dia_reserva:read-only {
             background-color: #fff;
         } */
-    
-
     </style>
 </head>
 
@@ -168,16 +167,16 @@ require_once("../../Models/seguridadResidente.php");
     </div>
 
 
-    <section id="main-content">
+    <section class="border main-content justify-content-center align-items-center d-flex" style="padding: 50px;" >
         <div class="row">
             <!--  <div class="container-fluid"> -->
-            <div class="col-md-6 ozuna">
+            <div class="col-md-6 ozuna" style="width:40%; ">
                 <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -webkit-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -moz-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);">
 
                     <!-- <div class="card-body"> -->
-                    <div class="year-calendar">
+                    <div class="year-calendar" >
                         <div id="detalles-reservacion">
                         </div>
                     </div>
@@ -189,53 +188,66 @@ require_once("../../Models/seguridadResidente.php");
             <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
             <!--             <div class="container-fluid">
  -->
-            <div class="col-md-6 adi ">
-                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form adidas"
+            <div class="col-md-6 adi">
+                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form center adidas"
                     method="post" autocomplete="off">
-                    <div class="row g-2">
 
-
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
+                    <div class="row ">
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
                                 <label for=""><b>Día de Reserva</b></label>
-                                <input type="date" class="py-2 input  " id="dia_reserva" name="dia_reserva" readonly
+                                <input type="date" class="py-2 input  hora" id="dia_reserva" name="dia_reserva" readonly
+                                    required>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
+                                <label for=""><b>Hora de Inicio</b></label>
+                                <input type="time" class="py-2 input hora " id="hora_inicio" name="hora_inicio"
                                     required>
 
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
-                                <label for=""><b>Hora de Inicio</b></label>
-                                <input type="time" class="py-2 input " id="hora_inicio" name="hora_inicio" required>
+                    </div>
 
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
+
+
+                    <div class="row ">
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
                                 <label for=""><b>Hora de Finalización</b></label>
-                                <input type="time" class="py-2 input " id="hora_finalizacion" name="hora_finalizacion"
-                                    value="03:00:00" required>
+                                <input type="time" class="py-2 input hora " id="hora_finalizacion"
+                                    name="hora_finalizacion" value="03:00:00" required>
 
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
-                                <label for=""><b>Mesas</b></label>
-                                <input type="number" class="py-2 input " id="mesas" name="mesas" required>
+                    
 
-                            </div>
+                    <div class="col-md">
+                        <div class="d-flex flex-column col-md">
+                            <label for=""><b>Mesas</b></label>
+                            <input type="number" class="py-2 input hora " id="mesas" name="mesas" required>
+
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
+                    </div>
+                </div>
+
+
+
+                    <div class="row ">
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
                                 <label for=""><b>Sillas</b></label>
-                                <input type="number" class="py-2 input " id="sillas" name="sillas" required>
+                                <input type="number" class="py-2 input hora " id="sillas" name="sillas" required>
 
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="d-flex flex-column col-md-6">
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
                                 <label for="" class="form-label"><b>Tipo de evento</b></label>
-                                <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
+                                <select name="tipo_evento" id="disabledSelect" class="py-2 input hora">
                                     <option value="" selected></option>
                                     <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                                     <option value="Matrimonio">Matrimonio</option>
@@ -253,13 +265,14 @@ require_once("../../Models/seguridadResidente.php");
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-success face">Enviar</button>
-                        </div>
                     </div>
-
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success face">Enviar</button>
+                    </div>
             </div>
-            <!-- </div> -->
+
+        </div>
+        <!-- </div> -->
 
 
         </div>
@@ -275,14 +288,15 @@ require_once("../../Models/seguridadResidente.php");
         </div>
         <!-- /# column -->
         </div>
-        <div class="d-grid gap-2 col-6 mx-auto bzrp " style="margin-top: 50px; ">
+        <section>
+        <div class=" border d-grid gap-2 col-6 mx-auto border bzrp " style="margin-top: 50px; ">
             <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-success bzrp">Ver Reserva</a>
         </div>
-
+        </section>
 
         <!-- /# row -->
 
-      <!--   <div class="row">
+        <!--   <div class="row">
             <div class="col-lg-12">
                 <div class="footer">
                     <p>2018 © Admin Board. - <a href="#">example.com</a></p>
