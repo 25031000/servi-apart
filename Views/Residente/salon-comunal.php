@@ -167,10 +167,10 @@ require_once("../../Models/seguridadResidente.php");
     </div>
 
 
-    <section class="border main-content justify-content-center align-items-center d-flex" style="padding: 50px;" >
+    <section class="border main-content justify-content-center align-items-center  " style="padding: 50px" >
         <div class="row">
             <!--  <div class="container-fluid"> -->
-            <div class="col-md-6 ozuna" style="width:40%; ">
+            <div class="col-md-6 ozuna" style="width:500px; margin-left:400px;">
                 <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -webkit-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -moz-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);">

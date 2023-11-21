@@ -27,7 +27,7 @@
     include '../../components/headerInclude.php';
 ?>
 
-    <main class="container rimary d-flex flex-wrap justify-content-center">
+    <main class="container d-flex flex-wrap justify-content-center">
         <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>Paquetes recibidos</strong></h2>
         <div class="d-flex w-100 mb-2 ms-5 my-3 align-items-center history-content">
             <box-icon role="button" name='history' class=" d-inline-flex my-auto history-icon"
