@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Common -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
@@ -86,7 +87,7 @@
                         
                     </form>
                      <div id="grid" class="col-md-5 p-0 m-5 grid-collage " >
-                        <img src="./images/hola.jpg"  width="100%" height="100%" alt="">
+                        <img src="./images/megafono.jpg"  width="100%" height="100%" alt="">
                         <img src="./images/hola1.jpg"  alt="">
                         <img src="./images/mensaje.jpg" width="100%" height="100%"   alt="">
                     </div>
