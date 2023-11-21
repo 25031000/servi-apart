@@ -35,11 +35,22 @@
       animation: 1.5s cubic-bezier(.25, 1, .30, 1) wipe-out-down both;
     }
 
-    header{
+    header {
       box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff !important;
     }
   </style>
 </head>
+<?php
+
+require_once "../../Models/seguridadResidente.php";
+require_once "../../Models/conexion.php";
+require_once "../../Models/consultas.php";
+$user_id = $_SESSION['id'];
+
+$objetoConsulta = new Consultas();
+$userInfo = $objetoConsulta->mostrarUsuarioEditarAdmin($user_id)[0];
+
+?>
 
 <body>
   <header class="py-4 px-3 px-md-5  w-100 d-flex align-items-center justify-content-between">
@@ -47,11 +58,11 @@
       <img id="menu-btn" width="24" height="24" role="button" src="icons/Menu.png" alt="">
     </div>
     <div class="d-flex ">
-      <img width="42" height="42" class="rounded-5 ml-3 ml-5" src="images/ghost.png" alt="">
+      <img width="42" height="42" class="rounded-5 ml-3 ml-5" src="../<?php echo $userInfo['foto'] ?>" alt="">
       <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none"><a style="text-decoration: none;" class="text-black" href="../Residente/perfil.php">Perfil</a></button>
       <a href="../../Controllers/cerrarSesion.php">
-      <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none">Cerrar Sesion</button>
-  </a>
+        <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none">Cerrar Sesion</button>
+      </a>
     </div>
   </header>
 
