@@ -177,8 +177,10 @@ function cargarNovedadesResidente()
     } else {
 
         foreach ($result as $f) {
+            
 
-            // print_r($f);
+            print_r($f[5]);
+            
 
             echo '
             <tr><td style="text-align:center">' . $f['placa'] . '</td>
@@ -200,13 +202,18 @@ function cargarNovedadesResidente()
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <img src="' . $f["fotoR"] . '" alt="imagen de reporte" />
+                <img src="' .$f[5] . '" alt="imagen de reporte" id="fotoReporte" />
                 </div>
                 </div>
             </div>
             </div>
             ';
+        
+        
         }
+
+        return $result;
+        
 
 
     }

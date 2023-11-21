@@ -27,7 +27,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
-    <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
 
@@ -105,7 +105,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                             <tbody>
                                                 <?php
 
-                                                cargarNovedadesResidente();
+                                                $arreglo = cargarNovedadesResidente();
 
                                                 ?>
                                             </tbody>
@@ -139,14 +139,19 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     </div>
 
 
-
+<!-- <script>
+    var foto = document.getElementById("fotoReporte")
+    setTimeout(function(){
+        foto.src="../../Uploads/novedades/2019-10-10-para-quitar-los-rayones-en-la-moto-01.jpg  "
+    },500 )
+</script> -->
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>
     <script src="../Dashboard/js/lib/menubar/sidebar.js"></script>
     <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
-    <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
+    <script src="../dashboard/js/lib/bootstrap.min.js"></script>
     <script src="../Dashboard/js/scripts.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

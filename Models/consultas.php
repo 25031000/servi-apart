@@ -249,10 +249,13 @@ class Consultas
         $result->execute();
 
 
-        while ($resultado = $result->fetch()) {
-            $f[] = $resultado;
-        }
-        return $f;
+        $resultado = $result -> fetchAll();
+        return $resultado;
+
+        // while ($resultado = $result->fetch()) {
+        //     $f[] = $resultado;
+        // }
+        // return $f;
     }
 
     public function mostrarNovedadEditarAdmin($id_nov)
