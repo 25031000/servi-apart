@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2023 a las 00:56:00
+-- Tiempo de generación: 21-11-2023 a las 23:08:00
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -45,20 +45,21 @@ CREATE TABLE `novedad_vehiculo` (
   `novedad` varchar(500) DEFAULT NULL,
   `identificacion` int(11) NOT NULL,
   `fecha_rev` datetime NOT NULL DEFAULT current_timestamp(),
-  `foto` varchar(500) DEFAULT NULL
+  `fotoR` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `novedad_vehiculo`
 --
 
-INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`, `foto`) VALUES
+INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`, `fotoR`) VALUES
 (6, 'NJI164', 'Ventana de conductor abierta', 123456879, '2023-10-30 18:17:29', NULL),
 (7, 'NUI189', 'luz trasera fragmentada', 123456879, '2023-10-30 18:18:26', NULL),
 (9, 'MDO89Y', 'llanta trasera pinchada', 123456879, '2023-10-30 18:21:08', NULL),
 (10, 'JYP10L', 'rayon en el costado derecho', 123456879, '2023-10-30 18:21:52', NULL),
 (12, 'KJH654', 'sin la tapa de gasolina', 123456879, '2023-10-30 18:24:07', NULL),
-(13, 'JAD231', 'aboyadura en la parte trasera del vehiculo', 123456879, '2023-10-30 18:25:05', NULL);
+(13, 'JAD231', 'aboyadura en la parte trasera del vehiculo', 123456879, '2023-10-30 18:25:05', NULL),
+(16, 'MDO89Y', 'OEOEOEOE', 321, '2023-11-21 13:27:07', '../../Uploads/novedades/2019-10-10-para-quitar-los-rayones-en-la-moto-01.jpg');
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`

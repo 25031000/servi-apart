@@ -165,7 +165,6 @@ function cargarNovedadesResidente()
     $result = $objConsultas->mostrarNovedades($placa);
 
 
-
     if (!isset($result)) {
         echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
         echo '
@@ -179,32 +178,33 @@ function cargarNovedadesResidente()
 
         foreach ($result as $f) {
 
+            // print_r($f);
 
             echo '
-            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Imagen de Reporte</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <img src="../../' . $f['foto'] . '" alt="imagen de reporte" style="max-width: 460px; max-height: 500px">
-      </div>
-    </div>
-  </div>
-</div>
-
-            
             <tr><td style="text-align:center">' . $f['placa'] . '</td>
                 <td style="text-align:center; max-width: 500px">' . $f['novedad'] . ' </td>
                 <td style="text-align:center">' . $f['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
 
 
             </tr>  
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen de Reporte</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <img src="' . $f["fotoR"] . '" alt="imagen de reporte" />
+                </div>
+                </div>
+            </div>
+            </div>
             ';
         }
 
