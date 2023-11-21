@@ -123,11 +123,6 @@ function cargarInfoUsuarios()
 }
 
 
-
-
-
-
-
 function cargarVehiculosResidente()
 {
     $objConsultas = new Consultas();
@@ -169,6 +164,8 @@ function cargarNovedadesResidente()
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarNovedades($placa);
 
+
+
     if (!isset($result)) {
         echo '<h2> Este vehículo no presenta novedades o reportes realizados.</h2>';
         echo '
@@ -184,20 +181,30 @@ function cargarNovedadesResidente()
 
 
             echo '
+            <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Imagen de Reporte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../../' . $f['foto'] . '" alt="imagen de reporte" style="max-width: 460px; max-height: 500px">
+      </div>
+    </div>
+  </div>
+</div>
+
             
             <tr><td style="text-align:center">' . $f['placa'] . '</td>
                 <td style="text-align:center; max-width: 500px">' . $f['novedad'] . ' </td>
                 <td style="text-align:center">' . $f['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
+                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" data-bs-toggle="modal" href="#exampleModalToggle" role="button"><img src="../../assets/icons/ver.png" width="20px"</button></td>
 
 
-            </tr>   
-
-            
-            
-
+            </tr>  
             ';
         }
 
@@ -429,25 +436,6 @@ function cargarTotalPaquetesRes(string $identificacion)
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function cargarReservaRes(string $identificacion)
 {
     $objConsultas = new Consultas();
@@ -513,7 +501,6 @@ function cargarReservaRes(string $identificacion)
         }, $arr);
     }
 }
-
 
 function modificarReservaRes()
 {

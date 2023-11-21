@@ -237,7 +237,7 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT *, u.nombres, v.placa
+        $consultar = "SELECT n.id_nov, n.placa, n.novedad,n.identificacion, n.fecha_rev, n.foto, u.nombres, v.placa
             FROM novedad_vehiculo n
             INNER JOIN usuarios u ON n.identificacion = u.identificacion
             INNER JOIN vehiculo v ON n.placa = v.placa
