@@ -1409,6 +1409,38 @@ class Consultas
         }
     }
 
+    public function mostrarPaquetePs(): array
+    {
+        try {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+
+            $query = "SELECT 
+                            U.torre,
+                            U.apartamento,
+                            P.remitente,
+                            P.fecha,
+                            U.nombres,
+                            U.apellidos,
+                            U.telefono
+                            FROM usuarios U INNER JOIN paqueteria P ON U.identificacion=P.usuario;
+                ";
+
+            $statement = $conexion->prepare($query);
+
+
+            $response = $statement->execute();
+            if (!$response)
+                return [];
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            if (count($result) == 0)
+                return [];
+            return $result;
+        } catch (\Throwable $th) {
+            echo "Error en la consulta :( " . $th;
+        }
+    }
+
     /**
      * Metodo para eliminar paquetes en modulo de paqueteria con rol residente
      * 
