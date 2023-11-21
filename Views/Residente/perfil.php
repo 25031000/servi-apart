@@ -28,8 +28,8 @@
 
     $objetoConsulta = new Consultas();
     $userInfo = $objetoConsulta->mostrarUsuarioEditarAdmin($user_id)[0];
-    include '../../components/menuPS.php';
-    include '../../components/headerIncludePS.php';
+    include '../../components/menu.php';
+    include '../../components/headerInclude.php';
 
     ?>
 

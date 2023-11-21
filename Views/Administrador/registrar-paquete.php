@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Common -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">

@@ -1,10 +1,10 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 
-    $objecto_consulta = new Consultas(); 
+$objecto_consulta = new Consultas();
 ?>
 
 
@@ -32,21 +32,22 @@
 
 <body>
 
-<?php
+    <?php
     include 'menu-include.php';
-?>
+    ?>
     <!-- /# sidebar -->
 
 
 
     <div class="content-wrap">
         <div class="main">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1 class="animate__animated animate__fadeInLeft" style="font-size: 4rem; color: #232020;" >Hola,
+                                <h1 class="animate__animated animate__fadeInLeft"
+                                    style="font-size: 4rem; color: #232020; margin-left: 300px">Hola,
                                     <span style="color: #ff914d; font-size: 4rem;">Bienvenido</span>
                                 </h1>
                             </div>
@@ -54,100 +55,108 @@
                     </div>
 
                 </div>
+
+                <br>
+                <br>
                 <!-- /# row -->
                 <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-car color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Vehiculos</div>
-                                        <div class="stat-digit">
-                                            <?php  
+                    <div class="row" style="">
+                        <div class="col-lg-5">
+                            <div class=" col-md-8 animate__animated animate__fadeIn animate__slow">
+                                <div style="border-radius: 40px;" class="card p-2">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-car color-success border-success"></i>
+                                        </div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">N° de Vehiculos</div>
+                                            <div class="stat-digit">
+                                                <?php
                                                 $count = $objecto_consulta->registerCounter('vehiculo', 'identificacion');
-                                                echo $count;                                            
-                                            ?>
+                                                echo $count;
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° Usuarios</div>
-                                        <div class="stat-digit">
-                                            <?php  
+                            <br>
+                            
+                            <div class="col-md-8 animate__animated animate__fadeIn animate__slow" style="display:block">
+                                <div style="border-radius: 40px;" class="card p-2">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
+                                        </div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">N° Usuarios</div>
+                                            <div class="stat-digit">
+                                                <?php
                                                 $count = $objecto_consulta->registerCounter('usuarios', 'identificacion');
-                                                echo $count;                                            
-                                            ?>
+                                                echo $count;
+                                                ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-calendar color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Reservas de salon activas</div>
-                                        <div class="stat-digit">
-                                            <?php  
+                            <br>
+                            
+                            <div class="col-md-8 animate__animated animate__fadeIn animate__slow">
+                                <div style="border-radius: 40px;" class="card p-2">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-calendar color-pink border-pink"></i>
+                                        </div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">Reservas de salon activas</div>
+                                            <div class="stat-digit">
+                                                <?php
                                                 $count = $objecto_consulta->registerCounter('reserva_salon', 'id_reserva');
-                                                echo $count;                                            
-                                            ?>
+                                                echo $count;
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            
+                            <div class="col-md-8 animate__animated animate__fadeIn animate__slow">
+                                <div style="border-radius: 40px;" class="card p-2">
+                                    <div class="stat-widget-one">
+                                        <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i>
+                                        </div>
+                                        <div class="stat-content dib">
+                                            <div class="stat-text">N° de Peticiones</div>
+                                            <div class="stat-digit">18</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Peticiones</div>
-                                        <div class="stat-digit">18</div>
-                                    </div>
-                                </div>
-                            </div>
+
+                        <div class=" col-lg-7 p-r-0 title-margin-right">
+                            <img src="../../assets/img/imagen-home.svg" alt="" style=" width: 700px; margin-top: 30px; ">
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 10px; padding: 30px;" class="card">
-                                <div class="card-title">
-                                    <h4>Promedio de usuarios nuevos</h4>
-
-                                </div>
-                                <div class="card-body">
-                                    <div class="ct-bar-chart m-t-30"></div>
-                                </div>
-                            </div>
-                        </div>
-
-                       
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
+
+
+
+
+
+
+
+
+
+            <div class="">
+                <div class="col-lg-12">
+                    <div class="footer">
+                        <p style="margin-left: 195px">2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                    </div>
+                </div>
+            </div>
+            </section>
         </div>
+    </div>
     </div>
 
 

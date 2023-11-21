@@ -24,6 +24,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
     <!-- Common -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">

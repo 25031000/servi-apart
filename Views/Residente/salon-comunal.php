@@ -40,8 +40,7 @@ require_once("../../Models/seguridadResidente.php");
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
@@ -49,54 +48,8 @@ require_once("../../Models/seguridadResidente.php");
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <!--     <link rel="stylesheet" href="./css/paqueteria.css"> -->
     <style>
-     
-        /* Estilo para la sección principal */
-        /* #main-content {
-            padding: 20px;
-        }
 
-        .year-calendar {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-        }
 
-        form {
-            border-radius: 5px;
-            padding: 20px;
-        }
-
-        .form-floating {
-            margin-bottom: 20px;
-        }
-
-        .form-floating input[type="number"],
-        .form-floating input[type="date"],
-        .form-floating input[type="time"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .form-floating label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 7px;
-            pointer-events: none;
-            transition: 0.3s;
-        }
-
-        .form-floating input:focus~label {
-            top: -20px;
-            background-color: #fff;
-            color: #333;
-        }
-
-        #dia_reserva:read-only {
-            background-color: #fff;
-        } */
     </style>
 </head>
 
@@ -113,53 +66,7 @@ require_once("../../Models/seguridadResidente.php");
 
     $result = cargarInfoUsuarios();
 
-    if (!empty($result)) {
-        // Asegúrate de iniciar la sesión
-    
-        $sesionId = $_SESSION['id']; // Obtén el ID del usuario que ha iniciado sesión
-    
-        $usuarioEnSesion = null;
-
-        // Busca el usuario actual en el array de resultados
-        foreach ($result as $usuario) {
-            if ($usuario['identificacion'] == $sesionId) {
-                $usuarioEnSesion = $usuario;
-                break;
-            }
-        }
-
-        if ($usuarioEnSesion !== null) {
-            $nombres = $usuarioEnSesion['nombres'];
-            $apellidos = $usuarioEnSesion['apellidos'];
-
-            ?>
-            <!-- /# sidebar -->
-            <div class="content-wrap">
-                <div class="main">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-8 p-r-0 title-margin-right">
-                                <div class="page-header">
-                                    <div class="page-title">
-                                        <h1 style="font-size: 36px;">Bienvenido,
-                                            <?php
-                                            echo $nombres . ' ' . $apellidos;
-                                            ?>
-                                        </h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php
-        } else {
-            echo '<h2> El usuario de la sesión no se encontró en los resultados.</h2>';
-        }
-    } else {
-        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
-    }
+    /*  */
     ?>
 
     <div class="d-flex justify-content-center">
@@ -167,16 +74,16 @@ require_once("../../Models/seguridadResidente.php");
     </div>
 
 
-    <section class="border main-content justify-content-center align-items-center d-flex" style="padding: 50px;" >
+    <section class=" main-content justify-content-center align-items-center resposive" style="padding: 50px">
         <div class="row">
             <!--  <div class="container-fluid"> -->
-            <div class="col-md-6 ozuna" style="width:40%; ">
+            <div class="col-md-6 ozuna" style="width:500px; margin-left:400px;">
                 <div class="card" style="box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -webkit-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);
                                 -moz-box-shadow: 1px 6px 14px 3px rgba(0,0,0,0.18);">
 
                     <!-- <div class="card-body"> -->
-                    <div class="year-calendar" >
+                    <div class="year-calendar">
                         <div id="detalles-reservacion">
                         </div>
                     </div>
@@ -188,25 +95,22 @@ require_once("../../Models/seguridadResidente.php");
             <!-- Aquí se mostrarán los detalles de la reserva seleccionada -->
             <!--             <div class="container-fluid">
  -->
-            <div class="col-md-6 adi">
-                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form center adidas"
-                    method="post" autocomplete="off">
+            <div class="col-md-6 blees" style="width:500px">
+                <form action="../../Controllers/registrarDiaSC.php?id=<?php echo $sesionId ?>" class="pack-form center adidas" method="post" autocomplete="off">
 
                     <div class="row ">
                         <div class="col-md">
                             <div class="d-flex flex-column col-md">
-                                <label for=""><b>Día de Reserva</b></label>
-                                <input type="date" class="py-2 input  hora" id="dia_reserva" name="dia_reserva" readonly
-                                    required>
+                                <label for="" class="horai"><b>Día de Reserva</b></label>
+                                <input type="date" class="py-2 input  " id="dia_reserva" name="dia_reserva" readonly required>
                             </div>
                         </div>
 
-                        
+
                         <div class="col-md">
                             <div class="d-flex flex-column col-md">
-                                <label for=""><b>Hora de Inicio</b></label>
-                                <input type="time" class="py-2 input hora " id="hora_inicio" name="hora_inicio"
-                                    required>
+                                <label for="" class="horai"><b>Hora de Inicio</b></label>
+                                <input type="time" class="py-2 input  " id="hora_inicio" name="hora_inicio" required>
 
                             </div>
                         </div>
@@ -217,37 +121,36 @@ require_once("../../Models/seguridadResidente.php");
                     <div class="row ">
                         <div class="col-md">
                             <div class="d-flex flex-column col-md">
-                                <label for=""><b>Hora de Finalización</b></label>
-                                <input type="time" class="py-2 input hora " id="hora_finalizacion"
-                                    name="hora_finalizacion" value="03:00:00" required>
+                                <label for="" class="horai"><b>Hora de Finalización</b></label>
+                                <input type="time" class="py-2 input  " id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required>
 
                             </div>
                         </div>
-                    
 
-                    <div class="col-md">
-                        <div class="d-flex flex-column col-md">
-                            <label for=""><b>Mesas</b></label>
-                            <input type="number" class="py-2 input hora " id="mesas" name="mesas" required>
 
+                        <div class="col-md">
+                            <div class="d-flex flex-column col-md">
+                                <label for="" class="horai"><b>Mesas</b></label>
+                                <input type="number" class="py-2 input  " id="mesas" name="mesas" required>
+
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
 
                     <div class="row ">
                         <div class="col-md">
                             <div class="d-flex flex-column col-md">
-                                <label for=""><b>Sillas</b></label>
-                                <input type="number" class="py-2 input hora " id="sillas" name="sillas" required>
+                                <label for="" class="horai"><b>Sillas</b></label>
+                                <input type="number" class="py-2 input  " id="sillas" name="sillas" required>
 
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="d-flex flex-column col-md">
-                                <label for="" class="form-label"><b>Tipo de evento</b></label>
-                                <select name="tipo_evento" id="disabledSelect" class="py-2 input hora">
+                                <label for="" class="form-label horai"><b>Tipo de evento</b></label>
+                                <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
                                     <option value="" selected></option>
                                     <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                                     <option value="Matrimonio">Matrimonio</option>
@@ -269,6 +172,7 @@ require_once("../../Models/seguridadResidente.php");
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-success face">Enviar</button>
                     </div>
+                </form>
             </div>
 
         </div>
@@ -278,7 +182,7 @@ require_once("../../Models/seguridadResidente.php");
         </div>
         </div>
         </div>
-        </form>
+
         </div>
 
         </div>
@@ -289,9 +193,9 @@ require_once("../../Models/seguridadResidente.php");
         <!-- /# column -->
         </div>
         <section>
-        <div class=" border d-grid gap-2 col-6 mx-auto border bzrp " style="margin-top: 50px; ">
-            <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-success bzrp">Ver Reserva</a>
-        </div>
+            <div class="  d-grid gap-2 col-6 mx-auto  bzrp " style="margin-top: 50px; ">
+                <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-success bzrp">Ver Reserva</a>
+            </div>
         </section>
 
         <!-- /# row -->
@@ -322,9 +226,7 @@ require_once("../../Models/seguridadResidente.php");
     <!-- sidebar -->
 
     <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
 
 
@@ -373,7 +275,7 @@ require_once("../../Models/seguridadResidente.php");
     </script>
 
     <script>
-        $(function () {
+        $(function() {
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>

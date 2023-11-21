@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-:root{
+:root {
     --primary: #00bf63;
     --alternative: #b1b1b1;
     --input-back: #f0f0f8;
@@ -13,12 +13,12 @@ body {
 
 }
 
-html{
+html {
     overflow: hidden;
     font-family: 'Varela Round', sans-serif;
 }
 
-*{
+* {
     font-family: 'Varela Round', sans-serif;
 }
 
@@ -65,7 +65,8 @@ html{
     background-color: #18d26e;
 }
 
-#GenerarPDF a, #GenerarExcel a {
+#GenerarPDF a,
+#GenerarExcel a {
     color: black;
 }
 
@@ -91,7 +92,7 @@ html{
 
 .box-cont {
     box-shadow: 6px 6px 36px #e3e3e3,
-                -6px -6px 36px #ffffff !important;
+        -6px -6px 36px #ffffff !important;
     padding: 2rem 0;
 }
 
@@ -100,14 +101,14 @@ html{
 
 }
 
-.paragr-content{
+.paragr-content {
     margin-left: 86px;
 }
 
 /* register packages */
 
 
-.input{
+.input {
     padding: 0.75rem 0;
     border: none;
     padding-left: 0.625rem;
@@ -117,45 +118,48 @@ html{
     font-weight: 300 !important;
 }
 
-.pack-form{
+.pack-form {
     border-radius: 0.625rem;
     box-shadow: 6px 6px 36px #e3e3e3,
-                -6px -6px 36px #ffffff !important;
+        -6px -6px 36px #ffffff !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 25.25rem;
 }
 
-.pack-form-ps{
+.pack-form-ps {
     border-radius: 0.625rem;
     box-shadow: 6px 6px 36px #e3e3e3,
-                -6px -6px 36px #ffffff !important;
+        -6px -6px 36px #ffffff !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 25.25rem;
 }
+
 /*
 estilos del formulario de residente en salon comunal
 */
 
-.adi{
+.adi {
     position: relative;
     padding: 15px;
 }
 
-.adidas{
+.adidas {
     position: absolute;
     top: 15px;
     left: 50px;
     padding: 20px;
 }
-.hora{
+
+.horai {
     width: 100%;
+    margin-top: 10px;
 }
 
-.register-btn{
+.register-btn {
     width: 7.5rem;
     background-color: var(--primary);
     color: black;
@@ -163,60 +167,63 @@ estilos del formulario de residente en salon comunal
     font-weight: 300 !important;
 }
 
-.grid-collage{
+.grid-collage {
     display: grid;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-                        "img1 img3"
-                        "img2 img3";
-    
-    
+    grid-template-areas:
+        "img1 img3"
+        "img2 img3";
+
+
 }
 
-.grid-collage-ps{
+.grid-collage-ps {
     display: grid;
     grid-column-gap: 1em;
     grid-row-gap: 1em;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 
-                        "img1 img3"
-                        "img2 img3";
+    grid-template-areas:
+        "img1 img3"
+        "img2 img3";
 }
 
-#grid > img:nth-child(1){
-    
+#grid>img:nth-child(1) {
+
     grid-area: img1;
 }
 
-#grid > img:nth-child(2){
- 
+#grid>img:nth-child(2) {
+
     width: 100%;
     height: 100%;
     grid-area: img3;
 }
 
-#grid > img:nth-child(3){
+#grid>img:nth-child(3) {
     grid-area: img2;
 }
 
 
+.responsive {
+    display: flex;
+}
 
-
-@media (max-width: 1400px){
-    body{
+@media (max-width: 1400px) {
+    body {
         font-size: 13px;
     }
 }
 
-@media (max-width: 1200px){
-    .grid-collage{
+@media (max-width: 1200px) {
+    .grid-collage {
         display: none;
     }
-    .pack-form{
+
+    .pack-form {
         width: 80%;
         display: flex;
         margin: 0 auto;
@@ -224,13 +231,109 @@ estilos del formulario de residente en salon comunal
 }
 
 
-@media (max-width: 902px){
-    .grid-collage-ps{
+@media (max-width: 902px) {
+    .grid-collage-ps {
         display: none;
     }
-    .pack-form-ps{
+
+    .pack-form-ps {
         width: 80%;
         display: flex;
         margin: 0 auto;
     }
 }
+
+@media (max-width: 902px) {
+
+    .pack-form-ps {
+        width: 80%;
+        display: flex;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*salon comunal  CELULAR*/
+
+@media (max-width: 767px) {
+    .grid-collage-ps {
+        display: none;
+    }
+
+    .ozuna {
+        width: 100% !important;
+        margin-left: 0% !important;
+        transition: width 0.3s ease, margin-left 0.3s ease;
+    }
+
+    .blees {
+        left: 0% !important;
+        transition: left 0.3s ease;
+    }
+
+    .adidas {
+        left: 0;
+        transition: left 0.3s ease;
+    }
+
+    .bzrp {
+        margin-top: 510px;
+        transition: margin-top 0.3s ease;
+    }
+}
+
+/* Tablet (min-width: 768px y max-width: 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .grid-collage-ps {
+        display: none;
+    }
+
+    .blees {
+        margin-left: 15% !important;
+        transition: margin-left 0.3s ease;
+    }
+
+    .ozuna {
+        width: 100% !important;
+        margin-left: 0% !important;
+        transition: width 0.3s ease, margin-left 0.3s ease;
+    }
+
+    .bzrp {
+        margin-top: 370px;
+        margin-left: 18% !important;
+        transition: margin-top 0.3s ease, margin-left 0.3s ease;
+    }
+}
+
+/* Pantallas más grandes (min-width: 992px y max-width: 1500px) */
+@media (min-width: 992px) and (max-width: 1500px) {
+    .grid-collage-ps {
+        display: none;
+    }
+
+    /* formulario */
+    .ozuna {
+        width: 60% !important;
+        transition: width 0.3s ease, margin-left 0.3s ease;
+    }
+
+    /* boton */
+    .bzrp {
+        margin-top: 370px;
+        margin-left: 16% !important;
+        transition: margin-left 0.3s ease;
+    }
+
+    /* Otros estilos según sea necesario */
+}
+
