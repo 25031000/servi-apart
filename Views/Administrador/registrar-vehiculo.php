@@ -28,7 +28,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
     <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
-    <title>Vehiculos</title>
+    <title>Servi - Apart</title>
 </head>
 
 <body>
@@ -90,7 +90,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
                             <div class="form-group col-md-4 ">
                                 <label>Placa:</label>
-                                <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: UZI974"
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" placeholder="Ej: UZI974"
                                     name="placa">
                             </div>
                             <div class="form-group col-md-4 ">
@@ -171,7 +171,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
                             <div class="form-group col-md-4  labelid" style="display:block">
                                 <label>Parqueadero Asignado:</label>
-                                <input style="width:100%" type="text" class="rounded-3 input"
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input"
                                     placeholder="Ej: B10" name="parqueadero">
                             </div>
                             <div class="form-group col-md-6 campos_vehiculo">
@@ -212,6 +212,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     </div>
 
 
+    <script src="../../assets/js/placas.js"></script>
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

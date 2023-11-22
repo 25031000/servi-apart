@@ -42,7 +42,9 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
             integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link rel="stylesheet" href="../../assets/css/pack-styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
         <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+
 
 
 

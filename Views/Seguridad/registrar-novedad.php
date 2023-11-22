@@ -99,7 +99,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label>Placa:</label>
                                 <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: UZI974"
-                                    name="placa">
+                                    name="placa" id="mi-input">
                             </div>
 
                             <div class="form-group col-md-6 campos_vehiculo">
@@ -127,7 +127,9 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
             </div>
         </div>
     </div>
-    
+
+
+        <script src="../../assets/js/placas.js"></script>
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

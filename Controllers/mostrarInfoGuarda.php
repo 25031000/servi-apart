@@ -340,7 +340,7 @@ function cargarNovedadesEditarPS()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <input style="width:100%" value="' . $f['novedad'] . '"  type="text" class="rounded-3 input" placeholder="Ej: Chevrolet"
+                                            <input style="width:100%" value="' . $f['novedad'] . '"  type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
                                                 name="novedad">
                                         </div>
 
@@ -349,7 +349,9 @@ function cargarNovedadesEditarPS()
                                     </div>
                                     
                         </div>
-                        <button type="submit" class="p-2 mt-2 btn btn-primary btn-editar" style="width:180px">Modificar Novedad</button>                    
+                                                <div class="d-flex flex-column  mt-3">
+                            <button class="boton-btn">Registrar</button>
+                        </div>
                 </form>
 
                         </div>
@@ -514,11 +516,11 @@ function cargarPaquetePS()
 
                <div class="d-flex">
                     <div class="d-flex me-2 flex-column">
-                        <p class="m-0 p-0" style="font-size: 20px; font-weight: 600 !important; ">' . $item['apartamento'] .  '</p>
+                        <p class="m-0 p-0" style="font-size: 20px; font-weight: 600 !important; ">' . $item['apartamento'] . '</p>
                         <small class="m-0 p-0">Apartamento</small>
                     </div>
                     <div class="d-flex  flex-column">
-                        <p class="m-0 p-0" style="font-size: 20px; font-weight: 600 !important; ">' . $item['torre'] .'</p>
+                        <p class="m-0 p-0" style="font-size: 20px; font-weight: 600 !important; ">' . $item['torre'] . '</p>
                         <small class="m-0 p-0">Torre</small>    
                     </div>
                </div>          

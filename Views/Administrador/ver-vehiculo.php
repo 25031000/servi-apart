@@ -15,7 +15,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi-Apart</title>
+    <title>Servi - Apart</title>
 
     <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">

@@ -460,8 +460,8 @@ function cargarNovedadesEditar()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <input style="width:100%" value="' . $f['novedad'] . '"  type="text" class="rounded-3 input" placeholder="Ej: Chevrolet"
-                                                name="novedad">
+                                            <textarea style="width:100%; max-height: 180px" type="text" class="rounded-3 input" placeholder="Ej: El vehiculo tiene un rayón en el costado derecho"
+                                                name="novedad">' . $f['novedad'] . '</textarea>
                                         </div>
 
 
@@ -469,7 +469,9 @@ function cargarNovedadesEditar()
                                     </div>
                                     
                         </div>
-                        <button type="submit" class="p-2 btn btn-primary btn-editar" style="margin-left:4px; width:180px">Modificar Novedad</button>                    
+                        <div class="d-flex flex-column  mt-3">
+                        <button class="boton-btn">Registrar</button>
+                    </div>
                 </form>
 
                         </div>
@@ -627,7 +629,9 @@ function cargarVehiculoEditar()
                                     <div class="d-flex flex-column  mt-3">                       
                         </div>
                     </form>
-                    <button type="submit" class="p-2 btn btn-primary btn-editar w-40" style="margin-left:7px">Modificar datos del Vehiculo</button>
+                    <div class="d-flex flex-column  mt-3">
+                    <button class="boton-btn">Registrar</button>
+                </div>
                         
                     </div>
                 </form>
