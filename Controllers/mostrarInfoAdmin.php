@@ -86,70 +86,72 @@ function cargarUsuarioEditar()
     foreach ($result as $f) {
         echo '
         
-        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST">
+        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST"  class="p-5 pack-form">
         <div class="row">
-            <div class="form-group col-md-6">
-                <label>identificacion:</label>
-                <input type="number" value="' . $f['identificacion'] . '" class="form-control" readonly placeholder="Ej: 23554535354" name="identificacion">
+        <div class="d-flex flex-column mb-3">
+            <h2 style="font-size: 1.7em;">Datos de Usuario</h2>
+        </div> 
+            <div class="form-group col-md-3">
+                <label>Identificación:</label>
+                <input type="number" value="' . $f['identificacion'] . '" class="rounded-3 input" readonly placeholder="Ej: 23554535354" name="identificacion" style="width:100%">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Tipo de Documento:</label>
-                <select name="tipo_doc" id="" class="form-control">
+                <select name="tipo_doc" id="" class="rounded-3 input" style="width:100%">
                     <option value="' . $f['tipo_doc'] . '"> ' . $f['tipo_doc'] . ' </option>
                     <option value="CC">CC</option>
                     <option value="CE">CE</option>
                     <option value="PASAPORTE">PASAPORTE</option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Nombres:</label>
-                <input type="text" value="' . $f['nombres'] . '"  class="form-control" placeholder="Ej: Miguel Angel" name="nombres">
+                <input type="text" value="' . $f['nombres'] . '"  class="rounded-3 input" style="width:100%" placeholder="Ej: Miguel Angel" name="nombres">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
                 <label>Apellidos:</label>
-                <input type="text" value="' . $f['apellidos'] . '"  class="form-control" placeholder="Ej: Gallejo Restrepo" name="apellidos">
+                <input type="text" value="' . $f['apellidos'] . '"  class="rounded-3 input" style="width:100%" placeholder="Ej: Gallejo Restrepo" name="apellidos">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label>Email:</label>
-                <input type="email" value="' . $f['email'] . '" class="form-control" placeholder="Ej: example@example.com" name="email">
+                <input type="email" value="' . $f['email'] . '" class="rounded-3 input" style="width:100%" placeholder="Ej: example@example.com" name="email">
             </div>
-            <div class="form-group col-md-6">
-                <label>telefono:</label>
-                <input type="number" value="' . $f['telefono'] . '" class="form-control" placeholder="Ej: 323 233 2333" name="telefono">
+            <div class="form-group col-md-4">
+                <label>Teléfono:</label>
+                <input type="number" value="' . $f['telefono'] . '" class="rounded-3 input" style="width:100%" placeholder="Ej: 323 233 2333" name="telefono">
             </div>
-            <div class="form-group col-md-6">
-                <label>Roles:</label>
-                <select name="Roles" id="rolSelect" class="form-control">
+            <div class="form-group col-md-4">
+                <label>Rol:</label>
+                <select name="Roles" id="rolSelect" class="rounded-3 input" style="width:100%">
                     <option value="' . $f['rol'] . '"> ' . $f['rol'] . '</option>
                     <option value="Administrador">Administrador</option>
                     <option value="Residente">Residente</option>
                     <option value="Seguridad">Seguridad</option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label>Seleccione Estado:</label>
-                <select name="Estado" id="" class="form-control">
+                <select name="Estado" id="" class="rounded-3 input" style="width:100%">
                     <option value="' . $f['estado'] . '"> ' . $f['estado'] . ' </option>
                     <option value="Activo">Activo</option>
                     <option value="Pendiente">Pendiente</option>
                     <option value="Bloqueado">Bloqueado</option>
                 </select>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label>Torre:</label>
-                <input type="text" id="torreInput" value="' . $f['torre'] . '"  class="form-control" placeholder="Ej: A" name="torre">
+                <input type="text" id="torreInput" value="' . $f['torre'] . '"  class="rounded-3 input" style="width:100%" placeholder="Ej: A" name="torre">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label>Apartamento:</label>
-                <input type="text" id="apartamentoInput" value="' . $f['apartamento'] . '"  class="form-control" placeholder="Ej: 101" name="apartamento">
+                <input type="text" id="apartamentoInput" value="' . $f['apartamento'] . '"  class="rounded-3 input" style="width:100%" placeholder="Ej: 101" name="apartamento">
             </div>
 
             
         </div>
-        <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Actualizar</button>
-        <div class="register-link m-t-15 text-center">
-            
-        </div>
+        <div class="d-flex flex-column  mt-3">
+                    <button class="boton-btn">Actualizar</button>
+                </div>
     </form>
 
         ';
@@ -772,9 +774,9 @@ function cargarPubliEditar()
 </div>
 </div>
                         ';
-                        
 
-                       
+
+
 
 
 

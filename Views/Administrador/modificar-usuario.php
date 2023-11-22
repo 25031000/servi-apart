@@ -1,9 +1,9 @@
 <?php
-    // Enlazamos las dependencias necesario
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");    
+// Enlazamos las dependencias necesario
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
 ?>
 
 
@@ -15,7 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servia_Apart</title>
+    <title>Servi - Apart</title>
 
     <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
@@ -25,14 +25,17 @@
     <link href="../dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
     <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
-    <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
+
+    <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
 </head>
 
 <body>
-<?php
+    <?php
     include 'menu-include.php';
-?>
+    ?>
 
 
 
@@ -43,9 +46,12 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Modificar Información de usuarios
-                                </h1>
-                                <p>Por favor edita los campos para actualizar la información de un usuario.</p>
+                                <h1 style="font-size:40px">Modificar Información de Usuarios</h1>
+                                <p style="font-size:15px; margin-top: 10px">
+                                    En este módulo, tienes el control total para editar y mantener actualizados los
+                                    registros de los usuarios creados. Puedes modificar detalles como nombre, apellido,
+                                    correo electrónico, entre otros, asegurando así que los datos
+                                    de los usuarios sean precisos y seguros.</p>
                             </div>
                         </div>
                     </div>
@@ -66,32 +72,27 @@
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-                    
-                    <div class="row">
-                        <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-title">
-                        
-                                        
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="basic-elements">
-                                            <?php
-                                                cargarUsuarioEditar();
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
+
+                    <div class="row d-flex align-items-center">
+                        <div class="col-lg-5 d-flex justify-content-center">
+                            <img src="../../assets/img/user-edit.svg" alt="imagen de carro" style="width:70%">
                         </div>
+                        <div class="col-lg-7">
+                            <div class="card " style="border:none">
+                                <div class="card-title">
 
-                    </div>
 
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="footer">
-                                    <p>2023 © Admin Board. - <a href="#">Servi - Apart</a></p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="basic-elements">
+                                        <?php
+                                        cargarUsuarioEditar();
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
                     </div>
                 </section>
             </div>
