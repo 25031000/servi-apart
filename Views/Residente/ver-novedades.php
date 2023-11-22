@@ -34,6 +34,8 @@ require_once("../../Controllers/mostrarInfoResidente.php");
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
 
@@ -64,7 +66,8 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Novedades</h1>
-                                <p>Como residente y propietario, accede al historial de novedades de tus vehículos realizadas por el
+                                <p>Como residente y propietario, accede al historial de novedades de tus vehículos
+                                    realizadas por el
                                     personal de seguridad de nuestro conjunto</p>
                             </div>
                         </div>
@@ -138,8 +141,10 @@ require_once("../../Controllers/mostrarInfoResidente.php");
         </div>
     </div>
 
+    
 
-<!-- <script>
+
+    <!-- <script>
     var foto = document.getElementById("fotoReporte")
     setTimeout(function(){
         foto.src="../../Uploads/novedades/2019-10-10-para-quitar-los-rayones-en-la-moto-01.jpg  "

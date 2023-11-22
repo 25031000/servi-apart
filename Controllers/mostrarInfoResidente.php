@@ -176,10 +176,11 @@ function cargarNovedadesResidente()
 
     } else {
 
-        foreach ($result as $f) {
-            
 
-            print_r($f[5]);
+        //print_r($result[1]['fotoR']);
+        /* foreach ($result as $f) {
+            
+            
             
 
             echo '
@@ -200,9 +201,10 @@ function cargarNovedadesResidente()
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen de Reporte</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <p>'. $result[1]['fotoR'] .'</p>
                 </div>
                 <div class="modal-body">
-                <img src="' .$f[5] . '" alt="imagen de reporte" id="fotoReporte" />
+                <img src="' .$result[1]['fotoR'] . '" alt="imagen de reporte" id="fotoReporte" />
                 </div>
                 </div>
             </div>
@@ -210,10 +212,37 @@ function cargarNovedadesResidente()
             ';
         
         
+        } */
+
+        array_map(function ($i) {
+            //print_r($i['fotoR']);
+            $foto = $i['fotoR'];
+            echo $foto;
+            echo '
+            <tr><td style="text-align:center">' . $i['placa'] . '</td>
+                <td style="text-align:center; max-width: 500px">' . $i['novedad'] . ' </td>
+                <td style="text-align:center">' . $i['fecha_rev'] . '</td>
+                <td style="text-align:center">' . $i['identificacion'] . ' </td>
+                <td style="text-align:center">' . $i['nombres'] . ' </td>
+                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <script>
+        function opened(i) {
+            Swal.fire({
+                title: "Sweet!",
+                text: "Modal with a custom image.",
+                imageUrl: "'. $foto .'",
+                imageWidth: 400,
+                imageHeight: 200,
+                imageAlt: "Custom image"
+            });
         }
+    </script>
+            </tr>  
+            ';
+        }, $result);
 
         return $result;
-        
+
 
 
     }

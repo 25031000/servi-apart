@@ -249,7 +249,7 @@ class Consultas
         $result->execute();
 
 
-        $resultado = $result -> fetchAll();
+        $resultado = $result->fetchAll(PDO::FETCH_ASSOC);
         return $resultado;
 
         // while ($resultado = $result->fetch()) {
