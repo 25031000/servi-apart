@@ -172,7 +172,7 @@ $sesionId = $_SESSION['id'];
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-success face">Enviar</button>
+                        <button type="submit" class="btn btn-success face" style="margin-top:10px">Enviar</button>
                     </div>
                 </form>
             </div>
