@@ -449,9 +449,9 @@ function cargarReservaRes(string $identificacion)
     $arr = $objConsultas->mostrarReservaRes($identificacion);
     if (count($arr) == 0) {
         echo '
-            <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no tienes reservas</h5>
+            <section class="  container d-flex flex-column align-items-center">
+                <img src="./images/saloncomunal.svg" width="500" height="500" />
+                <h5 class="" style="margin-left: -100px; font-size:2rem; color: #C3BCBA">Parece que no tienes reservas</h5>
             </section>
         ';
     } else {

@@ -72,11 +72,11 @@ $sesionId = $_SESSION['id'];
     ?>
 
     <div class="d-flex justify-content-center">
-        <h4 class="mx-auto">Reserva Tu Dia</h4>
+        <h4 class="mx-auto" style="margin-top:35px">Reserva Tu Dia</h4>
     </div>
 
 
-    <section class=" main-content justify-content-center align-items-center resposive" style="padding: 50px">
+    <section class=" main-content justify-content-center align-items-center resposive" style="padding: 40px">
         <div class="row">
             <!--  <div class="container-fluid"> -->
             <div class="col-md-6 ozuna" style="width:500px; margin-left:400px;">
@@ -196,7 +196,7 @@ $sesionId = $_SESSION['id'];
         </div>
         <section>
             <div class="  d-grid gap-2 col-6 mx-auto  bzrp " style="margin-top: 50px; ">
-                <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-success bzrp">Ver Reserva</a>
+                <a href="ver-reservaRes.php?id=<?php echo $sesionId ?>" class="btn btn-secondary bzrp">Ver Reserva</a>
             </div>
         </section>
 
