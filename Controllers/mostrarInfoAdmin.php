@@ -22,16 +22,16 @@ function cargarUsuarios()
     } else {
         foreach ($result as $f) {
             echo '
-            <tr>
-                <td><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></td>
-                <td>' . $f['identificacion'] . '</td>
-                <td>' . $f['tipo_doc'] . ' </td>
-                <td>' . $f['nombres'] . '</td>
-                <td>' . $f['apellidos'] . ' </td>
-                <td>' . $f['email'] . ' </td>
-                <td>' . $f['estado'] . ' </td>
-                <td>' . $f['torre'] . ' </td>
-                <td>' . $f['apartamento'] . ' </td>
+            <tr style="border-bottom: #e7e7e7 1px solid">
+                <td style="text-align:center"><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></td>
+                <td style="text-align:center">' . $f['identificacion'] . '</td>
+                <td style="text-align:center">' . $f['tipo_doc'] . ' </td>
+                <td style="text-align:center">' . $f['nombres'] . '</td>
+                <td style="text-align:center">' . $f['apellidos'] . ' </td>
+                <td style="text-align:center">' . $f['email'] . ' </td>
+                <td style="text-align:center">' . $f['estado'] . ' </td>
+                <td style="text-align:center">' . $f['torre'] . ' </td>
+                <td style="text-align:center">' . $f['apartamento'] . ' </td>
                 <td style="text-align:center; display:flex; justify-content:center; border:white"><a href="modificar-usuario.php?identificacion=' . $f['identificacion'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
                 <a href="../../Controllers/eliminarUserAdmin.php?identificacion=' . $f['identificacion'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"   style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
             </tr>     
@@ -460,7 +460,7 @@ function cargarNovedadesEditar()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <textarea style="width:100%; max-height: 180px" type="text" class="rounded-3 input" placeholder="Ej: El vehiculo tiene un rayón en el costado derecho"
+                                            <textarea style="width:100%; max-height: 180px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehiculo tiene un rayón en el costado derecho"
                                                 name="novedad">' . $f['novedad'] . '</textarea>
                                         </div>
 
