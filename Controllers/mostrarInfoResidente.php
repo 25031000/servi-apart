@@ -177,45 +177,9 @@ function cargarNovedadesResidente()
     } else {
 
 
-        //print_r($result[1]['fotoR']);
-        /* foreach ($result as $f) {
-            
-            
-            
-
-            echo '
-            <tr><td style="text-align:center">' . $f['placa'] . '</td>
-                <td style="text-align:center; max-width: 500px">' . $f['novedad'] . ' </td>
-                <td style="text-align:center">' . $f['fecha_rev'] . '</td>
-                <td style="text-align:center">' . $f['identificacion'] . ' </td>
-                <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
-
-
-            </tr>  
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Imagen de Reporte</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <p>'. $result[1]['fotoR'] .'</p>
-                </div>
-                <div class="modal-body">
-                <img src="' .$result[1]['fotoR'] . '" alt="imagen de reporte" id="fotoReporte" />
-                </div>
-                </div>
-            </div>
-            </div>
-            ';
-        
-        
-        } */
 
         array_map(function ($i) {
-            //print_r($i['fotoR']);
+            print_r($i);
             $foto = $i['fotoR'];
             echo $foto;
             echo '
@@ -224,9 +188,26 @@ function cargarNovedadesResidente()
                 <td style="text-align:center">' . $i['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $i['identificacion'] . ' </td>
                 <td style="text-align:center">' . $i['nombres'] . ' </td>
-                <td style="text-align:center"><button class="btn btn-detalles" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <td style="text-align:center"><button class="btn btn-detalles" id="'.$i['id_nov'].'" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
                 <script>
-        function opened(i) {
+         async function opened(i) {
+            let id = '.$i['id_nov'] .';
+
+            let btn = document.querySelector(".btn-detalles");
+            let btn2 = btn.id
+
+
+            const fetchOptions = {
+                method: "POST",
+                headers:{
+                    "Content-Type": "text/plain"
+                },
+                body: btn2
+            }
+
+            let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
+            console.log(response);
+
             Swal.fire({
                 title: "Sweet!",
                 text: "Modal with a custom image.",

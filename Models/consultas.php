@@ -241,7 +241,7 @@ class Consultas
             FROM novedad_vehiculo n
             INNER JOIN usuarios u ON n.identificacion = u.identificacion
             INNER JOIN vehiculo v ON n.placa = v.placa
-            WHERE v.placa = :placa;";
+            WHERE v.placa = :placa ";
         $result = $conexion->prepare($consultar);
 
         $result->bindParam("placa", $placa);
@@ -257,6 +257,29 @@ class Consultas
         // }
         // return $f;
     }
+
+
+
+    public function mostrarFotoRes($id_nov)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT fotoR FROM novedad_vehiculo WHERE id_nov=:id_nov";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam(":id_nov", $id_nov);
+
+        $result->execute();
+
+
+        $f = $result->fetch();
+        
+        return $f;
+    }
+
+
 
     public function mostrarNovedadEditarAdmin($id_nov)
     {
@@ -840,10 +863,7 @@ class Consultas
                         
                     })
                 </script>';
-        }
-
-
-        else if ($fIdentificacion) {
+        } else if ($fIdentificacion) {
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
             $insertar = "INSERT INTO vehiculo(placa, marca, referencia, modelo, identificacion, parqueadero, foto1, foto2, foto3, foto4) 
             VALUES(:placa, :marca, :referencia, :modelo, :identificacion, :parqueadero, :foto1, :foto2, :foto3, :foto4)";
@@ -1474,7 +1494,8 @@ class Consultas
         }
     }
 
-    public function modificarCuentaResidente(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $clave, string $torre, string $apartamento) : bool{
+    public function modificarCuentaResidente(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $clave, string $torre, string $apartamento): bool
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -1488,7 +1509,7 @@ class Consultas
                         clave = :clave,
                         torre = :torre,
                         apartamento = :apartamento WHERE identificacion = :identificacion";
-            
+
             $statement = $conexion->prepare($query);
             $statement->bindParam(':identificacion', $user_id, PDO::PARAM_STR);
             $statement->bindParam(':tipo_doc', $tipo_doc, PDO::PARAM_STR);
@@ -1499,9 +1520,9 @@ class Consultas
             $statement->bindParam(':clave', $clave, PDO::PARAM_STR);
             $statement->bindParam(':torre', $torre, PDO::PARAM_STR);
             $statement->bindParam(':apartamento', $apartamento, PDO::PARAM_STR);
-            
+
             $response = $statement->execute();
-            
+
             return $response == false ? 0 : 1;
 
         } catch (\Throwable $th) {
@@ -1509,7 +1530,8 @@ class Consultas
         }
     }
 
-    public function modificarCuentaResidenteAlterna(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $torre, string $apartamento) : bool{
+    public function modificarCuentaResidenteAlterna(string $user_id, string $tipo_doc, string $nombres, string $apellidos, string $email, string $telefono, string $torre, string $apartamento): bool
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -1522,7 +1544,7 @@ class Consultas
                         telefono = :telefono,
                         torre = :torre,
                         apartamento = :apartamento WHERE identificacion = :identificacion";
-            
+
             $statement = $conexion->prepare($query);
             $statement->bindParam(':identificacion', $user_id, PDO::PARAM_STR);
             $statement->bindParam(':tipo_doc', $tipo_doc, PDO::PARAM_STR);
@@ -1532,9 +1554,9 @@ class Consultas
             $statement->bindParam(':telefono', $telefono, PDO::PARAM_STR);
             $statement->bindParam(':torre', $torre, PDO::PARAM_STR);
             $statement->bindParam(':apartamento', $apartamento, PDO::PARAM_STR);
-            
+
             $response = $statement->execute();
-            
+
             return $response == false ? 0 : 1;
 
         } catch (\Throwable $th) {

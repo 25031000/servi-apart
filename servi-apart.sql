@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2023 a las 23:08:00
+-- Tiempo de generación: 22-11-2023 a las 18:12:02
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -59,7 +59,7 @@ INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, 
 (10, 'JYP10L', 'rayon en el costado derecho', 123456879, '2023-10-30 18:21:52', NULL),
 (12, 'KJH654', 'sin la tapa de gasolina', 123456879, '2023-10-30 18:24:07', NULL),
 (13, 'JAD231', 'aboyadura en la parte trasera del vehiculo', 123456879, '2023-10-30 18:25:05', NULL),
-(16, 'MDO89Y', 'OEOEOEOE', 321, '2023-11-21 13:27:07', '../../Uploads/novedades/2019-10-10-para-quitar-los-rayones-en-la-moto-01.jpg');
+(16, 'MDO89Y', 'OEOEOEOE', 321, '2023-11-21 13:27:07', NULL);
 
 -- --------------------------------------------------------
 
