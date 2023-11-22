@@ -340,8 +340,8 @@ function cargarNovedadesEditarPS()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <input style="width:100%" value="' . $f['novedad'] . '"  type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
-                                                name="novedad">
+                                            <textarea style="width:100%; max-height: 180px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
+                                                name="novedad">' . $f['novedad'] . '</textarea>
                                         </div>
 
 
