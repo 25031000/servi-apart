@@ -86,10 +86,9 @@
 
                         
                     </form>
-                     <div id="grid" class="col-md-5 p-0 m-5 grid-collage " >
-                        <img src="./images/megafono.jpg"  width="100%" height="100%" alt="">
-                        <img src="./images/hola1.jpg"  alt="">
-                        <img src="./images/mensaje.jpg" width="100%" height="100%"   alt="">
+                     <div id="grid" class="col-md-5 p-0 m-5 " >
+                        <img src="./images/darwin.svg"  width="100%" height="100%" alt="">
+                       
                     </div>
                     </div>
                 </main>
