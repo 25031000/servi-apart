@@ -66,6 +66,7 @@
     <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../dashboard/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
 </head>
 
