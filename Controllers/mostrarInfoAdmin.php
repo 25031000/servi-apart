@@ -1138,7 +1138,8 @@ function mostrarReservas()
             <article class="col-md-12 box-cont p-4 px-4 my-5" style=" -webkit-border-radius:  0.625rem; -moz-border-radius:  0.625rem; border-radius:  0.625rem; box-shadow: 6px 6px 36px #e3e3e3,
             -6px -6px 36px #ffffff">
                 <header class="w-100 p-2 border-2 border-bottom border-dark">
-                    <h3> Numero de Reserva ' . $f['id_reserva'] . '</h3>
+                    <h3> # ' . $f['id_reserva'] . ' </h3>
+                    <h3 style="position:absolute; left: 100px; top:30px; left: 630px;"> ' . $f['tipo_evento'] . '</h3>
                 </header>
                 <div class="h-auto row d-flex p-2">
                                 <section class="col p-2">
@@ -1158,19 +1159,10 @@ function mostrarReservas()
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] . '</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] .' '. $f['apellidos'] . '</p>
                                         </div>
                                     </div>
 
-                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
-                                        <div class"w-50 d-flex p-2" style="align-items: center;">
-                                            <img  src="../../assets/icons/iconSalonComunal/usuarios.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
-                                            <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Apellidos</p>
-                                        </div>
-                                        <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['apellidos'] . '</p>
-                                        </div>
-                                    </div>
 
                                     <div style="display: flex" class=" justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
@@ -1200,7 +1192,19 @@ function mostrarReservas()
                                             <p class="fs-6" style="position:relative; top: 9px">' . $f['dia_reserva'] . '</p>
                                         </div>
                                     </div>
+                                    
+                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
+                                    <div class"w-50 d-flex p-2" style="align-items: center;">
+                                        <img  src="../../assets/icons/iconSalonComunal/cartel.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
+                                        <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Tipo de Evento</p>
+                                    </div>
+                                    <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
+                                        <p class="fs-6" style="position:relative; top: 9px">' . $f['tipo_evento'] . '</p>
+                                    </div>
+                                </div>
                                 </section>
+
+
                                 <section class="col p-2">
                                     <div style="display: flex" class=" justify-content-between p-2 px-3">
                                         <div class"w-50 d-flex p-2" style="align-items: center;">
@@ -1261,15 +1265,6 @@ function mostrarReservas()
                                         </div>
                                     </div>
 
-                                    <div style="display: flex" class=" justify-content-between p-2 px-3">
-                                    <div class"w-50 d-flex p-2" style="align-items: center;">
-                                        <img  src="../../assets/icons/iconSalonComunal/cartel.png" alt="building" class="imgSC" style="width: 30px; height: 30px;">
-                                        <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Tipo de Evento</p>
-                                    </div>
-                                    <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
-                                        <p class="fs-6" style="position:relative; top: 9px">' . $f['tipo_evento'] . '</p>
-                                    </div>
-                                </div>
 
                                     <div class="h-auto row d-flex p-2">
                                     <section class="col p-2 ">
@@ -1356,13 +1351,12 @@ function cargarReservaEditar()
                         
                     </div>
                 </div>
-                <div class="col-md-6">
+                   <div class="col-md-6">
                 <div>
                     <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
                     <div>
-                        <select class="form-control" id="tipo_evento" name="tipo_evento" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
-                            <option value="' . $f['tipo_evento'] . '">' . $f['tipo_evento'] . '</option>
-                            <option value="" selected></option>
+                        <select class="form-control" id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
+                            <option value="">' . $f['tipo_evento'] . '</option>
                             <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                             <option value="Matrimonio">Matrimonio</option>
                             <option value="Primera comunión">Primera comunión</option>
