@@ -767,7 +767,7 @@ function cargarPubliEditar()
         <main class="w-100 row px-5 gap-5 flex-nowrap align-items-center py-4" >
             <form action="../../Controllers/modificarpubli.php?id_publi' . $f['id_publi'] . ' " class="col-md-6 p-5 pack-form h-75" method="post">
             <div class="d-flex flex-column mb-3">
-                    <h2 style="font-size: 1.7em;">Crear publicación</h2>
+                    <h2 style="font-size: 1.7em;">Modificar publicación</h2>
                 </div>  
 
                 <div class="d-flex flex-column mb-3">
@@ -781,7 +781,7 @@ function cargarPubliEditar()
                 </div>
 
                 <div class="d-flex flex-column  mt-3">
-                    <button class="boton-btn">Registrar</button>                        
+                    <button class="boton-btn">Modificar</button>                        
                 </div>
 
                 
