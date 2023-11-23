@@ -18,6 +18,7 @@
     <title>Servi-Apart</title>
 
     <!-- ================= Favicon ================== -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <link href="../client-site/assets/img/sar.png" rel="shortcut icon">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
@@ -68,6 +69,8 @@
     <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
     <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
+    <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
 </head>
 
 <body>
@@ -127,7 +130,7 @@
 
                     </div>
 
-                        <div class="row">
+                        <div class="row" style="margin-left: 240px">
                             <div class="col-lg-12">
                                 <div class="footer">
                                     <p>2023 © Admin Board. - <a href="#">Servi - Apart</a></p>

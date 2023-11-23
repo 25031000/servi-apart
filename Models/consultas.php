@@ -496,7 +496,7 @@ class Consultas
         $result->execute();
 
         echo '<script>alert("Información actualizada")</script>';
-        //echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";//
+        // echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
     }
 
     public function mostrarPubliEditar($id_publi)
