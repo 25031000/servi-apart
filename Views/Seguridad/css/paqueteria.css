@@ -13,3 +13,11 @@ body{
     box-shadow: 6px 6px 36px #e3e3e3,
                 -6px -6px 36px #ffffff !important;
 }
+
+.filter_item:hover{
+    background-color: #e3e3e3;
+}
+
+.filter_icon{
+    transform: rotate(-180deg);
+}

@@ -37,7 +37,7 @@ if($apartamento !== ''  && $remitente !== '' && $torre !== ''){
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Error al registrar paquete. Intentelo de nuevo',
+                text: 'Error al registrar paquete. Verifique los datos ingresados e Intentelo de nuevo',
                 confirmButtonText: 'Ok'
             }).then((result)=>{
                 if(result.isConfirmed){
