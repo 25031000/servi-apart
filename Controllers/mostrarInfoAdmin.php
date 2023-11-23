@@ -69,6 +69,25 @@ function cargarUsuariosexcel()
     }
 }
 
+function cargarInfoAdmin()
+{
+    $objConsultas = new Consultas();
+
+    // session_start();
+
+    $identificacion = $_SESSION['id'];
+    // Reemplaza 'valor_de_identificacion' con el ID que deseas buscar
+
+    $result = $objConsultas->verPerfil($identificacion);
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY USUARIOS REGISTRADOS </h2>';
+    } else {
+
+        return $result;
+    }
+}
+
 
 // aterrizamos la pk enviada desde la tabla 
 function cargarUsuarioEditar()

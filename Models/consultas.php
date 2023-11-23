@@ -108,8 +108,22 @@ class Consultas
         $f = $result->fetch();
 
         if ($f) {
-            echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-            echo "<script>location.href = '../Views/Administrador/registrar-usuario.php'</script>";
+            echo '
+            <script>
+    
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Los datos ingresados ya se encuentran registrados en el sistema",
+                confirmButtonText: "Ok"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = "../Views/Administrador/registrar-usuario.php";
+                }
+    
+            })
+            </script>
+            ';
         } else {
 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
@@ -138,7 +152,16 @@ class Consultas
             //EJECUTAMOS EL INSERT
             $result->execute();
 
-            echo '<script>alert("Usuario registrado con exito")</script>';
+            echo '<script>
+            Swal.fire({
+                icon: "success",
+                title: "Usuario ingresado exitosamente",
+                timer: 2000,
+                showConfirmButton: false,
+            }).then(() => {
+                location.href = "../Views/Administrador/ver-usuario.php";
+            });
+        </script>';
 
         }
 
@@ -152,7 +175,7 @@ class Consultas
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * FROM usuarios ORDER BY nombres ASC ";
+        $consultar = "SELECT * FROM usuarios ORDER BY estado DESC ";
 
         $result = $conexion->prepare($consultar);
 
@@ -275,7 +298,7 @@ class Consultas
 
 
         $f = $result->fetch();
-        
+
         return $f;
     }
 
@@ -332,28 +355,70 @@ class Consultas
 
     public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento)
     {
-
-        $objConexion = new conexion();
+    
+        //CREAMOS EL OBJETO DE CONEXION
+        $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-
-        $actualizar = " UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
-        $result = $conexion->prepare($actualizar);
-
-        $result->bindParam("identificacion", $identificacion);
-        $result->bindParam("tipo_doc", $tipo_doc);
-        $result->bindParam("nombres", $nombres);
-        $result->bindParam("apellidos", $apellidos);
-        $result->bindParam("email", $email);
-        $result->bindParam("telefono", $telefono);
-        $result->bindParam("torre", $torre);
-        $result->bindParam("apartamento", $apartamento);
-
-        $result->execute();
-
-        echo '<script>alert("Información actualizada")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+    
+        // OBTENEMOS EL CORREO ORIGINAL DEL USUARIO
+        $consultarCorreoOriginal = 'SELECT email FROM usuarios WHERE identificacion=:identificacion';
+        $stmtCorreoOriginal = $conexion->prepare($consultarCorreoOriginal);
+        $stmtCorreoOriginal->bindParam(":identificacion", $identificacion);
+        $stmtCorreoOriginal->execute();
+        $correoOriginal = $stmtCorreoOriginal->fetchColumn();
+    
+        // VERIFICAMOS SI EL CORREO INGRESADO ES DIFERENTE AL ORIGINAL
+        if ($correoOriginal !== $email) {
+            // VERIFICAMOS SI EL NUEVO CORREO YA ESTÁ REGISTRADO
+            $consultar = 'SELECT * FROM usuarios WHERE email=:email';
+            $stmtVerificarCorreo = $conexion->prepare($consultar);
+            $stmtVerificarCorreo->bindParam(":email", $email);
+            $stmtVerificarCorreo->execute();
+            $correoExistente = $stmtVerificarCorreo->fetch();
+    
+            if ($correoExistente) {
+                echo '
+                <script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "El correo ingresado ya se encuentra registrado en el sistema",
+                        confirmButtonText: "Ok"
+                    }).then(() => {
+                        location.href = "../Views/Administrador/ver-usuario.php";
+                    });
+                </script>';
+                return; // Detener la ejecución del código si el correo ya está registrado
+            }
+        }
+    
+        // ACTUALIZAR LA INFORMACIÓN DEL USUARIO
+        $actualizar = "UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
+        $stmtActualizar = $conexion->prepare($actualizar);
+    
+        $stmtActualizar->bindParam(":identificacion", $identificacion);
+        $stmtActualizar->bindParam(":tipo_doc", $tipo_doc);
+        $stmtActualizar->bindParam(":nombres", $nombres);
+        $stmtActualizar->bindParam(":apellidos", $apellidos);
+        $stmtActualizar->bindParam(":email", $email);
+        $stmtActualizar->bindParam(":telefono", $telefono);
+        $stmtActualizar->bindParam(":torre", $torre);
+        $stmtActualizar->bindParam(":apartamento", $apartamento);
+    
+        $stmtActualizar->execute();
+    
+        echo '
+        <script>
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                location.href="../Views/Administrador/ver-usuario.php";
+            });
+        </script>';
     }
-
 
 
     public function crearPublicacion($titulo, $descripcion)
@@ -776,8 +841,16 @@ class Consultas
         $result->bindParam(":id", $id);
 
         $result->execute();
-        echo '<script>alert("Usuario Eliminado")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-usuario.php'</script>";
+        echo '<script>
+        Swal.fire({
+            icon: "success",
+            title: "Usuario eliminado",
+            timer: 2000,
+            showConfirmButton: true,
+        }).then(() => {
+            location.href = "../Views/Administrador/ver-usuario.php";
+        });
+    </script>';
     }
 
     public function verPerfil($identificacion)
