@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2023 a las 18:12:02
+-- Tiempo de generación: 24-11-2023 a las 01:15:45
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -48,19 +48,6 @@ CREATE TABLE `novedad_vehiculo` (
   `fotoR` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Volcado de datos para la tabla `novedad_vehiculo`
---
-
-INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`, `fotoR`) VALUES
-(6, 'NJI164', 'Ventana de conductor abierta', 123456879, '2023-10-30 18:17:29', NULL),
-(7, 'NUI189', 'luz trasera fragmentada', 123456879, '2023-10-30 18:18:26', NULL),
-(9, 'MDO89Y', 'llanta trasera pinchada', 123456879, '2023-10-30 18:21:08', NULL),
-(10, 'JYP10L', 'rayon en el costado derecho', 123456879, '2023-10-30 18:21:52', NULL),
-(12, 'KJH654', 'sin la tapa de gasolina', 123456879, '2023-10-30 18:24:07', NULL),
-(13, 'JAD231', 'aboyadura en la parte trasera del vehiculo', 123456879, '2023-10-30 18:25:05', NULL),
-(16, 'MDO89Y', 'OEOEOEOE', 321, '2023-11-21 13:27:07', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -73,21 +60,6 @@ CREATE TABLE `paqueteria` (
   `remitente` varchar(50) DEFAULT NULL,
   `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `paqueteria`
---
-
-INSERT INTO `paqueteria` (`id`, `usuario`, `remitente`, `fecha`) VALUES
-(6, 231, 'sas group', '2023-10-17'),
-(7, 999, 'apple', '2023-11-03'),
-(8, 999, 'gropu', '2023-11-03'),
-(9, 999, 'gali', '2023-11-03'),
-(10, 999, 'pooo', '2023-11-03'),
-(11, 999, 'perra', '2023-11-03'),
-(12, 999, 'bebi', '2023-11-03'),
-(13, 999, 'bebi', '2023-11-03'),
-(14, 999, 'punto', '2023-11-03');
 
 -- --------------------------------------------------------
 
@@ -142,15 +114,6 @@ CREATE TABLE `reserva_salon` (
   `tipo_evento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
---
--- Volcado de datos para la tabla `reserva_salon`
---
-
-INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
-(32, 999, '2023-11-14', '23:59:00', '03:00:00', 789, 487, 'Presentación teatral'),
-(33, 999, '2023-11-25', '21:02:00', '03:00:00', 789, 987, 'Baby shower'),
-(34, 654321, '2023-11-26', '13:48:00', '03:00:00', 1000, 2000, 'Otro');
-
 -- --------------------------------------------------------
 
 --
@@ -177,21 +140,16 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
-(1, 'CC', 'Administrador', 'Cuenta', 'administrador@gmail.com', '00000000', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', NULL, '', ''),
-(123, 'CC', 'Residente', 'Cuenta', 'residente@gmail.com', '0000000000000', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, 'A', '501'),
-(231, 'CC', 'admin', 'admin', 'admin@gmail.com', '321', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariospng-clipart-service-information-business-organization-management-administrator-miscellaneous-face.png', '1', '101'),
-(321, 'CC', 'Guarda', 'Cuenta', 'guardaseguridad@gmail.com', '0000', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', NULL, '', ''),
-(999, 'CC', 'ronald', 'rodriguez', 'ronal@gmail.com', '222222', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', NULL, '4', 'b-23'),
-(4546, 'CC', 'antonio', 'Cortés', 'facortes839@soy.sena.edu.co', '456879', '4546', 'Administrador', 'Activo', '../Uploads/Usuarios/', '', ''),
-(35354, 'CE', 'Andres', 'garzon', 'garzon@gmail.com', '3194564165', '35354', 'Residente', 'Activo', '../Uploads/Usuarios/3.jfif', 'B', '609'),
-(354534, 'CC', 'angel', 'gallardo', 'gallardo@gmail.com', '318354352', '354534', 'Residente', 'Activo', '../Uploads/Usuarios/5.jfif', 'c', '701'),
-(654321, 'PASAPORTE', 'Nicki', 'Nicole', 'nicole@gmail.com', '534378343234', 'c33367701511b4f6020ec61ded352059', 'Residente', 'Activo', '../Uploads/Usuarios/ni.jpg', 'a', '502'),
-(6456456, 'CC', 'Franklin', 'GOMEZ', 'enri@gmail.com', '456456', '6456456', 'Residente', 'Activo', '../Uploads/Usuarios/', 'C', '32'),
-(123456879, 'CC', 'Johan Stiven ', 'castañeda', 'castanedapaola539@gmail.com', '31941', '97b290acab82d5937fb87a28b06181a3', 'Seguridad', 'Activo', '../Uploads/Usuarios/Plantilla-Foto-Nota.jpg', NULL, NULL),
-(321654987, 'PASAPORTE', 'Manuel', 'Turizo', 'turizo@gmailc.om', '316163', 'd1b2cc725d846f0460ff290c60925070', 'Residente', 'Activo', '../Uploads/Usuarios/ma.png', 'g', '101'),
-(537837838, 'CC', 'luis', 'eduardo', 'eduardo@gmail.com', '31615', '537837838', '', 'Activo', '../Uploads/Usuarios/2.jfif', NULL, NULL),
-(563453783, 'CC', 'miguel', 'lopez', 'lopez@gmail.com', '38464652', '563453783', 'Residente', 'Pendiente', '../Uploads/Usuarios/6.jfif', 'c', '245'),
-(2147483647, 'PASAPORTE', 'carlos', 'alberto', 'alberto@gmail.com', '3149848', '37837833453', '', 'Activo', '../Uploads/Usuarios/1.jfif', NULL, NULL);
+(11105687, 'PASAPORTE', 'Laura Beatriz', 'Ramírez Soto', 'sotolau1090@gmail.com', '3115689474', 'c67d9df7e2ae67e043532bb0ce993777', 'Residente', 'Activo', '../Uploads/Usuarios/user6.jpg', 'A', '303'),
+(1000056356, 'CC', 'Claudia Isabel', 'Torres Martínez', 'clauisabel1980@gmail.com', '3100156891', '0a98cf1edd627edc737b8e083cb14554', 'Seguridad', 'Activo', '../Uploads/Usuarios/user9.jpg', NULL, NULL),
+(1005689221, 'CC', 'Santiago', 'Peralta Torres ', 'santiago901pe@gmail.com', '3224678954', '8c2d7eca06767ef7e484afdfc674ddce', 'Residente', 'Activo', '../Uploads/Usuarios/user2.jpg', 'B', '301'),
+(1022352265, 'CC', 'Alejandro José', 'Pérez Ramírez', 'guardaseguridad@gmail.com', '3215689212', '2a460be978d0bfcfeb85c6698ba78e86', 'Seguridad', 'Activo', '../Uploads/Usuarios/user7.png', '', ''),
+(1025689451, 'CC', 'Carlos Eduardo ', 'González Martinez', 'camartinezeduar1970@gmail.com', '3156894517', 'c6b6178da5cf1163374b7e5846b35a79', 'Residente', 'Activo', '../Uploads/Usuarios/user3.jpg', 'B', '102'),
+(1056892568, 'CE', 'María Alejandra ', 'Herrera Torres', 'herreramaria876a@outlook.com', '3111456894', '12a62b0c967a5b44088cc789a60ab628', 'Residente', 'Activo', '../Uploads/Usuarios/user4.jpeg', 'A', '202'),
+(1065898452, 'CC', 'Gabriel Andrés', 'Mendoza López', 'gabilopez987@hotmail.com', '3165256891', 'cff05c1be554757c2ae7b51a9a3e4a2b', 'Seguridad', 'Activo', '../Uploads/Usuarios/user8.jpg', NULL, NULL),
+(1065984556, 'CC', 'Ana Carolina', 'López Mendoza', '09809anacarol@hotmail.com', '3205896521', '4914398a07630b3125c0f1f5cc9b2802', 'Residente', 'Activo', '../Uploads/Usuarios/user5.jpg', 'A', '102'),
+(1264565423, 'CC', 'Carlos Eduardo', 'González Martínez', 'admin@gmail.com', '3156453223', '102c059187935f48de43e7060e0d0671', 'Administrador', 'Activo', '../Uploads/Usuariosuser10.jpg', NULL, NULL),
+(1876219012, 'CC', 'Juan Andrés', 'Ramirez Orejuela', 'juananra012@gmail.com', '3245678912', 'eb87cad271826e0a25a5b016548e9f35', 'Residente', 'Activo', '../Uploads/Usuarios/user1.jpg', 'A', '201');
 
 -- --------------------------------------------------------
 
@@ -212,19 +170,6 @@ CREATE TABLE `vehiculo` (
   `foto4` varchar(200) DEFAULT NULL,
   `parqueadero` varchar(10) DEFAULT 'NA'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Volcado de datos para la tabla `vehiculo`
---
-
-INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`, `parqueadero`) VALUES
-(563453783, 'JAD231', 'chevrolet', 'Aveo', 2010, '2023-10-30 18:03:32', '../Uploads/vehiculos/1200px-07_Chevrolet_Aveo.jpg', '../Uploads/vehiculos/aveo.png', '../Uploads/vehiculos/1200px-07_Chevrolet_Aveo.jpg', '../Uploads/vehiculos/kfz74363255_chevrolet-aveo-fv297wx-1.jpg', 'NA'),
-(6456456, 'JYP10L', 'suzuki-motos', 'Gixxer 250', 2020, '2023-10-30 18:07:03', '../Uploads/vehiculos/373074099_6854829611245694_7728345865232265779_n.jpg', '../Uploads/vehiculos/376613450_6759346867448988_857412316125683335_n.jpg', '../Uploads/vehiculos/377142517_7133066106743679_6546180573538173479_n.jpg', '../Uploads/vehiculos/379925709_6791518704232916_5010015788712805100_n.jpg', 'NA'),
-(123, 'KJH654', 'ford', 'Mustang', 2021, '2023-10-30 18:04:37', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-2.jpg', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-5.jpg', '../Uploads/vehiculos/C4owTPPOhKCYMAZ.jpg', '../Uploads/vehiculos/ford_mustang_36-1440x960.jpg', 'NA'),
-(999, 'MDO89Y', 'royal-enfield', 'Himalayan', 2022, '2023-10-30 18:08:14', '../Uploads/vehiculos/385038190_10229709550101568_6522253390091800740_n.jpg', '../Uploads/vehiculos/385066547_10229709549821561_8669995821190450946_n.jpg', '../Uploads/vehiculos/385776850_10229709550381575_2953303067214096847_n.jpg', '../Uploads/vehiculos/385905058_10229709550861587_2624138796443913553_n.jpg', 'NA'),
-(231, 'NJI164', 'chevrolet', 'Camaro', 2018, '2023-10-30 18:13:53', '../Uploads/vehiculos/descarga (1).jpg', '../Uploads/vehiculos/descarga (2).jpg', '../Uploads/vehiculos/descarga (3).jpg', '../Uploads/vehiculos/aaaaaaaa.jpeg', 'B12'),
-(231, 'NUI189', 'toyota', 'Hilux', 2009, '2023-10-30 18:09:22', '../Uploads/vehiculos/387051147_10161032564347829_5498429313744374518_n.jpg', '../Uploads/vehiculos/387149993_10161032563542829_5955634481596939495_n.jpg', '../Uploads/vehiculos/387815411_10161032564397829_3618727748125337355_n.jpg', '../Uploads/vehiculos/toyota_hilux_2018_diesel_toyota_hilux_2018_automatica_4x4_full_28_7770127685556873237.jpg', 'NA'),
-(321654987, 'XDL458', 'jeep', 'Wrangler', 2020, '2023-10-30 18:05:52', '../Uploads/vehiculos/118648004_324394212337259_463587677140842316_n.jpg', '../Uploads/vehiculos/118744016_324394219003925_6714623843598140147_n.jpg', '../Uploads/vehiculos/118788046_324394205670593_3565358998563215441_n.jpg', '../Uploads/vehiculos/118805529_324394202337260_8295620494356773503_n.jpg', 'NA');
 
 --
 -- Índices para tablas volcadas
