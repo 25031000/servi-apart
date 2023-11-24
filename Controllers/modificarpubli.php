@@ -14,6 +14,7 @@
     $id_publi = $_GET['id_publi'];
 
 
+
     // Verificamos que las claves coincidan
 
         //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS

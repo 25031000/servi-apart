@@ -496,7 +496,7 @@ class Consultas
         $result->execute();
 
         echo '<script>alert("Información actualizada")</script>';
-        //echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";//
+        // echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
     }
 
     public function mostrarPubliEditar($id_publi)
@@ -1097,37 +1097,83 @@ class Consultas
     {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-
+    
         $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
         $result = $conexion->prepare($eliminar);
-
+    
         $result->bindParam(":id_reserva", $id_reserva);
-
+    
         if ($result->execute()) {
-            echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
-            echo "<script>location.href = '../Views/Administrador/ver-ReservaSC.php'</script>";
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Reserva Eliminada Con Éxito",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        customClass: {
+                            title: "varela-round-font"
+                        }
+                    }).then(() => {
+                        location.href = "../Views/Administrador/ver-ReservaSC.php";
+                    });
+                  </script>';
         } else {
-            echo '<script>alert("Error al eliminar la reserva")</script>';
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al eliminar la reserva",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        customClass: {
+                            title: "varela-round-font"
+                        }
+                    });
+                  </script>';
         }
     }
+    
+    
 
     public function eliminarDiaReservaPSE($id_reserva)
     {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-
+    
         $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
         $result = $conexion->prepare($eliminar);
-
+    
         $result->bindParam(":id_reserva", $id_reserva);
-
+    
         if ($result->execute()) {
-            echo '<script>alert("Reserva Eliminada Con Éxito")</script>';
-            echo "<script>location.href = '../Views/Residente/ver-ReservaRes.php'</script>";
+            echo '<script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Reserva Eliminada Con Éxito",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        customClass: {
+                            title: "varela-round-font"
+                        }
+                    }).then(() => {
+                        location.href = "../Views/Residente/ver-ReservaRes.php";
+                    });
+                  </script>';
         } else {
-            echo '<script>alert("Error al eliminar la reserva")</script>';
+            echo '<script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al eliminar la reserva",
+                        showConfirmButton: false,
+                        timer: 2000,
+                        customClass: {
+                            title: "varela-round-font"
+                        }
+                    });
+                  </script>';
         }
     }
+    
+    
 
     public function mostrarReservaEditarAdmin($id_reserva)
     {
@@ -1244,14 +1290,12 @@ class Consultas
 
     public function modificarReservaAdmin($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
-
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
-
-        $actualizar = " UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE identificacion=:identificacion";
+    
+        $actualizar = "UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE identificacion=:identificacion";
         $result = $conexion->prepare($actualizar);
-
-
+    
         $result->bindParam(":identificacion", $identificacion);
         $result->bindParam(":dia_reserva", $dia_reserva);
         $result->bindParam(":hora_inicio", $hora_inicio);
@@ -1259,13 +1303,35 @@ class Consultas
         $result->bindParam(":mesas", $mesas);
         $result->bindParam(":sillas", $sillas);
         $result->bindParam(":tipo_evento", $tipo_evento);
-
-        $result->execute();
-
-        echo '<script>alert("Información actualizada")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-reservaSC.php'</script>";
-
+    
+        if ($result->execute()) {
+            // Información actualizada con éxito
+            echo '
+                <script>
+                    Swal.fire({
+                        icon: "success",
+                        title: "Información actualizada",
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(() => {
+                        location.href="../Views/Administrador/ver-reservaSC.php";
+                    });
+                </script>';
+        } else {
+            // Error al actualizar
+            echo '
+                <script>
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al actualizar",
+                        text: "Hubo un problema al actualizar la información",
+                    }).then(() => {
+                        location.href="../Views/Administrador/ver-reservaSC.php";
+                    });
+                </script>';
+        }
     }
+    
 
 
 
@@ -1776,7 +1842,7 @@ class ValidarSesion
 
                     switch ($f['rol']) {
                         case 'Administrador':
-                            echo '<script>alert("Bienvenido señor administrador")</script>';
+                            echo '<script>alert("Bienvenido señor administradoooooor")</script>';
                             echo "<script>location.href = '../Views/Administrador/home.php'</script>";
                             break;
 
