@@ -769,8 +769,8 @@ class Consultas
 
         if ($fPlaca) {
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
-            $insertar = "INSERT INTO novedad_vehiculo(placa, novedad, identificacion, foto) 
-            VALUES(:placa, :novedad, :identificacion, :foto)";
+            $insertar = "INSERT INTO novedad_vehiculo(placa, novedad, identificacion, fotoR) 
+            VALUES(:placa, :novedad, :identificacion, :fotoR)";
 
 
             //PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -781,7 +781,7 @@ class Consultas
             $result->bindParam(":placa", $placa);
             $result->bindParam(":novedad", $novedad);
             $result->bindParam(":identificacion", $identificacion);
-            $result->bindParam(":foto", $fotoReporte);
+            $result->bindParam(":fotoR", $fotoReporte);
 
             //EJECUTAMOS EL INSERT
             $result->execute();
@@ -970,7 +970,7 @@ class Consultas
                 showConfirmButton: false,
                 timer: 2000
             }).then((result)=>{
-                location.href="../Views/Administrador/registrar-vehiculo.php";
+                location.href="../Views/Administrador/ver-vehiculo.php";
             })
         </script>';
 

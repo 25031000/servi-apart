@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2023 a las 01:15:45
+-- Tiempo de generación: 24-11-2023 a las 04:39:59
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -47,6 +47,19 @@ CREATE TABLE `novedad_vehiculo` (
   `fecha_rev` datetime NOT NULL DEFAULT current_timestamp(),
   `fotoR` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `novedad_vehiculo`
+--
+
+INSERT INTO `novedad_vehiculo` (`id_nov`, `placa`, `novedad`, `identificacion`, `fecha_rev`, `fotoR`) VALUES
+(17, 'BXI558', 'Llanta trasera derecha pinchada', 1022352265, '2023-11-23 22:19:32', '../Uploads/novedades/llanta-pinchada.jpg'),
+(18, 'KJU66P', 'La motocicleta no se encuentra en el estacionamiento adecuado.', 1022352265, '2023-11-23 22:23:15', '../Uploads/novedades/'),
+(19, 'LIO748', 'El carro tiene un rayon en el costado izquierdo', 1000056356, '2023-11-23 22:26:15', '../Uploads/novedades/Cómo reducir los rayones a un carro.jpg'),
+(20, 'MNI96P', 'Rayon en el guardabarros delantero', 1000056356, '2023-11-23 22:27:50', '../Uploads/novedades/2019-10-10-para-quitar-los-rayones-en-la-moto-01.jpg'),
+(21, 'PKE358', 'Puerta de conductor abierta', 1065898452, '2023-11-23 22:29:29', '../Uploads/novedades/'),
+(22, 'RAY658', 'Vidrio fragmentado', 1065898452, '2023-11-23 22:31:19', '../Uploads/novedades/2336592.jpg'),
+(23, 'UGT189', 'El vehiculo está botando aceite constantemente', 1065898452, '2023-11-23 22:32:26', '../Uploads/novedades/cárter-aceite-dañado.jpg');
 
 -- --------------------------------------------------------
 
@@ -172,6 +185,19 @@ CREATE TABLE `vehiculo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
+-- Volcado de datos para la tabla `vehiculo`
+--
+
+INSERT INTO `vehiculo` (`identificacion`, `placa`, `marca`, `referencia`, `modelo`, `fecha`, `foto1`, `foto2`, `foto3`, `foto4`, `parqueadero`) VALUES
+(11105687, 'BXI558', 'chevrolet', 'Camaro', 2019, '2023-11-23 21:04:36', '../Uploads/vehiculos/aaaaaaaa.jpeg', '../Uploads/vehiculos/descarga (1).jpg', '../Uploads/vehiculos/descarga (2).jpg', '../Uploads/vehiculos/descarga (3).jpg', 'A4'),
+(1056892568, 'KJU66P', 'suzuki-motos', 'Gixxer 250', 2022, '2023-11-23 20:58:36', '../Uploads/vehiculos/373074099_6854829611245694_7728345865232265779_n.jpg', '../Uploads/vehiculos/376613450_6759346867448988_857412316125683335_n.jpg', '../Uploads/vehiculos/377142517_7133066106743679_6546180573538173479_n.jpg', '../Uploads/vehiculos/379925709_6791518704232916_5010015788712805100_n.jpg', 'B5'),
+(11105687, 'LIO748', 'ford', 'Mustang', 2020, '2023-11-23 20:54:45', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-2.jpg', '../Uploads/vehiculos/20190420-FORD-MUSTANG-HIGH-PERFORMANCE-PACKAGE-2020-5.jpg', '../Uploads/vehiculos/C4owTPPOhKCYMAZ.jpg', '../Uploads/vehiculos/ford_mustang_36-1440x960.jpg', 'A7'),
+(1025689451, 'MNI96P', 'royal-enfield', 'Himalayan', 2018, '2023-11-23 21:00:56', '../Uploads/vehiculos/385038190_10229709550101568_6522253390091800740_n.jpg', '../Uploads/vehiculos/385066547_10229709549821561_8669995821190450946_n.jpg', '../Uploads/vehiculos/385776850_10229709550381575_2953303067214096847_n.jpg', '../Uploads/vehiculos/385905058_10229709550861587_2624138796443913553_n.jpg', 'B3'),
+(1065984556, 'PKE358', 'jeep', 'Wrangler', 2021, '2023-11-23 20:57:04', '../Uploads/vehiculos/118648004_324394212337259_463587677140842316_n.jpg', '../Uploads/vehiculos/118744016_324394219003925_6714623843598140147_n.jpg', '../Uploads/vehiculos/118788046_324394205670593_3565358998563215441_n.jpg', '../Uploads/vehiculos/118805529_324394202337260_8295620494356773503_n.jpg', 'B2'),
+(1005689221, 'RAY658', 'toyota', 'Hilux', 2015, '2023-11-23 21:02:34', '../Uploads/vehiculos/387051147_10161032564347829_5498429313744374518_n.jpg', '../Uploads/vehiculos/387149993_10161032563542829_5955634481596939495_n.jpg', '../Uploads/vehiculos/387815411_10161032564397829_3618727748125337355_n.jpg', '../Uploads/vehiculos/toyota_hilux_2018_diesel_toyota_hilux_2018_automatica_4x4_full_28_7770127685556873237.jpg', 'A2'),
+(1876219012, 'UGT189', 'chevrolet', 'Aveo', 2008, '2023-11-23 20:53:40', '../Uploads/vehiculos/1200px-07_Chevrolet_Aveo.jpg', '../Uploads/vehiculos/aveo.png', '../Uploads/vehiculos/kfz74363255_chevrolet-aveo-fv297wx-1.jpg', '../Uploads/vehiculos/aveoo.jpg', 'A10');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -237,7 +263,7 @@ ALTER TABLE `vehiculo`
 -- AUTO_INCREMENT de la tabla `novedad_vehiculo`
 --
 ALTER TABLE `novedad_vehiculo`
-  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_nov` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `paqueteria`
