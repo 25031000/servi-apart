@@ -77,10 +77,9 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             <!-- main content -->
             <div class="pt-3 ">
                 <main class="w-100 row px-5 gap-4 flex-nowrap  py-3">
-                    <div id="grid" class="col-md-6 p-0 m-0 grid-collage">
-                        <img src="./images/horizontal2.jpg" width="100%" height="100%" alt="">
-                        <img src="./images/vertical.jpg" alt="">
-                        <img src="./images/horizontal.jpg" width="100%" height="100%" alt="">
+                    <div id="grid" class="col-md-5 p-0 m-5 ">
+                        <img src="../../assets/img/car.svg" width="100%" height="100%" alt="">
+                   
                     </div>
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form"
                         method="post" enctype="multipart/form-data">

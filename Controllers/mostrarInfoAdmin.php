@@ -766,17 +766,17 @@ function cargarPubliEditar()
         <main class="w-100 row px-5 gap-5 flex-nowrap align-items-center py-4" >
             <form action="../../Controllers/modificarpubli.php?id_publi' . $f['id_publi'] . ' " class="col-md-6 p-5 pack-form h-75" method="post">
             <div class="d-flex flex-column mb-3">
-                    <h2 style="font-size: 1.7em;">Modificar publicación</h2>
+                    <h2 style="font-size: 1.7em;">Edita la informacion</h2>
                 </div>  
 
                 <div class="d-flex flex-column mb-3">
                     <label for="" class="py-2">Titulo</label>
-                    <input type="text" name="titulo" value="' . $f['titulo'] . '" placeholder="Ej: acueducto " class="rounded-3 input">
+                    <input type="text" name="titulo" value="' . $f['titulo'] . ' "class="rounded-3 input">
                 </div>
 
                 <div class="d-flex flex-column mb-3">
                     <label for="" class="py-2">Descripcion</label>
-                    <textarea name="descripcion" rows="5" cols="40" value="' . $f['descripcion'] . '" placeholder="Ej: Por motivos de tema acueducto el dia de hoy no tendremos agua" class="rounded-3 input"></textarea> 
+                    <textarea  name="descripcion" rows="5" cols="40" value="' . $f['descripcion'] . ' "class="rounded-3 input"></textarea> 
                 </div>
 
                 <div class="d-flex flex-column  mt-3">
