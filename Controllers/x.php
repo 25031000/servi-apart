@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === "POST"){
 
     $objConsultas = new Consultas();
     $result = $objConsultas->mostrarFotoRes($data);
-    print_r ($result);
+    echo $result[0];
 }
 
 

@@ -16,7 +16,6 @@ function cargarPublicacionRes()
 
     if (!isset($result)) {
         echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
-
     } else {
 
 
@@ -45,10 +44,7 @@ function cargarPublicacionRes()
                             </footer>
                         </article>
                     ';
-
         }
-
-
     }
 }
 
@@ -61,7 +57,6 @@ function cargarPublicacionesRes()
 
     if (!isset($result)) {
         echo '<h2> NO HAY PUBLICACIONES REGISTRADOS </h2>';
-
     } else {
         $count = count($result);
         $start = max(0, $count - 3);
@@ -95,9 +90,7 @@ function cargarPublicacionesRes()
                             </footer>
                         </article>
                     ';
-
         }
-
     }
 }
 
@@ -139,7 +132,6 @@ function cargarVehiculosResidente()
                 head.style.display = "none";
             </script>
         ';
-
     } else {
         foreach ($result as $f) {
             echo '
@@ -173,59 +165,49 @@ function cargarNovedadesResidente()
                 head.style.display = "none";
             </script>
         ';
-
     } else {
 
 
 
         array_map(function ($i) {
-            print_r($i);
-            $foto = $i['fotoR'];
-            echo $foto;
             echo '
             <tr><td style="text-align:center">' . $i['placa'] . '</td>
                 <td style="text-align:center; max-width: 500px">' . $i['novedad'] . ' </td>
                 <td style="text-align:center">' . $i['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $i['identificacion'] . ' </td>
                 <td style="text-align:center">' . $i['nombres'] . ' </td>
-                <td style="text-align:center"><button class="btn btn-detalles" id="'.$i['id_nov'].'" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
                 <script>
-         async function opened(i) {
-            let id = '.$i['id_nov'] .';
+                    async function opened(i) {
+                        
+                        let idNov = i.id
 
-            let btn = document.querySelector(".btn-detalles");
-            let btn2 = btn.id
+                        const fetchOptions = {
+                            method: "POST",
+                            headers:{
+                                "Content-Type": "text/plain"
+                            },
+                            body: idNov
+                        }
 
+                        let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
+                        
 
-            const fetchOptions = {
-                method: "POST",
-                headers:{
-                    "Content-Type": "text/plain"
-                },
-                body: btn2
-            }
-
-            let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
-            console.log(response);
-
-            Swal.fire({
-                title: "Sweet!",
-                text: "Modal with a custom image.",
-                imageUrl: "'. $foto .'",
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: "Custom image"
-            });
-        }
-    </script>
+                        Swal.fire({
+                            title: "Sweet!",
+                            text: "Modal with a custom image.",
+                            imageUrl: "../" + response,
+                            imageWidth: 400,
+                            imageHeight: 200,
+                            imageAlt: "Custom image"
+                        });
+                    }
+                </script>
             </tr>  
             ';
         }, $result);
 
         return $result;
-
-
-
     }
 }
 
@@ -362,12 +344,7 @@ function cargarFotosVehiculoRes()
 
 
         ';
-
-
-
-
     }
-
 }
 
 
@@ -406,10 +383,7 @@ function cargarPaquetesRes(string $identificacion)
             </section>
         ';
         }, $arr);
-
     }
-
-
 }
 
 
@@ -514,7 +488,6 @@ function cargarReservaRes(string $identificacion)
                </div>           
             </section>
         ';
-
         }, $arr);
     }
 }
@@ -622,22 +595,3 @@ function modificarReservaRes()
                 ';
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
