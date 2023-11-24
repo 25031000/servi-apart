@@ -59,7 +59,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 
 
 
-    <div class="content-wrap container-fluid">
+    <div class="content-wrap container">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
@@ -67,7 +67,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1 style="font-size:40px">Modificar Novedades</h1>
-                                <p style="font-size:15px; padding-right: 300px; margin-top: 10px">
+                                <p style="font-size:15px; margin-top: 10px">
                                     En este módulo, puedes editar las novedades realizadas por el personal en relación a
                                     los vehículos de nuestros residentes en caso de daños o incidencias. Realiza
                                     actualizaciones o correcciones, y garantiza un ambiente residencial seguro y bien
@@ -100,7 +100,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                             <img src="../../assets/img/car_edit.svg" alt="imagen de carro" style="width:100%">
                         </div>
 
-                        <div class="col-lg-5">
+                        <div class="col-lg-6">
                             <div class="card vehiculos_ver" style="border:none">
                                 <div class="card-title">
 

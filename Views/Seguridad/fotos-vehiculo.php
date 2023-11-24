@@ -55,9 +55,9 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 
 
 
-  <div class="content-wrap container-fluid">
+  <div class="content-wrap">
     <div class="main">
-      <div class="container-fluid">
+      <div class="container">
 
         <?php
         cargarFotosVehiculoPS();

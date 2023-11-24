@@ -25,7 +25,6 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
 
     <!-- Common -->
-    <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/menubar/sidebar.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +61,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title d-flex align-items-center">
                                 <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/carro-ver.png"
+                                    <img src="../../assets/icons/usuario.png"
                                         style="width: 48px; height: 48px !important" alt="">
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Ver Usuarios</h1>
@@ -115,10 +114,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="card-publi" style="margin-left:25px">
-                                <div class="card-title">
-
-                                </div>
+                            <div class="card-publi" style="margin-left:25px; box-shadow: 3px 3px 18px #e3e3e3, -3px -3px 18px #ffffff;;">
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-hover ">

@@ -92,7 +92,7 @@ function cargarFotosVehiculoPS()
         echo '        
         
         
-        <div class="row container-fluid" style="margin-top: -20px">
+        <div class="row container-fluid" style="margin-top: 0px">
             <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
                 <div class="page-title">
@@ -121,16 +121,16 @@ function cargarFotosVehiculoPS()
 
 
 
-      <div class="row" style="display:flex; align-items:center; margin-left:20px">
-      <div class="col-lg-5">
-          <div id="carouselExampleDark" class="carousel slide" data-bs-ride="carousel">
+      <div class="row" style="display:flex; align-items:center; margin-top:30px; margin-left: -40px">
+      <div class="col-lg-6">
+      <div id="carouselExampleDark" class="carousel slide" >
   <div class="carousel-indicators" >
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-  <div class="carousel-inner carrusel" style="">
+  <div class="carousel-inner carrusel" style="margin-top:20px">
     <div class="carousel-item active">
         <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
@@ -156,7 +156,7 @@ function cargarFotosVehiculoPS()
 
 
 
-    <div class="col-lg-6" style="margin-left:70px">
+    <div class="col-lg-5" style="margin-left:50px; margin-top: -35px">
         <div class="row">
                     <div class="card modificar-user card-datos vehiculos_ver" style="padding:18px">
                         <div class=" modificar-user">
@@ -273,25 +273,58 @@ function cargarNovedadesPS()
         ';
     } else {
 
-        foreach ($result as $f) {
+        array_map(function ($i) {
 
 
             echo '
             
             <tr>
-                <td style="text-align:center">' . $f['placa'] . ' </td>
-                <td style="text-align:center; max-width:600px">' . $f['novedad'] . '</td>
-                <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
-                <td style="text-align:center">' . $f['nombres'] . ' ' . $f['apellidos'] . '</td>
-                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
-                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
-                <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
+                <td style="text-align:center">' . $i['placa'] . ' </td>
+                <td style="text-align:center; max-width:600px">' . $i['novedad'] . '</td>
+                <td style="text-align:center">' . $i['fecha_rev'] . ' </td>
+                <td style="text-align:center">' . $i['nombres'] . ' ' . $i['apellidos'] . '</td>
+                <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+                <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
 
+
+
+                <script>
+                    async function opened(i) {
+                        
+                        let idNov = i.id
+
+                        const fetchOptions = {
+                            method: "POST",
+                            headers:{
+                                "Content-Type": "text/plain"
+                            },
+                            body: idNov
+                        }
+
+                        let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
+                        
+                        Swal.fire({
+                            customClass: {
+                                popup: "swal-wide-popup",
+                                image: "swal-wide-image",
+                                title: "swal-title",
+                            },
+                            title: "Foto de Reporte",
+                            imageUrl: "../" + response,
+                            imageWidth: 600,
+                            imageHeight: 350,
+                            imageAlt: "Foto de Novedad"
+                        });
+                    }
+                </script>
             </tr>   
             
 
             ';
-        }
+        }, $result);
+
+        return $result;
     }
 }
 
@@ -334,7 +367,7 @@ function cargarNovedadesEditarPS()
                                                 name="placa">
                                         </div>
                                         <div class="form-group col-md-7  labelid" style="display:block">
-                                        <label>Identificación del Personal de Seguridad:</label>
+                                        <label>Id del Personal de Seguridad:</label>
                                         <input style="width:100%" value="' . $f['identificacion'] . '" readonly type="number" class="rounded-3 input" placeholder="Ej: 1516465400"
                                             name="identificacion">
                                         </div>

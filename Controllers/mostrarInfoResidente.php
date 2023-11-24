@@ -192,14 +192,17 @@ function cargarNovedadesResidente()
 
                         let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
                         
-
                         Swal.fire({
-                            title: "Sweet!",
-                            text: "Modal with a custom image.",
+                            customClass: {
+                                popup: "swal-wide-popup",
+                                image: "swal-wide-image",
+                                title: "swal-title",
+                            },
+                            title: "Foto de Reporte",
                             imageUrl: "../" + response,
-                            imageWidth: 400,
-                            imageHeight: 200,
-                            imageAlt: "Custom image"
+                            imageWidth: 600,
+                            imageHeight: 350,
+                            imageAlt: "Foto de Novedad"
                         });
                     }
                 </script>

@@ -32,6 +32,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
@@ -53,10 +54,21 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
     include '../../components/headerIncludePS.php';
     ?>
 
+    <style>
+        .swal-title {
+            padding: 0;
+        }
+
+        .swal-wide-popup {
+            width: 650px;
+            /* Ajusta este valor según tus necesidades */
+        }
+    </style>
 
 
 
-    <div class="content-wrap container-fluid">
+
+    <div class="content-wrap container">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
@@ -65,7 +77,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                             <div class="page-title">
                                 <h1 id="tl_v_vehiculos">Novedades</h1>
                                 <p>Como guarda de seguridad, accede al historial de novedades de vehículos registradas
-                                    por el personal en nuestro conjunto.    </p>
+                                    por el personal en nuestro conjunto. </p>
                             </div>
                         </div>
                     </div>

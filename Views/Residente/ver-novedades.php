@@ -55,6 +55,16 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
     ?>
 
+    <style>
+        .swal-title {
+            padding: 0;
+        }
+        .swal-wide-popup {
+            width: 650px;
+            /* Ajusta este valor según tus necesidades */
+        }
+    </style>
+
 
 
 
@@ -141,7 +151,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
         </div>
     </div>
 
-    
+
 
 
     <!-- <script>
