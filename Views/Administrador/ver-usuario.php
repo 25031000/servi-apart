@@ -127,8 +127,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Foto</th>
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Identificación</th>
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Tipo de Documento</th>
-                                                    <th style="font-size:16px; padding: 0 0 15px 0">Nombres</th>
-                                                    <th style="font-size:16px; padding: 0 0 15px 0">Apellidos</th>
+                                                    <th style="font-size:16px; padding: 0 0 15px 0">Nombre</th>
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Correo</th>
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Estado</th>
                                                     <th style="font-size:16px; padding: 0 0 15px 0">Torre</th>

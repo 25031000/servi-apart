@@ -23,11 +23,10 @@ function cargarUsuarios()
         foreach ($result as $f) {
             echo '
             <tr style="border-bottom: #e7e7e7 1px solid">
-                <td style="text-align:center"><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;"></td>
+                <td style="text-align:center"><img src="../' . $f['foto'] . '" alt="Foto" style="width: 80px; height: 80px; border-radius: 20%; object-fit: cover;"></td>
                 <td style="text-align:center">' . $f['identificacion'] . '</td>
                 <td style="text-align:center">' . $f['tipo_doc'] . ' </td>
-                <td style="text-align:center">' . $f['nombres'] . '</td>
-                <td style="text-align:center">' . $f['apellidos'] . ' </td>
+                <td style="text-align:center">' . $f['nombres'] . ' ' . $f['apellidos'] . '</td>
                 <td style="text-align:center">' . $f['email'] . ' </td>
                 <td style="text-align:center">' . $f['estado'] . ' </td>
                 <td style="text-align:center">' . $f['torre'] . ' </td>

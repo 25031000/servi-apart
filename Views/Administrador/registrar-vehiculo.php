@@ -158,12 +158,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                 <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: Explorer"
                                     name="referencia">
                             </div>
-                            <div class="form-group col-md-4 ">
+                            <div class="form-group col-md-3 ">
                                 <label style="display:block;">Modelo:</label>
                                 <input style="width:100%" type="number" class="rounded-3 input" placeholder="Ej: 2013"
                                     name="modelo">
                             </div>
-                            <div class="form-group col-md-4  labelid" style="display:block">
+                            <div class="form-group col-md-5  labelid" style="display:block">
                                 <label>Identificación de Propietario:</label>
                                 <input style="width:100%" type="number" class="rounded-3 input"
                                     placeholder="Ej: 1516465400" name="identificacion">

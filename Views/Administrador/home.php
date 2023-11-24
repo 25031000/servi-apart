@@ -57,9 +57,9 @@ $objecto_consulta = new Consultas();
 
     <div class="content-wrap">
         <div class="main">
-            <div class="container-fluid">
+            <div class="container-fluid" style="height: 100%">
                 <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
+                    <div class="col-lg-8 p-r-3 title-margin-right ">
                         <div class="page-header">
                             <div class="page-title mt-4 ml-4">
                                 <h1 class="animate__animated animate__fadeInLeft"
@@ -70,24 +70,31 @@ $objecto_consulta = new Consultas();
                             </div>
                         </div>
                         <div>
-                            <p style="padding: 25px 120px 30px 40px; text-align: justify;">
-                                Bienvenido al portal del administrador de nuestro conjunto residencial. Aquí, tienes
-                                acceso a las funciones necesarias para gestionar el lugar. Desde la coordinación de
-                                eventos hasta el manejo de solicitudes de mantenimiento, esta plataforma está diseñada
-                                para hacer tu trabajo más fácil. Mantente informado, gestiona eficientemente y haz que
-                                las cosas funcionen sin complicaciones.</p>
+                            <p style="padding: 25px 80px 30px 40px; text-align: justify;">Aquí, tienes acceso a las
+                                funciones necesarias para gestionar el lugar. Desde la coordinación de eventos hasta el
+                                manejo de solicitudes de mantenimiento, esta plataforma está diseñada para hacer tu
+                                trabajo más fácil. Mantente informado, gestiona eficientemente y haz que las cosas
+                                funcionen sin complicaciones. Estamos encantados de tenerte aquí, y confiamos en que
+                                esta herramienta facilitará la administración para crear un entorno residencial aún más
+                                acogedor.</p>
+                        </div>
+                        <div class="p-5 mt-5">
+                            <img src="../../assets/img/home.svg" alt="" height="450px" width="100%" style="margin-left:-150px">
                         </div>
                     </div>
 
 
-                    <div class="col-lg-4">
-                        <div class=" col-md-8">
-                            <div style="border-radius: 40px;" class="card p-2">
-                                <div class="stat-widget-one">
+                    <div class="col-lg-4 p-5" style="background-color: #f2f2f2">
+                        <h2 class="mb-5 ml-5" style="margin-top: 100px">Estadísticas del sistema</h2>
+                        <div class=" col-md-8 mt-4 ml-4" >
+                            <div style="border-radius: 35px; width:370px; border-color:transparent" class="card p-2" >
+                                <div class="stat-widget-one" >
                                     <div class="stat-icon dib"><i class="ti-car color-success border-success"></i>
                                     </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Vehiculos</div>
+                                    <div class="dib ml-2">
+                                        <div class="stat-text">
+                                            <h3 style="font-size: 22px">N° de Vehiculos</h3>
+                                        </div>
                                         <div class="stat-digit">
                                             <?php
                                             $count = $objecto_consulta->registerCounter('vehiculo', 'identificacion');
@@ -100,13 +107,16 @@ $objecto_consulta = new Consultas();
                         </div>
                         <br>
 
-                        <div class="col-md-8 animate__animated animate__fadeIn animate__slow" style="display:block">
-                            <div style="border-radius: 40px;" class="card p-2">
+                        <div class="col-md-8 ml-4 animate__animated animate__fadeIn animate__slow"
+                            style="display:block">
+                            <div style="border-radius: 35px; width:370px;  border-color:transparent" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
                                     </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° Usuarios</div>
+                                    <div class="dib ml-2">
+                                        <div class="stat-text">
+                                            <h3 style="font-size: 22px">N° Usuarios</h3>
+                                        </div>
                                         <div class="stat-digit">
                                             <?php
                                             $count = $objecto_consulta->registerCounter('usuarios', 'identificacion');
@@ -119,13 +129,15 @@ $objecto_consulta = new Consultas();
                         </div>
                         <br>
 
-                        <div class="col-md-8 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
+                        <div class="col-md-8 ml-4 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 35px; width:370px;  border-color:transparent" class="card p-2">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-calendar color-pink border-pink"></i>
                                     </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Reservas de salon activas</div>
+                                    <div class="dib ml-2">
+                                        <div class="stat-text">
+                                            <h3 style="font-size: 22px">N° de Reservas de Salón</h3>
+                                        </div>
                                         <div class="stat-digit">
                                             <?php
                                             $count = $objecto_consulta->registerCounter('reserva_salon', 'id_reserva');
@@ -138,14 +150,16 @@ $objecto_consulta = new Consultas();
                         </div>
                         <br>
 
-                        <div class="col-md-8 animate__animated animate__fadeIn animate__slow">
-                            <div style="border-radius: 40px;" class="card p-2">
+                        <div class="col-md-8 ml-4 animate__animated animate__fadeIn animate__slow">
+                            <div style="border-radius: 35px; width:370px;  border-color:transparent" class="card p-2">
                                 <div class="stat-widget-one">
 
                                     <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i>
                                     </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">N° de Peticiones</div>
+                                    <div class="dib ml-2">
+                                        <div class="stat-text">
+                                            <h3 style="font-size: 22px">N° de Peticiones</h3>
+                                        </div>
                                         <div class="stat-digit">18</div>
                                     </div>
                                 </div>
@@ -155,14 +169,6 @@ $objecto_consulta = new Consultas();
                 </div>
             </div>
             </section>
-        </div>
-
-        <div class="">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p style="margin-left: 195px">2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                </div>
-            </div>
         </div>
     </div>
     </div>
