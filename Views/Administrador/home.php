@@ -17,9 +17,8 @@ $objecto_consulta = new Consultas();
 
     <title>Servi - Apart</title>
 
-    <!-- ================= Favicon ================== -->
-    <!-- Standard -->
-    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <!-- Chartist -->
     <link href="../Dashboard/css/lib/chartist/chartist.min.css" rel="stylesheet">
     <!-- Common -->
