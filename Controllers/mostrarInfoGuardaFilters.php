@@ -11,8 +11,8 @@ function cargarPaquetePS()
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no existen paquetes registrados</h5>
+                <img src="./images/empty-mailbox.svg" class="empty_mailbox" />
+                <h5 class="w-100 text-center mt-5">Parece que no existen paquetes registrados</h5>
             </section>
         ';
     } else {
@@ -57,8 +57,8 @@ function cargarPaquetesHoyPS(){
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no existen paquetes registrados el dia de hoy</h5>
+                <img src="./images/empty-mailbox.svg" class="empty_mailbox"  />
+                <h5 class="w-100 text-center mt-5">Parece que no existen paquetes registrados el dia de hoy</h5>
             </section>
         ';
     } else {
@@ -102,8 +102,8 @@ function cargarPaquetesSemanaPS(){
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no existen paquetes registrados el dia de hoy</h5>
+                <img src="./images/empty-mailbox.svg" class="empty_mailbox" />
+                <h5 class="w-100 text-center mt-5">Parece que no existen paquetes registrados de la semana</h5>
             </section>
         ';
     } else {
@@ -147,8 +147,8 @@ function cargarPaquetesMesPS(){
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no existen paquetes registrados el dia de hoy</h5>
+                <img src="./images/empty-mailbox.svg" class="empty_mailbox" />
+                <h5 class="w-100 text-center mt-5">Parece que no existen paquetes de este mes.</h5>
             </section>
         ';
     } else {

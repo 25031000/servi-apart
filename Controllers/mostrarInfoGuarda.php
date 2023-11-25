@@ -524,8 +524,8 @@ function cargarPaquetePS()
     if (count($arr) == 0) {
         echo '
             <section class="container d-flex flex-column align-items-center">
-                <img src="./images/empty-mailbox.svg" width="500" height="500" />
-                <h5>Parece que no existen paquetes registrados</h5>
+                <img src="./images/empty-mailbox.svg" class="empty_mailbox" />
+                <h5 class="w-100 text-center mt-5">Parece que no existen paquetes registrados</h5>
             </section>
         ';
     } else {

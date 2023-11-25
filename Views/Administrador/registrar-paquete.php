@@ -32,70 +32,65 @@
     include 'menu-include.php';
     ?>
 
-    <div class="content-wrap">
-        <div class="main">
-        <div class="row">
-                    <div class="col-lg-8 p-r-0 title-margin-right">
-                        <div class="page-header ms-4">
-                            <div class="page-title d-flex align-items-center">
-                                <div class="icon-content p-2 rounded-circle"
-                                    style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/box-pack.png" alt="">
+    <div class="content-wrap  d-flex align-items-center" style="height: 92vh;">
+            <div class="row ">
+                    <div class=" d-md-flex justify-content-between">
+                        <div class="col-lg-8 p-r-0 title-margin-right">
+                            <div class="page-header ms-4">
+                                <div class="page-title d-flex align-items-center">
+                                    <div class="icon-content p-2 rounded-circle"
+                                        style="background-color: #18d26e !important;">
+                                        <img src="../../assets/icons/box-pack.png" alt="">
+                                    </div>
+                                    <h1 style="font-size: 1.7em;" class="ms-4 mb-0">Registro de paqueteria</h1>
                                 </div>
-                                <h1 style="font-size: 1.7em;" class="ms-4">Registro de paqueteria</h1>
                             </div>
                         </div>
-                    </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Administrador</a>
-                                    </li>
-                                    <li class="breadcrumb-item active">Registro de paqueteria</li>
-                                </ol>
-                            </div>
+                        <!-- /# column -->
+                        <div class="col-lg-4 p-l-0 title-margin-left  ms-5 ms-md-0 justify-content-md-end d-flex align-items-center">
+                                    <ol class="breadcrumb mb-0 ">
+                                        <li class="breadcrumb-item">
+                                            <a href="#" style="color: #18d26e">Administrador</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Registro de paqueteria</li>
+                                    </ol>
                         </div>
+                        <!-- /# column -->
                     </div>
-                    <!-- /# column -->
+                    <!-- main content -->
+                <div class="pt-3 ">
+                    <main class="w-100 row px-5 gap-5 flex-nowrap justify-content-center align-items-center py-4">
+                        <form action="../../Controllers/registrarPaquete.php" class="col-md-6 p-5  pack-form h-75" method="post">
+                        <div class="d-flex flex-column mb-3">
+                                <h2 style="font-size: 1.7em;">Formulario de registro</h2>
+                            </div>  
+
+                            <div class="d-flex flex-column mb-3">
+                                <label for="" class="py-2">Torre</label>
+                                <input type="text" name="torre" placeholder="1" class="rounded-3 input">
+                            </div>
+
+                            <div class="d-flex flex-column mb-3">
+                                <label for="" class="py-2">Apartamento</label>
+                                <input type="text" name="apartamento" placeholder="a-12" class="rounded-3 input">
+                            </div>
+
+                            <div class="d-flex flex-column mb-4">
+                                <label for="" class="py-2">Remitente</label>
+                                <input type="text" name="remitente" placeholder="Mercado libre" class="rounded-3 input">
+                            </div>
+
+                            <div class="d-flex flex-column  mt-3">
+                            <button class="boton-btn">Registrar</button>                           
+                            </div>
+                        </form>
+                        <div class="col-md-6 m-0  h-100 img_wrapper" style="padding: 30px !important;">
+                            <img src="./images/drone.svg"  width="100%" height="100%" alt="">
+                            
+                        </div>
+                    </main>
                 </div>
-                <!-- main content -->
-            <div class="pt-3 ">
-                <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4">
-                    <form action="../../Controllers/registrarPaquete.php" class="col-md-5 p-5 pack-form h-75" method="post">
-                    <div class="d-flex flex-column mb-3">
-                            <h2 style="font-size: 1.7em;">Formulario de registro</h2>
-                        </div>  
-
-                        <div class="d-flex flex-column mb-3">
-                            <label for="" class="py-2">Torre</label>
-                            <input type="text" name="torre" placeholder="1" class="rounded-3 input">
-                        </div>
-
-                        <div class="d-flex flex-column mb-3">
-                            <label for="" class="py-2">Apartamento</label>
-                            <input type="text" name="apartamento" placeholder="a-12" class="rounded-3 input">
-                        </div>
-
-                        <div class="d-flex flex-column mb-4">
-                            <label for="" class="py-2">Remitente</label>
-                            <input type="text" name="remitente" placeholder="Mercado libre" class="rounded-3 input">
-                        </div>
-
-                        <div class="d-flex flex-column  mt-3">
-                        <button class="boton-btn">Registrar</button>                           
-                        </div>
-                    </form>
-                    <div id="grid" class="col-md-7 p-0 m-0 grid-collage">
-                        <img src="./images/pack.jpg"  width="100%" height="100%" alt="">
-                        <img src="./images/vertical-p.jpg"  alt="">
-                        <img src="./images/pack1.jpg" width="100%" height="100%"   alt="">
-                    </div>
-                </main>
             </div>
-        </div>
     </div>
 
 

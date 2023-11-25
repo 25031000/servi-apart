@@ -44,6 +44,10 @@ html {
     color: whitesmoke;
 }
 
+.drone_img{
+    max-width: 608px !important;
+    max-height: 433px !important;
+}
 
 
 .hola {
@@ -123,7 +127,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 25.25rem;
+    max-width: 32rem !important;
 }
 
 .pack-form-ps {
@@ -165,29 +169,7 @@ estilos del formulario de residente en salon comunal
     font-weight: 300 !important;
 }
 
-.grid-collage {
-    display: grid;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "img1 img3"
-        "img2 img3";
 
-
-}
-
-.grid-collage-ps {
-    display: grid;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-        "img1 img3"
-        "img2 img3";
-}
 
 #grid>img:nth-child(1) {
 
@@ -217,14 +199,12 @@ estilos del formulario de residente en salon comunal
 }
 
 @media (max-width: 1200px) {
-    .grid-collage {
-        display: none;
-    }
 
     .pack-form {
-        width: 80%;
-        display: flex;
-        margin: 0 auto;
+        min-width: 80%;
+    }
+    .img_wrapper{
+        display: none;
     }
 }
 
@@ -235,7 +215,7 @@ estilos del formulario de residente en salon comunal
     }
 
     .pack-form-ps {
-        width: 80%;
+        width: 100%;
         display: flex;
         margin: 0 auto;
     }
