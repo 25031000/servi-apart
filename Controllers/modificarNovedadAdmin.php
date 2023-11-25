@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,42 +10,56 @@
     <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 <style>
-    *, html, body{
+    *,
+    html,
+    body {
         font-family: 'Varela Round', sans-serif;
     }
 </style>
 
 <body>
-<?php
+    <?php
 
     // Enlazamos las dependencias necesario
-    require_once ("../Models/conexion.php");
-    require_once ("../Models/consultas.php");
+    require_once("../Models/conexion.php");
+    require_once("../Models/consultas.php");
 
     // Aterrizamos en variables los datos ingresados por el usuario
     // los cuales viajan a travé del metodo POST y name de los campos
-
+    
     $id_nov = $_GET['id_nov'];
     $placa = $_GET['placa'];
     $identificacion = $_POST['identificacion'];
     $novedad = $_POST['novedad'];
 
     
-     // ------------------------------------------
+
+
+    // ------------------------------------------
     // Verificamos que las claves coincidan
-
-        //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($novedad)>0){
-
-            //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
-            //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
-
+    
+    //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
+    if (strlen($novedad) > 0) {
+        if ($_FILES['fotoR']['size'] > 0) {
+            $fotoR = "../Uploads/Novedades/" . $_FILES['fotoR']['name'];
+            $mover = move_uploaded_file($_FILES['fotoR']['tmp_name'], $fotoR);
+        }
+        else {
+            // Si no se ha seleccionado un archivo, seleccionar la fotoR antigua
             $objConsultas = new Consultas();
-            $result = $objConsultas -> modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad);    
-        
+            $fotoR = $objConsultas->obtenerFotoAntigua($id_nov);
+            
+        }
 
-        }else{
-            echo '<script>
+        //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
+        //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
+    
+        $objConsultas = new Consultas();
+        $result = $objConsultas->modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad, $fotoR);
+
+
+    } else {
+        echo '<script>
                 
             Swal.fire({
                 icon: "error",
@@ -58,9 +73,10 @@
                 
             })
         </script>';
-        }
+    }
 
 
-?>
+    ?>
 </body>
+
 </html>

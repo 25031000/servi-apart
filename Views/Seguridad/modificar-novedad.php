@@ -95,7 +95,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
 
 
                     <div class="row"
-                        style="display: flex; justify-content: center; align-items: center; margin-top:50px">
+                        style="display: flex; justify-content: center; align-items: center">
                         <div class="col-lg-6" style="display: flex;align-items: center;">
                             <img src="../../assets/img/car_edit.svg" alt="imagen de carro" style="width:100%">
                         </div>

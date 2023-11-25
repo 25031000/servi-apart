@@ -30,18 +30,28 @@
     $novedad = $_POST['novedad'];
 
     
-     // ------------------------------------------
+       // ------------------------------------------
     // Verificamos que las claves coincidan
-
-        //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
-        if (strlen($novedad)>0){
-
-            //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
-            //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
-
+    
+    //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
+    if (strlen($novedad) > 0) {
+        if ($_FILES['fotoR']['size'] > 0) {
+            $fotoR = "../Uploads/Novedades/" . $_FILES['fotoR']['name'];
+            $mover = move_uploaded_file($_FILES['fotoR']['tmp_name'], $fotoR);
+        }
+        else {
+            // Si no se ha seleccionado un archivo, seleccionar la fotoR antigua
             $objConsultas = new Consultas();
-            $result = $objConsultas -> modificarNovedadesPS($id_nov, $placa, $identificacion, $novedad);    
-        
+            $fotoR = $objConsultas->obtenerFotoAntigua($id_nov);
+            
+        }
+
+        //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
+        //PARA EN ENVIAR LOS ARGUMENTOS A LA FUNCION EN EL MODELO. (ARCHIVO CONSULTAS)
+        $objConsultas = new Consultas();
+        $result = $objConsultas->modificarNovedadesPS($id_nov, $placa, $identificacion, $novedad, $fotoR);
+
+
 
         }else{
             echo '<script>

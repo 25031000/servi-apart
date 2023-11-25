@@ -130,7 +130,7 @@ function cargarFotosVehiculoPS()
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
-  <div class="carousel-inner carrusel" style="margin-top:20px">
+  <div class="carousel-inner carrusel" style="margin-top:-50px">
     <div class="carousel-item active">
         <img src="../' . $f['foto1'] . '" class="d-block w-100" alt="..." style="border-radius: 8px; max-height: 640px">
     </div>
@@ -280,12 +280,12 @@ function cargarNovedadesPS()
             
             <tr>
                 <td style="text-align:center">' . $i['placa'] . ' </td>
-                <td style="text-align:center; max-width:600px">' . $i['novedad'] . '</td>
+                <td style="text-align:center; max-width:400px">' . $i['novedad'] . '</td>
                 <td style="text-align:center">' . $i['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $i['nombres'] . ' ' . $i['apellidos'] . '</td>
                 <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
-                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
-                <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-editar" style="border: none; background: #00BF63; color: white; align-items: center; max-width:100px"><img src="../../assets/icons/edita.png" width="17px"> Editar</a>
+                <a href="../../Controllers/eliminarNovedadesPS.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-danger"  style="max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px"> Eliminar</a></td>
 
 
 
@@ -353,7 +353,7 @@ function cargarNovedadesEditarPS()
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             
-                    <form action="../../Controllers/modificarNovedadPS.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST">
+                    <form action="../../Controllers/modificarNovedadPS.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST" enctype="multipart/form-data">
                     
                     <div class="row">
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
@@ -373,12 +373,13 @@ function cargarNovedadesEditarPS()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <textarea style="width:100%; max-height: 180px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
+                                            <textarea style="width:100%; max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
                                                 name="novedad">' . $f['novedad'] . '</textarea>
                                         </div>
-
-
-                                
+                                        <div class="form-group col-md-12">
+                                        <label for="uploadBtn" class="archivo">Foto de Reporte:</label>
+                                            <input type="file" accept=".jpeg, .jpg, .png, .gif" id="uploadBtn" class="input-file rounded-3 input" style="width:100%" name="fotoR">
+                                        </div>
                                     </div>
                                     
                         </div>

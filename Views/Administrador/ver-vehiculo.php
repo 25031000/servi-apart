@@ -124,7 +124,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th style="font-size:17px">Marca</th>
                                                     <th style="font-size:17px">Referencia</th>
                                                     <th style="font-size:17px">Modelo</th>
-                                                    <th style="font-size:17px; max-width: 190px">ID Propietario</th>
+                                                    <th style="font-size:17px; max-width: 190px">ID Propietario(a)</th>
                                                     <th style="font-size:17px; max-width: 130px">Estacionamiento</th>
                                                     <th style="font-size:17px">Fecha de Registro</th>
                                                     <th style="font-size:17px">Operaciones</th>

@@ -170,10 +170,10 @@ function cargarNovedadesResidente()
         array_map(function ($i) {
             echo '
             <tr><td style="text-align:center">' . $i['placa'] . '</td>
-                <td style="text-align:center; max-width: 500px">' . $i['novedad'] . ' </td>
+                <td style="text-align:center; max-width: 450px">' . $i['novedad'] . ' </td>
                 <td style="text-align:center">' . $i['fecha_rev'] . '</td>
                 <td style="text-align:center">' . $i['identificacion'] . ' </td>
-                <td style="text-align:center">' . $i['nombres'] . ' </td>
+                <td style="text-align:center">' . $i['nombres'] .' '. $i['apellidos'].' </td>
                 <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
                 <script>
                     async function opened(i) {

@@ -411,29 +411,56 @@ function cargarNovedades()
         ';
 
     } else {
-
-        foreach ($result as $f) {
+        array_map(function ($i) {
 
 
             echo '
             
-            <tr><td style="text-align:center">' . $f['id_nov'] . '</td>
-                <td style="text-align:center">' . $f['placa'] . ' </td>
-                <td style="text-align:center">' . $f['novedad'] . '</td>
-                <td style="text-align:center">' . $f['fecha_rev'] . ' </td>
-                <td style="text-align:center">' . $f['identificacion'] . ' </td>
-                <td style="text-align:center">' . $f['nombres'] . ' </td>
-                <td style="text-align:center"><a href="" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/ver.png" width="20px"</a></td>
-                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-editar" style="margin-right:15px; border: none; background: #00BF63; color: white; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
-                <a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" class="btn btn-danger"  style="margin-left:15px;max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
+            <tr><td style="text-align:center">' . $i['id_nov'] . '</td>
+                <td style="text-align:center">' . $i['placa'] . ' </td>
+                <td style="text-align:center; max-width:450px">' . $i['novedad'] . '</td>
+                <td style="text-align:center">' . $i['fecha_rev'] . ' </td>
+                <td style="text-align:center">' . $i['identificacion'] . ' </td>
+                <td style="text-align:center">' . $i['nombres'] . ' ' . $i['apellidos'].' </td>
+                <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
+                <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-editar" style="border: none; background: #00BF63; color: white; align-items: center; max-width:100px"><img src="../../assets/icons/edita.png" width="17px"> Editar</a>
+                <a href="../../Controllers/eliminarNovedadesAdmin.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-danger"  style="max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" > Eliminar</a></td>
 
             </tr>   
-            
+            <script>
+            async function opened(i) {
+                
+                let idNov = i.id
 
-            ';
-        }
+                const fetchOptions = {
+                    method: "POST",
+                    headers:{
+                        "Content-Type": "text/plain"
+                    },
+                    body: idNov
+                }
 
+                let response =  await (await fetch("../../Controllers/x.php", fetchOptions)).text();
+                
+                Swal.fire({
+                    customClass: {
+                        popup: "swal-wide-popup",
+                        image: "swal-wide-image",
+                        title: "swal-title",
+                    },
+                    title: "Foto de Reporte",
+                    imageUrl: "../" + response,
+                    imageWidth: 600,
+                    imageHeight: 350,
+                    imageAlt: "Foto de Novedad"
+                });
+            }
+        </script>
+    </tr>  
+    ';
+        }, $result);
 
+        return $result;
     }
 }
 
@@ -460,7 +487,7 @@ function cargarNovedadesEditar()
                     <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             
-                    <form action="../../Controllers/modificarNovedadAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST">
+                    <form action="../../Controllers/modificarNovedadAdmin.php?id_nov=' . $f['id_nov'] . '&placa=' . $f['placa'] . '" method="POST" enctype="multipart/form-data">
                     
                     <div class="row">
                     <form action="../../Controllers/registrarVehiculoAdmin.php" class="col-md-6 p-5 pack-form" method="post">
@@ -480,8 +507,12 @@ function cargarNovedadesEditar()
                                         </div>
                                         <div class="form-group col-md-12 ">
                                             <label>Novedad:</label>
-                                            <textarea style="width:100%; max-height: 180px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehiculo tiene un rayón en el costado derecho"
+                                            <textarea style="width:100%; max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehiculo tiene un rayón en el costado derecho"
                                                 name="novedad">' . $f['novedad'] . '</textarea>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                        <label for="uploadBtn" class="archivo">Foto de Reporte:</label>
+                                            <input type="file" accept=".jpeg, .jpg, .png, .gif" id="uploadBtn" class="input-file rounded-3 input" style="width:100%" name="fotoR">
                                         </div>
 
 
@@ -1158,7 +1189,7 @@ function mostrarReservas()
                                             <p class=" d-inline-flex fs-6 " style="position:relative; top: 5px">Nombre</p>
                                         </div>
                                         <div class"w-50 p-2  d-flex justify-content-center" style="margin-right: 40px">
-                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] .' '. $f['apellidos'] . '</p>
+                                            <p class="fs-6" style="position:relative; top: 9px">' . $f['nombres'] . ' ' . $f['apellidos'] . '</p>
                                         </div>
                                     </div>
 

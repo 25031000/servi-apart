@@ -111,7 +111,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
                                                     <th style="font-size:17px">Descripción de novedad</th>
                                                     <th style="font-size:17px">Fecha Revisión</th>
                                                     <th style="font-size:17px">Identificación guarda</th>
-                                                    <th style="font-size:17px; text-align: center">Guarda encargado</th>
+                                                    <th style="font-size:17px; text-align: center">Guarda encargado(a)</th>
                                                     <th style="font-size:17px; text-align: center">Ver Foto</th>
                                                 </tr>
                                             </thead>

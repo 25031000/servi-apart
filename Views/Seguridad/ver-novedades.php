@@ -54,16 +54,26 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
     include '../../components/headerIncludePS.php';
     ?>
 
-    <style>
+<style>
         .swal-title {
             padding: 0;
         }
 
         .swal-wide-popup {
-            width: 650px;
-            /* Ajusta este valor según tus necesidades */
+            width: auto !important;
+            max-width: 35vw;
+        }
+
+        .swal-wide-image {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .swal-title {
+            margin-bottom: 20px;
         }
     </style>
+
 
 
 
@@ -112,7 +122,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                                                     <th style="font-size:17px">Placa</th>
                                                     <th style="font-size:17px">Novedad</th>
                                                     <th style="font-size:17px">Fecha Revisión</th>
-                                                    <th style="font-size:17px">Nombre de guarda encargado</th>
+                                                    <th style="font-size:17px">Nombre de guarda encargado(a)</th>
                                                     <th style="font-size:17px; text-align: center">Ver Foto</th>
                                                     <th style="text-align:center; font-size:17px">Operaciones</th>
                                                 </tr>

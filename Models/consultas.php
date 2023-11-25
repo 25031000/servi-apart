@@ -355,18 +355,18 @@ class Consultas
 
     public function modificarCuentaAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $torre, $apartamento)
     {
-    
+
         //CREAMOS EL OBJETO DE CONEXION
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-    
+
         // OBTENEMOS EL CORREO ORIGINAL DEL USUARIO
         $consultarCorreoOriginal = 'SELECT email FROM usuarios WHERE identificacion=:identificacion';
         $stmtCorreoOriginal = $conexion->prepare($consultarCorreoOriginal);
         $stmtCorreoOriginal->bindParam(":identificacion", $identificacion);
         $stmtCorreoOriginal->execute();
         $correoOriginal = $stmtCorreoOriginal->fetchColumn();
-    
+
         // VERIFICAMOS SI EL CORREO INGRESADO ES DIFERENTE AL ORIGINAL
         if ($correoOriginal !== $email) {
             // VERIFICAMOS SI EL NUEVO CORREO YA ESTÁ REGISTRADO
@@ -375,7 +375,7 @@ class Consultas
             $stmtVerificarCorreo->bindParam(":email", $email);
             $stmtVerificarCorreo->execute();
             $correoExistente = $stmtVerificarCorreo->fetch();
-    
+
             if ($correoExistente) {
                 echo '
                 <script>
@@ -391,11 +391,11 @@ class Consultas
                 return; // Detener la ejecución del código si el correo ya está registrado
             }
         }
-    
+
         // ACTUALIZAR LA INFORMACIÓN DEL USUARIO
         $actualizar = "UPDATE usuarios SET tipo_doc=:tipo_doc, nombres=:nombres, apellidos=:apellidos, email=:email, telefono=:telefono, torre=:torre, apartamento=:apartamento WHERE identificacion=:identificacion ";
         $stmtActualizar = $conexion->prepare($actualizar);
-    
+
         $stmtActualizar->bindParam(":identificacion", $identificacion);
         $stmtActualizar->bindParam(":tipo_doc", $tipo_doc);
         $stmtActualizar->bindParam(":nombres", $nombres);
@@ -404,9 +404,9 @@ class Consultas
         $stmtActualizar->bindParam(":telefono", $telefono);
         $stmtActualizar->bindParam(":torre", $torre);
         $stmtActualizar->bindParam(":apartamento", $apartamento);
-    
+
         $stmtActualizar->execute();
-    
+
         echo '
         <script>
             Swal.fire({
@@ -593,17 +593,41 @@ class Consultas
         return $f;
     }
 
-    public function modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad)
+
+
+    public function obtenerFotoAntigua($id_nov)
+    {
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        
+        $consulta = "SELECT fotoR FROM novedad_vehiculo WHERE id_nov = :id_nov";
+        $stmt = $conexion->prepare($consulta);
+        $stmt->bindParam(":id_nov", $id_nov);
+        $stmt->execute();
+
+        // Obtén el resultado de la consulta
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($resultado && isset($resultado['fotoR'])) {
+            // Si hay una fotoR actual, devuelve su ruta
+            return $resultado['fotoR'];
+        }
+    }
+
+    public function modificarNovedadesAdmin($id_nov, $placa, $identificacion, $novedad, $fotoR)
     {
 
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
+
+        $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad, fotoR=:fotoR WHERE id_nov=:id_nov ";
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam("id_nov", $id_nov);
         $result->bindParam("novedad", $novedad);
+        $result->bindParam("fotoR", $fotoR);
 
         $result->execute();
 
@@ -621,17 +645,18 @@ class Consultas
         </script>';
     }
 
-    public function modificarNovedadesPS($id_nov, $placa, $identificacion, $novedad)
+    public function modificarNovedadesPS($id_nov, $placa, $identificacion, $novedad, $fotoR)
     {
 
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $actualizar = " UPDATE novedad_vehiculo SET novedad=:novedad WHERE id_nov=:id_nov ";
+        $actualizar = "UPDATE novedad_vehiculo SET novedad=:novedad, fotoR=:fotoR WHERE id_nov=:id_nov ";
         $result = $conexion->prepare($actualizar);
 
         $result->bindParam("id_nov", $id_nov);
         $result->bindParam("novedad", $novedad);
+        $result->bindParam("fotoR", $fotoR);
 
         $result->execute();
 
@@ -1097,12 +1122,12 @@ class Consultas
     {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-    
+
         $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
         $result = $conexion->prepare($eliminar);
-    
+
         $result->bindParam(":id_reserva", $id_reserva);
-    
+
         if ($result->execute()) {
             echo '<script>
                     Swal.fire({
@@ -1131,19 +1156,19 @@ class Consultas
                   </script>';
         }
     }
-    
-    
+
+
 
     public function eliminarDiaReservaPSE($id_reserva)
     {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-    
+
         $eliminar = "DELETE FROM reserva_salon WHERE id_reserva=:id_reserva";
         $result = $conexion->prepare($eliminar);
-    
+
         $result->bindParam(":id_reserva", $id_reserva);
-    
+
         if ($result->execute()) {
             echo '<script>
                     Swal.fire({
@@ -1172,8 +1197,8 @@ class Consultas
                   </script>';
         }
     }
-    
-    
+
+
 
     public function mostrarReservaEditarAdmin($id_reserva)
     {
@@ -1292,10 +1317,10 @@ class Consultas
     {
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
-    
+
         $actualizar = "UPDATE reserva_salon SET identificacion=:identificacion,  dia_reserva=:dia_reserva, hora_inicio=:hora_inicio, hora_finalizacion=:hora_finalizacion, mesas=:mesas, sillas=:sillas, tipo_evento=:tipo_evento WHERE identificacion=:identificacion";
         $result = $conexion->prepare($actualizar);
-    
+
         $result->bindParam(":identificacion", $identificacion);
         $result->bindParam(":dia_reserva", $dia_reserva);
         $result->bindParam(":hora_inicio", $hora_inicio);
@@ -1303,7 +1328,7 @@ class Consultas
         $result->bindParam(":mesas", $mesas);
         $result->bindParam(":sillas", $sillas);
         $result->bindParam(":tipo_evento", $tipo_evento);
-    
+
         if ($result->execute()) {
             // Información actualizada con éxito
             echo '
@@ -1331,7 +1356,7 @@ class Consultas
                 </script>';
         }
     }
-    
+
 
 
 
@@ -1604,7 +1629,8 @@ class Consultas
     }
 
 
-    public function mostrarPaquetesHoyPs(): array{
+    public function mostrarPaquetesHoyPs(): array
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -1633,7 +1659,8 @@ class Consultas
         }
     }
 
-    public function mostrarPaquetesSemanaPs(): array{
+    public function mostrarPaquetesSemanaPs(): array
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
@@ -1662,7 +1689,8 @@ class Consultas
         }
     }
 
-    public function mostrarPaquetesMesPs(): array{
+    public function mostrarPaquetesMesPs(): array
+    {
         try {
             $objConexion = new Conexion();
             $conexion = $objConexion->get_conexion();
