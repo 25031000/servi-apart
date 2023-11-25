@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +36,7 @@ if($titulo !== '' && $descripcion !== ''){
         
         Swal.fire({
             icon: 'success',
-            title: 'Registro exitoso',
+            title: 'Publicacion creada exitosamente',
             showConfirmButton: false,
             timer: 2000
         }).then((result)=>{
@@ -50,7 +52,7 @@ if($titulo !== '' && $descripcion !== ''){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Error al crear la publicacion, rellene todos los campos por favor',
+            text: 'Error al crear la publicacion, verifica que todos los campos esten completos',
             confirmButtonText: 'Ok'
         }).then((result)=>{
             if(result.isConfirmed){
