@@ -21,7 +21,7 @@
 
 <body>
     <?php
-    require_once "../../Models/seguridadResidente.php";
+    require_once "../../Models/seguridadPS.php";
     require_once "../../Models/conexion.php";
     require_once "../../Models/consultas.php";
     $user_id = $_SESSION['id'];
@@ -29,7 +29,7 @@
     $objetoConsulta = new Consultas();
     $userInfo = $objetoConsulta->mostrarUsuarioEditarAdmin($user_id)[0];
     include '../../components/menu.php';
-    include '../../components/headerInclude.php';
+    include '../../components/headerIncludePS.php';
 
     ?>
 
@@ -58,7 +58,7 @@
         </section>
         <section class="form_wrapper p-0 col-lg-7 position-relative  d-flex flex-column justify-content-center">
 
-            <form action="../../Controllers/editarPerfilRes.php?user=<?php echo $user_id ?>" method="post" class="border border border-top-0 border-bottom-0 border-end-0  p-0 py-4 d-flex flex-column gap-5">
+            <form action="../../Controllers/editarPerfilPS.php?user=<?php echo $user_id ?>" method="post" class="border border border-top-0 border-bottom-0 border-end-0  p-0 py-4 d-flex flex-column gap-5">
                 <section class="desicion_icons_wrp justify-content-end d-flex">
                     <button type="submit" class="submit-btn me-2 bg-transparent">
                         <!-- <img src="./icons/Tick.png" role="button" class="m-2" alt=""> -->
@@ -69,31 +69,24 @@
                     </button>
                 </section>
                 <div class="w-100 row px-2 m-0 ">
-                    <div class="input_wrapper col-md-4 mb-3">
+                    <div class="input_wrapper col-md-6  mb-3">
                         <label for="" class="mb-2">Nombres</label>
                         <input type="text" value="<?php echo $userInfo['nombres'] ?>" name="nombres" placeholder="Ronald">
                     </div>
-                    <div class="input_wrapper col-md-4 mb-3">
+                    <div class="input_wrapper col-md-6  mb-3">
                         <label for="" class="mb-2">Apellidos</label>
                         <input type="text" value="<?php echo $userInfo['apellidos'] ?>" name="apellidos" placeholder="Rodriguez">
                     </div>
-                    <div class="input_wrapper col-md-4 mb-3">
-                        <label for="" class="mb-2">Email</label>
-                        <input type="text" value="<?php echo $userInfo['email'] ?>" name="email" placeholder="ronal@gmail.com">
-                    </div>
+                    
                 </div>
                 <div class="w-100 row px-2 m-0 ">
-                    <div class="input_wrapper col-md-4 mb-3">
+                    <div class="input_wrapper col-md-6  mb-3">
                         <label for="" class="mb-2">Telefono</label>
                         <input type="text" value="<?php echo $userInfo['telefono'] ?>" name="telefono" placeholder="32111445">
                     </div>
-                    <div class="input_wrapper col-md-4 mb-3">
-                        <label for="" class="mb-2">Torre</label>
-                        <input type="text" value="<?php echo $userInfo['torre'] ?>" name="torre" placeholder="1">
-                    </div>
-                    <div class="input_wrapper col-md-4 mb-3">
-                        <label for="" class="mb-2">Apartamento</label>
-                        <input type="text" value="<?php echo $userInfo['apartamento'] ?>" name="apartamento" placeholder="234">
+                    <div class="input_wrapper col-md-6  mb-3">
+                        <label for="" class="mb-2">Email</label>
+                        <input type="text" value="<?php echo $userInfo['email'] ?>" name="email" placeholder="ronal@gmail.com">
                     </div>
                 </div>
                 <div>

@@ -60,7 +60,7 @@
                     <!-- main content -->
                 <div class="pt-3 ">
                     <main class="w-100 row px-5 gap-5 flex-nowrap justify-content-center align-items-center py-4">
-                        <form action="../../Controllers/registrarPaquete.php" class="col-md-6 p-5  pack-form h-75" method="post">
+                        <form action="../../Controllers/registrarPaquete.php" class="col-md-6 p-5  pack-form-rs h-75" method="post">
                         <div class="d-flex flex-column mb-3">
                                 <h2 style="font-size: 1.7em;">Formulario de registro</h2>
                             </div>  
