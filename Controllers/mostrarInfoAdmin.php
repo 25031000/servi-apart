@@ -769,7 +769,7 @@ function cargarPublicaciones()
             <td>' . $f['titulo'] . ' </td>
             <td>' . $f['descripcion'] . ' </td>
          
-            <td><a href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
+            <td><a  href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
             <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
         </tr>     
             ';
@@ -808,11 +808,11 @@ function cargarPubliEditar()
                 <div class="d-flex flex-column mb-3">
                 <label>Descripcion:</label>
                 <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
-                    name="novedad">' . $f['descripcion'] . '</textarea>
+                    name="descripcion">' . $f['descripcion'] . '</textarea>
             </div>
 
                 <div class="d-flex flex-column  mt-3">
-                    <button class="boton-btn">Modificar</button>                        
+                     <button type="submi" class="boton-btn">Modificar</button>                        
                 </div>
 
                 

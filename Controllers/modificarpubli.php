@@ -27,7 +27,8 @@
             $objConsultas = new Consultas();
 
             $result = $objConsultas->modificarPubli($id_publi, $titulo, $descripcion);    
-            echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
+            // echo "<script>location.href='../Views/Administrador/ver-publicaciones.php'</script>";
+            
         
 
         }else{
