@@ -68,7 +68,6 @@ if($apartamento !== ''  && $remitente !== '' && $torre !== ''){
         })
     </script>
     <?php 
-echo "end";
 }else{
     ?>
     <script>
@@ -80,7 +79,8 @@ echo "end";
             confirmButtonText: 'Ok'
         }).then((result)=>{
             if(result.isConfirmed){
-               location.href='../Views/Administrador/registrar-paquete.php'; 
+               //location.href='../Views/Administrador/registrar-paquete.php'; 
+               window.history.back();
             }
             
         })

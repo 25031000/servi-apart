@@ -127,9 +127,18 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 32rem !important;
+    min-width: 25.25rem;
 }
 
+.pack-form-rs {
+    border-radius: 0.625rem;
+    box-shadow: 6px 6px 36px #e3e3e3,
+        -6px -6px 36px #ffffff !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 32rem !important;
+}
 .pack-form-ps {
     border-radius: 0.625rem;
     box-shadow: 6px 6px 36px #e3e3e3,

@@ -3,29 +3,28 @@ require_once "../Models/conexion.php";
 require_once "../Models/consultas.php";
 
 
+
 function modifyAccount()
 {
     $nombres = $_POST['nombres'] ?? "";
     $apellidos = $_POST["apellidos"] ?? "";
     $email = $_POST["email"] ?? "";
     $telefono = $_POST["telefono"] ?? "";
-    $torre = $_POST["torre"] ?? "";
-    $apartamento = $_POST["apartamento"] ?? "";
     $clave = $_POST["password"] ?? "";
     $clave_2 = $_POST["password-verifier"] ?? "";
     $tipo = $_POST["type"] ?? "";
     $id = $_GET["user"] ?? "";
 
+    //primer caso, todos los valores, contrasenas vacias e iguales
     if (
         $nombres !== '' &&  $apellidos !== '' &&
         $email !== '' &&  $telefono !== '' &&
-        $torre !== '' &&  $apartamento !== '' &&
         $clave === '' &&  $clave_2 === '' &&
         $tipo !== '' &&  $id !== '' && $clave === $clave_2
     ) {
         $objetoConsulta = new Consultas();
 
-        $response = $objetoConsulta->modificarCuentaResidenteAlterna($id, $tipo, $nombres, $apellidos, $email, $telefono, $torre, $apartamento);
+        $response = $objetoConsulta->modificarCuentaPSAlterna($id, $tipo, $nombres, $apellidos, $email, $telefono);
 
         if($response){
             echo '
@@ -38,17 +37,17 @@ function modifyAccount()
             echo "error";
         }
     }
+    //segundo caso, todos los valores y contrasenas iguales
     if (
         $nombres !== '' &&  $apellidos !== '' &&
         $email !== '' &&  $telefono !== '' &&
-        $torre !== '' &&  $apartamento !== '' &&
         $clave !== '' &&  $clave_2 !== '' &&
         $tipo !== '' &&  $id !== '' && $clave === $clave_2
     ) {
         $hash = md5($clave);
         $objetoConsulta = new Consultas();
 
-        $response = $objetoConsulta->modificarCuentaResidente($id, $tipo, $nombres, $apellidos, $email, $telefono, $hash, $torre, $apartamento);
+        $response = $objetoConsulta->modificarCuentaPS($id, $tipo, $nombres, $apellidos, $email, $telefono, $hash);
 
         if($response){
             echo '
@@ -61,12 +60,10 @@ function modifyAccount()
             echo "error";
         }
     }
-    
+    //tercer caso, alguno de los valores no fue rellenado o las claves no coinciden
     if(
         $nombres == '' ||  $apellidos == '' ||
         $email == '' ||  $telefono == '' ||
-        $torre == '' ||  $apartamento == '' ||
-
         $tipo == '' ||  $id == '' || $clave !== $clave_2
     ){
         echo '

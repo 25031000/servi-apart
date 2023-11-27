@@ -48,6 +48,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <main id="dash" class="container position-relative">
         <div class="w-100 mt-5">
             <h2 style="font-size: 2.5rem; letter-spacing: 5px" class="text-center ">Personal de seguridad</h2>
+            <?php echo $_SESSION['rol']  ?> 
             <p class="text-center" style="font-family: 'Roboto', sans-serif !important; font-weight: 300 !important;">Navega entre los distintos modulos en base a las actividades que necesisas realizar</p>
         </div>
         <section class="grid  mx-auto mt-5" style="height: 670px;">
