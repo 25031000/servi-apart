@@ -802,13 +802,14 @@ function cargarPubliEditar()
 
                 <div class="d-flex flex-column mb-3">
                     <label for="" class="py-2">Titulo</label>
-                    <input type="text" name="titulo" value="' . $f['titulo'] . ' "class="rounded-3 input">
+                    <input type="text" name="titulo" style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" value="' . $f['titulo'] . ' "class="rounded-3 input">
                 </div>
 
                 <div class="d-flex flex-column mb-3">
-                    <label for="" class="py-2">Descripcion</label>
-                    <textarea  name="descripcion" rows="5" cols="40" value="' . $f['descripcion'] . ' "class="rounded-3 input"></textarea> 
-                </div>
+                <label>Descripcion:</label>
+                <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
+                    name="novedad">' . $f['descripcion'] . '</textarea>
+            </div>
 
                 <div class="d-flex flex-column  mt-3">
                     <button class="boton-btn">Modificar</button>                        
