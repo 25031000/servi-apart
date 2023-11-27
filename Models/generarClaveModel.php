@@ -109,16 +109,26 @@ class generarClave
 </tr></table></td></tr></table></td></tr></table></td></tr></table></td>
 </tr></table><table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%"><tr style="border-collapse:collapse"><td style="padding:0;Margin:0;background-color:#232020" bgcolor="#232020" align="center"><table class="es-content-body" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:transparent;width:640px" cellspacing="0" cellpadding="0" align="center"><tr style="border-collapse:collapse"><td style="Margin:0;padding-top:15px;padding-bottom:15px;padding-left:20px;padding-right:20px;background-color:#232020" bgcolor="#232020" align="left"><!--[if mso]><table style="width:600px" cellpadding="0" cellspacing="0"><tr><td style="width:200px" valign="top"><![endif]--><table class="es-left" cellspacing="0" cellpadding="0" align="left" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left"><tr style="border-collapse:collapse"><td class="es-m-p0r es-m-p20b" valign="top" align="center" style="padding:0;Margin:0;width:200px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td class="es-m-txt-c" align="left" style="padding:0;Margin:0;font-size:0px"><img src="https://smmdou.stripocdn.email/content/guids/CABINET_05a26d3d3395942bb12e63ccbe54486657ffd94652ce62cdf2ad7b4c5fae2b29/images/logo1_GET.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="80" height="40"></td>
 </tr></table></td></tr></table><!--[if mso]></td><td style="width:20px"></td>
-<td style="width:380px" valign="top"><![endif]--><table cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;width:380px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td class="es-m-txt-c" align="right" style="padding:0;Margin:0;padding-top:10px;font-size:0px"><table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Facebook" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/facebook-circle-black.png" alt="Fb" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
-<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Twitter" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/twitter-circle-black.png" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td><td valign="top" align="center" style="padding:0;Margin:0"><img title="Instagram" src="https://smmdou.stripocdn.email/content/assets/img/social-icons/circle-black/instagram-circle-black.png" alt="Inst" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td></tr></table></td></tr></table></td></tr></table><!--[if mso]></td></tr></table><![endif]--></td></tr></table></td></tr></table></td></tr></table></div></body></html>
+<td style="width:380px" valign="top"><![endif]--><table cellspacing="0" cellpadding="0" align="right" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td align="left" style="padding:0;Margin:0;width:380px"><table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"><tr style="border-collapse:collapse"><td class="es-m-txt-c" align="right" style="padding:0;Margin:0;padding-top:10px;font-size:0px"><table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"></td>
+<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"></td><td valign="top" align="center" style="padding:0;Margin:0"></td></tr></table></td></tr></table></td></tr></table><!--[if mso]></td></tr></table><![endif]--></td></tr></table></td></tr></table></td></tr></table></div></body></html>
 
                 ';
 
                 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                 $mail->send();
-                echo '<script>alert("Mensaje enviado")</script>';
-                echo '<script>location.href="../Views/client-site/page-login.html"</script>';
+
+                echo '<script>
+            
+                            Swal.fire({
+                                icon: "success",
+                                title:"Mensaje enviado. Revisa tu correo para obtener tu nueva clave",
+                                showConfirmButton: false,
+                                timer: 3000
+                            }).then((result)=>{
+                                location.href="../Views/client-site/page-login.html";
+                            })
+                        </script>';
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
@@ -133,8 +143,23 @@ class generarClave
 
 
         } else {
-            echo '<script>alert("Los datos de Usuario no se Encuentran en el Sistema")</script>';
-            echo "<script>location.href='../Views/client-site/page-reset-password.html'</script>";
+            echo "
+
+            <script>
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los datos de usuario no se encuentran en el sistema',
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = '../Views/client-site/page-reset-password.html';
+                }
+
+            })
+        </script>
+        ";
         }
 
     }

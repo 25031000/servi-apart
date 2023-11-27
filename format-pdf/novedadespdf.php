@@ -6,7 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/plantilla-pdf.css">
-    <title>Reporte de novedades</title>
+    <title>Reporte de Novedades</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 
 <body>

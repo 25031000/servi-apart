@@ -10,6 +10,13 @@
     <!-- icono -->
     <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
+<style>
+    *,
+    html,
+    body {
+        font-family: 'Varela Round', sans-serif;
+    }
+</style>
 
 <body>
 
@@ -26,8 +33,20 @@
         $objValidar = new ValidarSesion();
         $result = $objValidar->iniciarSesion($email, $clave);
     } else {
-        echo '<script>alert("Ingrese el usuario y contraseña")</script>';
-        echo "<script>location.href='../Views/client-site/page-login.html'</script>";
+        echo '<script>
+                
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Error al ingresar. Verifica el usuario y contraseña",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/client-site/page-login.html"; 
+                }
+                
+            })
+        </script>';
     }
 ?>
 

@@ -28,8 +28,23 @@ class Consultas
         $f = $result->fetch();
 
         if ($f) {
-            echo '<script>alert("Los datos de usuario ya se encuentran registrados")</script>';
-            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+            echo "
+            <script>
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Los datos de usuario ya se encuentran registrados',
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = '../Views/client-site/page-login.html';
+                }
+
+            })
+        </script>
+        ";
+
         } else {
 
             //CREAMOS LA VARIABLE QUE CONTENDRA LA CONSULTA A EJECUTAR
@@ -56,9 +71,18 @@ class Consultas
 
             //EJECUTAMOS EL INSERT
             $result->execute();
-
-            echo '<script>alert("Te has registrado exitosamente, debes esperar a que un administrador te autorize")</script>';
-            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+            echo '
+            <script>
+            
+            Swal.fire({
+                icon: "success",
+                title:"Te has registrado exitosamente, debes esperar a que un administrador te autorice",
+                showConfirmButton: false,
+                timer: 5000
+            }).then((result)=>{
+                location.href="../Views/client-site/page-login.html";
+            })
+        </script>';
         }
 
     }
@@ -600,7 +624,7 @@ class Consultas
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        
+
         $consulta = "SELECT fotoR FROM novedad_vehiculo WHERE id_nov = :id_nov";
         $stmt = $conexion->prepare($consulta);
         $stmt->bindParam(":id_nov", $id_nov);
@@ -1095,7 +1119,7 @@ class Consultas
         }
         return $f;
     }
-    
+
     public function modificarPeticion($id_peticion, $titulo, $descripcion)
     {
 
@@ -2008,34 +2032,99 @@ class ValidarSesion
 
                     switch ($f['rol']) {
                         case 'Administrador':
-                            echo '<script>alert("Bienvenido señor administradoooooor")</script>';
-                            echo "<script>location.href = '../Views/Administrador/home.php'</script>";
+                            echo '<script>
+            
+                            Swal.fire({
+                                icon: "success",
+                                title:"Bienvenido Señor(a) Administrador(a)",
+                                showConfirmButton: false,
+                                timer: 3000
+                            }).then((result)=>{
+                                location.href="../Views/Administrador/home.php";
+                            })
+                        </script>';
                             break;
 
                         case 'Residente':
-                            echo '<script>alert("Bienvenido señor residente")</script>';
-                            echo "<script>location.href = '../Views/Residente/homeResidente.php'</script>";
+                            echo '<script>
+            
+                            Swal.fire({
+                                icon: "success",
+                                title:"Bienvenido Señor(a) Residente",
+                                showConfirmButton: false,
+                                timer: 3000
+                            }).then((result)=>{
+                                location.href="../Views/Residente/homeResidente.php";
+                            })
+                        </script>';
                             break;
 
                         case 'Seguridad':
-                            echo '<script>alert("Bienvenido señor personal de seguridad")</script>';
-                            echo "<script>location.href = '../Views/Seguridad/homePS.php'</script>";
+                            echo '<script>
+            
+                            Swal.fire({
+                                icon: "success",
+                                title:"Bienvenido Señor(a) Guarda",
+                                showConfirmButton: false,
+                                timer: 3000
+                            }).then((result)=>{
+                                location.href="../Views/Seguridad/homePS.php";
+                            })
+                        </script>';
                             break;
                     }
 
 
 
                 } else {
-                    echo '<script>alert("La cuenta no está activa, contactese con el administrador")</script>';
-                    echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+                    echo '
+                    <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "La cuenta no está activa, contactese con el administrador",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/client-site/page-login.html"; 
                 }
+                
+            })
+        </script>';
+                }
+
             } else {
-                echo '<script>alert("Clave incorrecta")</script>';
-                echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+                echo '
+                <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Clave Incorrecta",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/client-site/page-login.html"; 
+                }
+                
+            })
+        </script>';
             }
+
         } else {
-            echo '<script>alert("El usuario no existe")</script>';
-            echo "<script>location.href = '../Views/client-site/page-login.html'</script>";
+            echo '
+            <script>
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "El usuario no existe",
+                confirmButtonText: "Ok"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                   location.href="../Views/client-site/page-login.html"; 
+                }
+                
+            })
+        </script>';
         }
     }
 

@@ -6,14 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/plantilla-pdf.css">
-    <title>Servi - Apart</title>
+    <title>Reporte de Vehículos</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 
 <body>
   <header style="border-bottom: 2px solid green; padding: 20px 0px; font-size: 2rem;">
     Servi - Apart
   </header>
-    <h1">Reporte de vehiculos en el sistema</h1>
+    <h1">Reporte de vehículos en el sistema</h1>
     <table style="width: 100%; border-collapse: collapse; border-spacing: 0;">
   <thead>
     <tr>
