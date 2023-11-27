@@ -1,8 +1,10 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadAdministrador.php");
-    require_once ("../../Controllers/mostrarInfoAdmin.php");
+
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once ("../../Models/seguridadAdministrador.php");
+require_once("../../Controllers/mostrarInfoAdmin.php");
+
 
 ?>
 
@@ -16,11 +18,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi - Apart / Peticiones</title>
+    <title>Servi-Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
-    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <!-- Retina iPad Touch Icon-->
     <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
     <!-- Retina iPhone Touch Icon-->
@@ -68,8 +70,20 @@
     <link href="../Dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../../assets/css/vehiculo-styles.css" rel="stylesheet">
+    <link href="../client-site/assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/publicaciones-styles.css" rel="stylesheet">
+    <style>
+        .card-publi {
+            border-radius: 0.625rem;
+            box-shadow: 6px 6px 36px #e3e3e3,
+                -6px -6px 36px #ffffff;
+            margin: 0 2em;
+            margin-top: -50px;
+            
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -80,59 +94,112 @@
 
 
 
-<div class="content-wrap">
+
+  <div class="content-wrap">
         <div class="main">
-            <div class="col-lg-12 w-100 p-l-0 title-margin-left ">
-                <div class="page-header">
-                    <div class="page-title">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a href="#" style="color: #FFC451">Administrador</a>
-                            </li>
-                            <li class="breadcrumb-item active">Peticiones</li>
-                        </ol>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title d-flex align-items-center">
+                            <div class="icon-content p-2 rounded-circle"
+                                    style="background-color: #18d26e !important;">
+                                    <img src="../../assets/icons/promocion.png" width= "48px" height= "48px" alt="">
+                                </div>
+                                <h1 style="font-size: 1.5rem;" class="ms-4">Peticiones Creadas</h1>
+                               
+
+                               
+                            </div>
+
+                        </div >
+                        <p id="text-title" style="margin-left: 100px">Se visualizara todas las peticiones  que han sido creadas por los residentes. </p>
                     </div>
+
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                    <a href="#" style="color: #18d26e">Administrador</a>
+
+                                    </li>
+                                    <li class="breadcrumb-item active">Peticiones Creadas</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
                 </div>
-            </div>
-            <div class="container-fluid p-4">
+                <!-- /# row -->
 
-                <section class=" rounded-3 d-flex row">
-
-                    <div class="col-md-6  p-4 d-flex justify-content-center align-items-center">
-                        <img class="w-75 xxl-w-50" src="../../assets/img/peticiones.svg" alt="">
-                    </div>
-
-                    <div class="col-md-6   p-2">
-                        <h2 class="p-4 title  w-100">¡<span class="span-title">Pregunta</span>, nosotros respondemos! </h2>
-                        <p class="px-4 d-block ">En Servi - Apart, nos 
-                            esforzamos por responder a todas las solicitudes de manera 
-                            oportuna y proporcionar soluciones efectivas. Nuestro equipo 
-                            de administradores está aquí para atender tus necesidades y
-                             brindarte la asistencia que requieres.
-
-                            Valoramos tus comentarios y sugerencias, ya que nos ayudan a mejorar constantemente nuestros servicios y proporcionar la mejor experiencia a nuestros usuarios.
-                        </p>
-                    </div>
-                    
-             
-                    <br>
-
-                    
-                    
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="footer">
-                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
                 </div>
-            </div>
-        </div>
+
+                <div style="display: flex; justify-content: end; width: 98%">
+                
+                <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light"
+                        href="../../services/generarpdfpubli.php" target="_blank">Generar
+                        PDF</a></button>
+                <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light"
+                        href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
+               
+
+                </div>
+
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card-publi" style="margin-left:25px">
+                                <div class="card-title">
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover ">
+                                            <thead>
+                                                <tr style="font-size:15px">
+                                                    <th>Titulo</th>
+                                                    <th>Descripcion</th>
+                                                    <th>Fecha</th>
+                                                    <th>Hora</th>
+                                                    <th>Operaciones</th>
+                                                  
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+
+                                                cargarPeticiones();
+
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /# column -->
+
+
+
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="footer">
+                                    <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                                </div>
+                            </div>
+                        </div>
                 </section>
-            </div>
         </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

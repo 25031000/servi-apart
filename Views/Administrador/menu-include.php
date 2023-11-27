@@ -128,7 +128,7 @@ $result = $objConsulta->verPerfil($id);
                     </a>
                     <ul>
                         <li>
-                            <a href="#"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"
+                            <a href="ver-peticiones.php"><img src="../../assets/icons/ver.png" alt="icono ver" width="20px"
                                     style="margin-right:10px"> Ver </a>
                         </li>
                     </ul>
@@ -155,21 +155,6 @@ $result = $objConsulta->verPerfil($id);
                         </li>
 
 
-                    </ul>
-                </li>
-
-                <li>
-                    <a class="sidebar-sub-toggle">
-                        <img src="../../assets/icons/pagos.png" alt="icono pagos" width="20px"
-                            style="margin-right:10px"> Pagos
-                        <span class="sidebar-collapse-icon ti-angle-down"></span>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="pagos.php"><img src="../../assets/icons/gestionPagos.png"
-                                    alt="icono gestion de pagos" width="20px" style="margin-right:10px"> Gestión de
-                                pagos</a>
-                        </li>
                     </ul>
                 </li>
             </ul>
