@@ -834,6 +834,33 @@ function cargarPubliEditar()
 
 }
 
+function cargarPeticiones()
+{
+
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPeticiones();
+
+    if (!isset($result)) {
+        echo '<h2> No hay peticiones registradas. </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+            
+            <td>' . $f['titulo'] . ' </td>
+            <td>' . $f['descripcion'] . ' </td>
+            <td>' . $f['fecha'] . ' </td>
+            <td>' . $f['hora'] . ' </td>
+         
+            <td><a href="../../Controllers/eliminarPeticion.php?id_peticion=' . $f['id_peticion'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style=" display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:6px">  Eliminar</a></td>
+        </tr>     
+            ';
+        }
+    }
+}
+
 
 
 

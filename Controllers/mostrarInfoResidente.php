@@ -92,6 +92,41 @@ function cargarPublicacionesRes()
     }
 }
 
+function cargarPeticionesRes()
+{
+
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPeticiones();
+
+    if (!isset($result)) {
+        echo '<h2> No tienes peticiones registradas </h2>';
+    } else {
+        $count = count($result);
+
+        foreach ($result as $f) {
+            echo '
+          
+            <div class="col-md-4" style="padding-bottom: 30px;">
+                        
+            <div class="card text-center">
+            <div class="card-header" style="background-color: #76ffbb; color: #00341d;">
+               ID de petición: '.$f['id_peticion'].'
+            </div>
+            <div class="card-body">
+              <h5 class="card-title" >'.$f ['titulo'].'</h5>
+              <p class="card-text">'.$f ['descripcion'].'</p>
+            </div>
+            <div class="card-footer text-body-secondary" style="background-color: #b2ffd9;">
+              2 days ago
+            </div>
+          </div>
+          </div>
+       
+                    ';
+        }
+    }
+}
 
 
 function cargarInfoUsuarios()

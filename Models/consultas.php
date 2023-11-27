@@ -1061,6 +1061,81 @@ class Consultas
 
     }
 
+    public function eliminarPeticion($id_peticion)
+    {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $eliminar = "DELETE FROM peticiones Where id_peticion=:id_peticion";
+        $result = $conexion->prepare($eliminar);
+
+        $result->bindParam(":id_peticion", $id_peticion);
+
+        $result->execute();
+        echo '<script>alert("Peticion Eliminada")</script>';
+        echo "<script>location.href = '../Views/Administrador/ver-peticiones.php'</script>";
+    }
+
+
+    public function mostrarPeticiones()
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM peticiones";
+
+        $result = $conexion->prepare($consultar);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
+    
+    public function modificarPeticion($id_peticion, $titulo, $descripcion)
+    {
+
+        $objConexion = new conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $actualizar = " UPDATE peticiones SET  titulo=:titulo, descripcion=:descripcion WHERE id_peticion=:id_peticion";
+        $result = $conexion->prepare($actualizar);
+
+        $result->bindParam("id_peticion", $id_peticion);
+        $result->bindParam("titulo", $titulo);
+        $result->bindParam("descripcion", $descripcion);
+
+
+        $result->execute();
+
+        echo '<script>alert("Petición actualizada correctamente")</script>';
+        // echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+    }
+
+    public function mostrarPeticionEditar($id_peticion)
+    {
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "SELECT * FROM peticiones WHERE id_peticion=:id_peticion";
+        $result = $conexion->prepare($consultar);
+
+        $result->bindParam("id_peticion", $id_peticion);
+
+        $result->execute();
+
+
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        return $f;
+    }
+
     public function registrarDia($identificacion, $dia_reserva, $hora_inicio, $hora_finalizacion, $mesas, $sillas, $tipo_evento)
     {
         $objConexion = new Conexion();
