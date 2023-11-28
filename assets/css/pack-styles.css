@@ -273,7 +273,7 @@ estilos del formulario de residente en salon comunal
     }
 
     .bzrp {
-        margin-top: 510px;
+        margin-top: 530px;
         transition: margin-top 0.3s ease;
     }
 }
@@ -317,8 +317,8 @@ estilos del formulario de residente en salon comunal
 
     /* boton */
     .bzrp {
-       
-        margin-left: 26% !important;
+/*         margin-top: 370px;
+ */        margin-left: 16% !important;
         transition: margin-left 0.3s ease;
     }
 
