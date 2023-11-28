@@ -681,7 +681,7 @@ function cargarVehiculoEditar()
                         </div>
                     </form>
                     <div class="d-flex flex-column  mt-3">
-                    <button class="boton-btn">Registrar</button>
+                    <button class="boton-btn">Modificar</button>
                 </div>
                         
                     </div>
@@ -792,40 +792,39 @@ function cargarPubliEditar()
 
     foreach ($result as $f) {
         echo '
-
-        <div class="pt-3 ">
+        <div class="col-lg-11 pt-3 ">
         <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4" >
-            <form action="../../Controllers/modificarpubli.php?id_publi' . $f['id_publi'] . ' " class="col-md-6 p-5 pack-form h-75" method="post">
+            <form action="../../Controllers/modificarpubli.php?id_publi='.$f['id_publi'].' " class="col-md-12 p-5 pack-form h-75" method="post">
             <div class="d-flex flex-column mb-3">
-                    <h2 style="font-size: 1.7em;">Edita la informacion</h2>
+                    <h2 style="font-size: 1.7em;">Editar informacion</h2>
                 </div>  
 
                 <div class="d-flex flex-column mb-3">
                     <label for="" class="py-2">Titulo</label>
-                    <input type="text" name="titulo" style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" value="' . $f['titulo'] . ' "class="rounded-3 input">
+                    <input type="text" name="titulo" placeholder="Ej: acueducto " value="' . $f['titulo'] . '" class="rounded-3 input">
                 </div>
 
                 <div class="d-flex flex-column mb-3">
-                <label>Descripcion:</label>
-                <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El dia de hoy o habra agua por problemas en el acueducto"
-                    name="descripcion">' . $f['descripcion'] . '</textarea>
-            </div>
+        <label>Descripcion:</label>
+        <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El dia de hoy o habra agua por problemas en el acueducto"
+            name="descripcion">'.$f['descripcion'].'</textarea>
+     </div>
 
                 <div class="d-flex flex-column  mt-3">
-                     <button type="submi" class="boton-btn">Modificar</button>                        
+                    <button class="boton-btn">Modificar</button>                        
                 </div>
 
                 
             </form>
-            
+             
             </div>
         </main>
     </div>
- </div>
 </div>
-                        ';
+</div>
+                       ';
 
-
+                        
 
 
 
@@ -906,9 +905,10 @@ function cargarPublicacionesPDF()
         foreach ($result as $f) {
             echo '
             <tr>
-                <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_publi'] . '</th>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['titulo'] . '</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['descripcion'] . '</td>
+            <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_publi'] . '</th>
+            <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['titulo'] . '</td>
+            <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['descripcion'] . '</td>
+           
                
             </tr>     
             ';
