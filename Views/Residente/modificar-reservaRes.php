@@ -19,45 +19,9 @@
 
     <!-- ================= Favicon ================== -->
     <link href="../client-site/assets/img/sar.png" rel="shortcut icon">
-    <!-- Retina iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
-    <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
-    <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
-    <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
 
-    <!-- Toastr -->
-    <link href="../dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
     <!-- Sweet Alert -->
     <link href="../dashboard/css/lib/sweetalert/sweetalert.css" rel="stylesheet">
-    <!-- Range Slider -->
-    <link href="../dashboard/css/lib/rangSlider/ion.rangeSlider.css" rel="stylesheet">
-    <link href="../dashboard/css/lib/rangSlider/ion.rangeSlider.skinFlat.css" rel="stylesheet">
-    <!-- Bar Rating -->
-    <link href="../dashboard/css/lib/barRating/barRating.css" rel="stylesheet">
-    <!-- Nestable -->
-    <link href="../dashboard/css/lib/nestable/nestable.css" rel="stylesheet">
-    <!-- JsGrid -->
-    <link href="../dashboard/css/lib/jsgrid/jsgrid-theme.min.css" rel="stylesheet" />
-    <link href="../dashboard/css/lib/jsgrid/jsgrid.min.css" type="text/css" rel="stylesheet" />
-    <!-- Datatable -->
-    <link href="../dashboard/css/lib/datatable/dataTables.bootstrap.min.css" rel="stylesheet" />
-    <link href="../dashboard/css/lib/data-table/buttons.bootstrap.min.css" rel="stylesheet" />
-    <!-- Calender 2 -->
-    <link href="../dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <!-- Weather Icon -->
-    <link href="../dashboard/css/lib/weather-icons.css" rel="stylesheet" />
-    <!-- Owl Carousel -->
-    <link href="../dashboard/css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="../dashboard/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <!-- Select2 -->
-    <link href="../dashboard/css/lib/select2/select2.min.css" rel="stylesheet">
-    <!-- Chartist -->
-    <link href="../dashboard/css/lib/chartist/chartist.min.css" rel="stylesheet">
-    <!-- Calender -->
-    <link href="../dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
 
     <!-- Common -->
     <link href="../dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -66,12 +30,18 @@
     <link href="../dashboard/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../dashboard/css/style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
     <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
+
+    
 </head>
 
 
