@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <title>Servi - Apart</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
+</head>
+<style>
+    *,
+    html,
+    body {
+        font-family: 'Varela Round', sans-serif;
+    }
+</style>
+
+<body>
 <?php
 
 $identificacion = $_POST['identificacion'];
@@ -13,8 +33,7 @@ $torre = $_POST['torre'];
 $apartamento = $_POST['apartamento'];
 define('ROL', 'residente');
 
-echo $apartamento;
-echo ROL;
+
 
     // Enlazamos las dependencias necesario
     require_once ("../Models/conexion.php");
@@ -48,19 +67,46 @@ echo ROL;
         }
 
         else{
-            echo '<script>alert("Por favor complete todos los campos")</script>';
-            echo "<script>location.href='../Views/client-site/page-register.html'</script>";
+            echo "
+            <script>
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor complete todos los campos',
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = '../Views/client-site/register-view.html';
+                }
+
+            })
+        </script>
+        ";
         }
     
         
     }else{
-        echo '<script>
-            alert("Las claves no coinciden.")
-        </script>';
+        echo "
+            <script>
 
-        echo "<script>
-            location.href='../Views/client-site/page-register.html'
-        </script>";
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Las claves no coinciden',
+                confirmButtonText: 'Ok'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = '../Views/client-site/register-view.html';
+                }
+
+            })
+        </script>
+        ";
+        
     }
 
 ?>
+</body>
+
+</html>

@@ -6,12 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/plantilla-pdf.css">
-    <title>Document</title>
+    <title>Reporte de Paqueteria</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 
 <body>
   <header style="border-bottom: 2px solid green; padding: 20px 0px; font-size: 2rem;">
-    ServiApart
+    Servi - Apart
   </header>
     <h1">Reporte paqueteria</h1>
     <p>Este reporte organiza todos los registros de paquetes en el sistema</p>
