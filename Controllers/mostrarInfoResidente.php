@@ -544,15 +544,15 @@ function modificarReservaRes()
                 
              <div class="card-body" style="-webkit-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
              -moz-box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);
-             box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px;" >
+             box-shadow: 16px 14px 17px -8px rgba(0,0,0,0.75);  border-radius: 15px; padding: 25px;" >
                 <form action="../../Controllers/modificarReservaRes.php?reservaid=' . $id_reserva . '" method="POST" >
                 <div class="row g-2">
                
                  
                 <div class="col-md-6">
                     <div class="">
-                    <label for="identificacion" style="font-weight: bold; color: #333;">Identificacion</label>
-                        <input type="number" class="form-control" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" readonly  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="identificacion" class="horai" style="font-weight: bold; color: #333;">Identificacion</label>
+                        <input type="number" class="form-control py-2 input" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" readonly  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
@@ -560,45 +560,45 @@ function modificarReservaRes()
 
                 <div class="col-md-6">
                     <div class="">
-                    <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
-                        <input type="date" class="form-control" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="dia_reserva" class="horai" style="font-weight: bold; color: #333;">Día de Reserva</label>
+                        <input type="date" class="form-control py-2 input" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
             
                 <div class="col-md-6">
                     <div class="">
-                    <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
-                        <input type="time" class="form-control" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="hora_inicio" class="horai"  style="font-weight: bold; color: #333;">Hora de Inicio</label>
+                        <input type="time" class="form-control py-2 input" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
-                    <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
-                        <input type="time" class="form-control" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="hora_finalizacion" class="horai" style="font-weight: bold; color: #333;">Hora de Finalización</label>
+                        <input type="time" class="form-control py-2 input" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
-                    <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
-                        <input type="number" class="form-control"  value="' . $f['mesas'] . '" id="mesas" name="mesas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="mesas" class="horai" style="font-weight: bold; color: #333;">Mesas</label>
+                        <input type="number" class="form-control py-2 input"  value="' . $f['mesas'] . '" id="mesas" name="mesas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="">
-                    <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
-                        <input type="number" class="form-control" value="' . $f['sillas'] . '" id="sillas" name="sillas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                    <label for="sillas" class="horai" style="font-weight: bold; color: #333;">Sillas</label>
+                        <input type="number" class="form-control py-2 input" value="' . $f['sillas'] . '" id="sillas" name="sillas"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
                 <div class="col-md-6">
                 <div>
-                    <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
+                    <label for="tipo_evento" class="horai" style="font-weight: bold; color: #333;">Tipo de evento</label>
                     <div>
-                        <select class="form-control" id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
+                        <select class="form-control py-2 input" id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
                             <option value="">' . $f['tipo_evento'] . '</option>
                             <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                             <option value="Matrimonio">Matrimonio</option>
@@ -621,7 +621,7 @@ function modificarReservaRes()
           
 
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Actualizar Informacion</button>
+                    <button type="submit" class="btn btn-success">Actualizar Informacion</button>
                 </div>
             </div>
         </form>

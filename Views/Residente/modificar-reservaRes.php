@@ -67,6 +67,7 @@
     <link href="../dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../dashboard/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="../client-site/assets/css/admin.css">
+    <link href="../../assets/css/pack-styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
     <!-- Transition.style website -->
@@ -89,7 +90,7 @@
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Modificar Información de usuarios
+                                <h1>Modificar Información de las Reservaciones
                                 </h1>
                                 <p>Por favor edita los campos para actualizar la información de un usuario.</p>
                             </div>
@@ -101,7 +102,7 @@
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Administrador</a>
+                                        <a href="#">Residente</a>
                                     </li>
                                     <li class="breadcrumb-item active">Modificar Reservas</li>
                                 </ol>
@@ -114,7 +115,7 @@
                 <section id="main-content">
                     
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-8" style="margin-left :250px;  margin-top:30px">
                                 <div class="cardSC" >
                                     <div class="card-title">
                         
@@ -132,7 +133,7 @@
 
                     </div>
 
-                        <div class="row">
+                        <div class="row" style="margin-top:145px;">
                             <div class="col-lg-12">
                                 <div class="footer">
                                     <p>2023 © Admin Board. - <a href="#">Servi - Apart</a></p>
