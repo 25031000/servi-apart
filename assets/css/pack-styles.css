@@ -311,13 +311,14 @@ estilos del formulario de residente en salon comunal
     /* formulario */
     .ozuna {
         width: 60% !important;
+        margin-left: 0% !important;
         transition: width 0.3s ease, margin-left 0.3s ease;
     }
 
     /* boton */
     .bzrp {
-        margin-top: 370px;
-        margin-left: 16% !important;
+       
+        margin-left: 26% !important;
         transition: margin-left 0.3s ease;
     }
 

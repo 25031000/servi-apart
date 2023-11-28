@@ -142,14 +142,14 @@ $sesionId = $_SESSION['id'];
 
 
                     <div class="row ">
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="d-flex flex-column col-md">
                                 <label for="" class="horai"><b>Sillas</b></label>
                                 <input type="number" class="py-2 input  " id="sillas" name="sillas" required>
 
                             </div>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md-6">
                             <div class="d-flex flex-column col-md">
                                 <label for="" class="form-label horai"><b>Tipo de evento</b></label>
                                 <select name="tipo_evento" id="disabledSelect" class="py-2 input ">
