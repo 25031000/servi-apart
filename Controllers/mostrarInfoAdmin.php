@@ -231,7 +231,7 @@ function cargarFotosVehiculo()
             <div class="col-lg-8 p-r-0 title-margin-right">
             <div class="page-header">
                 <div class="page-title">
-                <h1 style="font-size:50px">Vehiculo con placa <span style="font-size:50px; font-weight: 800; color:#FF914D">' . $f['placa'] . '</span>
+                <h1 style="font-size:50px">Vehículo con placa <span style="font-size:50px; font-weight: 800; color:#FF914D">' . $f['placa'] . '</span>
                 </h1>
                 </div>
             </div>
@@ -244,7 +244,7 @@ function cargarFotosVehiculo()
                 <li class="breadcrumb-item">
                   <a href="#" style="color: #18d26e">Residente</a>
                 </li>
-                <li class="breadcrumb-item active">Ver datos de vehiculo</li>
+                <li class="breadcrumb-item active">Ver datos de vehículo</li>
               </ol>
             </div>
           </div>
@@ -297,7 +297,7 @@ function cargarFotosVehiculo()
                         <div class=" modificar-user">
                         <ul class="nav nav-tabs" id="myTab" role="tablist" style="border:none; margin-left:1px">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active tl_datos_fotos" style="border:none; font-size: 18px; margin-top:7px" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehiculo</button>
+                                <button class="nav-link active tl_datos_fotos" style="border:none; font-size: 18px; margin-top:7px" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Datos del Vehículo</button>
                             </li>
                         </ul>
                             <div class="tab-content" id="myTabContent">
@@ -984,7 +984,7 @@ function perfilEditar()
         echo '
             
 
-            <section id="main-content">
+            <section id="main-content" style="padding: 0 15px">
             <div class="row">
                 <div class="col-lg-4">
                             <div class="card perfil-user d-flex justify-content-center align-items-center py-3">
@@ -999,15 +999,15 @@ function perfilEditar()
                         <div class="card modificar-user">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Perfil</button>
+                                <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="color: #232020">Perfil</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Cambiar foto</button>
+                                <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false" style="color: #232020">Cambiar foto</button>
 
                                 
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Cambiar Clave</button>
+                                <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="color: #232020">Cambiar Clave</button>
                             </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
@@ -1016,12 +1016,12 @@ function perfilEditar()
                             <form action="../../Controllers/modificarCuentaAdmin.php" method="POST" enctype="multipart/form-data">
                         <div class="row px-4">
                             <div class="form-group col-md-6">
-                                <label>Identificacion:</label>
-                                <input type="number" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
+                                <label>Identificación:</label>
+                                <input style="width:100%" type="number" class="rounded-3 input mi-input" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Tipo de Documento:</label>
-                                <select name="tipo_doc" id="" class="form-control">
+                                <select name="tipo_doc" style="width:100%" type="text" class="rounded-3 input mi-input">
                                     <option value="' . $f['tipo_doc'] . '">' . $f['tipo_doc'] . '</option>
                                     <option value="CC">CC</option>
                                     <option value="CE">CE</option>
@@ -1030,53 +1030,52 @@ function perfilEditar()
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Nombres:</label>
-                                <input type="text" class="form-control" value="' . $f['nombres'] . '" placeholder="Ej: Miguel Angel" name="nombres">
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" value="' . $f['nombres'] . '" placeholder="Ej: Miguel Angel" name="nombres">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Apellidos:</label>
-                                <input type="text" class="form-control" value="' . $f['apellidos'] . '"  laceholder="Ej: Gallejo Restrepo" name="apellidos">
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" value="' . $f['apellidos'] . '"  placeholder="Ej: Gallejo Restrepo" name="apellidos">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Email:</label>
-                                <input type="email" class="form-control" value="' . $f['email'] . '" placeholder="Ej: example@example.com" name="email">
+                                <input style="width:100%" type="email" class="rounded-3 input mi-input" value="' . $f['email'] . '" placeholder="Ej: example@example.com" name="email">
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Telefono:</label>
-                                <input type="number" class="form-control" value="' . $f['telefono'] . '" placeholder="Ej: 323 233 2333" name="telefono">
+                                <label>Teléfono:</label>
+                                <input style="width:100%" type="number" class="rounded-3 input mi-input" value="' . $f['telefono'] . '" placeholder="Ej: 323 233 2333" name="telefono">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Torre:</label>
-                                <input type="text" class="form-control" value="' . $f['torre'] . '" placeholder="Ej: 323 233 2333" name="torre">
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" value="' . $f['torre'] . '" placeholder="Ej: A" name="torre">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Apartamento:</label>
-                                <input type="text" class="form-control" value="' . $f['apartamento'] . '" placeholder="Ej: 323 233 2333" name="apartamento">
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" value="' . $f['apartamento'] . '" placeholder="Ej: 202" name="apartamento">
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-success  w-25 ms-4   btn-flat m-b-30 m-t-30" style="margin: 0 auto">Modificar Cuenta</button>
-                        <div class="register-link m-t-15 text-center">
-                            
-                        </div>
+                        <button type="submit" class="boton-btn  w-20 ms-4 m-b-30 m-t-30" style="margin: 0 auto">Modificar Cuenta</button>
+                        
                     </form>
 
                             </div>
+                            
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="form-group col-md-12">
                             <form action="../../Controllers/modificarFotoAdmin.php" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label>Identificacion:</label>
-                                <input type="number" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
+                                <label>Identificación:</label>
+                                <input style="width:100%" type="number" class="rounded-3 input mi-input" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
                             </div>
                             
                             <div class="form-group col-md-6">
                                 <label>Foto:</label>
-                                <input type="file"  class="form-control"  name="foto" accept=".jpeg, .jpg, .png, .gif">
+                                <input type="file" id="uploadBtn"  class="input-file input"  name="foto" accept=".jpeg, .jpg, .png, .gif">
                             </div>
                             
                         </div>
-                        <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Modificar Foto</button>
+                        <button type="submit" class="boton-btn w-20 mt-2">Modificar Foto</button>
                         <div class="register-link m-t-15 text-center">
                             
                         </div>
@@ -1085,24 +1084,25 @@ function perfilEditar()
                             </div>
 
 
-
-                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                            
+                            <div class="tab-pane fade p-3" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <form action="../../Controllers/modificarClaveAdmin.php"  method="POST">
+                                <div class="row">
 
-                                   <div class="form-group col-md-6">
-                                    <label>Identificacion:</label>
-                                     <input type="number" class="form-control" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
+                                   <div class="form-group col-md-4">
+                                    <label>Identificación:</label>
+                                     <input style="width:100%" type="number" class="rounded-3 input mi-input" value="' . $f['identificacion'] . '"  readonly placeholder="Ej: 23554535354" name="identificacion" required >
                                      </div>
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-4">
                                         <label>Nueva Clave:</label>
-                                        <input type="password" class="form-control" placeholder="Ej: **********" name="clave" required>
+                                        <input style="width:90%" type="password" class="rounded-3 input mi-input" placeholder="Ej: **********" name="clave" required>
                                     </div>
-                                    <div class="form-group col-md-12">
+                                    <div class="form-group col-md-4">
                                         <label>Confirmar Nueva Clave:</label>
-                                        <input type="password" class="form-control" placeholder="Ej: ********" name="clave2" required>
+                                        <input style="width:90%" type="password" class="rounded-3 input mi-input" placeholder="Ej: ********" name="clave2" required>
                                     </div>
-                                     <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30 ms-4">Modificar Clave</button>
-
+                                     <button type="submit" class="boton-btn w-20 m-b-30 m-t-30 ms-2">Modificar Clave</button>
+                                </div>
                                 </form>
                             </div>
                             

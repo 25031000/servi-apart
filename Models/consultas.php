@@ -464,7 +464,7 @@ class Consultas
                 return false;
             return true;
         } catch (\Throwable $th) {
-            echo "Ha ocurrido un problema al crear la publicacion :( " . $th;
+            echo "Ha ocurrido un problema al crear la publicación :( " . $th;
         }
     }
 

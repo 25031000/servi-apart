@@ -14,18 +14,21 @@
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <!-- boxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <title>Paqueteria</title>
+    <title>Servi - Apart</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
 </head>
 
 <body>
     <?php
-            session_start();    
-            $id = $_SESSION['id'];
+    session_start();
+    $id = $_SESSION['id'];
     //menu
     include '../../components/menu.php';
     //header
     include '../../components/headerInclude.php';
-?>
+    ?>
 
     <main class="container d-flex flex-wrap justify-content-center">
         <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>Paquetes recibidos</strong></h2>
@@ -36,10 +39,10 @@
                 historial</small>
         </div>
         <?php
-            require_once "../../Controllers/mostrarInfoResidente.php";
-            
-            cargarPaquetesRes($id);
-            ?>
+        require_once "../../Controllers/mostrarInfoResidente.php";
+
+        cargarPaquetesRes($id);
+        ?>
 
     </main>
 

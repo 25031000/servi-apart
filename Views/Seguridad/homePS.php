@@ -48,13 +48,12 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <main id="dash" class="container position-relative">
         <div class="w-100 mt-5">
             <h2 style="font-size: 2.5rem; letter-spacing: 5px" class="text-center ">Personal de seguridad</h2>
-            <?php echo $_SESSION['rol']  ?> 
-            <p class="text-center" style="font-family: 'Roboto', sans-serif !important; font-weight: 300 !important;">Navega entre los distintos modulos en base a las actividades que necesisas realizar</p>
+            <p class="text-center">Navega entre los distintos modulos en base a las actividades que necesisas realizar</p>
         </div>
         <section class="grid  mx-auto mt-5" style="height: 670px;">
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
-                <h2 class="ps-4">Vehiculos</h2>
-                <p class="ps-4">Manten un registro minusioso de los vehiculos que se encuentran en la propiedad y controla su estado de una manera rapida</p>
+                <h2 class="ps-4">Vehículos</h2>
+                <p class="ps-4">Manten un registro minusioso de los vehículos que se encuentran en la propiedad y controla su estado de una manera rapida</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #FFA031">
                 <a href="ver-vehiculo.php"> 
                     <img src="./images/Next.png" alt="">
@@ -63,8 +62,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <img src="./images/carro.png" class="position-absolute" alt="">
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
-                <h2 class="ps-4">Salon comunal</h2>
-                <p class="ps-4">Mantente al tanto de que personas estan utilizando el salon comunal y cuales son sus horarios.</p>
+                <h2 class="ps-4">Salón comunal</h2>
+                <p class="ps-4">Mantente al tanto de que personas estan utilizando el salón comunal y cuales son sus horarios.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #05EB00">
                 <a href="salonComunal.php"> 
                     <img src="./images/Next.png" alt="">
@@ -85,7 +84,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Publicaciones</h2>
-                <p class="ps-4">Visualiza las publicaciones que la administracion realiza para mantenerte al dia.</p>
+                <p class="ps-4">Visualiza las publicaciones que la administración realiza para mantenerte al día.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #2FA3FF">
                 <a href="ver-publicaciones.php"> 
                 <img src="./images/Next.png" alt="">

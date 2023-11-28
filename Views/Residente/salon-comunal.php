@@ -19,8 +19,9 @@ $sesionId = $_SESSION['id'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Servi - Apart</title>
-    <!--     <link href="../../assets/css/style.css" rel="stylesheet">
- -->
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">

@@ -52,7 +52,7 @@
                             <div class="page-title">
                                 <h1 style="font-size: 35px">Modificar Publicaciones
                                 </h1>
-                                <p style="font-size: 25px">Por favor edita los campos para actualizar la información de las publicaciones</p>
+                                <p>Por favor edita los campos para actualizar la información de las publicaciones</p>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="#"  style="color: #18d26e">Administador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Modificar Publicacion</li>
+                                    <li class="breadcrumb-item active">Modificar Publicación</li>
                                 </ol>
                             </div>
                         </div>
