@@ -79,8 +79,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
                     <div class="row" style="display: flex; justify-content: center; align-items: center">
-                        <div class="col-lg-6" style="display: flex;align-items: center;">
-                            <img src="../../assets/img/car_edit.svg" alt="imagen de carro" style="width:100%">
+                        <div class="col-lg-7" style="display: flex;align-items: center;">
+                            <img src="../../assets/img/car_edit.svg" alt="" style="width:100%">
                         </div>
 
                         <div class="col-lg-5">

@@ -110,39 +110,37 @@
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-                    
-                    <div class="row">
-                        <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-title">
-                        
-                                        
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="basic-elements">
-                                            <?php
-                                                cargarPubliEditar();
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
+
+                <div class="row" style="display: flex; justify-content: center; align-items: center">
+                <div class="col-lg-5" style="display: flex;align-items: center;">
+                            <img src="../../assets/img/publicaciones.svg" alt="" style="width:100%">
                         </div>
 
-                    </div>
+                        <div class="col-lg-5">
+                           
+                                <div class="card-title">
 
-                        <div class="row" style="margin-left: 240px">
-                            <div class="col-lg-12">
-                                <div class="footer">
-                                    <p>2023 © Admin Board. - <a href="#">Servi - Apart</a></p>
+
+                                </div>
+                              
+
+
+                                        <?php
+                                        cargarPubliEditar();
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+
+
+
                     </div>
-                </section>
-            </div>
+                 </section>
+             </div>
         </div>
     </div>
-
-
 
 
     <!-- Common -->

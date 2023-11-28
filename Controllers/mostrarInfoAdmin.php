@@ -793,8 +793,8 @@ function cargarPubliEditar()
     foreach ($result as $f) {
         echo '
 
-        <div class="pt-4 ">
-        <main class="w-100 row px-5 gap-5 flex-nowrap align-items-center py-4" >
+        <div class="pt-3 ">
+        <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4" >
             <form action="../../Controllers/modificarpubli.php?id_publi' . $f['id_publi'] . ' " class="col-md-6 p-5 pack-form h-75" method="post">
             <div class="d-flex flex-column mb-3">
                     <h2 style="font-size: 1.7em;">Edita la informacion</h2>
@@ -807,7 +807,7 @@ function cargarPubliEditar()
 
                 <div class="d-flex flex-column mb-3">
                 <label>Descripcion:</label>
-                <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El vehículo tiene un rayon en el costado derecho"
+                <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El dia de hoy o habra agua por problemas en el acueducto"
                     name="descripcion">' . $f['descripcion'] . '</textarea>
             </div>
 
@@ -821,7 +821,7 @@ function cargarPubliEditar()
             </div>
         </main>
     </div>
-</div>
+ </div>
 </div>
                         ';
 
