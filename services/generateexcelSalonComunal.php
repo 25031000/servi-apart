@@ -1,7 +1,8 @@
 <?php
 
-header("Content-Type: application/vnd.ms-excel; charset=utf-8");
+header("content-Type: application/vnd.ms-excel; charset=UTF-8");
 header("Content-Disposition: attachment; filename=Reporte_SalonComunal.xls");
+echo "\xEF\xBB\xBF"; 
 
 ?>
 

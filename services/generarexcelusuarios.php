@@ -1,8 +1,8 @@
 <?php
 
-header("content-Type: application/xls");
+header("content-Type: application/vnd.ms-excel; charset=UTF-8");
 header("content-Disposition: attachment; filename=Reporte_Usuarios.xls");
-
+echo "\xEF\xBB\xBF"; 
 ?>
 
 <table class="table table-hover ">
