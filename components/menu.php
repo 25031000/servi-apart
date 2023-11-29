@@ -48,6 +48,24 @@
                 </div>
             </div>
 
+            <div id="second-li" role="button"
+                class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
+                <a href="registrar-peticion.php" class="chocolate">Peticiones</a>
+
+                <div>
+                    <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
+                </div>
+            </div>
+
+            <div id="second-li" role="button"
+                class="list-group-item item-list   d-flex  align-items-center justify-content-between text-white py-2 w-auto">
+                <a href="pagos.php" class="chocolate">Pagos</a>
+
+                <div>
+                    <img class="second-arrow" style="transform: rotate(-90deg);" src="icons/arrow.png" alt="">
+                </div>
+            </div>
+
             <div role="button" id="third-li"
                 class="list-group-item  item-list  d-flex  align-items-center justify-content-between text-white py-2 w-auto">
                 <a href="homeResidente.php" class="chocolate">Home </a>

@@ -35,6 +35,9 @@
 <p class="text-center" style="padding-bottom:30px">Aquí puedes presentar todas tus peticiones, quejas o preguntas a los administradores de tu conjunto.</p>
 <div class="row">
   <div class="col-md-6">
+    <img src="images/PeticionBack.svg" alt="" style="with: 400px; height: 400px">
+  </div>
+  <div class="col-md-6">
 <form class="row g-3 pack-form" action="../../Controllers/registrarPeticion.php?id=<?php echo $id;?>" method="post">
   <div class="d-flex flex-column mb-3">
     <label class="form-label">Título</label>
@@ -46,10 +49,10 @@
     <div class="d-flex flex-column  mt-3">
      <div class="row">
      <div class="col-md-6">
-        <button class="btn btn-primary">Enviar</button>                           
+        <button type="submit" class="btn" style="background-color: #00BF63; color: #FFFFFF">Enviar</button>                           
       </div>
       <div class="col-md-6">
-        <button class="btn" style="background-color: green" ><a href="ver-peticiones.php?id=<?php echo $id;?>" style="color: #FFFFFF; text-decoration: none">Mis registros </a></button>                              
+        <button class="btn btn-warning"><a href="ver-peticiones.php?id=<?php echo $id;?>" style="color: #FFFFFF; text-decoration: none">Mis peticiones </a></button>                              
       </div>
         </div>
     </div>
