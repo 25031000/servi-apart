@@ -104,7 +104,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             <div class="page-title d-flex align-items-center">
                             <div class="icon-content p-2 rounded-circle"
                                     style="background-color: #18d26e !important;">
-                                    <img src="../../assets/icons/promocion.png" width= "48px" height= "48px" alt="">
+                                    <img src="../../assets/icons/peticion.png" width= "48px" height= "48px" alt="">
                                 </div>
                                 <h1 style="font-size: 1.5rem;" class="ms-4">Peticiones Creadas</h1>
                                
