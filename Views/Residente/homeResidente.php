@@ -45,11 +45,11 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <main id="dash" class="container position-relative">
         <div class="w-100 mt-5">
             <h2 style="font-size: 2.5rem; letter-spacing: 5px" class="text-center ">Señor Residente</h2>
-            <p class="text-center" style="font-family: 'Roboto', sans-serif !important; font-weight: 300 !important;">Navega entre los distintos modulos en base a las actividades que necesisas realizar</p>
+            <p class="text-center" >Navega entre los distintos módulos en base a las actividades que necesitas realizar</p>
         </div>
         <section class="grid  mx-auto mt-5" style="height: 670px;">
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
-                <h2 class="ps-4">Vehiculos</h2>
+                <h2 class="ps-4">Vehículos</h2>
                 <p class="ps-4">Visualiza y gestiona tus vehículos registrados en el sistema. Además, podrás ver las novedades realizadas por el personal de seguridad para cada uno de tus vehículos.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #FFA031">
                 <a href="ver-vehiculo.php">
@@ -59,8 +59,8 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <img src="./images/carro.png" class="position-absolute" alt="">
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
-                <h2 class="ps-4">Salon comunal</h2>
-                <p class="ps-4">Podras hacer reservas de nuestro salon comunal, para el dia que desees y lo dispongas  .</p>
+                <h2 class="ps-4">Salón comunal</h2>
+                <p class="ps-4">Podras hacer reservas de nuestro salón comunal, para el día que desees.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #05EB00">
                 <a href="salon-comunal.php">
                     <img src="./images/Next.png" alt="">
@@ -81,7 +81,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Publicaciones</h2>
-                <p class="ps-4">Visualiza las publicaciones que la administracion realiza para mantenerte al dia.</p>
+                <p class="ps-4">Visualiza las publicaciones que la administración realiza para mantenerte al dia.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #2FA3FF">
                 <a href="ver-publicaciones.php"> 
                 <img src="./images/Next.png" alt="">

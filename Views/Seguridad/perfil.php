@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+    <title>Servi - Apart</title>
+
     <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
 

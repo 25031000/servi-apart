@@ -54,7 +54,7 @@
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Error al editar la publiacion. Verifica que todos los campos estan completos",
+                text: "Error al editar la publicación. Verifica que todos los campos esten completos",
                 confirmButtonText: "Ok"
             }).then((result)=>{
                 if(result.isConfirmed){

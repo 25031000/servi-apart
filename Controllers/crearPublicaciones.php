@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src="sweetalert2.all.min.js"></script>
-    <title>Document</title>
+    <title>Servi - Apart</title>
+        <!-- icono -->
+        <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -36,7 +38,7 @@ if($titulo !== '' && $descripcion !== ''){
         
         Swal.fire({
             icon: 'success',
-            title: 'Publicacion creada exitosamente',
+            title: 'Publicación creada exitosamente',
             showConfirmButton: false,
             timer: 2000
         }).then((result)=>{
@@ -52,7 +54,7 @@ if($titulo !== '' && $descripcion !== ''){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Error al crear la publicacion, verifica que todos los campos esten completos',
+            text: 'Error al crear la publicación, verifica que todos los campos esten completos',
             confirmButtonText: 'Ok'
         }).then((result)=>{
             if(result.isConfirmed){

@@ -14,7 +14,10 @@ require_once("../Models/consultas.php");
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src="sweetalert2.all.min.js"></script>
-    <title>Document</title>
+    <title>Servi - Apart</title>
+
+<!-- icono -->
+<link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 

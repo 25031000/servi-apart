@@ -24,7 +24,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/pack-styles.css">
     <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
-    <title>Paqueteria</title>
+    <title>Servi - Apart</title>
 </head>
 
 <body>

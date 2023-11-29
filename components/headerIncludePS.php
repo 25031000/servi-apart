@@ -57,7 +57,7 @@ $userInfo = $objetoConsulta->mostrarUsuarioEditarAdmin($user_id)[0];
       <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none"><a style="text-decoration: none;" class="text-black" href="../Seguridad/perfil.php">Perfil</a></button>
 
       <a href="../../Controllers/cerrarSesion.php">
-      <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none">Cerrar Sesion</button>
+      <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none">Cerrar Sesión</button>
   </a>
 
     </div>

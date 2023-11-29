@@ -14,13 +14,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Servi-Apart</title>
+    <title>Servi - Apart</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
@@ -46,25 +46,24 @@
 
 
 
-    <div class="content-wrap">
+    <div class="content-wrap container">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title" style="margin-left: 20px; margin-top: 30px">
-                                <h1 id="publi-title" >Publicaciones Creadas</h1>
-                                <p id="text-title">mostramos las tres publicaciones más recientes que han sido registradas en nuestro módulo </p>
+                                <h1 id="publi-title">Publicaciones Creadas</h1>
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
-                            <div class="page-title" style="margin-top: 30px">
+                            <div class="page-title" style="margin-top: 30px; display:flex; justify-content:end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#" style="color: #18d26e">Residente</a>
+                                        <a href="" style="color: #18d26e; text-decoration:none">Residente</a>
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>
@@ -78,7 +77,7 @@
                 </div>
 
                      
-                <section class="publi-grid row ps-2" id="publi-cars">
+                <section class="publi-grid row ps-2 mt-5" id="publi-cars">
                     <?php
                         cargarPublicacionRes();
                     ?>
@@ -106,6 +105,9 @@
     <script src="../Dashboard/js/lib/menubar/sidebar.js"></script>
     <script src="../Dashboard/js/lib/preloader/pace.min.js"></script>
     <script src="../Dashboard/js/lib/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
 
     <script>

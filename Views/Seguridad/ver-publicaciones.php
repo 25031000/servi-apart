@@ -47,7 +47,7 @@
 
 
 
-    <div class="content-wrap">
+    <div class="content-wrap container">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
@@ -55,17 +55,17 @@
                         <div class="page-header">
                             <div class="page-title" style="margin-left: 20px; margin-top: 30px">
                                 <h1 id="publi-title" >Publicaciones Creadas</h1>
-                                <p id="text-title">mostramos todas las publicaciones que han sido registradas en nuestro módulo </p>
+                                
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
                     <div class="col-lg-4 p-l-0 title-margin-left" style="margin-top: 30px">
                         <div class="page-header">
-                            <div class="page-title" style="margin-left: 20px; margin-top: 25px">
+                            <div class="page-title" style="margin-left: 20px; display: flex; justify-content: end">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#"  style="color: #18d26e" >Seguridad</a>
+                                        <a href=""  style="color: #18d26e; text-decoration:none" >Seguridad</a>
                                     </li>
                                     <li class="breadcrumb-item active">Publicaciones Creadas</li>
                                 </ol>
@@ -79,7 +79,7 @@
                 </div>
 
                      
-                <section class="publi-grid row ps-2" id="publi-cars">
+                <section class="publi-grid row ps-2 mt-5" id="publi-cars">
                     <?php
                         cargarPublicacionRes();
                     ?>

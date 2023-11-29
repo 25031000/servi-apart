@@ -14,7 +14,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Paqueteria</title>
+    <title>Servi - Apart</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
 
 
     <!-- bootstrap -->
@@ -51,7 +54,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
     include '../../components/headerIncludePS.php';
     ?>
 
-<div class="content-wrap  d-flex align-items-center" style="height: 92vh;">
+<div class="content-wrap  container d-flex align-items-center" style="height: 92vh; margin-top:-20px">
             <div class="row ">
                     <div class=" d-md-flex justify-content-between me-5 px-5">
                         <div class="col-lg-8 p-r-0 title-margin-right">
@@ -69,7 +72,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                         <div class="col-lg-4 p-l-0 title-margin-left  ms-5 ms-md-0 mt-3 mt-md-0 justify-content-center justify-content-md-end d-flex align-items-center">
                                     <ol class="breadcrumb mb-0 ">
                                         <li class="breadcrumb-item">
-                                            <a href="#" style="color: #18d26e">Administrador</a>
+                                            <a href="" style="color: #18d26e; text-decoration:none">Administrador</a>
                                         </li>
                                         <li class="breadcrumb-item active">Registro de paqueteria</li>
                                     </ol>

@@ -60,12 +60,12 @@ function cargarVehiculosPS()
         foreach ($result as $f) {
             echo '
             <tr style="border:white"><td style="text-align:center;">' . $f['placa'] . '</td>
-                <td style="text-align:center">' . $f['marca'] . ' </td>
-                <td style="text-align:center">' . $f['referencia'] . '</td>
+                <td style="text-align:center; min-width:150px">' . $f['marca'] . ' </td>
+                <td style="text-align:center; min-width:150px">' . $f['referencia'] . '</td>
                 <td style="text-align:center">' . $f['modelo'] . ' </td>
                 <td style="text-align:center">' . $f['identificacion'] . ' </td>
                 <td style="text-align:center">' . $f['parqueadero'] . ' </td>
-                <td style="text-align:center">' . $f['fecha'] . ' </td>
+                <td style="text-align:center; min-width:200px">' . $f['fecha'] . ' </td>
                 <td style="text-align:center"><a href="ver-novedades.php?placa=' . $f['placa'] . '" class="btn btn-dark"><img src="../../assets/icons/novedades.png" width="25px" style="margin-right:3px"> Ver Historial</a></td>
                 <td style="text-align:center"><a href="fotos-vehiculo.php?placa=' . $f['placa'] . '" class="btn btn-detalles" style="width:45px"><img src="../../assets/icons/mas.png" width="20px" style="margin-right:3px"></a></td>
 
@@ -281,7 +281,7 @@ function cargarNovedadesPS()
             <tr>
                 <td style="text-align:center">' . $i['placa'] . ' </td>
                 <td style="text-align:center; max-width:400px">' . $i['novedad'] . '</td>
-                <td style="text-align:center">' . $i['fecha_rev'] . ' </td>
+                <td style="text-align:center; max-width:150px">' . $i['fecha_rev'] . ' </td>
                 <td style="text-align:center">' . $i['nombres'] . ' ' . $i['apellidos'] . '</td>
                 <td style="text-align:center"><button class="btn btn-detalles" id="' . $i['id_nov'] . '" style="width:45px" onclick="opened(this)" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="../../assets/icons/ver.png" width="20px"</button></td>
                 <td style="text-align:center"><a href="modificar-novedad.php?id_nov=' . $i['id_nov'] . '&placa=' . $i['placa'] . '" class="btn btn-editar" style="border: none; background: #00BF63; color: white; align-items: center; max-width:100px"><img src="../../assets/icons/edita.png" width="17px"> Editar</a>
@@ -383,7 +383,7 @@ function cargarNovedadesEditarPS()
                                     </div>
                                     
                         </div>
-                                                <div class="d-flex flex-column  mt-3">
+                                                <div class="d-flex flex-column  mt-1">
                             <button class="boton-btn">Registrar</button>
                         </div>
                 </form>
