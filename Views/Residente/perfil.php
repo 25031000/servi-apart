@@ -44,7 +44,17 @@
                         <input role="button" id="input_img" accept=".jpeg, .jpg, .png, .gif" type="file">
                     </div>
                     <div class="white_radius ">
-                        <img style="width: 290px; height: 290px;" src="../<?php echo $userInfo['foto'] ?>" alt="">
+                    <?php
+                        if (!$userInfo['foto']) {
+                        ?>
+                            <div style="width: 290px; height: 290px; border-radius: 50%; font-size: 5rem" class=" ml-5 bg bg-primary d-flex align-items-center justify-content-center text-white"><?php echo $userInfo['nombres'][0] ?></div>
+                        <?php
+                        } else {
+                        ?>
+                            <img width="290" height="290" style="border-radius: 50%;" class="ml-3 ml-5" src="../<?php echo $userInfo['foto'] ?>" alt="">
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="username_wrapper">

@@ -58,7 +58,18 @@ $userInfo = $objetoConsulta->mostrarUsuarioEditarAdmin($user_id)[0];
       <img id="menu-btn" width="24" height="24" role="button" src="icons/Menu.png" alt="">
     </div>
     <div class="d-flex ">
-      <img width="42" height="42" class="rounded-5 ml-3 ml-5" src="../<?php echo $userInfo['foto'] ?>" alt="">
+      <?php  
+        if(!$userInfo['foto']){
+          ?>
+            <div style="width: 42px; height: 42px" class="rounded-5 ml-5 bg bg-primary d-flex align-items-center justify-content-center text-white"><?php echo $userInfo['nombres'][0] ?></div>
+          <?php
+        }else{
+          ?>
+           <img width="42" height="42" class="rounded-5 ml-3 ml-5" src="../<?php echo $userInfo['foto'] ?>" alt=""> 
+          <?php
+        }
+      ?>
+      
       <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none"><a style="text-decoration: none;" class="text-black" href="../Residente/perfil.php">Perfil</a></button>
       <a href="../../Controllers/cerrarSesion.php">
         <button class="px-4 py-2 rounded-2 bg-none text-black perfil-btn ms-3 border-none">Cerrar Sesión</button>
