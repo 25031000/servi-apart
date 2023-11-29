@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <title>Servi - Apart</title>
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
+    <link rel="stylesheet" href="../../assets/css/pack-styles.css">
    
 
 </head>
@@ -29,22 +30,28 @@
     include '../../components/headerInclude.php';
 ?>
 
-
 <div class="container">
 <h2 class="my-5 ms-5 mb-3 d-block w-100 text-center"><strong>Registrar Petición</strong></h2>
+<p class="text-center" style="padding-bottom:30px">Aquí puedes presentar todas tus peticiones, quejas o preguntas a los administradores de tu conjunto.</p>
 <div class="row">
-<form class="row g-3" action="../../Controllers/registrarPeticion.php?id=<?php echo $id;?>" method="post">
+  <div class="col-md-6">
+<form class="row g-3 pack-form" action="../../Controllers/registrarPeticion.php?id=<?php echo $id;?>" method="post">
   <div class="d-flex flex-column mb-3">
     <label class="form-label">Título</label>
-    <input type="text" name="titulo" class="form-control" id="inputEmail4">
+    <input type="text" name="titulo" class="form-control input" id="inputEmail4">
   </div>
   <div class="d-flex flex-column mb-3">
     <label class="form-label">Descripción</label>
     <textarea name="descripcion" rows="4" cols="40" placeholder="" class="rounded-3 input"></textarea> 
     <div class="d-flex flex-column  mt-3">
-      <div class="row">
-        <button class="boton-btn">Registrar</button>  
-        <button class="boton-btn"><a href="ver-peticiones.php">Mis registros </a></button>                              
+     <div class="row">
+     <div class="col-md-6">
+        <button class="btn btn-primary">Enviar</button>                           
+      </div>
+      <div class="col-md-6">
+        <button class="btn" style="background-color: green" ><a href="ver-peticiones.php?id=<?php echo $id;?>" style="color: #FFFFFF; text-decoration: none">Mis registros </a></button>                              
+      </div>
+        </div>
     </div>
     </div>
 

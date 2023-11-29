@@ -854,6 +854,7 @@ function cargarPeticiones()
             <td>' . $f['hora'] . ' </td>
          
             <td><a href="../../Controllers/eliminarPeticion.php?id_peticion=' . $f['id_peticion'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style=" display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:6px">  Eliminar</a></td>
+            <td><a href="../../Controllers/detallesPeticion.php?id_peticion=' . $f['id_peticion'] . '" class="btn btn-warning"data-toggle="tooltip" data-placement="left"  style=" display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/ver.png" width="20px" style="margin-right:6px">  Detalles</a></td>
         </tr>     
             ';
         }

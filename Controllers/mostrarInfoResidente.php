@@ -95,34 +95,44 @@ function cargarPublicacionesRes()
 function cargarPeticionesRes()
 {
 
-
+    $identificacion = $_SESSION['id'];
     $objConsultas = new Consultas();
-    $result = $objConsultas->mostrarPeticiones();
+    $result = $objConsultas->mostrarPeticionesRes($identificacion);
 
     if (!isset($result)) {
-        echo '<h2> No tienes peticiones registradas </h2>';
+        echo '<h2> No tienes peticiones registradas.</h2>';
     } else {
         $count = count($result);
 
         foreach ($result as $f) {
             echo '
-          
-            <div class="col-md-4" style="padding-bottom: 30px;">
-                        
-            <div class="card text-center">
-            <div class="card-header" style="background-color: #76ffbb; color: #00341d;">
-               ID de petición: '.$f['id_peticion'].'
-            </div>
-            <div class="card-body">
-              <h5 class="card-title" >'.$f ['titulo'].'</h5>
-              <p class="card-text">'.$f ['descripcion'].'</p>
-            </div>
-            <div class="card-footer text-body-secondary" style="background-color: #b2ffd9;">
-              2 days ago
-            </div>
-          </div>
-          </div>
-       
+                            
+                         <article class="col-md-12  box-cont p-4 px-4 my-5 h-auto border" style="-webkit-border-radius: 0.625rem; margin-left: 30%; width: 770px; -moz-border-radius: 0.625rem; border-radius: 0.625rem; box-shadow: 6px 6px 36px #e3e3e3, -6px -6px 36px #ffffff">
+                         <h4 class="text-center" style=""><strong>ID de la petición N°'.$f['id_peticion'].'</strong></h4>
+                            <div class=" p-2 d-flex " > 
+                            
+                            <h2 class="fw-bold my-auto  w-100  text-wrap" style="font-size: 1rem; font-weight: 600 ">
+                            ' . $f['titulo'] . '
+                            </h2>
+
+                            <a href="modificar-peticion.php">  
+                            <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
+                                <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
+                            </div> </a>
+
+                            </div>
+                            <main class=" p-2 d-flex flex-column justify-content-center">
+                                <p class=" my-auto" style="font-size: 1rem">' . $f['descripcion'] . '</p>
+                            </main>
+                            <footer class=" p-2 m-0" style="background: transparent; height: 21%">
+                            <section class="w-100 m-0 p-0 d-flex align-items-center ">
+                                    <img style="width: 20px; height: 20px" src="./icons/calendario.png">
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['fecha'] . '</small>
+                                    <img style="width: 20px; height: 20px" src="./icons/reloj-bold.png">
+                                    <small class="text-black-50 mx-2 " style="font-size: 0.875rem; font-weight: 300"> ' . $f['hora'] . '</small>
+                            </section>
+                            </footer>
+                        </article>
                     ';
         }
     }
