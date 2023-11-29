@@ -10,6 +10,11 @@ echo "\xEF\xBB\xBF";
     <thead>
     <thead>
         <tr class="d-flex row border rounded-top rounded-3">
+        <th class="d-flex col-md-2">
+                <div
+                    style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">
+                </div> <span class="ms-2">ID Reserva</span>
+            </th>
             <th class="d-flex col-md-2">
                 <div
                     style="padding-bottom: 8px; border-bottom: 3px solid #18d26e; justify-content: center; display: flex; align-items:center; width: 45px; height: 45px;">

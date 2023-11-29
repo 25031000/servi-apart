@@ -24,7 +24,7 @@ require_once("../Models/consultas.php");
 
         html,
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Varela Round', sans-serif;
         }
     </style>
 </head>
@@ -38,9 +38,8 @@ require_once("../Models/consultas.php");
     $mesas = $_POST['mesas'] ?? null;
     $sillas = $_POST['sillas'] ?? null;
     $tipo_evento = $_POST['tipo_evento'] ?? null;
-
     $identificacion = $_GET['id'] ?? null;
-
+    
 
     if ($identificacion !== '' && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' && $tipo_evento !== '') {
         $objConsultas = new Consultas();
@@ -51,7 +50,7 @@ require_once("../Models/consultas.php");
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'ese dia ya esta reserva, escoje otro',
+                    text: 'Este dia ya se encuentra reservado, elige otro',
                     ConfirmButtom: 'Ok'
 
                 }).then((result) => {

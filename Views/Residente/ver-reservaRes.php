@@ -1,5 +1,5 @@
 <?php
-            require_once("../../Models/seguridadResidente.php"); 
+require_once("../../Models/seguridadResidente.php");
 ?>
 
 <!DOCTYPE html>
@@ -18,38 +18,43 @@
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <!-- boxicons -->
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <title>Ver reservas</title>
+    <title>Servi - Apart</title>
+
+    <!-- icono -->
+    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
 </head>
 
 <body>
     <?php
-    
-            /* session_start(); */
-            $identificacion = $_SESSION['id'];
 
-            
+    /* session_start(); */
+    $identificacion = $_SESSION['id'];
+
+
 
     //menu
     include '../../components/menu.php';
     //header
     include '../../components/headerInclude.php';
-?>
+    ?>
 
-<main class="container-fluid primary d-flex flex-wrap justify-content-center"> <!-- Cambia 'rimary' por 'primary' en la clase -->
-    <div class="col-md-6">
-        <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>Reservas realizadas</strong></h2>
-    </div>
-    <div class="col-md-6 text-md-end">
-        <a href="salon-comunal.php" ><img src="../client-site/assets/img/Return1.png" alt="regresar" style="width: 32px;margin-top:25px;margin-right:25px"></a>
-    </div>
+    <main class="container-fluid primary d-flex flex-wrap justify-content-center">
+        <!-- Cambia 'rimary' por 'primary' en la clase -->
+        <div class="col-md-6">
+            <h2 class="my-5 ms-5 mb-3 d-block w-100"><strong>Reservas realizadas</strong></h2>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <a href="salon-comunal.php"><img src="../client-site/assets/img/Return1.png" alt="regresar"
+                    style="width: 32px;margin-top:25px;margin-right:25px"></a>
+        </div>
 
         <?php
-            require_once "../../Controllers/mostrarInfoResidente.php";
-            require_once("../../Models/seguridadResidente.php");
-            require_once("../../Models/consultas.php");
+        require_once "../../Controllers/mostrarInfoResidente.php";
+        require_once("../../Models/seguridadResidente.php");
+        require_once("../../Models/consultas.php");
 
-            
-            cargarReservaRes($identificacion);
+
+        cargarReservaRes($identificacion);
         ?>
 
     </main>
