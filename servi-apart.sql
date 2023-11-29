@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2023 a las 04:39:59
+-- Tiempo de generación: 29-11-2023 a las 04:46:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -126,6 +126,24 @@ CREATE TABLE `reserva_salon` (
   `sillas` int(10) NOT NULL,
   `tipo_evento` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Volcado de datos para la tabla `reserva_salon`
+--
+
+INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
+(35, 11105687, '2023-11-30', '15:01:00', '03:00:00', 14, 25, 'Matrimonio'),
+(36, 11105687, '2023-12-08', '15:00:00', '03:00:00', 12, 30, 'Baby shower'),
+(37, 11105687, '2023-12-10', '15:00:00', '03:00:00', 13, 30, 'Aniversario'),
+(38, 1005689221, '2023-12-09', '12:39:00', '03:00:00', 14, 25, 'Taller de arte'),
+(39, 1005689221, '2023-12-19', '18:00:00', '03:00:00', 13, 35, 'Primera comunion'),
+(40, 1005689221, '2023-12-17', '00:40:00', '03:00:00', 10, 30, 'Expocion artesanias'),
+(41, 1025689451, '2023-12-12', '00:00:00', '03:00:00', 8, 20, 'Baby shower'),
+(42, 1025689451, '2023-11-15', '16:00:00', '03:00:00', 10, 25, 'Reunion comunitaria'),
+(43, 1025689451, '2023-12-15', '16:00:00', '03:00:00', 6, 12, 'Baby shower'),
+(44, 1065984556, '2023-12-02', '14:00:00', '03:00:00', 10, 25, 'Expocion artesanias'),
+(45, 1065984556, '2023-12-03', '16:00:00', '03:00:00', 13, 30, 'Fiesta de cumpleaños'),
+(46, 1065984556, '2023-12-07', '19:00:00', '03:00:00', 15, 35, 'Presentacion teatral');
 
 -- --------------------------------------------------------
 
@@ -287,7 +305,7 @@ ALTER TABLE `publicaciones`
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restricciones para tablas volcadas
