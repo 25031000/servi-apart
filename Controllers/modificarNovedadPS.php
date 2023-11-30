@@ -63,7 +63,7 @@
                 confirmButtonText: "Ok"
             }).then((result)=>{
                 if(result.isConfirmed){
-                   location.href="../Views/Seguridad/ver-vehiculo.php"; 
+                   location.href="../Views/Seguridad/modificar-novedad.php?id_nov='.$id_nov.'"; 
                 }
                 
             })

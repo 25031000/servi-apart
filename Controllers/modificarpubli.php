@@ -58,7 +58,7 @@
                 confirmButtonText: "Ok"
             }).then((result)=>{
                 if(result.isConfirmed){
-                   location.href="../Views/Administrador/crear-publicacion.php"; 
+                   location.href="../Views/Administrador/modificar-publi.php?id_publi='.$id_publi.'"; 
                 }
                 
             })

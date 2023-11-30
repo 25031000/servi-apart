@@ -45,7 +45,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
 
-    <div class="content-wrap">
+    <div class="content-wrap container">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">

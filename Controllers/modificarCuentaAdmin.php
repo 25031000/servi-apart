@@ -62,7 +62,7 @@
                 confirmButtonText: "Ok"
             }).then((result)=>{
                 if(result.isConfirmed){
-                   location.href="../Views/Administrador/ver-usuario.php"; 
+                   location.href="../Views/Administrador/perfil.php?id='.$identificacion.'"; 
                 }
                 
             })

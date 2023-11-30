@@ -103,13 +103,17 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>
-                alert("Infomación de usuario actualizada ;)")
-            </script>';
-
-        echo "<script>
-                location.href = '../Views/Administrador/perfil.php?id=$id'
-            </script>";
+        echo '
+        <script>
+            Swal.fire({
+                icon: "success",
+                title:"Información actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                location.href="../Views/Administrador/perfil.php?id=' . $id . '";
+            });
+        </script>';
     }
 
     public function insertarUserAdmin($identificacion, $tipo_doc, $nombres, $apellidos, $email, $telefono, $claveMd, $rol, $estado, $torre, $apartamento, $foto)
@@ -439,7 +443,7 @@ class Consultas
                 showConfirmButton: false,
                 timer: 2000
             }).then(() => {
-                location.href="../Views/Administrador/ver-usuario.php";
+                location.href="../Views/Administrador/perfil.php?id=' . $identificacion . '";
             });
         </script>';
     }
@@ -480,8 +484,18 @@ class Consultas
         $result->bindParam(":id_publi", $id_publi);
 
         $result->execute();
-        echo '<script>alert("Publicacion Eliminada")</script>';
-        echo "<script>location.href = '../Views/Administrador/ver-publicaciones.php'</script>";
+        echo '
+        <script>
+        
+        Swal.fire({
+            icon: "success",
+            title:"Publicacion Eliminada",
+            showConfirmButton: false,
+            timer: 2000
+        }).then((result)=>{
+            location.href="../Views/Administrador/ver-publicaciones.php";
+        })
+    </script>';
     }
 
 
@@ -519,7 +533,7 @@ class Consultas
 
         $result->execute();
 
-     
+
         echo '
         <script>
         
@@ -582,6 +596,42 @@ class Consultas
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
+        // Obtener información actual del vehículo
+        $consultarVehiculo = 'SELECT * FROM vehiculo WHERE placa=:placa';
+        $resultVehiculo = $conexion->prepare($consultarVehiculo);
+        $resultVehiculo->bindParam(":placa", $placa);
+        $resultVehiculo->execute();
+        $vehiculoActual = $resultVehiculo->fetch();
+
+        // Verificar cambios en el estacionamiento
+        if ($vehiculoActual['parqueadero'] != $parqueadero) {
+            // Verificamos que el parqueadero asignado no esté relacionado a otro vehiculo
+            $consultarParqueadero = 'SELECT * FROM vehiculo WHERE parqueadero=:parqueadero';
+            $resultParqueadero = $conexion->prepare($consultarParqueadero);
+            $resultParqueadero->bindParam(":parqueadero", $parqueadero);
+            $resultParqueadero->execute();
+            $fParqueadero = $resultParqueadero->fetch();
+
+            if ($fParqueadero) {
+                echo '<script>
+                    
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "El parqueadero que ingresaste ya está asignado a otro vehiculo. Verifica que este bien",
+                        confirmButtonText: "Ok"
+                    }).then((result)=>{
+                        if(result.isConfirmed){
+                           location.href="../Views/Administrador/modificar-vehiculo.php?placa=' . $placa . '"; 
+                        }
+                        
+                    })
+                </script>';
+                return; // Detener la ejecución si hay un error
+            }
+        }
+
+        // Realizar la actualización
         $actualizar = " UPDATE vehiculo SET parqueadero=:parqueadero, marca=:marca, referencia=:referencia, modelo=:modelo WHERE placa=:placa ";
         $result = $conexion->prepare($actualizar);
 
@@ -605,7 +655,6 @@ class Consultas
                 location.href="../Views/Administrador/ver-vehiculo.php";
             })
         </script>';
-
     }
 
     public function mostrarVehiculoEditarAdmin($placa)
@@ -1140,7 +1189,7 @@ class Consultas
         $consultar = "SELECT * FROM peticiones WHERE identificacion=:identificacion";
 
         $result = $conexion->prepare($consultar);
-        
+
         $result->bindParam("identificacion", $identificacion);
 
         $result->execute();
@@ -1470,8 +1519,17 @@ class Consultas
 
         $result->execute();
 
-        echo '<script>alert("Clave Actualizada")</script>';
-        echo "<script>location.href = '../Views/Administrador/perfil.php?id=$identificacion'</script>";
+        echo '
+        <script>
+            Swal.fire({
+                icon: "success",
+                title:"Clave Actualizada",
+                showConfirmButton: false,
+                timer: 2000
+            }).then(() => {
+                location.href="../Views/Administrador/perfil.php?id=' . $identificacion . '";
+            });
+        </script>';
     }
 
     public function getUserByApartament(string $apartamento, string $torre): int

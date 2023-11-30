@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-    <script src="sweetalert2.all.min.js"></script>
     <title>Servi - Apart</title>
-
     <!-- icono -->
-    <link rel="shortcut icon" href="../../assets/icons/ico.ico">
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-    *, html, body{
-        font-family: 'Montserrat', sans-serif;
+    *,
+    html,
+    body {
+        font-family: 'Varela Round', sans-serif;
     }
 </style>
 <body>

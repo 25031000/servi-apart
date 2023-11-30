@@ -15,9 +15,9 @@ require_once("../Models/consultas.php");
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src="sweetalert2.all.min.js"></script>
     <title>Servi - Apart</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 
-<!-- icono -->
-<link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -39,7 +39,7 @@ require_once("../Models/consultas.php");
     $sillas = $_POST['sillas'] ?? null;
     $tipo_evento = $_POST['tipo_evento'] ?? null;
     $identificacion = $_GET['id'] ?? null;
-    
+
 
     if ($identificacion !== '' && $dia_reserva !== '' && $hora_inicio !== '' && $hora_finalizacion !== '' && $mesas !== '' && $sillas !== '' && $tipo_evento !== '') {
         $objConsultas = new Consultas();

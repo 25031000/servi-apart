@@ -104,7 +104,7 @@ function cargarUsuarioEditar()
     foreach ($result as $f) {
         echo '
         
-        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST"  class="p-5 pack-form">
+        <form action="../../Controllers/actualizarUserAdmin.php" method="POST"  class="p-5 pack-form">
         <div class="row">
         <div class="d-flex flex-column mb-3">
             <h2 style="font-size: 1.7em;">Datos de Usuario</h2>
@@ -153,7 +153,6 @@ function cargarUsuarioEditar()
                     <option value="' . $f['estado'] . '"> ' . $f['estado'] . ' </option>
                     <option value="Activo">Activo</option>
                     <option value="Pendiente">Pendiente</option>
-                    <option value="Bloqueado">Bloqueado</option>
                 </select>
             </div>
             <div class="form-group col-md-4">
@@ -656,7 +655,7 @@ function cargarVehiculoEditar()
 
                                         <div class="form-group col-md-4  labelid" style="display:block">
                                         <label>Estacionamiento:</label>
-                                        <input style="width:100%" value="' . $f['parqueadero'] . '" type="text" class="rounded-3 input" placeholder="Ej: B17"
+                                        <input style="width:100%" value="' . $f['parqueadero'] . '" type="text" class="rounded-3 input mi-input" placeholder="Ej: B17"
                                             name="parqueadero">
                                         </div>
                                         <div class="form-group col-md-4 ">
@@ -767,7 +766,7 @@ function cargarPublicaciones()
             <tr>
             
             <td>' . $f['titulo'] . ' </td>
-            <td>' . $f['descripcion'] . ' </td>
+            <td style="max-width:650px">' . $f['descripcion'] . ' </td>
          
             <td><a  href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
             <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>

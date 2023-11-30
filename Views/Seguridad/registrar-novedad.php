@@ -98,7 +98,7 @@ require_once("../../Controllers/mostrarInfoGuarda.php");
                             </div>
                             <div class="form-group col-md-6 campos_vehiculo">
                                 <label>Placa:</label>
-                                <input style="width:100%" type="text" class="rounded-3 input" placeholder="Ej: UZI974"
+                                <input style="width:100%" type="text" class="rounded-3 input mi-input" placeholder="Ej: UZI974"
                                     name="placa" id="mi-input">
                             </div>
 

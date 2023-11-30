@@ -41,7 +41,7 @@
     //VALIDAMOS QUE LOS CAMPOS ESTEN COMPLETAMENTE DILIGENCIADOS
     if (
         strlen($placa) > 0 && strlen($marca) > 0
-        && strlen($referencia) > 0 && strlen($modelo) > 0
+        && strlen($referencia) > 0 && strlen($modelo) > 0 && strlen($parqueadero)
     ) {
 
         //CREAMOS EL OBJETO A PARTIR DE UNA CLASE
@@ -61,7 +61,7 @@
                 confirmButtonText: "Ok"
             }).then((result)=>{
                 if(result.isConfirmed){
-                   location.href="../Views/Administrador/registrar-vehiculo.php"; 
+                   location.href="../Views/Administrador/modificar-vehiculo.php?placa='.$placa.'"; 
                 }
                 
             })
