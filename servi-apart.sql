@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2023 a las 04:46:17
+-- Tiempo de generación: 30-11-2023 a las 19:32:19
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -172,15 +172,15 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
 (11105687, 'PASAPORTE', 'Laura Beatriz', 'Ramírez Soto', 'sotolau1090@gmail.com', '3115689474', 'c67d9df7e2ae67e043532bb0ce993777', 'Residente', 'Activo', '../Uploads/Usuarios/user6.jpg', 'A', '303'),
-(1000056356, 'CC', 'Claudia Isabel', 'Torres Martínez', 'clauisabel1980@gmail.com', '3100156891', '0a98cf1edd627edc737b8e083cb14554', 'Seguridad', 'Activo', '../Uploads/Usuarios/user9.jpg', NULL, NULL),
-(1005689221, 'CC', 'Santiago', 'Peralta Torres ', 'santiago901pe@gmail.com', '3224678954', '8c2d7eca06767ef7e484afdfc674ddce', 'Residente', 'Activo', '../Uploads/Usuarios/user2.jpg', 'B', '301'),
-(1022352265, 'CC', 'Alejandro José', 'Pérez Ramírez', 'guardaseguridad@gmail.com', '3215689212', '2a460be978d0bfcfeb85c6698ba78e86', 'Seguridad', 'Activo', '../Uploads/Usuarios/user7.png', '', ''),
-(1025689451, 'CC', 'Carlos Eduardo ', 'González Martinez', 'camartinezeduar1970@gmail.com', '3156894517', 'c6b6178da5cf1163374b7e5846b35a79', 'Residente', 'Activo', '../Uploads/Usuarios/user3.jpg', 'B', '102'),
+(1000056356, 'CC', 'Claudia Isabel', 'Torres Martínez', 'clauisabel1980@gmail.com', '3100156891', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user9.jpg', NULL, NULL),
+(1005689221, 'CC', 'Santiago', 'Peralta Torres ', 'santiago901pe@gmail.com', '3224678954', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user2.jpg', 'B', '301'),
+(1022352265, 'CC', 'Alejandro José', 'Pérez Ramírez', 'guardaseguridad@gmail.com', '3215689212', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user7.png', '', ''),
+(1025689451, 'CC', 'Carlos Eduardo ', 'González Martinez', 'camartinezeduar1970@gmail.com', '3156894517', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user3.jpg', 'B', '102'),
 (1056892568, 'CE', 'María Alejandra ', 'Herrera Torres', 'herreramaria876a@outlook.com', '3111456894', '12a62b0c967a5b44088cc789a60ab628', 'Residente', 'Activo', '../Uploads/Usuarios/user4.jpeg', 'A', '202'),
-(1065898452, 'CC', 'Gabriel Andrés', 'Mendoza López', 'gabilopez987@hotmail.com', '3165256891', 'cff05c1be554757c2ae7b51a9a3e4a2b', 'Seguridad', 'Activo', '../Uploads/Usuarios/user8.jpg', NULL, NULL),
-(1065984556, 'CC', 'Ana Carolina', 'López Mendoza', '09809anacarol@hotmail.com', '3205896521', '4914398a07630b3125c0f1f5cc9b2802', 'Residente', 'Activo', '../Uploads/Usuarios/user5.jpg', 'A', '102'),
-(1264565423, 'CC', 'Carlos Eduardo', 'González Martínez', 'admin@gmail.com', '3156453223', '102c059187935f48de43e7060e0d0671', 'Administrador', 'Activo', '../Uploads/Usuariosuser10.jpg', NULL, NULL),
-(1876219012, 'CC', 'Juan Andrés', 'Ramirez Orejuela', 'juananra012@gmail.com', '3245678912', 'eb87cad271826e0a25a5b016548e9f35', 'Residente', 'Activo', '../Uploads/Usuarios/user1.jpg', 'A', '201');
+(1065898452, 'CC', 'Gabriel Andrés', 'Mendoza López', 'gabilopez987@hotmail.com', '3165256891', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user8.jpg', NULL, NULL),
+(1065984556, 'CC', 'Ana Carolina', 'López Mendoza', '09809anacarol@hotmail.com', '3205896521', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user5.jpg', 'A', '102'),
+(1264565423, 'CC', 'Carlos Eduardo', 'González Martínez', 'admin@gmail.com', '3156453223', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariosuser10.jpg', NULL, NULL),
+(1876219012, 'CC', 'Juan Andrés', 'Ramirez Orejuela', 'juananra012@gmail.com', '3245678912', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user1.jpg', 'A', '201');
 
 -- --------------------------------------------------------
 
