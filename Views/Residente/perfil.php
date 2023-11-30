@@ -137,7 +137,7 @@
                                     <input type="radio" name="type" value="PASAPORTE">
                                 </div>
                             </section>
-
+                            
                         </div>
                     </section>
 
@@ -174,6 +174,7 @@
             echo '
                 <script>
                     const item = document.querySelector("input[value=CE]");
+                    item.checked = true;
                     item.parentElement.style.boxShadow = "0 0 0 0.2rem rgba(0, 255, 98, 0.308)";
                     item.parentElement.style.boderColor = "#00ff37"
                 </script>
@@ -184,7 +185,7 @@
             echo '
                 <script>
                     const item = document.querySelector("input[value=PASAPORTE]");
-            
+                    item.checked = true;
                     item.parentElement.style.boxShadow = "0 0 0 0.2rem rgba(0, 255, 98, 0.308)";
                     item.parentElement.style.boderColor = "#00ff37"
                 </script>
@@ -255,6 +256,7 @@
                     const input = item.childNodes[3]
 
                     input.checked ? input.checked = false : input.checked = true;
+                    
                 })
             });
 
