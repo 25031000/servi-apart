@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2023 a las 19:32:19
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 01-12-2023 a las 20:50:56
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `inventario_salon` (
   `id_inv` int(11) NOT NULL,
   `num_sillas` int(11) NOT NULL,
   `num_mesas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `novedad_vehiculo` (
   `identificacion` int(11) NOT NULL,
   `fecha_rev` datetime NOT NULL DEFAULT current_timestamp(),
   `fotoR` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `novedad_vehiculo`
@@ -72,7 +72,7 @@ CREATE TABLE `paqueteria` (
   `usuario` int(11) DEFAULT NULL,
   `remitente` varchar(50) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `peticiones` (
   `titulo` varchar(60) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
   `identificacion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -99,16 +99,19 @@ CREATE TABLE `publicaciones` (
   `descripcion` varchar(500) NOT NULL,
   `fecha` date NOT NULL DEFAULT current_timestamp(),
   `hora` time NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `publicaciones`
 --
 
 INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`, `hora`) VALUES
-(3, 'Agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion. ', '2023-09-14', '00:00:00'),
-(9, 'Remodelacion en el edificio', 'Se observaron problemas en la red electrica', '2023-09-19', '00:00:00'),
-(10, 'Fuga de gas', 'Fuga de gas en el apartamento 601-torre 5', '2023-09-19', '00:00:00');
+(11, 'Novenas navideñas ', 'El dia 16 diciembre se dara comienso ala las novenas navideñas, las culaes todos los residentes estaran invitados a participar.', '2023-12-01', '14:38:04'),
+(12, 'tema de luz ', 'Hubo problemas con electricidad en el conjunto, por lo tanto se hará mantenimiento el día 15 de diciembre .', '2023-12-01', '14:41:24'),
+(13, 'reunion de lideres ', 'El día 20 de enero llevaremos acabo una Reunión entre todos los lideres del conjunto, para abarcar unos temas de mucho importancia ', '2023-12-01', '14:43:10'),
+(14, 'Agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion.', '2023-12-01', '14:48:21'),
+(15, 'electricidad ', 'Se observaron problemas en la red electrica', '2023-12-01', '14:49:00'),
+(16, 'Fuga de gas ', 'Fuga de gas en el apartamento 601-torre 5', '2023-12-01', '14:49:32');
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,7 @@ CREATE TABLE `reserva_salon` (
   `mesas` int(10) NOT NULL,
   `sillas` int(10) NOT NULL,
   `tipo_evento` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `reserva_salon`
@@ -164,7 +167,7 @@ CREATE TABLE `usuarios` (
   `foto` varchar(200) DEFAULT NULL,
   `torre` varchar(15) DEFAULT NULL,
   `apartamento` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -200,7 +203,7 @@ CREATE TABLE `vehiculo` (
   `foto3` varchar(200) DEFAULT NULL,
   `foto4` varchar(200) DEFAULT NULL,
   `parqueadero` varchar(10) DEFAULT 'NA'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `vehiculo`
@@ -299,7 +302,7 @@ ALTER TABLE `peticiones`
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `reserva_salon`
