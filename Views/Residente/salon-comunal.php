@@ -41,7 +41,24 @@ $sesionId = $_SESSION['id'];
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../../assets/css/vehiculo-styles.css">
     <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
-
+    <script defer>
+        window.onload = () => {
+            let dom = document.querySelector('.pignose-calendar-week-sun')
+            let mon = document.querySelector('.pignose-calendar-week-mon')
+            let tues = document.querySelector('.pignose-calendar-week-tue')
+            let wed = document.querySelector('.pignose-calendar-week-wed')
+            let thur = document.querySelector('.pignose-calendar-week-thu')
+            let fri = document.querySelector('.pignose-calendar-week-fri')
+            let sat = document.querySelector('.pignose-calendar-week-sat')
+            dom.innerHTML = 'DOM';
+            mon.innerHTML = 'LUN';
+            tues.innerHTML = 'MAR';
+            wed.innerHTML = 'MIE';
+            thur.innerHTML = 'JUE';
+            fri.innerHTML = 'VIE';
+            sat.innerHTML = 'SAB';
+        }
+    </script>
 </head>
 
 <body>
