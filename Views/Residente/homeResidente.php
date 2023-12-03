@@ -92,7 +92,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Peticiones</h2>
-                <p class="ps-4">Realiza las preguntas, quejas o reclamos, un administrador las leera y tratará de solucionarlo.</p>
+                <p class="ps-4">Realiza las preguntas, presenta tus quejas o reclamos, un administrador las leera y tratará de solucionarlo.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #FF34C5">
                 <a href="registrar-peticion.php"> 
                 <img src="./images/Next.png" alt="">
@@ -103,7 +103,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
                 <h2 class="ps-4">Pagos</h2>
-                <p class="ps-4">En este apartado pordrás diligenciar el respectivo formulario para realizar tus pagos correspondientes.</p>
+                <p class="ps-4">En este apartado pordrás diligenciar el formulario para realizar tus pagos correspondientes.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #EFF400">
                 <a href="pagos.php"> 
                 <img src="./images/Next.png" alt="">

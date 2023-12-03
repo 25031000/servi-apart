@@ -115,7 +115,7 @@ function cargarPeticionesRes()
                             ' . $f['titulo'] . '
                             </h2>
 
-                            <a href="modificar-peticion.php">  
+                            <a href="modificar-peticion.php?id_peticion='.$f['id_peticion'].'">  
                             <div id="go_to" role="button" class="p-2 d-flex justify-content-center align-items-center flex-shrink rounded-5 ">
                                 <img id="diagonal-arrow" width="20" height="20" src="./icons/arrow.png" >
                             </div> </a>
@@ -136,6 +136,62 @@ function cargarPeticionesRes()
                     ';
         }
     }
+}
+
+
+function cargarPeticionEditar()
+{
+
+    $id_peticion = $_GET['id_peticion'];
+
+    //enviamos la pk A UNA funcion de la clase consultas 
+
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPeticionEditar($id_peticion);
+
+    //pintamos la informacion  consultada en el artefacto (FORM)
+
+    foreach ($result as $f) {
+        echo '
+        <div class="col-lg-11 pt-3 ">
+        <main class="w-100 row px-5 gap-4 flex-nowrap align-items-center py-4" >
+            <form action="../../Controllers/modificarpeticion.php?id_peticion='.$f['id_peticion'].' " class="col-md-12 p-5 pack-form h-75" method="post">
+            <div class="d-flex flex-column mb-3">
+                    <h2 style="font-size: 1.7em;">Editar informacion</h2>
+                </div>  
+
+                <div class="d-flex flex-column mb-3">
+                    <label for="" class="py-2">Titulo</label>
+                    <input type="text" name="titulo" placeholder="Ej: acueducto " value="' . $f['titulo'] . '" class="rounded-3 input">
+                </div>
+
+                <div class="d-flex flex-column mb-3">
+        <label>Descripcion:</label>
+        <textarea style="width:100%;  max-height: 120px; min-height:45px" type="text" class="rounded-3 input" placeholder="Ej: El dia de hoy o habra agua por problemas en el acueducto"
+            name="descripcion">'.$f['descripcion'].'</textarea>
+     </div>
+
+                <div class="d-flex flex-column  mt-3">
+                    <button class="boton-btn">Modificar</button>                        
+                </div>
+
+                
+            </form>
+             
+            </div>
+        </main>
+    </div>
+</div>
+</div>
+                       ';
+
+                        
+
+
+
+
+    }
+
 }
 
 
