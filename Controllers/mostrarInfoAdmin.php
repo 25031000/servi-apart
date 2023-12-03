@@ -861,6 +861,29 @@ function cargarPeticiones()
     }
 }
 
+function cargarPeticionesPDF()
+{
+    $objConsultas = new Consultas();
+    $result = $objConsultas->mostrarPeticiones();
+
+    if (!isset($result)) {
+        echo '<h2> NO HAY PETICIONES REGISTRADAS </h2>';
+
+    } else {
+        foreach ($result as $f) {
+            echo '
+            <tr>
+            <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_peticion'] . '</th>
+            <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['titulo'] . '</td>
+            <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['descripcion'] . '</td>
+           
+               
+            </tr>     
+            ';
+        }
+    }
+}
+
 
 
 

@@ -139,10 +139,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <div style="display: flex; justify-content: end; width: 98%">
                 
                 <button id="GenerarPDF" class="btn p-2 btn-pdf "><a class="text-light"
-                        href="../../services/generarpdfpubli.php" target="_blank">Generar
+                        href="../../services/generarpdfPeticiones.php" target="_blank">Generar
                         PDF</a></button>
                 <button id="GenerarExcel" class="btn p-2 btn-excel mx-3 "><a class="text-light"
-                        href="../../services/generarexelpubli.php" target="_blank">Generar Excel</a></button>
+                        href="../../services/generarexcelPeticiones.php" target="_blank">Generar Excel</a></button>
                
 
                 </div>
