@@ -45,7 +45,7 @@
   </div>
   <div class="d-flex flex-column mb-3">
     <label class="form-label">Descripción</label>
-    <textarea name="descripcion" rows="4" cols="40" placeholder="" class="rounded-3 input"></textarea> 
+    <textarea name="descripcion" rows="4" cols="40" placeholder="" class="rounded-3 input" style="max-height:300px"></textarea> 
     <div class="d-flex flex-column  mt-3">
      <div class="row">
      <div class="col-md-6">

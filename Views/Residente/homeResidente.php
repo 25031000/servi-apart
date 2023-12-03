@@ -59,7 +59,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <img src="./images/carro.png" class="position-absolute" alt="">
             </div>
             <div class="rounded-4 position-relative d-flex flex-column justify-content-center">
-                <h2 class="ps-4">Salón comunal</h2>
+                <h2 class="ps-4">Salón Comunal</h2>
                 <p class="ps-4">Podras hacer reservas de nuestro salón comunal, para el día que desees.</p>
                 <span role="button" class="p-1 position-relative rounded-5 justify-content-center align-items-center ms-4 d-flex " style="width: 50px; height:50px; top: 30px; background: #05EB00">
                 <a href="salon-comunal.php">
@@ -112,7 +112,10 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                 <img src="./images/pagoss.png" style="width: 158px;" class="position-absolute" alt="">
               
             </div>
+            <br>
         </section>
+
+        
     </main>
 
     

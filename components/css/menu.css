@@ -9,6 +9,9 @@
 
 }
 
+.pignose-calendar-top-icon{
+    font-family: fontawesome !important;
+}
 #menu-modal{
     background-color: #0F1210;
     height: 100vh;

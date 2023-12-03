@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>auth</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+       *,
+    html,
+    body {
+        font-family: 'Varela Round', sans-serif;
+    } 
+    </style>
+    
+</head>
+
+<body>
+   
+</body>
+
+</html>
+
 <?php
 require_once "../Models/conexion.php";
 require_once "../Models/consultas.php";
@@ -28,13 +52,36 @@ function modifyAccount()
 
         if($response){
             echo '
-                <script>
-                    alert("successfully update one");
-                    window.history.back();
-                </script>
+            <script>
+        
+            Swal.fire({
+                icon: "success",
+                title: "Hecho!",
+                text: "Actualizacion de perfil exitosa",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                window.history.back();
+            })
+        </script>
             ';
         }else{
-            echo "error";
+            echo '
+            <script>
+        
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Error al actualizar la cuenta, verifica que todos los campos esten completos",
+                        confirmButtonText: "Ok"
+                    }).then((result)=>{
+                        if(result.isConfirmed){
+                            window.history.back();
+                        }
+                        
+                    })
+                </script>
+            ';
         }
     }
     //segundo caso, todos los valores y contrasenas iguales
@@ -51,10 +98,18 @@ function modifyAccount()
 
         if($response){
             echo '
-                <script>
-                    alert("successfully update two");
-                    window.history.back();
-                </script>
+            <script>
+        
+            Swal.fire({
+                icon: "success",
+                title: "Hecho!",
+                text: "Actualizacion de clave exitosa",
+                showConfirmButton: false,
+                timer: 2000
+            }).then((result)=>{
+                window.history.back();
+            })
+        </script>
             ';
         }else{
             echo "error";
@@ -69,9 +124,19 @@ function modifyAccount()
         echo '
         
         <script>
-            alert("Te falta un valor o tus contrasenas no coinciden, intentalo de nuevo.")
-            window.history.back();
-        </script>
+        
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error al actualizar la cuenta, verifica que las claves coincidan y los campos esten completos",
+                    confirmButtonText: "Ok"
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        window.history.back();
+                    }
+                    
+                })
+            </script>
         ';
     }
 }

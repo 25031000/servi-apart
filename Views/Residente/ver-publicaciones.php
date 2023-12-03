@@ -1,8 +1,8 @@
 <?php
-    require_once ("../../Models/conexion.php");
-    require_once ("../../Models/consultas.php");
-    require_once ("../../Models/seguridadResidente.php");
-    require_once ("../../Controllers/mostrarInfoResidente.php");
+require_once("../../Models/conexion.php");
+require_once("../../Models/consultas.php");
+require_once("../../Models/seguridadResidente.php");
+require_once("../../Controllers/mostrarInfoResidente.php");
 ?>
 
 
@@ -13,34 +13,33 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <title>Servi - Apart</title>
 
-    <!-- ================= Favicon ================== -->
-    <!-- Standard -->
+    <!-- icono -->
     <link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        
+
     <link rel="stylesheet" href="../../components/css/header.css">
     <link rel="stylesheet" href="../../components/css/menu.css">
-    
+
     <link rel="stylesheet" href="../Residente/css/home.css">
     <!-- Transition.style website -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     <link rel="stylesheet" href="../../assets/css/publicaciones-styles.css">
-    
-    
-  
+
+
+
 </head>
 
-<body style="font-family: 'Varela Round', sans-serif !important;" >
+<body style="font-family: 'Varela Round', sans-serif !important;">
 
-<?php
+    <?php
     include '../../components/menu.php';
     include '../../components/headerInclude.php';
 
-    
+
     ?>
 
 
@@ -74,27 +73,27 @@
                 </div>
                 <!-- /# row -->
 
-                </div>
-
-                     
-                <section class="publi-grid row ps-2 mt-5" id="publi-cars">
-                    <?php
-                        cargarPublicacionRes();
-                    ?>
-                    
-                </section>
-                 
-
-                    <div class="row" style="margin-left: 20px">
-                        <div class="col-lg-12">
-                            <div class="footer">
-                                <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
-                            </div>
-                        </div>
-                    </div>
-                
             </div>
+
+
+            <section class="publi-grid row ps-2 mt-5" id="publi-cars">
+                <?php
+                cargarPublicacionRes();
+                ?>
+
+            </section>
+
+
+            <div class="row" style="margin-left: 20px">
+                <div class="col-lg-12">
+                    <div class="footer">
+                        <p>2023 © Admin Board. - <a href="#">Servi-Apart.</a></p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
     </div>
 
 
@@ -111,28 +110,28 @@
 
 
     <script>
-    //menu icon on Navbar
-    $('#menu-btn').click(() => {
+        //menu icon on Navbar
+        $('#menu-btn').click(() => {
 
-$('#menu-modal').attr('transition-style', 'in:wipe:down')
-$('#menu-modal').css({
-    display: 'block'
-})
-$('body').css({
-    overflowX: "hidden"
-})
-})
+            $('#menu-modal').attr('transition-style', 'in:wipe:down')
+            $('#menu-modal').css({
+                display: 'block'
+            })
+            $('body').css({
+                overflowX: "hidden"
+            })
+        })
 
-//close icon on modal
-$('#close').click(() => {
+        //close icon on modal
+        $('#close').click(() => {
 
-$('#menu-modal').attr('transition-style', 'out:wipe:down')
-$('html').css({
-    overflow: "scroll"
-})
+            $('#menu-modal').attr('transition-style', 'out:wipe:down')
+            $('html').css({
+                overflow: "scroll"
+            })
 
-})
-</script>
+        })
+    </script>
     <!-- Common -->
 
 

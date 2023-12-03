@@ -104,7 +104,7 @@ function cargarUsuarioEditar()
     foreach ($result as $f) {
         echo '
         
-        <form action="../../Controllers/modificarCuentaAdmin.php" method="POST"  class="p-5 pack-form">
+        <form action="../../Controllers/actualizarUserAdmin.php" method="POST"  class="p-5 pack-form">
         <div class="row">
         <div class="d-flex flex-column mb-3">
             <h2 style="font-size: 1.7em;">Datos de Usuario</h2>
@@ -153,7 +153,6 @@ function cargarUsuarioEditar()
                     <option value="' . $f['estado'] . '"> ' . $f['estado'] . ' </option>
                     <option value="Activo">Activo</option>
                     <option value="Pendiente">Pendiente</option>
-                    <option value="Bloqueado">Bloqueado</option>
                 </select>
             </div>
             <div class="form-group col-md-4">
@@ -656,7 +655,7 @@ function cargarVehiculoEditar()
 
                                         <div class="form-group col-md-4  labelid" style="display:block">
                                         <label>Estacionamiento:</label>
-                                        <input style="width:100%" value="' . $f['parqueadero'] . '" type="text" class="rounded-3 input" placeholder="Ej: B17"
+                                        <input style="width:100%" value="' . $f['parqueadero'] . '" type="text" class="rounded-3 input mi-input" placeholder="Ej: B17"
                                             name="parqueadero">
                                         </div>
                                         <div class="form-group col-md-4 ">
@@ -767,7 +766,7 @@ function cargarPublicaciones()
             <tr>
             
             <td>' . $f['titulo'] . ' </td>
-            <td>' . $f['descripcion'] . ' </td>
+            <td style="max-width:650px">' . $f['descripcion'] . ' </td>
          
             <td><a  href="modificar-publi.php?id_publi=' . $f['id_publi'] . '" class="btn btn-editar" style="margin-right:15px; border: none; color: white; display: flex; align-items: center; max-width:100px; margin-left:10px"><img src="../../assets/icons/edita.png" width="17px" style="margin-right:7px">  Editar</a>
             <td><a href="../../Controllers/eliminarPubli.php?id_publi=' . $f['id_publi'] . '" class="btn btn-danger"data-toggle="tooltip" data-placement="left"  style="margin-left:15px; display: flex; align-items: center; max-width:120px"><img src="../../assets/icons/eliminar.png" width="20px" style="margin-right:7px">  Eliminar</a></td>
@@ -1382,61 +1381,60 @@ function cargarReservaEditar()
     foreach ($result as $f) {
         echo '
             
-            <div class="card text-center"  
-              style="box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);
-              -webkit-box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);
-              -moz-box-shadow: 2px 6px 20px -9px rgba(0,0,0,0.75);  border-radius: 15px; padding:20px";  >
+            <div class="  
+              style=""  >
                 <form action="../../Controllers/modificarReservaAdminSC.php" method="POST" >
-                <div class="row g-2">
-                <div class="col-md-6">
+                <div class="">
+                            <h2 style="font-size: 1.7em;">Datos de la Reserva</h2>
+                        </div> 
+                <div class="row">
+                <div class="form-group col-md-6">
                     <div class="">
-                    <label for="" style="font-weight: bold; color: #333;">Identificación</label>
-                        <input type="number" class="form-control py-2 input " value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                    <label for="" >Identificación</label>
+                        <input style="width:100%" type="number" class="rounded-3 input" value="' . $f['identificacion'] . '" id="identificacion" name="identificacion" placeholder="0123456789" readonly style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
                 
-                <div class="col-md-6">
+                <div class="form-group col-md-6">
                     <div class="">
-                    <label for="dia_reserva" style="font-weight: bold; color: #333;">Día de Reserva</label>
-                        <input type="date" class="form-control py-2 input " value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="dia_reserva" >Día de Reserva</label>
+                        <input style="width:100%" type="date" class="rounded-3 input" value="' . $f['dia_reserva'] . '" id="dia_reserva" name="dia_reserva"  required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
             
-                <div class="col-md-6">
+                <div class="form-group col-md-6">
                     <div class="">
-                    <label for="hora_inicio" style="font-weight: bold; color: #333;">Hora de Inicio</label>
-                        <input type="time" class="form-control py-2 input " value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="hora_inicio" >Hora de Inicio</label>
+                        <input style="width:100%" type="time" class="rounded-3 input" value="' . $f['hora_inicio'] . '" id="hora_inicio" name="hora_inicio" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="form-group col-md-6">
                     <div class="">
-                    <label for="hora_finalizacion" style="font-weight: bold; color: #333;">Hora de Finalización</label>
-                        <input type="time" class="form-control py-2 input " value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" value="03:00:00" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
+                    <label for="hora_finalizacion" >Hora de Finalización</label>
+                        <input style="width:100%" type="time" class="rounded-3 input" value="' . $f['hora_finalizacion'] . '" id="hora_finalizacion" name="hora_finalizacion" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;">
                         
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="form-group col-md-3">
                     <div class="">
-                    <label for="mesas" style="font-weight: bold; color: #333;">Mesas</label>
-                        <input type="number" class="form-control py-2 input "  value="' . $f['mesas'] . '" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px; ">
+                    <label for="mesas" >Mesas</label>
+                        <input style="width:100%" type="number" class="rounded-3 input"  value="' . $f['mesas'] . '" id="mesas" name="mesas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px; ">
                         
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="form-group col-md-3">
                     <div class="">
-                    <label for="sillas" style="font-weight: bold; color: #333;">Sillas</label>
-                        <input type="number" class="form-control py-2 input " value="' . $f['sillas'] . '" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
+                    <label for="sillas" >Sillas</label>
+                        <input style="width:100%" type="number" class="rounded-3 input" value="' . $f['sillas'] . '" id="sillas" name="sillas" required style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" >
                         
                     </div>
                 </div>
-                   <div class="col-md-6">
-                <div>
-                    <label for="tipo_evento" style="font-weight: bold; color: #333;">Tipo de evento</label>
-                    <div>
-                        <select class="form-control py-2 input  " id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
+                   <div class="form-group col-md-6">
+                    <label for="tipo_evento" >Tipo de evento</label>
+                        <select style="width:100%" class="rounded-3 input" id="tipo_evento" name="tipo_evento"  style="border: 1px solid #ccc; padding: 5px; border-radius: 5px;" placeholder="' . $f['tipo_evento'] . '">
                             <option value="">' . $f['tipo_evento'] . '</option>
                             <option value="Fiesta de cumpleaños">Fiesta de cumpleaños</option>
                             <option value="Matrimonio">Matrimonio</option>
@@ -1452,13 +1450,12 @@ function cargarReservaEditar()
                             <option value="Exposición de artesanías">Exposición de artesanías</option>
                             <option value="Otro">Otro</option>
                         </select>
-                    </div>
                 </div>
             </div>
             
-                <div class="col-md-12">
-                    <button type="submit" class="btn btn-success">Actualizar Informacion</button>
-                </div>
+            <div class="d-flex flex-column mt-3">
+            <button class="boton-btn  w-30">Modificar Reserva</button>
+    </div>
             </div>
         </form>
          </div>
@@ -1512,10 +1509,10 @@ function cargarReservasEX()
             <tr>
                 <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['id_reserva'] . '</th>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['identificacion'] . '</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombre'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['nombres'] . '</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apellidos'] . '</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['telefonos'] . '</td>
-                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['correo'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['telefono'] . '</td>
+                <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['email'] . '</td>
                 <th style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['dia_reserva'] . '</th>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['torre'] . '</td>
                 <td style="padding: 8px; border-top: 1px solid #dee2e6;">' . $f['apartamento'] . '</td>

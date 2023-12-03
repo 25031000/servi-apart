@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2023 a las 04:39:59
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 01-12-2023 a las 20:50:56
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +31,7 @@ CREATE TABLE `inventario_salon` (
   `id_inv` int(11) NOT NULL,
   `num_sillas` int(11) NOT NULL,
   `num_mesas` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -46,7 +46,7 @@ CREATE TABLE `novedad_vehiculo` (
   `identificacion` int(11) NOT NULL,
   `fecha_rev` datetime NOT NULL DEFAULT current_timestamp(),
   `fotoR` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `novedad_vehiculo`
@@ -72,7 +72,7 @@ CREATE TABLE `paqueteria` (
   `usuario` int(11) DEFAULT NULL,
   `remitente` varchar(50) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -85,7 +85,7 @@ CREATE TABLE `peticiones` (
   `titulo` varchar(60) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
   `identificacion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -99,16 +99,19 @@ CREATE TABLE `publicaciones` (
   `descripcion` varchar(500) NOT NULL,
   `fecha` date NOT NULL DEFAULT current_timestamp(),
   `hora` time NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `publicaciones`
 --
 
 INSERT INTO `publicaciones` (`id_publi`, `titulo`, `descripcion`, `fecha`, `hora`) VALUES
-(3, 'Agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion. ', '2023-09-14', '00:00:00'),
-(9, 'Remodelacion en el edificio', 'Se observaron problemas en la red electrica', '2023-09-19', '00:00:00'),
-(10, 'Fuga de gas', 'Fuga de gas en el apartamento 601-torre 5', '2023-09-19', '00:00:00');
+(11, 'Novenas navideñas ', 'El dia 16 diciembre se dara comienso ala las novenas navideñas, las culaes todos los residentes estaran invitados a participar.', '2023-12-01', '14:38:04'),
+(12, 'tema de luz ', 'Hubo problemas con electricidad en el conjunto, por lo tanto se hará mantenimiento el día 15 de diciembre .', '2023-12-01', '14:41:24'),
+(13, 'reunion de lideres ', 'El día 20 de enero llevaremos acabo una Reunión entre todos los lideres del conjunto, para abarcar unos temas de mucho importancia ', '2023-12-01', '14:43:10'),
+(14, 'Agua', 'El dia de hoy por temas de acueducto tendremos problemas con tema de agua, por lo tanto no tendremos este servicio durante las 8:00 pm a 10:00 pm, muchas gracias por su atencion.', '2023-12-01', '14:48:21'),
+(15, 'electricidad ', 'Se observaron problemas en la red electrica', '2023-12-01', '14:49:00'),
+(16, 'Fuga de gas ', 'Fuga de gas en el apartamento 601-torre 5', '2023-12-01', '14:49:32');
 
 -- --------------------------------------------------------
 
@@ -125,7 +128,25 @@ CREATE TABLE `reserva_salon` (
   `mesas` int(10) NOT NULL,
   `sillas` int(10) NOT NULL,
   `tipo_evento` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `reserva_salon`
+--
+
+INSERT INTO `reserva_salon` (`id_reserva`, `identificacion`, `dia_reserva`, `hora_inicio`, `hora_finalizacion`, `mesas`, `sillas`, `tipo_evento`) VALUES
+(35, 11105687, '2023-11-30', '15:01:00', '03:00:00', 14, 25, 'Matrimonio'),
+(36, 11105687, '2023-12-08', '15:00:00', '03:00:00', 12, 30, 'Baby shower'),
+(37, 11105687, '2023-12-10', '15:00:00', '03:00:00', 13, 30, 'Aniversario'),
+(38, 1005689221, '2023-12-09', '12:39:00', '03:00:00', 14, 25, 'Taller de arte'),
+(39, 1005689221, '2023-12-19', '18:00:00', '03:00:00', 13, 35, 'Primera comunion'),
+(40, 1005689221, '2023-12-17', '00:40:00', '03:00:00', 10, 30, 'Expocion artesanias'),
+(41, 1025689451, '2023-12-12', '00:00:00', '03:00:00', 8, 20, 'Baby shower'),
+(42, 1025689451, '2023-11-15', '16:00:00', '03:00:00', 10, 25, 'Reunion comunitaria'),
+(43, 1025689451, '2023-12-15', '16:00:00', '03:00:00', 6, 12, 'Baby shower'),
+(44, 1065984556, '2023-12-02', '14:00:00', '03:00:00', 10, 25, 'Expocion artesanias'),
+(45, 1065984556, '2023-12-03', '16:00:00', '03:00:00', 13, 30, 'Fiesta de cumpleaños'),
+(46, 1065984556, '2023-12-07', '19:00:00', '03:00:00', 15, 35, 'Presentacion teatral');
 
 -- --------------------------------------------------------
 
@@ -146,7 +167,7 @@ CREATE TABLE `usuarios` (
   `foto` varchar(200) DEFAULT NULL,
   `torre` varchar(15) DEFAULT NULL,
   `apartamento` varchar(15) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -154,15 +175,15 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`identificacion`, `tipo_doc`, `nombres`, `apellidos`, `email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `torre`, `apartamento`) VALUES
 (11105687, 'PASAPORTE', 'Laura Beatriz', 'Ramírez Soto', 'sotolau1090@gmail.com', '3115689474', 'c67d9df7e2ae67e043532bb0ce993777', 'Residente', 'Activo', '../Uploads/Usuarios/user6.jpg', 'A', '303'),
-(1000056356, 'CC', 'Claudia Isabel', 'Torres Martínez', 'clauisabel1980@gmail.com', '3100156891', '0a98cf1edd627edc737b8e083cb14554', 'Seguridad', 'Activo', '../Uploads/Usuarios/user9.jpg', NULL, NULL),
-(1005689221, 'CC', 'Santiago', 'Peralta Torres ', 'santiago901pe@gmail.com', '3224678954', '8c2d7eca06767ef7e484afdfc674ddce', 'Residente', 'Activo', '../Uploads/Usuarios/user2.jpg', 'B', '301'),
-(1022352265, 'CC', 'Alejandro José', 'Pérez Ramírez', 'guardaseguridad@gmail.com', '3215689212', '2a460be978d0bfcfeb85c6698ba78e86', 'Seguridad', 'Activo', '../Uploads/Usuarios/user7.png', '', ''),
-(1025689451, 'CC', 'Carlos Eduardo ', 'González Martinez', 'camartinezeduar1970@gmail.com', '3156894517', 'c6b6178da5cf1163374b7e5846b35a79', 'Residente', 'Activo', '../Uploads/Usuarios/user3.jpg', 'B', '102'),
+(1000056356, 'CC', 'Claudia Isabel', 'Torres Martínez', 'clauisabel1980@gmail.com', '3100156891', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user9.jpg', NULL, NULL),
+(1005689221, 'CC', 'Santiago', 'Peralta Torres ', 'santiago901pe@gmail.com', '3224678954', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user2.jpg', 'B', '301'),
+(1022352265, 'CC', 'Alejandro José', 'Pérez Ramírez', 'guardaseguridad@gmail.com', '3215689212', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user7.png', '', ''),
+(1025689451, 'CC', 'Carlos Eduardo ', 'González Martinez', 'camartinezeduar1970@gmail.com', '3156894517', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user3.jpg', 'B', '102'),
 (1056892568, 'CE', 'María Alejandra ', 'Herrera Torres', 'herreramaria876a@outlook.com', '3111456894', '12a62b0c967a5b44088cc789a60ab628', 'Residente', 'Activo', '../Uploads/Usuarios/user4.jpeg', 'A', '202'),
-(1065898452, 'CC', 'Gabriel Andrés', 'Mendoza López', 'gabilopez987@hotmail.com', '3165256891', 'cff05c1be554757c2ae7b51a9a3e4a2b', 'Seguridad', 'Activo', '../Uploads/Usuarios/user8.jpg', NULL, NULL),
-(1065984556, 'CC', 'Ana Carolina', 'López Mendoza', '09809anacarol@hotmail.com', '3205896521', '4914398a07630b3125c0f1f5cc9b2802', 'Residente', 'Activo', '../Uploads/Usuarios/user5.jpg', 'A', '102'),
-(1264565423, 'CC', 'Carlos Eduardo', 'González Martínez', 'admin@gmail.com', '3156453223', '102c059187935f48de43e7060e0d0671', 'Administrador', 'Activo', '../Uploads/Usuariosuser10.jpg', NULL, NULL),
-(1876219012, 'CC', 'Juan Andrés', 'Ramirez Orejuela', 'juananra012@gmail.com', '3245678912', 'eb87cad271826e0a25a5b016548e9f35', 'Residente', 'Activo', '../Uploads/Usuarios/user1.jpg', 'A', '201');
+(1065898452, 'CC', 'Gabriel Andrés', 'Mendoza López', 'gabilopez987@hotmail.com', '3165256891', '202cb962ac59075b964b07152d234b70', 'Seguridad', 'Activo', '../Uploads/Usuarios/user8.jpg', NULL, NULL),
+(1065984556, 'CC', 'Ana Carolina', 'López Mendoza', '09809anacarol@hotmail.com', '3205896521', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user5.jpg', 'A', '102'),
+(1264565423, 'CC', 'Carlos Eduardo', 'González Martínez', 'admin@gmail.com', '3156453223', '202cb962ac59075b964b07152d234b70', 'Administrador', 'Activo', '../Uploads/Usuariosuser10.jpg', NULL, NULL),
+(1876219012, 'CC', 'Juan Andrés', 'Ramirez Orejuela', 'juananra012@gmail.com', '3245678912', '202cb962ac59075b964b07152d234b70', 'Residente', 'Activo', '../Uploads/Usuarios/user1.jpg', 'A', '201');
 
 -- --------------------------------------------------------
 
@@ -182,7 +203,7 @@ CREATE TABLE `vehiculo` (
   `foto3` varchar(200) DEFAULT NULL,
   `foto4` varchar(200) DEFAULT NULL,
   `parqueadero` varchar(10) DEFAULT 'NA'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `vehiculo`
@@ -281,13 +302,13 @@ ALTER TABLE `peticiones`
 -- AUTO_INCREMENT de la tabla `publicaciones`
 --
 ALTER TABLE `publicaciones`
-  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_publi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `reserva_salon`
 --
 ALTER TABLE `reserva_salon`
-  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_reserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- Restricciones para tablas volcadas

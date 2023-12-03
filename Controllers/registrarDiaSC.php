@@ -15,16 +15,16 @@ require_once("../Models/consultas.php");
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     <script src="sweetalert2.all.min.js"></script>
     <title>Servi - Apart</title>
+    <!-- icono -->
+    <link rel="shortcut icon" href="../assets/icons/ico.ico">
 
-<!-- icono -->
-<link rel="shortcut icon" href="../../assets/icons/ico.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
         html,
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Varela Round', sans-serif;
         }
     </style>
 </head>
@@ -38,7 +38,6 @@ require_once("../Models/consultas.php");
     $mesas = $_POST['mesas'] ?? null;
     $sillas = $_POST['sillas'] ?? null;
     $tipo_evento = $_POST['tipo_evento'] ?? null;
-
     $identificacion = $_GET['id'] ?? null;
 
 
@@ -51,7 +50,7 @@ require_once("../Models/consultas.php");
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'ese dia ya esta reserva, escoje otro',
+                    text: 'Este dia ya se encuentra reservado, elige otro',
                     ConfirmButtom: 'Ok'
 
                 }).then((result) => {
