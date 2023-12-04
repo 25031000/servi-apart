@@ -44,10 +44,9 @@ require_once("../../Controllers/mostrarInfoResidente.php");
 
 
 
-
     <div class="content-wrap container">
         <div class="main">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
@@ -96,6 +95,7 @@ require_once("../../Controllers/mostrarInfoResidente.php");
         </div>
     </div>
     </div>
+    
 
 
 

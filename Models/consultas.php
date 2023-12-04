@@ -1163,13 +1163,15 @@ class Consultas
 
     public function mostrarPeticiones()
     {
+        $query = "SELECT p.*, u.nombres, u.apellidos FROM peticiones p
+        LEFT JOIN usuarios u ON p.identificacion = u.identificacion";
         $f = null;
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
 
         $consultar = "SELECT * FROM peticiones";
 
-        $result = $conexion->prepare($consultar);
+        $result = $conexion->prepare($query);
 
         $result->execute();
 
@@ -1200,6 +1202,7 @@ class Consultas
         }
         return $f;
     }
+
 
     public function mostrarPeticionEditar($id_peticion)
     {

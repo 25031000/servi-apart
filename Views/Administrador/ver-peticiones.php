@@ -113,7 +113,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                             </div>
 
                         </div >
-                        <p id="text-title" style="margin-left: 100px">Se visualizara todas las peticiones  que han sido creadas por los residentes. </p>
+                        <p id="text-title" style="margin-left: 100px">Aquí podrá visualizar todas las peticiones  que han sido creadas por los residentes. </p>
                     </div>
 
                     <!-- /# column -->
@@ -163,6 +163,7 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
                                                     <th>Descripcion</th>
                                                     <th>Fecha</th>
                                                     <th>Hora</th>
+                                                    <th>Nombre</th>
                                                     <th>Operaciones</th>
                                                   
                                                    
@@ -199,7 +200,14 @@ require_once("../../Controllers/mostrarInfoAdmin.php");
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>
     <script src="../Dashboard/js/lib/jquery.nanoscroller.min.js"></script>

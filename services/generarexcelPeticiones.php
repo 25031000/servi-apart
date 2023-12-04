@@ -14,10 +14,10 @@ echo "\xEF\xBB\xBF";
             </th>
             <th class="d-flex col-md-2">
             
-                <span class="ms-2">Titulo</span>
+                <span class="ms-2">Título</span>
             </th>
             <th class="d-flex col-md-2">
-             <span class="ms-2">Descripcion</span>
+             <span class="ms-2">Descripción</span>
             </th>
             
         
